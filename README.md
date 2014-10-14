@@ -28,6 +28,7 @@ advantages:
 * Per-environment configuration using .env file, which is ignored by git
 * Powerful build system (phake-builder) integrated
 * Composer integrated with vendor/ folder added to .gitignore .
+* PHPUnit integrated with tests/ folder and an example unit test.
 * Sensible defaults for best practices - favicon.ico, robots.txt, GPL, etc
 
 For example, you can easily automate the build process of your application
@@ -41,4 +42,13 @@ $ ./vendor/bin/phake -T
 As you can see, there are already placeholders for app:install, app:update,
 and app:remove.  You can populate these, remove them or add more, of
 course.
+
+Here is how to run your unit tests:
+
+```
+$ ./vendor/bin/phpunit --coverage-text --colors tests/
+```
+
+There's an example one for you, so now you have no excuse NOT to write
+them.
 
