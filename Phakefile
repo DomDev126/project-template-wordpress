@@ -4,7 +4,7 @@ require_once 'vendor/qobo/phake-builder/Phakefile';
 group('app', function() {
 
 	desc('Install application');
-	task('install', ':builder::init', function($app) {
+	task('install', ':builder:init', function($app) {
 		printSeparator();
 		printInfo("Installing application");
 		task('install', ':git:pull');
