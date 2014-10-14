@@ -1,0 +1,193 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "78ededb80059ce7e2f0890fbffa3a7d6",
+    "packages": [
+        {
+            "name": "jaz303/phake",
+            "version": "v0.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jaz303/phake.git",
+                "reference": "ddfc0e71e7d65a9bfb852a8b3e1b9aad7b6b825e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jaz303/phake/zipball/ddfc0e71e7d65a9bfb852a8b3e1b9aad7b6b825e",
+                "reference": "ddfc0e71e7d65a9bfb852a8b3e1b9aad7b6b825e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "bin": [
+                "bin/phake"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "phake": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jason Frame",
+                    "email": "jason@onehackoranother.com"
+                }
+            ],
+            "description": "A wee clone of Ruby's rake for PHP 5.3. Uses closures for ultimate coolness.",
+            "homepage": "http://github.com/jaz303/phake",
+            "keywords": [
+                "Tasks",
+                "automation",
+                "cli"
+            ],
+            "time": "2014-01-04 20:27:15"
+        },
+        {
+            "name": "mamchenkov/mysql-find-and-replace",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mamchenkov/MySQL-FindAndReplace.git",
+                "reference": "d3b4b0ce0d546c244cfd08eb076481becd84a793"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mamchenkov/MySQL-FindAndReplace/zipball/d3b4b0ce0d546c244cfd08eb076481becd84a793",
+                "reference": "d3b4b0ce0d546c244cfd08eb076481becd84a793",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mysqli": "*",
+                "php": ">=5.3.0"
+            },
+            "bin": [
+                "bin/mysql-replace.php"
+            ],
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Leonid Mamchenkov",
+                    "email": "leonid@mamchenkov.net",
+                    "homepage": "http://mamchenkov.net",
+                    "role": "Developer"
+                },
+                {
+                    "name": "David Coveney",
+                    "homepage": "http://davidcoveney.com/",
+                    "role": "Author"
+                }
+            ],
+            "description": "Find and replace tool for MySQL",
+            "homepage": "https://github.com/mamchenkov/MySQL-FindAndReplace",
+            "keywords": [
+                "database",
+                "find-replace",
+                "mysql",
+                "strings"
+            ],
+            "time": "2014-10-10 06:52:30"
+        },
+        {
+            "name": "qobo/phake-builder",
+            "version": "v1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/QoboLtd/phake-builder.git",
+                "reference": "b52cfa7176ff521e3f81a038c61a0db86583bc23"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/QoboLtd/phake-builder/zipball/b52cfa7176ff521e3f81a038c61a0db86583bc23",
+                "reference": "b52cfa7176ff521e3f81a038c61a0db86583bc23",
+                "shasum": ""
+            },
+            "require": {
+                "jaz303/phake": "*",
+                "mamchenkov/mysql-find-and-replace": "1.0.*",
+                "vlucas/phpdotenv": "*"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Leonid Mamchenkov",
+                    "email": "leonid@mamchenkov.net",
+                    "homepage": "http://mamchenkov.net",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A set of build and deploy files, based on jaz303/phake",
+            "time": "2014-10-13 16:14:12"
+        },
+        {
+            "name": "vlucas/phpdotenv",
+            "version": "1.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vlucas/phpdotenv.git",
+                "reference": "2821c024b4c14c7e6d1ff99e063ae9532620beb2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/2821c024b4c14c7e6d1ff99e063ae9532620beb2",
+                "reference": "2821c024b4c14c7e6d1ff99e063ae9532620beb2",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Dotenv": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD"
+            ],
+            "authors": [
+                {
+                    "name": "Vance Lucas",
+                    "email": "vance@vancelucas.com",
+                    "homepage": "http://www.vancelucas.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Loads environment variables from `.env` to `getenv()`, `$_ENV` and `$_SERVER` automagically.",
+            "homepage": "http://github.com/vlucas/phpdotenv",
+            "keywords": [
+                "dotenv",
+                "env",
+                "environment"
+            ],
+            "time": "2014-01-31 16:18:39"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "platform": [],
+    "platform-dev": []
+}

@@ -1,0 +1,5 @@
+{
+	"require": {
+		"qobo/phake-builder": "~1.0"
+	}
+}
