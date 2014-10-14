@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /etc/
+Disallow: /src/
+Disallow: /vendor/
+Disallow: /composer.json
+Disallow: /composer.lock
