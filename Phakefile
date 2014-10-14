@@ -4,15 +4,19 @@ require_once 'vendor/qobo/phake-builder/Phakefile';
 group('app', function() {
 
 	desc('Install application');
-	task('install', ':git:pull', ':git:checkout', ':builder:init', function() {
+	task('install', ':builder::init', function($app) {
 		printSeparator();
 		printInfo("Installing application");
+		task('install', ':git:pull');
+		task('install', ':git:checkout');
 	});
 
 	desc('Update application');
-	task('update', ':git:pull', ':git:checkout', ':builder:init', function() {
+	task('update', ':builder:init', function($app) {
 		printSeparator();
 		printInfo("Updating application");
+		task('install', ':git:pull');
+		task('install', ':git:checkout');
 	});
 
 	desc('Remove application');
