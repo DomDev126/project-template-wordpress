@@ -7,17 +7,21 @@ group('app', function() {
 	task('install', ':builder:init', function($app) {
 		printSeparator();
 		printInfo("Installing application");
-		task('install', ':git:pull');
-		task('install', ':git:checkout');
 	});
+	task('install', ':git:pull');
+	task('install', ':git:checkout');
+	task('install', ':composer:install');
+
 
 	desc('Update application');
 	task('update', ':builder:init', function($app) {
 		printSeparator();
 		printInfo("Updating application");
-		task('update', ':git:pull');
-		task('update', ':git:checkout');
 	});
+	task('update', ':git:pull');
+	task('update', ':git:checkout');
+	task('update', ':composer:install');
+
 
 	desc('Remove application');
 	task('remove', ':builder:init', function() {

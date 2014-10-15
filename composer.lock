@@ -102,16 +102,16 @@
         },
         {
             "name": "qobo/phake-builder",
-            "version": "v1.0.3",
+            "version": "v1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/QoboLtd/phake-builder.git",
-                "reference": "b52cfa7176ff521e3f81a038c61a0db86583bc23"
+                "reference": "de69b41147cc3155be93e40eb28070cafe641af1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/QoboLtd/phake-builder/zipball/b52cfa7176ff521e3f81a038c61a0db86583bc23",
-                "reference": "b52cfa7176ff521e3f81a038c61a0db86583bc23",
+                "url": "https://api.github.com/repos/QoboLtd/phake-builder/zipball/de69b41147cc3155be93e40eb28070cafe641af1",
+                "reference": "de69b41147cc3155be93e40eb28070cafe641af1",
                 "shasum": ""
             },
             "require": {
@@ -133,29 +133,34 @@
                 }
             ],
             "description": "A set of build and deploy files, based on jaz303/phake",
-            "time": "2014-10-13 16:14:12"
+            "time": "2014-10-15 11:46:57"
         },
         {
             "name": "vlucas/phpdotenv",
-            "version": "1.0.6",
+            "version": "v1.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vlucas/phpdotenv.git",
-                "reference": "2821c024b4c14c7e6d1ff99e063ae9532620beb2"
+                "reference": "e783b688cf5bc29a4ffd1b79c92eb4dd2a2e2237"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/2821c024b4c14c7e6d1ff99e063ae9532620beb2",
-                "reference": "2821c024b4c14c7e6d1ff99e063ae9532620beb2",
+                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/e783b688cf5bc29a4ffd1b79c92eb4dd2a2e2237",
+                "reference": "e783b688cf5bc29a4ffd1b79c92eb4dd2a2e2237",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2"
             },
             "require-dev": {
-                "phpunit/phpunit": "*"
+                "phpunit/phpunit": "~4.0"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
             "autoload": {
                 "psr-0": {
                     "Dotenv": "src/"
@@ -169,8 +174,7 @@
                 {
                     "name": "Vance Lucas",
                     "email": "vance@vancelucas.com",
-                    "homepage": "http://www.vancelucas.com",
-                    "role": "Developer"
+                    "homepage": "http://www.vancelucas.com"
                 }
             ],
             "description": "Loads environment variables from `.env` to `getenv()`, `$_ENV` and `$_SERVER` automagically.",
@@ -180,7 +184,7 @@
                 "env",
                 "environment"
             ],
-            "time": "2014-01-31 16:18:39"
+            "time": "2014-10-14 15:06:44"
         }
     ],
     "packages-dev": [
