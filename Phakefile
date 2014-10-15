@@ -8,9 +8,9 @@ group('app', function() {
 		printSeparator();
 		printInfo("Installing application");
 	});
-	task('install', ':git:pull', $app);
-	task('install', ':git:checkout', $app);
-	task('install', ':composer:install', $app);
+	task('install', ':git:pull');
+	task('install', ':git:checkout');
+	task('install', ':composer:install');
 
 
 	desc('Update application');
@@ -18,9 +18,9 @@ group('app', function() {
 		printSeparator();
 		printInfo("Updating application");
 	});
-	task('update', ':git:pull', $app);
-	task('update', ':git:checkout', $app);
-	task('update', ':composer:install', $app);
+	task('update', ':git:pull');
+	task('update', ':git:checkout');
+	task('update', ':composer:install');
 
 
 	desc('Remove application');
