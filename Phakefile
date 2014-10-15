@@ -27,5 +27,5 @@ group('app', function() {
 
 });
 
-# vi:set ft=php
+# vi:ft=php
 ?>
