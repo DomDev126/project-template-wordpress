@@ -15,8 +15,8 @@ group('app', function() {
 	task('update', ':builder:init', function($app) {
 		printSeparator();
 		printInfo("Updating application");
-		task('install', ':git:pull');
-		task('install', ':git:checkout');
+		task('update', ':git:pull');
+		task('update', ':git:checkout');
 	});
 
 	desc('Remove application');
