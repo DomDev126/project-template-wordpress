@@ -10,6 +10,7 @@ group('app', function() {
 	});
 	task('install', ':git:pull');
 	task('install', ':git:checkout');
+	task('install', ':dotenv:create');
 	task('install', ':composer:install');
 
 
@@ -20,6 +21,7 @@ group('app', function() {
 	});
 	task('update', ':git:pull');
 	task('update', ':git:checkout');
+	task('update', ':dotenv:create');
 	task('update', ':composer:install');
 
 
@@ -28,6 +30,7 @@ group('app', function() {
 		printSeparator();
 		printInfo("Removing application");
 	});
+	task('remove', ':dotenv:delete');
 
 });
 
