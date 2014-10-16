@@ -7,6 +7,32 @@
     "hash": "affa43afb192a654bfc9d0981e97c9ec",
     "packages": [
         {
+            "name": "interconnectit/search-replace-db",
+            "version": "3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/interconnectit/Search-Replace-DB.git",
+                "reference": "12c6732502958a0c57125f6b30741e6e0f05655c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/interconnectit/Search-Replace-DB/zipball/12c6732502958a0c57125f6b30741e6e0f05655c",
+                "reference": "12c6732502958a0c57125f6b30741e6e0f05655c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "description": "A PHP search replace tool for quickly modifying a string throughout a database. Useful for changing the base URL when migrating a WordPress site from development to production.",
+            "homepage": "https://github.com/interconnectit/Search-Replace-DB",
+            "time": "2014-03-24 12:05:31"
+        },
+        {
             "name": "jaz303/phake",
             "version": "v0.6.0",
             "source": {
@@ -52,71 +78,22 @@
             "time": "2014-01-04 20:27:15"
         },
         {
-            "name": "mamchenkov/mysql-find-and-replace",
-            "version": "v1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mamchenkov/MySQL-FindAndReplace.git",
-                "reference": "d3b4b0ce0d546c244cfd08eb076481becd84a793"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mamchenkov/MySQL-FindAndReplace/zipball/d3b4b0ce0d546c244cfd08eb076481becd84a793",
-                "reference": "d3b4b0ce0d546c244cfd08eb076481becd84a793",
-                "shasum": ""
-            },
-            "require": {
-                "ext-mysqli": "*",
-                "php": ">=5.3.0"
-            },
-            "bin": [
-                "bin/mysql-replace.php"
-            ],
-            "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "Leonid Mamchenkov",
-                    "email": "leonid@mamchenkov.net",
-                    "homepage": "http://mamchenkov.net",
-                    "role": "Developer"
-                },
-                {
-                    "name": "David Coveney",
-                    "homepage": "http://davidcoveney.com/",
-                    "role": "Author"
-                }
-            ],
-            "description": "Find and replace tool for MySQL",
-            "homepage": "https://github.com/mamchenkov/MySQL-FindAndReplace",
-            "keywords": [
-                "database",
-                "find-replace",
-                "mysql",
-                "strings"
-            ],
-            "time": "2014-10-10 06:52:30"
-        },
-        {
             "name": "qobo/phake-builder",
-            "version": "v1.0.4",
+            "version": "v1.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/QoboLtd/phake-builder.git",
-                "reference": "de69b41147cc3155be93e40eb28070cafe641af1"
+                "reference": "32765800f9865472473dbc93268fe454c4eb4b3f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/QoboLtd/phake-builder/zipball/de69b41147cc3155be93e40eb28070cafe641af1",
-                "reference": "de69b41147cc3155be93e40eb28070cafe641af1",
+                "url": "https://api.github.com/repos/QoboLtd/phake-builder/zipball/32765800f9865472473dbc93268fe454c4eb4b3f",
+                "reference": "32765800f9865472473dbc93268fe454c4eb4b3f",
                 "shasum": ""
             },
             "require": {
+                "interconnectit/search-replace-db": "~3.0",
                 "jaz303/phake": "*",
-                "mamchenkov/mysql-find-and-replace": "1.0.*",
                 "vlucas/phpdotenv": "*"
             },
             "type": "library",
@@ -133,7 +110,7 @@
                 }
             ],
             "description": "A set of build and deploy files, based on jaz303/phake",
-            "time": "2014-10-15 11:46:57"
+            "time": "2014-10-16 12:22:51"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -491,16 +468,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.3.1",
+            "version": "4.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "06005259429c156c02596add91f6a59c7dc3d4af"
+                "reference": "02dd047049564f98f796789ec4207ee8f99bc3d4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/06005259429c156c02596add91f6a59c7dc3d4af",
-                "reference": "06005259429c156c02596add91f6a59c7dc3d4af",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/02dd047049564f98f796789ec4207ee8f99bc3d4",
+                "reference": "02dd047049564f98f796789ec4207ee8f99bc3d4",
                 "shasum": ""
             },
             "require": {
@@ -561,7 +538,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2014-10-06 06:20:35"
+            "time": "2014-10-16 08:01:00"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
