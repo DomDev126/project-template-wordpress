@@ -1,0 +1,49 @@
+server {
+	server_name %%NGINX_SITE_MAIN%% %%NGINX_SITE_OTHER%%;
+	root /var/www/html/%%NGINX_SITE_MAIN%%;
+
+	access_log /var/log/nginx/%%NGINX_SITE_MAIN%%-access.log;
+	error_log /var/log/nginx/%%NGINX_SITE_OTHER%%-error.log;
+
+	# Enable gzip compression
+	gzip on;
+	gzip_disable "msie6";
+
+	# Disable all methods besides HEAD, GET, and POST
+	if ($request_method !~ ^(GET|HEAD|POST)$) {
+		return 444;
+	}
+
+	# Deny all attempts to access hidden files such as .htaccess and .git
+	location ~ /\. { deny all; }
+
+	# Deny all attempts to access composer files
+	location = /composer.json { deny all; }
+	location = /composer.lock { deny all; }
+	location ~ /vendor\/ { deny all; }
+
+	# Deny all attempts to access template-project files
+	location ~ /etc\/ { deny all; }
+	location ~ /src\/ { deny all; }
+	location ~ /tests\/ { deny all; }
+	location = /Phakefile { deny all; }
+	location = /README.md { deny all; }
+
+	location / {
+		try_files $uri $uri/ =404;
+	}
+
+	# PHP
+	location ~ \.php$ {
+		fastcgi_split_path_info ^(.+?\.php)(/.*)$;
+		if (!-f $document_root$fastcgi_script_name) {
+			return 404;
+		}
+
+		include /etc/nginx/fastcgi.conf;
+		#fastcgi_intercept_errors on;
+		fastcgi_index index.php;
+		fastcgi_pass php;
+		#fastcgi_pass 127.0.0.1:9000;
+	}
+}
