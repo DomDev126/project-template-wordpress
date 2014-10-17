@@ -8,11 +8,9 @@ group('app', function() {
 		printSeparator();
 		printInfo("Installing application");
 	});
-	task('install', ':git:pull');
-	task('install', ':git:checkout');
-	task('install', ':dotenv:create');
+	task('install', ':git:pull', ':git:checkout');
 	task('install', ':composer:install');
-	task('install', ':file:process');
+	task('install', ':dotenv:create', ':dotenv:reload', ':file:process');
 
 
 	desc('Update application');
@@ -20,15 +18,13 @@ group('app', function() {
 		printSeparator();
 		printInfo("Updating application");
 	});
-	task('update', ':git:pull');
-	task('update', ':git:checkout');
-	task('update', ':dotenv:create');
+	task('update', ':git:pull', ':git:checkout');
 	task('update', ':composer:install');
-	task('update', ':file:process');
+	task('update', ':dotenv:create', ':dotenv:reload', ':file:process');
 
 
 	desc('Remove application');
-	task('remove', ':builder:init', function() {
+	task('remove', ':builder:init', function($app) {
 		printSeparator();
 		printInfo("Removing application");
 	});
