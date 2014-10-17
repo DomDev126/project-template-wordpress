@@ -12,6 +12,7 @@ group('app', function() {
 	task('install', ':git:checkout');
 	task('install', ':dotenv:create');
 	task('install', ':composer:install');
+	task('install', ':file:process');
 
 
 	desc('Update application');
@@ -23,6 +24,7 @@ group('app', function() {
 	task('update', ':git:checkout');
 	task('update', ':dotenv:create');
 	task('update', ':composer:install');
+	task('update', ':file:process');
 
 
 	desc('Remove application');
