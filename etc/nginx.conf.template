@@ -1,9 +1,9 @@
 server {
 	server_name %%NGINX_SITE_MAIN%% %%NGINX_SITE_OTHER%%;
-	root /var/www/html/%%NGINX_SITE_MAIN%%;
+	root %%NGINX_ROOT_PREFIX%%/%%NGINX_SITE_MAIN%%;
 
-	access_log /var/log/nginx/%%NGINX_SITE_MAIN%%-access.log;
-	error_log /var/log/nginx/%%NGINX_SITE_MAIN%%-error.log;
+	access_log %%NGINX_LOG_PREFIX%%/%%NGINX_SITE_MAIN%%-access.log;
+	error_log %%NGINX_LOG_PREFIX%%/%%NGINX_SITE_MAIN%%-error.log;
 
 	# Enable gzip compression
 	gzip on;
