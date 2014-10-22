@@ -8,6 +8,12 @@ server {
 	# Enable gzip compression
 	gzip on;
 	gzip_disable "msie6";
+	gzip_vary on;
+	gzip_proxied any;
+	gzip_comp_level 6;
+	gzip_buffers 16 8k;
+	gzip_http_version 1.1;
+	gzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript;
 
 	# Disable all methods besides HEAD, GET, and POST
 	if ($request_method !~ ^(GET|HEAD|POST)$) {
