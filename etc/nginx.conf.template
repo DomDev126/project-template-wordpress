@@ -14,7 +14,6 @@ server {
 					application/xml 
 					application/xml+rss 
 					text/css 
-					text/html
 					text/javascript
 					text/plain 
 					text/xml 
@@ -35,7 +34,6 @@ server {
 					application/xml 
 					application/xml+rss 
 					text/css 
-					text/html
 					text/javascript
 					text/plain 
 					text/xml 
