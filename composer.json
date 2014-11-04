@@ -27,6 +27,7 @@
 		"qobo/phake-builder": "~1.0",
 		"wpackagist/disable-wordpress-updates": "1.4.2",
 		"wpackagist/wp-theme-plugin-editor-disable": "1.0.0",
+		"wpackagist/disable-comments": "*",
 		"wpackagist-plugin/jetpack": "3.2",
 		"wpackagist-theme/twentyfourteen": "*"
 	},
