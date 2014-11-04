@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b5d44d925317fc78232f19fda9f2733e",
+    "hash": "14f208975cb061ade24b3240cf50f965",
     "packages": [
         {
             "name": "composer/installers",
@@ -517,7 +517,7 @@
             "type": "webroot"
         },
         {
-            "name": "wpackagist/jetpack",
+            "name": "wpackagist-plugin/jetpack",
             "version": "3.2",
             "source": {
                 "type": "svn",
@@ -533,15 +533,37 @@
             "require": {
                 "composer/installers": "~1.0"
             },
+            "replace": {
+                "wpackagist/jetpack": "self.version"
+            },
             "type": "wordpress-plugin",
             "homepage": "http://wordpress.org/plugins/jetpack/"
+        },
+        {
+            "name": "wpackagist-theme/twentyfourteen",
+            "version": "1.2",
+            "source": {
+                "type": "svn",
+                "url": "http://themes.svn.wordpress.org/twentyfourteen/",
+                "reference": "1.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://wordpress.org/themes/download/twentyfourteen.1.2.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-theme",
+            "homepage": "http://wordpress.org/themes/twentyfourteen/"
         }
     ],
     "packages-dev": null,
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": [],
-    "prefer-stable": false,
     "platform": {
         "php": ">=5.3.0"
     },
