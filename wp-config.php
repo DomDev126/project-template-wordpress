@@ -32,6 +32,7 @@ $name = getenv('DB_NAME');
 $host = getenv('DB_HOST') ?: 'localhost';
 $user = getenv('DB_USER') ?: 'root';
 $pass = getenv('DB_PASSWORD') ?: '';
+$debug = getenv('WP_DEBUG') ?: false;
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
@@ -97,7 +98,7 @@ define('WPLANG', '');
  * It is strongly recommended that plugin and theme developers use WP_DEBUG
  * in their development environments.
  */
-define('WP_DEBUG', false);
+define('WP_DEBUG', $debug);
 
 /* That's all, stop editing! Happy blogging. */
 
