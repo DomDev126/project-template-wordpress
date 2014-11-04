@@ -4,8 +4,50 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "affa43afb192a654bfc9d0981e97c9ec",
+    "hash": "08fbda9319ef0b764364428f518c92f9",
     "packages": [
+        {
+            "name": "fancyguy/webroot-installer",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fancyguy/webroot-installer.git",
+                "reference": "4888a3dad9ab3b3da505a149230be0ec2ab837f4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fancyguy/webroot-installer/zipball/4888a3dad9ab3b3da505a149230be0ec2ab837f4",
+                "reference": "4888a3dad9ab3b3da505a149230be0ec2ab837f4",
+                "shasum": ""
+            },
+            "require-dev": {
+                "composer/composer": "1.0.*@dev",
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "composer-installer",
+            "extra": {
+                "class": "FancyGuy\\Composer\\WebrootInstaller"
+            },
+            "autoload": {
+                "psr-0": {
+                    "FancyGuy\\Composer\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Steve Buzonas",
+                    "email": "steve@fancyguy.com",
+                    "homepage": "http://www.stevebuzonas.com"
+                }
+            ],
+            "description": "A composer installer for libraries that live in an application webroot.",
+            "homepage": "http://fancyguy.github.com/webroot-installer/",
+            "time": "2013-01-29 22:51:45"
+        },
         {
             "name": "interconnectit/search-replace-db",
             "version": "3.0.0",
@@ -369,6 +411,20 @@
                 "environment"
             ],
             "time": "2014-10-16 14:50:21"
+        },
+        {
+            "name": "wordpress",
+            "version": "4.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/WordPress/WordPress/archive/4.0.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "fancyguy/webroot-installer": "1.0.0"
+            },
+            "type": "webroot"
         }
     ],
     "packages-dev": null,
@@ -376,6 +432,8 @@
     "minimum-stability": "stable",
     "stability-flags": [],
     "prefer-stable": false,
-    "platform": [],
+    "platform": {
+        "php": ">=5.3.0"
+    },
     "platform-dev": []
 }

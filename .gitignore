@@ -1,3 +1,4 @@
 vendor/
+wp/
 .env
 etc/nginx.conf
