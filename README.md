@@ -1,7 +1,7 @@
-project-template
-================
+project-template-wordpress
+==========================
 
-This is a template for the new project.
+This is a template for the new project using WordPress.
 
 Install
 -------
@@ -12,7 +12,7 @@ When starting a new PHP project, do the following:
 $ mkdir new-project
 $ cd new-project
 $ git init
-$ git remote add template git@github.com:QoboLtd/project-template.git
+$ git remote add template git@github.com:QoboLtd/project-template-wordpress.git
 $ git remote update
 $ git merge template/master
 $ composer install
