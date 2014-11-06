@@ -16,7 +16,7 @@ $ git remote add template git@github.com:QoboLtd/project-template-wordpress.git
 $ git remote update
 $ git merge template/master
 $ composer install
-$ cp .env.example .env
+$ ./vendor/bin/phake dotenv:create
 ```
 
 Usage
@@ -30,6 +30,9 @@ advantages:
 * Composer integrated with vendor/ folder added to .gitignore .
 * PHPUnit integrated with tests/ folder and an example unit test.
 * Sensible defaults for best practices - favicon.ico, robots.txt, GPL, etc
+* Several WordPress plugins pre-installed (not activated by default though)
+* TwentyFourteen WordPress theme pre-installed (not activated, but used by default by WordPress)
+* Extran WordPress plugins when composer install/update --dev executed
 
 For example, you can easily automate the build process of your application
 by modifying the included Phakefile.  Run the following command to examine
