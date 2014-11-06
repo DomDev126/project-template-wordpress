@@ -11,6 +11,9 @@ group('app', function() {
 	task('install', ':git:pull', ':git:checkout');
 	task('install', ':composer:install');
 	task('install', ':dotenv:create', ':dotenv:reload', ':file:process');
+	task('install', ':mysql:database-create');
+	task('install', ':mysql:database-import');
+	task('install', ':mysql:find-replace');
 
 
 	desc('Update application');
@@ -21,6 +24,8 @@ group('app', function() {
 	task('update', ':git:pull', ':git:checkout');
 	task('update', ':composer:install');
 	task('update', ':dotenv:create', ':dotenv:reload', ':file:process');
+	task('update', ':mysql:database-import');
+	task('update', ':mysql:find-replace');
 
 
 	desc('Remove application');
@@ -28,6 +33,7 @@ group('app', function() {
 		printSeparator();
 		printInfo("Removing application");
 	});
+	task('remove', ':mysql:database-drop');
 	task('remove', ':dotenv:delete');
 
 });
