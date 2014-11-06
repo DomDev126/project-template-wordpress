@@ -31,7 +31,7 @@ define('WP_CONTENT_URL', '/wp-content');
 $name = getenv('DB_NAME');
 $host = getenv('DB_HOST') ?: 'localhost';
 $user = getenv('DB_USER') ?: 'root';
-$pass = getenv('DB_PASSWORD') ?: '';
+$pass = getenv('DB_PASS') ?: '';
 $debug = getenv('WP_DEBUG') ?: false;
 
 // ** MySQL settings - You can get this info from your web host ** //
