@@ -283,16 +283,16 @@
         },
         {
             "name": "qobo/phake-builder",
-            "version": "v1.0.12",
+            "version": "v1.0.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/QoboLtd/phake-builder.git",
-                "reference": "5ca85ee12729a50527169b1fe90cfc763a4485f1"
+                "reference": "009ded1abc96e158cf1ef0dff443f79256e721ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/QoboLtd/phake-builder/zipball/5ca85ee12729a50527169b1fe90cfc763a4485f1",
-                "reference": "5ca85ee12729a50527169b1fe90cfc763a4485f1",
+                "url": "https://api.github.com/repos/QoboLtd/phake-builder/zipball/009ded1abc96e158cf1ef0dff443f79256e721ab",
+                "reference": "009ded1abc96e158cf1ef0dff443f79256e721ab",
                 "shasum": ""
             },
             "require": {
@@ -317,7 +317,7 @@
                 }
             ],
             "description": "A set of build and deploy files, based on jaz303/phake",
-            "time": "2014-11-10 15:19:50"
+            "time": "2014-11-10 21:54:07"
         },
         {
             "name": "vlucas/phpdotenv",
