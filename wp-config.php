@@ -23,6 +23,9 @@ catch (\Exception $e) {
 	echo $e->getMessage();
 	exit(1);
 }
+// Changes for WordPress in wp/ folder
+define('WP_HOME', getenv('WP_URL'));
+define('WP_SITEURL', WP_HOME . '/wp');
 
 // Changes for wp-content/ folder at root level
 define('WP_CONTENT_DIR', dirname(__FILE__) . '/wp-content');
