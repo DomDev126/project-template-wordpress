@@ -16,8 +16,21 @@ $ git remote add template git@github.com:QoboLtd/project-template.git
 $ git remote update
 $ git merge template/master
 $ composer install
-$ cp .env.example .env
+$ ./vendor/bin/phake dotenv:create
 ```
+
+Test
+----
+
+Now that you have the project template installed, check that it works
+before you start working on your changes.  Fire up the PHP web server:
+
+```
+$ php -S localhost:8000
+```
+
+In your browser navigate to http://localhost:8000 .  You should see
+the standard ```phpinfo()``` page.  If you do, all parts are in place.
 
 Usage
 -----
