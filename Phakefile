@@ -62,7 +62,7 @@ group('wordpress', function() {
 			throw new \RuntimeException("Failed to create batch file");
 		}
 
-		doShellCommand('./' . $dst);
+		doShellCommand('/bin/sh ' . $dst);
 		unlink($dst);
 		
 	});
