@@ -98,7 +98,7 @@ group('wordpress', function() {
 		if (preg_match('#http.://github.com/(.*)?/(.*)?/archive/(.*)?\.zip#', $theme, $matches)) {
 			$src = $theme;
 			$dst = 'wp-content/themes/' . $matches[2] . '.zip';
-			if (\PhakeBuilder\downloadFile($src, $dst)) {
+			if (\PhakeBuilder\FileSystem::downloadFile($src, $dst)) {
 				$app['WP_THEME'] = $dst;
 			}
 		}
