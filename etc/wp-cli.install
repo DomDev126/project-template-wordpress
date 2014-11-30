@@ -24,7 +24,7 @@
 # 
 # Active plugins
 # 
-for WP_INACTIVE_PLUGIN in $(%%SYSTEM_COMMAND_WPCLI%% list --status=inactive --field=name)
+for WP_INACTIVE_PLUGIN in $(%%SYSTEM_COMMAND_WPCLI%% plugin list --status=inactive --field=name)
 do
 	%%SYSTEM_COMMAND_WPCLI%% plugin activate $WP_INACTIVE_PLUGIN
 done
