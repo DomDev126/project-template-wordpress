@@ -21,6 +21,18 @@
 # 
 %%SYSTEM_COMMAND_WPCLI%% rewrite structure "/%year%/%monthnum%/%day%/%postname%/"
 
+#
+# Install plugins
+#
+
+# WordPress Directory plugins
+%%SYSTEM_COMMAND_WPCLI%% plugin install --force --activate disable-wordpress-updates --version=1.4.2
+%%SYSTEM_COMMAND_WPCLI%% plugin install --force --activate wp-theme-plugin-editor-disable --version=1.0.0
+%%SYSTEM_COMMAND_WPCLI%% plugin install --force --activate disable-comments --version=1.2
+%%SYSTEM_COMMAND_WPCLI%% plugin install --force --activate jetpack --version=3.2
+# Custom plugins
+%%SYSTEM_COMMAND_WPCLI%% plugin install --force --activate https://github.com/QoboLtd/Qobo-WP-Custom-Theme-Path/archive/v1.0.0.zip
+
 # 
 # Active plugins
 # 
@@ -28,6 +40,15 @@ for WP_INACTIVE_PLUGIN in $(%%SYSTEM_COMMAND_WPCLI%% plugin list --status=inacti
 do
 	%%SYSTEM_COMMAND_WPCLI%% plugin activate $WP_INACTIVE_PLUGIN
 done
+
+#
+# Install themes
+# 
+
+# WordPress theme directory (default WP theme, just in case something breaks)
+%%SYSTEM_COMMAND_WPCLI%% theme install --force twentyfourteen
+# Custom parent theme
+%%SYSTEM_COMMAND_WPCLI theme install --force --activate https://github.com/QoboLtd/Qobo-WP-Generic-Theme/archive/v1.0.0.zip
 
 #
 # Setting options
