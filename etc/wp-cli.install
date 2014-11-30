@@ -29,4 +29,13 @@ do
 	%%SYSTEM_COMMAND_WPCLI%% plugin activate $WP_INACTIVE_PLUGIN
 done
 
+#
+# Setting options
+# 
+
+# WordPress is in the wp/ folder, but home should be in the root
+%%SYSTEM_COMMAND_WPCLI%% option update home '%%WP_URL%%'
+# Disable comments everywhere, for the Disable Comments plugin
+%%SYSTEM_COMMAND_WPCLI%% option update disable_comments_options 'a:5:{s:19:\"disabled_post_types\";a:3:{i:0;s:4:\"post\";i:1;s:4:\"page\";i:2;s:10:\"attachment\";}s:17:\"remove_everywhere\";b:1;s:9:\"permanent\";b:0;s:16:\"extra_post_types\";b:0;s:10:\"db_version\";i:6;}'
+
 # vi:ft=sh
