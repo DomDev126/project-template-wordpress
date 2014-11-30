@@ -68,7 +68,7 @@ group('wordpress', function() {
 		}
 
 		doShellCommand('/bin/sh ' . $dst);
-		unlink($dst);
+		#unlink($dst);
 		
 	});
 	
