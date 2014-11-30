@@ -1,0 +1,32 @@
+#
+# Install WordPress
+#
+%%SYSTEM_COMMAND_WPCLI%% \
+	core install \
+		--url=%%WP_URL%%  \
+		--title=%%WP_TITLE%% \
+		--admin_user=%%WP_ADMIN_USER%% \
+		--admin_password=%%WP_ADMIN_PASSW%% \
+		--admin_email=%%WP_ADMIN_EMAIL%% \
+
+# 
+# Remove default content
+# 
+%%SYSTEM_COMMAND_WPCLI%% comment delete 1 --force
+%%SYSTEM_COMMAND_WPCLI%% post delete 1 --force
+%%SYSTEM_COMMAND_WPCLI%% post delete 2 --force
+
+# 
+# Setup friendly URLs
+# 
+%%SYSTEM_COMMAND_WPCLI%% rewrite structure "/%year%/%monthnum%/%day%/%postname%/"
+
+# 
+# Active plugins
+# 
+for WP_INACTIVE_PLUGIN in $(%%SYSTEM_COMMAND_WPCLI%% list --status=inactive --field=name)
+do
+	%%SYSTEM_COMMAND_WPCLI%% plugin activate $WP_INACTIVE_PLUGIN
+done
+
+# vi:ft=sh
