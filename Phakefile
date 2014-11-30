@@ -48,8 +48,8 @@ group('wordpress', function() {
 		printSeparator();
 		printInfo("Installing WordPress");
 
-		$src = 'etc/wpcli.install';
-		$dst = 'etc/wpcli.install.sh';
+		$src = 'etc/wp-cli.install';
+		$dst = 'etc/wp-cli.install.sh';
 
 		$template = new \PhakeBuilder\Template($src);
 		$placeholders = $template->getPlaceholders();
