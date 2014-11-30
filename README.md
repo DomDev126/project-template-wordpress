@@ -1,7 +1,8 @@
 project-template-wordpress
 ==========================
 
-This is a template for the new project using WordPress.
+This is a template for the new project using WordPress.  It is heavily based
+on the work done in [project-template](https://github.com/QoboLtd/project-template).
 
 Install
 -------
