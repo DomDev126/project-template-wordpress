@@ -17,8 +17,13 @@ git remote add template git@github.com:QoboLtd/project-template-wordpress.git
 git remote update
 git merge template/master
 composer install
-./vendor/bin/phake dotenv:create
+./vendor/bin/phake dotenv:create DB_NAME=wordpress
+./vendor/bin/phake app:install
 ```
+
+DB_NAME, the name of the database to use, is the only setting which is required.  The
+rest is being figured out automatically, but you can easily adjust them.  Have a look
+at .env.example file for defaults.
 
 Test
 ----

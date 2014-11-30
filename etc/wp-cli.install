@@ -1,0 +1,64 @@
+#
+# Install WordPress
+#
+%%SYSTEM_COMMAND_WPCLI%% \
+	core install \
+		--url=%%WP_URL%%  \
+		--title=%%WP_TITLE%% \
+		--admin_user=%%WP_ADMIN_USER%% \
+		--admin_password=%%WP_ADMIN_PASS%% \
+		--admin_email=%%WP_ADMIN_EMAIL%% 
+
+# 
+# Remove default content
+# 
+%%SYSTEM_COMMAND_WPCLI%% comment delete 1 --force
+%%SYSTEM_COMMAND_WPCLI%% post delete 1 --force
+%%SYSTEM_COMMAND_WPCLI%% post delete 2 --force
+
+# 
+# Setup friendly URLs
+# 
+%%SYSTEM_COMMAND_WPCLI%% rewrite structure "/%year%/%monthnum%/%day%/%postname%/"
+
+#
+# Install plugins
+#
+
+# WordPress Directory plugins
+%%SYSTEM_COMMAND_WPCLI%% plugin install --force --activate disable-wordpress-updates --version=1.4.2
+%%SYSTEM_COMMAND_WPCLI%% plugin install --force --activate wp-theme-plugin-editor-disable --version=1.0.0
+%%SYSTEM_COMMAND_WPCLI%% plugin install --force --activate disable-comments --version=1.2
+%%SYSTEM_COMMAND_WPCLI%% plugin install --force --activate jetpack --version=3.2
+# Custom plugins
+%%SYSTEM_COMMAND_WPCLI%% plugin install --force --activate https://github.com/QoboLtd/Qobo-WP-Custom-Theme-Path/archive/v1.0.0.zip
+
+# 
+# Active plugins
+# 
+for WP_INACTIVE_PLUGIN in $(%%SYSTEM_COMMAND_WPCLI%% plugin list --status=inactive --field=name)
+do
+	%%SYSTEM_COMMAND_WPCLI%% plugin activate $WP_INACTIVE_PLUGIN
+done
+
+#
+# Install themes
+# 
+
+# WordPress theme directory (default WP theme, just in case something breaks)
+%%SYSTEM_COMMAND_WPCLI%% theme install --force twentyfourteen
+# Custom parent theme (slug or, local or remote ZIP)
+%%SYSTEM_COMMAND_WPCLI%% theme install --force %%WP_THEME%%
+# Custom child theme (this is just a good practice)
+%%SYSTEM_COMMAND_WPCLI%% theme activate custom
+
+#
+# Setting options
+# 
+
+# WordPress is in the wp/ folder, but home should be in the root
+%%SYSTEM_COMMAND_WPCLI%% option update home '%%WP_URL%%'
+# Disable comments everywhere, for the Disable Comments plugin
+%%SYSTEM_COMMAND_WPCLI%% option update disable_comments_options '{"disabled_post_types":["post","page","attachment"],"remove_everywhere":true,"permanent":false,"extra_post_types":false,"db_version":6}' --format=json
+
+# vi:ft=sh
