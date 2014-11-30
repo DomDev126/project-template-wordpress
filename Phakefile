@@ -67,8 +67,11 @@ group('wordpress', function() {
 			throw new \RuntimeException("Failed to create batch file");
 		}
 
-		doShellCommand('/bin/sh ' . $dst);
-		#unlink($dst);
+		$parts = array();
+		$parts[] = getValue('SYSTEM_COMMAND_SHELL', $app) ?: '/bin/sh';
+		$parts[] = $dst;
+		doShellCommand($parts);
+		unlink($dst);
 		
 	});
 	
