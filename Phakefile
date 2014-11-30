@@ -91,18 +91,6 @@ group('wordpress', function() {
 		printSeparator();
 		printInfo("Installing WordPress");
 		
-		# WP-CLI supports theme installation from remote ZIP
-		# but the template folder naming makes it difficult
-		# to use GitHub ones for child themes (includes version)
-		$theme = getValue('WP_THEME', $app) ?: 'twentyfourteen';
-		if (preg_match('#http.://github.com/(.*)?/(.*)?/archive/(.*)?\.zip#', $theme, $matches)) {
-			$src = $theme;
-			$dst = 'wp-content/themes/' . $matches[2] . '.zip';
-			if (\PhakeBuilder\FileSystem::downloadFile($src, $dst)) {
-				$app['WP_THEME'] = $dst;
-			}
-		}
-		
 		runWPCLIBatch('install', $app);
 	});
 	
