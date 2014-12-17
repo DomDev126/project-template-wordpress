@@ -31,7 +31,7 @@
 %%SYSTEM_COMMAND_WPCLI%% plugin install --force --activate disable-comments --version=1.2
 %%SYSTEM_COMMAND_WPCLI%% plugin install --force --activate jetpack --version=3.2
 # Custom plugins
-%%SYSTEM_COMMAND_WPCLI%% plugin install --force --activate https://github.com/QoboLtd/Qobo-WP-Custom-Theme-Path/archive/v1.0.0.zip
+%%SYSTEM_COMMAND_WPCLI%% plugin install --force --activate https://github.com/QoboLtd/Qobo-WP-Custom-Theme-Path/archive/v1.0.1.zip
 
 # 
 # Active plugins
