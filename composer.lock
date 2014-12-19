@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ca0b81983569c352c8d27e2b3e2273a8",
+    "hash": "1e41ec9664bb189f9f3d6e742a4a380b",
     "packages": [
         {
             "name": "composer/installers",
@@ -554,6 +554,20 @@
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin"
+        },
+        {
+            "name": "qobo/qobo-wp-generic-theme",
+            "version": "1.0.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/QoboLtd/Qobo-WP-Generic-Theme/archive/v1.0.0.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-theme"
         },
         {
             "name": "rhumsaa/array_column",

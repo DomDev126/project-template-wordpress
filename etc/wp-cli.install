@@ -30,13 +30,9 @@ do
 done
 
 #
-# Install themes
+# Activate custom child theme themes
 # 
 
-# WordPress theme directory (default WP theme, just in case something breaks)
-%%SYSTEM_COMMAND_WPCLI%% theme install --force twentyfourteen
-# Custom parent theme (slug or, local or remote ZIP)
-%%SYSTEM_COMMAND_WPCLI%% theme install --force %%WP_THEME%%
 # Custom child theme (this is just a good practice)
 %%SYSTEM_COMMAND_WPCLI%% theme activate custom
 
