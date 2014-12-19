@@ -21,20 +21,8 @@
 # 
 %%SYSTEM_COMMAND_WPCLI%% rewrite structure "/%year%/%monthnum%/%day%/%postname%/"
 
-#
-# Install plugins
-#
-
-# WordPress Directory plugins
-%%SYSTEM_COMMAND_WPCLI%% plugin install --force --activate disable-wordpress-updates --version=1.4.2
-%%SYSTEM_COMMAND_WPCLI%% plugin install --force --activate wp-theme-plugin-editor-disable --version=1.0.0
-%%SYSTEM_COMMAND_WPCLI%% plugin install --force --activate disable-comments --version=1.2
-%%SYSTEM_COMMAND_WPCLI%% plugin install --force --activate jetpack --version=3.2
-# Custom plugins
-%%SYSTEM_COMMAND_WPCLI%% plugin install --force --activate https://github.com/QoboLtd/Qobo-WP-Custom-Theme-Path/archive/v1.0.1.zip
-
 # 
-# Active plugins
+# Activate all installed inactive plugins (install them with Composer)
 # 
 for WP_INACTIVE_PLUGIN in $(%%SYSTEM_COMMAND_WPCLI%% plugin list --status=inactive --field=name)
 do
@@ -42,13 +30,9 @@ do
 done
 
 #
-# Install themes
+# Activate custom child theme themes
 # 
 
-# WordPress theme directory (default WP theme, just in case something breaks)
-%%SYSTEM_COMMAND_WPCLI%% theme install --force twentyfourteen
-# Custom parent theme (slug or, local or remote ZIP)
-%%SYSTEM_COMMAND_WPCLI%% theme install --force %%WP_THEME%%
 # Custom child theme (this is just a good practice)
 %%SYSTEM_COMMAND_WPCLI%% theme activate custom
 
