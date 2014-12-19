@@ -41,7 +41,11 @@
 		"fancyguy/webroot-installer": "1.0.0",
 		"qobo/phake-builder": "~1.0",
 		"wp-cli/wp-cli": "~0.17",
-		"qobo/qobo-wp-custom-theme-path": "1.0.1"
+		"qobo/qobo-wp-custom-theme-path": "1.0.1",
+		"wpackagist-plugin/disable-wordpress-updates": "1.4.2",
+		"wpackagist-plugin/wp-theme-plugin-editor-disable": "1.0.0",
+		"wpackagist-plugin/disable-comments": "1.2",
+		"wpackagist-plugin/jetpack": "3.2"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "~4.3",

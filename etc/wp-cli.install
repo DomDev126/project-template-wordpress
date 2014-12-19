@@ -21,18 +21,8 @@
 # 
 %%SYSTEM_COMMAND_WPCLI%% rewrite structure "/%year%/%monthnum%/%day%/%postname%/"
 
-#
-# Install plugins
-#
-
-# WordPress Directory plugins
-%%SYSTEM_COMMAND_WPCLI%% plugin install --force --activate disable-wordpress-updates --version=1.4.2
-%%SYSTEM_COMMAND_WPCLI%% plugin install --force --activate wp-theme-plugin-editor-disable --version=1.0.0
-%%SYSTEM_COMMAND_WPCLI%% plugin install --force --activate disable-comments --version=1.2
-%%SYSTEM_COMMAND_WPCLI%% plugin install --force --activate jetpack --version=3.2
-
 # 
-# Active plugins
+# Activate all installed inactive plugins (install them with Composer)
 # 
 for WP_INACTIVE_PLUGIN in $(%%SYSTEM_COMMAND_WPCLI%% plugin list --status=inactive --field=name)
 do
