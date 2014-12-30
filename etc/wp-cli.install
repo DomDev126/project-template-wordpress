@@ -52,8 +52,8 @@ done
 # Custom upload directory, uploads will be added in a separate firectory by logged in user. Files uploaded by dev user will be versioned
 %%SYSTEM_COMMAND_WPCLI%% option update custom_upload_dir --format=json '{"test_ids":"-1","template":"\/%current_user%\/%year%\/%monthnum%","only_leaf_nodes":false,"only_base_nodes":false,"flatten_hierarchy":false,"all_parents":true}'
 # Resize after upload settings
-%%SYSTEM_COMMAND_WPCLI%% option update jr_resizeupload_width '1200'
-%%SYSTEM_COMMAND_WPCLI%% option update jr_resizeupload_height '1200'
+%%SYSTEM_COMMAND_WPCLI%% option update jr_resizeupload_width '2560'
+%%SYSTEM_COMMAND_WPCLI%% option update jr_resizeupload_height '1440'
 %%SYSTEM_COMMAND_WPCLI%% option update jr_resizeupload_quality '90'
 %%SYSTEM_COMMAND_WPCLI%% option update jr_resizeupload_resize_yesno 'yes'
 %%SYSTEM_COMMAND_WPCLI%% option update jr_resizeupload_recompress_yesno 'no'
