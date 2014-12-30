@@ -60,5 +60,8 @@ done
 %%SYSTEM_COMMAND_WPCLI%% option update jr_resizeupload_convertbmp_yesno 'no'
 %%SYSTEM_COMMAND_WPCLI%% option update jr_resizeupload_convertpng_yesno 'no'
 %%SYSTEM_COMMAND_WPCLI%% option update jr_resizeupload_convertgif_yesno 'no'
+# Qobo Developed by
+%%SYSTEM_COMMAND_WPCLI%% option update qbdevby_settings '{"title":"", "text":"Designed and developed by", "text_style":"", "style":"text-align:center;", "light_colour_icon":"", "link":"http://www.qobo.biz", "footer":"1"}' --format=json
+
 
 # vi:ft=sh
