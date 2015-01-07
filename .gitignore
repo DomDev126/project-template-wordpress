@@ -7,4 +7,4 @@ etc/nginx.conf
 # Exclude uploads by dev user
 !wp-content/uploads
 wp-content/uploads/*
-!wp-content/uploads/qobo
+!wp-content/uploads/devuser
