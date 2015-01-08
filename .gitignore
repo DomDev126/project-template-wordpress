@@ -1,10 +1,11 @@
 vendor/
 wp/
-wp-content/
 .env
 etc/nginx.conf
 
-# Exclude uploads by dev user
+# Ignore wp-content/, but exclude uploads by dev user
+!wp-content/
+wp-content/*
 !wp-content/uploads
 wp-content/uploads/*
 !wp-content/uploads/qobo
