@@ -1,5 +1,11 @@
 vendor/
 wp/
-wp-content/
 .env
 etc/nginx.conf
+
+# Ignore wp-content/, but exclude uploads by dev user
+!wp-content/
+wp-content/*
+!wp-content/uploads
+wp-content/uploads/*
+!wp-content/uploads/qobo
