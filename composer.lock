@@ -554,7 +554,7 @@
             "require": {
                 "composer/installers": "~1.0"
             },
-            "type": "wordpress-theme"
+            "type": "wordpress-plugin"
         },
         {
             "name": "qobo/qobo-wp-custom-theme-path",
@@ -931,7 +931,7 @@
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/disable-comments/"
+            "homepage": "https://wordpress.org/plugins/disable-comments/"
         },
         {
             "name": "wpackagist-plugin/disable-wordpress-updates",
@@ -951,7 +951,7 @@
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/disable-wordpress-updates/"
+            "homepage": "https://wordpress.org/plugins/disable-wordpress-updates/"
         },
         {
             "name": "wpackagist-plugin/jetpack",
@@ -971,7 +971,7 @@
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/jetpack/"
+            "homepage": "https://wordpress.org/plugins/jetpack/"
         },
         {
             "name": "wpackagist-plugin/resize-image-after-upload",
@@ -1011,7 +1011,7 @@
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/wp-theme-plugin-editor-disable/"
+            "homepage": "https://wordpress.org/plugins/wp-theme-plugin-editor-disable/"
         },
         {
             "name": "zetacomponents/archive",
@@ -1952,11 +1952,8 @@
             "require": {
                 "composer/installers": "~1.0"
             },
-            "replace": {
-                "wpackagist/debug-bar": "self.version"
-            },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/debug-bar/"
+            "homepage": "https://wordpress.org/plugins/debug-bar/"
         },
         {
             "name": "wpackagist-plugin/debug-bar-console",
@@ -1975,11 +1972,8 @@
             "require": {
                 "composer/installers": "~1.0"
             },
-            "replace": {
-                "wpackagist/debug-bar-console": "self.version"
-            },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/debug-bar-console/"
+            "homepage": "https://wordpress.org/plugins/debug-bar-console/"
         },
         {
             "name": "wpackagist-plugin/p3-profiler",
@@ -2038,11 +2032,8 @@
             "require": {
                 "composer/installers": "~1.0"
             },
-            "replace": {
-                "wpackagist/user-switching": "self.version"
-            },
             "type": "wordpress-plugin",
-            "homepage": "http://wordpress.org/plugins/user-switching/"
+            "homepage": "https://wordpress.org/plugins/user-switching/"
         }
     ],
     "aliases": [],
