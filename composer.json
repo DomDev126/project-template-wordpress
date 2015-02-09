@@ -79,7 +79,8 @@
 		"wpackagist-plugin/disable-comments": "1.2",
 		"wpackagist-plugin/jetpack": "3.2",
 		"wpackagist-plugin/custom-upload-dir": "3.4",
-		"wpackagist-plugin/resize-image-after-upload": "1.6.1"
+		"wpackagist-plugin/resize-image-after-upload": "1.6.1",
+		"wpackagist-plugin/compress-png-for-wp": "1.3.5"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "~4.3",
