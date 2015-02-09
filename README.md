@@ -79,4 +79,5 @@ Configurations
 --------------
 
 Plugin - Compress PNG for WP (Using TinyPNG API)
+
 This plugin requires an API key from TinyPNG. You can set your key in .env.example file using parameter TINYPNG_API_KEY. A default valid API key has already been added to the template but due to a limited number of requests allowed per key, each project should be using its own key. You can get an API key at https://tinypng.com/developers (one key per email address).
