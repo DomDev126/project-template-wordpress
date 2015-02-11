@@ -64,5 +64,7 @@ done
 %%SYSTEM_COMMAND_WPCLI%% option update qbdevby_settings '{"title":"", "text":"Designed and developed by", "text_style":"", "style":"text-align:center;", "light_colour_icon":"", "link":"http://www.qobo.biz", "footer":"1"}' --format=json
 # Compress PNG for WP (Using TinyPNG API)
 %%SYSTEM_COMMAND_WPCLI%% option update gd_tiny_png_key '%%TINYPNG_API_KEY%%'
+# Available options for vanilla WP are - large, medium, thumbnail
+%%SYSTEM_COMMAND_WPCLI%% option update gd_tiny_png_sizes_option '{"large":"on"}' --format=json
 
 # vi:ft=sh
