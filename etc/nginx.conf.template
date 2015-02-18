@@ -7,7 +7,7 @@ server {
 
 	# For details on our Nginx configuration, 
 	# check puppet-boxes repo (https://github.com/QoboLtd/puppet-boxes)
-	include /etc/nginx/restrictions.conf
+	include /etc/nginx/restrictions.conf;
 
 	location / {
 		try_files $uri $uri/ =404;
