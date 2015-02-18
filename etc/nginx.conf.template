@@ -7,7 +7,7 @@ server {
 
 	# For details on our Nginx configuration, 
 	# check puppet-boxes repo (https://github.com/QoboLtd/puppet-boxes)
-	include /etc/nginx/restrictions.conf
+	include /etc/nginx/restrictions.conf;
 
 	# Add trailing slash to /wp-admin requests
 	rewrite /wp-admin$ $scheme://$host$uri/ permanent;
