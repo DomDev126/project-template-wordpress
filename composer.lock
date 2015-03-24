@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f10156bf52113342409aaf9f42bb50cd",
+    "hash": "aa68f81143e92673bd5b52229c758a32",
     "packages": [
         {
             "name": "composer/installers",
@@ -1025,6 +1025,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/resize-image-after-upload/"
+        },
+        {
+            "name": "wpackagist-plugin/shortcodes-ultimate",
+            "version": "4.9.4",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/shortcodes-ultimate/",
+                "reference": "tags/4.9.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/shortcodes-ultimate.4.9.4.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/shortcodes-ultimate/"
         },
         {
             "name": "wpackagist-plugin/wp-theme-plugin-editor-disable",
