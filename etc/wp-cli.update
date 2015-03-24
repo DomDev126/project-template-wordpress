@@ -1,0 +1,12 @@
+#
+# Update content WordPress
+#
+
+#
+# Setting categories
+# 
+
+# Update default category 'Uncategorised', set name & slug from 'Uncategorised' to 'General'
+%%SYSTEM_COMMAND_WPCLI%% term update category 1 --name=General --slug=general
+
+# vi:ft=sh
