@@ -3,6 +3,11 @@
 #
 
 #
+# Update Wordpress Database
+# 
+%%SYSTEM_COMMAND_WPCLI%% core update-db
+
+#
 # Setting categories
 # 
 
