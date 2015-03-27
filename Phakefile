@@ -60,6 +60,7 @@ group('app', function() {
 	//task('install', ':mysql:find-replace');
 	// ... or have a fresh and clean install
 	task('install', ':wordpress:install');
+	task('install', ':wordpress:content');
 
 
 	desc('Update application');
@@ -72,6 +73,7 @@ group('app', function() {
 	task('update', ':dotenv:create', ':dotenv:reload', ':file:process');
 	task('update', ':mysql:database-import');
 	task('update', ':mysql:find-replace');
+	task('update', ':wordpress:update');
 
 
 	desc('Remove application');
@@ -93,6 +95,20 @@ group('wordpress', function() {
 		
 		runWPCLIBatch('install', $app);
 	});
+        desc("Installation content WordPress");
+        task('content', ':builder:init', function($app) {
+                printSeparator();
+                printInfo("Adding installation content WordPress");
+
+                runWPCLIBatch('content', $app);
+        });
+        desc("Update content WordPress");
+        task('update', ':builder:init', function($app) {
+                printSeparator();
+                printInfo("Updating content WordPress");
+
+                runWPCLIBatch('update', $app);
+        });
 	
 });
 
