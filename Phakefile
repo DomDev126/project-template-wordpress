@@ -61,7 +61,6 @@ group('app', function() {
 	// ... or have a fresh and clean install
 	task('install', ':wordpress:install');
 	task('install', ':wordpress:content');
-    task('install', ':wordpress:permissions');
 
 
 	desc('Update application');
@@ -110,20 +109,6 @@ group('wordpress', function() {
 
                 runWPCLIBatch('update', $app);
         });
-
-        desc("Change Wordpress wp-content folder permissions");
-                task('permissions', ':builder:init', function($app) {
-                        printSeparator();
-                        printInfo("Changing wp-content folder WordPress");
-
-		                $result = \PhakeBuilder\FileSystem::chmodPath('wp-content');
-		                if (!$result) {
-			                 throw new \RuntimeException("Failed to change permissions");
-		                }
-		                printSuccess("Permission change complete!");
-		                printSuccess("SUCCESS!");
-
-                });
 	
 });
 
