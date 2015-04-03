@@ -61,6 +61,7 @@ group('app', function() {
 	// ... or have a fresh and clean install
 	task('install', ':wordpress:install');
 	task('install', ':wordpress:content');
+	task('install', ':file:chmod');
 
 
 	desc('Update application');
