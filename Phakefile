@@ -61,6 +61,9 @@ group('app', function() {
 	// ... or have a fresh and clean install
 	task('install', ':wordpress:install');
 	task('install', ':wordpress:content');
+	task('install', ':file:chmod');
+	task('install', ':file:chown');
+	task('install', ':file:chgrp');
 
 
 	desc('Update application');
@@ -75,6 +78,9 @@ group('app', function() {
 	task('update', ':mysql:find-replace');
 	task('update', ':wordpress:update');
 
+	task('update', ':file:chmod');
+	task('update', ':file:chown');
+	task('update', ':file:chgrp');
 
 	desc('Remove application');
 	task('remove', ':builder:init', function($app) {

@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "aa68f81143e92673bd5b52229c758a32",
+    "hash": "51164133bd8b3c0aae182e4579defd44",
     "packages": [
         {
             "name": "composer/installers",
@@ -578,10 +578,10 @@
         },
         {
             "name": "qobo/qobo-wp-generic-theme",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/QoboLtd/Qobo-WP-Generic-Theme/archive/v1.0.0.zip",
+                "url": "https://github.com/QoboLtd/Qobo-WP-Generic-Theme/archive/v1.0.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -918,7 +918,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/compress-png-for-wp.1.3.5.zip",
+                "url": "https://downloads.wordpress.org/plugin/compress-png-for-wp.1.3.5.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -958,7 +958,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/disable-comments.1.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/disable-comments.1.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -970,15 +970,15 @@
         },
         {
             "name": "wpackagist-plugin/disable-wordpress-updates",
-            "version": "1.4.6",
+            "version": "1.4.2",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/disable-wordpress-updates/",
-                "reference": "tags/1.4.6"
+                "reference": "tags/1.4.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/disable-wordpress-updates.1.4.6.zip",
+                "url": "https://downloads.wordpress.org/plugin/disable-wordpress-updates.1.4.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -1058,7 +1058,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/wp-theme-plugin-editor-disable.1.0.0.zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-theme-plugin-editor-disable.1.0.0.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -2166,7 +2166,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/debug-bar.0.8.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/debug-bar.0.8.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -2186,7 +2186,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/debug-bar-console.0.3.zip",
+                "url": "https://downloads.wordpress.org/plugin/debug-bar-console.0.3.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -2226,7 +2226,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/theme-check.20141222.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/theme-check.20141222.1.zip",
                 "reference": null,
                 "shasum": null
             },
