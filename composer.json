@@ -69,7 +69,7 @@
 		"php": ">=5.3.0",
 		"wordpress": "4.1.1",
 		"fancyguy/webroot-installer": "1.0.0",
-		"qobo/phake-builder": "1.0.19",
+		"qobo/phake-builder": "~1.0",
 		"wp-cli/wp-cli": "~0.17",
 		"qobo/qobo-wp-generic-theme": "1.0.1",
 		"qobo/qobo-wp-custom-theme-path": "1.0.1",
