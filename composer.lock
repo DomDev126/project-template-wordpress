@@ -238,16 +238,16 @@
         },
         {
             "name": "qobo/pattern",
-            "version": "v1.0.5",
+            "version": "v1.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/QoboLtd/PHP-Pattern.git",
-                "reference": "28c127dfe37501941a99076e8204e3ce834f3081"
+                "reference": "eaf13a6d3ecd9631d3b7ca14dc2f9dabd65bdcb9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/QoboLtd/PHP-Pattern/zipball/28c127dfe37501941a99076e8204e3ce834f3081",
-                "reference": "28c127dfe37501941a99076e8204e3ce834f3081",
+                "url": "https://api.github.com/repos/QoboLtd/PHP-Pattern/zipball/eaf13a6d3ecd9631d3b7ca14dc2f9dabd65bdcb9",
+                "reference": "eaf13a6d3ecd9631d3b7ca14dc2f9dabd65bdcb9",
                 "shasum": ""
             },
             "require": {
@@ -280,20 +280,20 @@
                 "strings",
                 "templating"
             ],
-            "time": "2015-02-17 12:25:21"
+            "time": "2015-04-08 11:07:16"
         },
         {
             "name": "qobo/phake-builder",
-            "version": "v1.0.19",
+            "version": "v1.0.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/QoboLtd/phake-builder.git",
-                "reference": "88a7ac3ed9c4a71c1d9eff8ce39b9f7bcf09fa42"
+                "reference": "b9e0a991d867748b4c65605410e36b835640a321"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/QoboLtd/phake-builder/zipball/88a7ac3ed9c4a71c1d9eff8ce39b9f7bcf09fa42",
-                "reference": "88a7ac3ed9c4a71c1d9eff8ce39b9f7bcf09fa42",
+                "url": "https://api.github.com/repos/QoboLtd/phake-builder/zipball/b9e0a991d867748b4c65605410e36b835640a321",
+                "reference": "b9e0a991d867748b4c65605410e36b835640a321",
                 "shasum": ""
             },
             "require": {
@@ -322,7 +322,7 @@
                 }
             ],
             "description": "A set of build and deploy files, based on jaz303/phake",
-            "time": "2015-04-07 09:19:42"
+            "time": "2015-04-08 11:42:30"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -868,16 +868,16 @@
         },
         {
             "name": "phpunit/php-token-stream",
-            "version": "1.4.0",
+            "version": "1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-token-stream.git",
-                "reference": "db32c18eba00b121c145575fcbcd4d4d24e6db74"
+                "reference": "eab81d02569310739373308137284e0158424330"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-token-stream/zipball/db32c18eba00b121c145575fcbcd4d4d24e6db74",
-                "reference": "db32c18eba00b121c145575fcbcd4d4d24e6db74",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-token-stream/zipball/eab81d02569310739373308137284e0158424330",
+                "reference": "eab81d02569310739373308137284e0158424330",
                 "shasum": ""
             },
             "require": {
@@ -913,7 +913,7 @@
             "keywords": [
                 "tokenizer"
             ],
-            "time": "2015-01-17 09:51:32"
+            "time": "2015-04-08 04:46:07"
         },
         {
             "name": "phpunit/phpunit",
