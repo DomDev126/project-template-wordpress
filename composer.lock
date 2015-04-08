@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "51164133bd8b3c0aae182e4579defd44",
+    "hash": "0184ba2d17b97349207bcfd9695840d2",
     "packages": [
         {
             "name": "composer/installers",
@@ -508,16 +508,16 @@
         },
         {
             "name": "qobo/phake-builder",
-            "version": "v1.0.19",
+            "version": "v1.0.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/QoboLtd/phake-builder.git",
-                "reference": "88a7ac3ed9c4a71c1d9eff8ce39b9f7bcf09fa42"
+                "reference": "b9e0a991d867748b4c65605410e36b835640a321"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/QoboLtd/phake-builder/zipball/88a7ac3ed9c4a71c1d9eff8ce39b9f7bcf09fa42",
-                "reference": "88a7ac3ed9c4a71c1d9eff8ce39b9f7bcf09fa42",
+                "url": "https://api.github.com/repos/QoboLtd/phake-builder/zipball/b9e0a991d867748b4c65605410e36b835640a321",
+                "reference": "b9e0a991d867748b4c65605410e36b835640a321",
                 "shasum": ""
             },
             "require": {
@@ -546,7 +546,7 @@
                 }
             ],
             "description": "A set of build and deploy files, based on jaz303/phake",
-            "time": "2015-04-07 09:19:42"
+            "time": "2015-04-08 11:42:30"
         },
         {
             "name": "qobo/qobo-wp-brand",
@@ -918,7 +918,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/compress-png-for-wp.1.3.5.zip",
+                "url": "http://downloads.wordpress.org/plugin/compress-png-for-wp.1.3.5.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -958,7 +958,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/disable-comments.1.2.zip",
+                "url": "http://downloads.wordpress.org/plugin/disable-comments.1.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -1058,7 +1058,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-theme-plugin-editor-disable.1.0.0.zip",
+                "url": "http://downloads.wordpress.org/plugin/wp-theme-plugin-editor-disable.1.0.0.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -2166,7 +2166,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/debug-bar.0.8.2.zip",
+                "url": "http://downloads.wordpress.org/plugin/debug-bar.0.8.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -2186,7 +2186,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/debug-bar-console.0.3.zip",
+                "url": "http://downloads.wordpress.org/plugin/debug-bar-console.0.3.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -2226,7 +2226,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/theme-check.20141222.1.zip",
+                "url": "http://downloads.wordpress.org/plugin/theme-check.20141222.1.zip",
                 "reference": null,
                 "shasum": null
             },
