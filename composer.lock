@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1ffd3001c732fd62e033c50228f76284",
+    "hash": "3fd349fa0932eded60412cdfbf63d4cd",
     "packages": [
         {
             "name": "composer/installers",
@@ -983,15 +983,15 @@
         },
         {
             "name": "wpackagist-plugin/disable-wordpress-updates",
-            "version": "1.4.6",
+            "version": "1.4.7",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/disable-wordpress-updates/",
-                "reference": "tags/1.4.6"
+                "reference": "tags/1.4.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/disable-wordpress-updates.1.4.6.zip",
+                "url": "https://downloads.wordpress.org/plugin/disable-wordpress-updates.1.4.7.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -1623,16 +1623,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.6.5",
+            "version": "4.6.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "1c54dd1d9a782d7c8715bb3604cde7b6e23c2614"
+                "reference": "3afe303d873a4d64c62ef84de491b97b006fbdac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/1c54dd1d9a782d7c8715bb3604cde7b6e23c2614",
-                "reference": "1c54dd1d9a782d7c8715bb3604cde7b6e23c2614",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/3afe303d873a4d64c62ef84de491b97b006fbdac",
+                "reference": "3afe303d873a4d64c62ef84de491b97b006fbdac",
                 "shasum": ""
             },
             "require": {
@@ -1691,7 +1691,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-04-29 05:04:43"
+            "time": "2015-04-29 15:18:52"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
