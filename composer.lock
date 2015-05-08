@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0605409b465a9abf409001f14918ffaa",
+    "hash": "43dabb25d6ffcf3ab33c76e351b9e312",
     "packages": [
         {
             "name": "composer/installers",
@@ -605,7 +605,7 @@
             "type": "wordpress-plugin"
         },
         {
-            "name": "rhumsaa/array_column",
+            "name": "ramsey/array_column",
             "version": "1.1.3",
             "source": {
                 "type": "git",
@@ -801,10 +801,10 @@
         },
         {
             "name": "wordpress",
-            "version": "4.1.1",
+            "version": "4.2.1",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/WordPress/WordPress/archive/4.1.1.zip",
+                "url": "https://github.com/WordPress/WordPress/archive/4.2.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -815,16 +815,16 @@
         },
         {
             "name": "wp-cli/php-cli-tools",
-            "version": "v0.10.3",
+            "version": "v0.10.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/php-cli-tools.git",
-                "reference": "edead860cb60e95ebdad965ab21e4a1dad7e6b6e"
+                "reference": "228e8c1300675313e519b4195783aaa1a1a020bf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/php-cli-tools/zipball/edead860cb60e95ebdad965ab21e4a1dad7e6b6e",
-                "reference": "edead860cb60e95ebdad965ab21e4a1dad7e6b6e",
+                "url": "https://api.github.com/repos/wp-cli/php-cli-tools/zipball/228e8c1300675313e519b4195783aaa1a1a020bf",
+                "reference": "228e8c1300675313e519b4195783aaa1a1a020bf",
                 "shasum": ""
             },
             "require": {
@@ -861,30 +861,30 @@
                 "cli",
                 "console"
             ],
-            "time": "2014-12-03 15:45:28"
+            "time": "2015-02-27 22:11:29"
         },
         {
             "name": "wp-cli/wp-cli",
-            "version": "v0.18.0",
+            "version": "v0.19.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli.git",
-                "reference": "d3ea18a17965f94d1498a607087e02594fc826f7"
+                "reference": "8c54240ec1c9fee352f7c74d8ef151275b1f3d39"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/d3ea18a17965f94d1498a607087e02594fc826f7",
-                "reference": "d3ea18a17965f94d1498a607087e02594fc826f7",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/8c54240ec1c9fee352f7c74d8ef151275b1f3d39",
+                "reference": "8c54240ec1c9fee352f7c74d8ef151275b1f3d39",
                 "shasum": ""
             },
             "require": {
                 "mustache/mustache": "~2.4",
                 "nb/oxymel": "0.1.0",
                 "php": ">=5.3.2",
-                "rhumsaa/array_column": "~1.1",
+                "ramsey/array_column": "~1.1",
                 "rmccue/requests": "~1.6",
                 "symfony/finder": "~2.3",
-                "wp-cli/php-cli-tools": "0.10.3"
+                "wp-cli/php-cli-tools": "0.10.4"
             },
             "require-dev": {
                 "behat/behat": "2.5.*",
@@ -919,7 +919,7 @@
                 "cli",
                 "wordpress"
             ],
-            "time": "2015-01-14 14:10:29"
+            "time": "2015-04-25 21:04:29"
         },
         {
             "name": "wpackagist-plugin/compress-png-for-wp",
@@ -963,15 +963,15 @@
         },
         {
             "name": "wpackagist-plugin/disable-comments",
-            "version": "1.2",
+            "version": "1.3.1",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/disable-comments/",
-                "reference": "tags/1.2"
+                "reference": "tags/1.3.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/disable-comments.1.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/disable-comments.1.3.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -1003,15 +1003,15 @@
         },
         {
             "name": "wpackagist-plugin/jetpack",
-            "version": "3.4.1",
+            "version": "3.5",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/jetpack/",
-                "reference": "tags/3.4.1"
+                "reference": "tags/3.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/jetpack.3.4.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/jetpack.3.5.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -1043,15 +1043,15 @@
         },
         {
             "name": "wpackagist-plugin/shortcodes-ultimate",
-            "version": "4.9.4",
+            "version": "4.9.6",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/shortcodes-ultimate/",
-                "reference": "tags/4.9.4"
+                "reference": "tags/4.9.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/shortcodes-ultimate.4.9.4.zip",
+                "url": "https://downloads.wordpress.org/plugin/shortcodes-ultimate.4.9.6.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -1317,16 +1317,16 @@
         },
         {
             "name": "phpspec/prophecy",
-            "version": "1.4.0",
+            "version": "v1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "8724cd239f8ef4c046f55a3b18b4d91cc7f3e4c5"
+                "reference": "3132b1f44c7bf2ec4c7eb2d3cb78fdeca760d373"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/8724cd239f8ef4c046f55a3b18b4d91cc7f3e4c5",
-                "reference": "8724cd239f8ef4c046f55a3b18b4d91cc7f3e4c5",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/3132b1f44c7bf2ec4c7eb2d3cb78fdeca760d373",
+                "reference": "3132b1f44c7bf2ec4c7eb2d3cb78fdeca760d373",
                 "shasum": ""
             },
             "require": {
@@ -1373,20 +1373,20 @@
                 "spy",
                 "stub"
             ],
-            "time": "2015-03-27 19:31:25"
+            "time": "2015-04-27 22:15:08"
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "2.0.15",
+            "version": "2.0.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "34cc484af1ca149188d0d9e91412191e398e0b67"
+                "reference": "934fd03eb6840508231a7f73eb8940cf32c3b66c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/34cc484af1ca149188d0d9e91412191e398e0b67",
-                "reference": "34cc484af1ca149188d0d9e91412191e398e0b67",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/934fd03eb6840508231a7f73eb8940cf32c3b66c",
+                "reference": "934fd03eb6840508231a7f73eb8940cf32c3b66c",
                 "shasum": ""
             },
             "require": {
@@ -1435,7 +1435,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-01-24 10:06:35"
+            "time": "2015-04-11 04:35:00"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -1623,16 +1623,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.6.2",
+            "version": "4.6.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "6c773fda0bdb5ea891d9e4430dcc26c990b9130b"
+                "reference": "3afe303d873a4d64c62ef84de491b97b006fbdac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/6c773fda0bdb5ea891d9e4430dcc26c990b9130b",
-                "reference": "6c773fda0bdb5ea891d9e4430dcc26c990b9130b",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/3afe303d873a4d64c62ef84de491b97b006fbdac",
+                "reference": "3afe303d873a4d64c62ef84de491b97b006fbdac",
                 "shasum": ""
             },
             "require": {
@@ -1691,7 +1691,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-04-07 09:16:49"
+            "time": "2015-04-29 15:18:52"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -2179,7 +2179,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/debug-bar.0.8.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/debug-bar.0.8.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -2199,7 +2199,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/debug-bar-console.0.3.zip",
+                "url": "https://downloads.wordpress.org/plugin/debug-bar-console.0.3.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -2211,15 +2211,15 @@
         },
         {
             "name": "wpackagist-plugin/p3-profiler",
-            "version": "1.5.3.8",
+            "version": "1.5.3.9",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/p3-profiler/",
-                "reference": "tags/1.5.3.8"
+                "reference": "tags/1.5.3.9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/p3-profiler.1.5.3.8.zip",
+                "url": "https://downloads.wordpress.org/plugin/p3-profiler.1.5.3.9.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -2239,7 +2239,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/theme-check.20141222.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/theme-check.20141222.1.zip",
                 "reference": null,
                 "shasum": null
             },
