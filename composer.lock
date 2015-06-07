@@ -144,6 +144,97 @@
             "time": "2013-01-29 22:51:45"
         },
         {
+            "name": "heartsentwined/arg-validator",
+            "version": "1.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/heartsentwined/php-arg-validator.git",
+                "reference": "198be54e92e5c2e3c4d6cf119ebc83ef377a2557"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/heartsentwined/php-arg-validator/zipball/198be54e92e5c2e3c4d6cf119ebc83ef377a2557",
+                "reference": "198be54e92e5c2e3c4d6cf119ebc83ef377a2557",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Heartsentwined\\ArgValidator": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "heartsentwined",
+                    "email": "heartsentwined@cogito-lab.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Validate function arguments, extending typehinting capabilities of PHP.",
+            "homepage": "https://github.com/heartsentwined/arg-validator",
+            "keywords": [
+                "argument",
+                "typehint",
+                "typehinting",
+                "validate",
+                "validator"
+            ],
+            "time": "2012-10-03 19:54:08"
+        },
+        {
+            "name": "heartsentwined/file-system-manager",
+            "version": "1.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/heartsentwined/php-file-system-manager.git",
+                "reference": "f72ccaa4dd3eb939d9dfc009bf330db799d2274d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/heartsentwined/php-file-system-manager/zipball/f72ccaa4dd3eb939d9dfc009bf330db799d2274d",
+                "reference": "f72ccaa4dd3eb939d9dfc009bf330db799d2274d",
+                "shasum": ""
+            },
+            "require": {
+                "heartsentwined/arg-validator": "1.*",
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Heartsentwined\\FileSystemManager": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "heartsentwined",
+                    "email": "heartsentwined@cogito-lab.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A collection of file and directory management functions.",
+            "homepage": "https://github.com/heartsentwined/file-system-manager",
+            "keywords": [
+                "dir",
+                "directory",
+                "file",
+                "manager",
+                "system"
+            ],
+            "time": "2012-10-03 19:54:08"
+        },
+        {
             "name": "interconnectit/search-replace-db",
             "version": "3.0.0",
             "source": {
@@ -508,19 +599,20 @@
         },
         {
             "name": "qobo/phake-builder",
-            "version": "v1.0.21",
+            "version": "v1.0.23",
             "source": {
                 "type": "git",
                 "url": "https://github.com/QoboLtd/phake-builder.git",
-                "reference": "c9fe144db9ad403876547959f8511fe5849adf99"
+                "reference": "731a3ddf6d53328e0c67dd682ee6d2098434d52f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/QoboLtd/phake-builder/zipball/c9fe144db9ad403876547959f8511fe5849adf99",
-                "reference": "c9fe144db9ad403876547959f8511fe5849adf99",
+                "url": "https://api.github.com/repos/QoboLtd/phake-builder/zipball/731a3ddf6d53328e0c67dd682ee6d2098434d52f",
+                "reference": "731a3ddf6d53328e0c67dd682ee6d2098434d52f",
                 "shasum": ""
             },
             "require": {
+                "heartsentwined/file-system-manager": "~1.1",
                 "interconnectit/search-replace-db": "~3.0",
                 "jaz303/phake": "~0.6",
                 "kmelia/monolog-stdout-handler": "~1.2",
@@ -546,7 +638,7 @@
                 }
             ],
             "description": "A set of build and deploy files, based on jaz303/phake",
-            "time": "2015-06-02 14:30:10"
+            "time": "2015-06-07 10:28:10"
         },
         {
             "name": "qobo/qobo-wp-brand",
@@ -1371,16 +1463,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "2.1.2",
+            "version": "2.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "6b7d2094ca2a685a2cad846cb7cd7a30e8b9470f"
+                "reference": "3703c4bb67c8700957dd41c843254658539d091d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/6b7d2094ca2a685a2cad846cb7cd7a30e8b9470f",
-                "reference": "6b7d2094ca2a685a2cad846cb7cd7a30e8b9470f",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/3703c4bb67c8700957dd41c843254658539d091d",
+                "reference": "3703c4bb67c8700957dd41c843254658539d091d",
                 "shasum": ""
             },
             "require": {
@@ -1429,7 +1521,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-06-01 07:35:26"
+            "time": "2015-06-06 08:33:23"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -1617,16 +1709,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.6.9",
+            "version": "4.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "816d12536a7a032adc3b68737f82cfbbf98b79c1"
+                "reference": "8e0c63329c8c4185296b8d357daa5c6bae43080f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/816d12536a7a032adc3b68737f82cfbbf98b79c1",
-                "reference": "816d12536a7a032adc3b68737f82cfbbf98b79c1",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/8e0c63329c8c4185296b8d357daa5c6bae43080f",
+                "reference": "8e0c63329c8c4185296b8d357daa5c6bae43080f",
                 "shasum": ""
             },
             "require": {
@@ -1637,7 +1729,7 @@
                 "ext-spl": "*",
                 "php": ">=5.3.3",
                 "phpspec/prophecy": "~1.3,>=1.3.1",
-                "phpunit/php-code-coverage": "~2.0,>=2.0.11",
+                "phpunit/php-code-coverage": "~2.1",
                 "phpunit/php-file-iterator": "~1.4",
                 "phpunit/php-text-template": "~1.2",
                 "phpunit/php-timer": "~1.0",
@@ -1659,7 +1751,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.6.x-dev"
+                    "dev-master": "4.7.x-dev"
                 }
             },
             "autoload": {
@@ -1685,7 +1777,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-05-29 06:00:03"
+            "time": "2015-06-06 08:36:08"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
