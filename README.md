@@ -8,7 +8,7 @@ Install
 
 When starting a new PHP project, do the following:
 
-```
+```bash
 # Initiate the new work space
 mkdir new-project
 cd new-project
