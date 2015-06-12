@@ -17,11 +17,12 @@ git init
 touch README.md
 git add README.md
 git commit -m "Initial commit"
-# Merge project-template
+# Get project-template
 git remote add template git@github.com:QoboLtd/project-template.git
 git remote update
-git merge --squash template/master
-git commit -m "Merged project-template master branch"
+# Merge latest tag (or use 'template/master' instead)
+git merge --squash $(git tag | tail -n 1)
+git commit -m "Merged project-template ($(git tag | tail -n 1))"
 # Finalize the setup
 composer install
 ./vendor/bin/phake dotenv:create
