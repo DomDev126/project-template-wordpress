@@ -9,12 +9,20 @@ Install
 When starting a new PHP project, do the following:
 
 ```
+# Initiate the new work space
 mkdir new-project
 cd new-project
 git init
+# Kick off the project (this is needed for --squash merge later)
+touch README.md
+git add README.md
+git commit -m "Initial commit"
+# Merge project-template
 git remote add template git@github.com:QoboLtd/project-template.git
 git remote update
-git merge template/master
+git merge --squash template/master
+git commit -m "Merged project-template master branch"
+# Finalize the setup
 composer install
 ./vendor/bin/phake dotenv:create
 ```
