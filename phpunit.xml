@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit
+	bootstrap="vendor/autoload.php"
+	colors="true"
+	verbose="true"
+	>
+
+	<filter>
+		<blacklist>
+			<directory>vendor/</directory>
+			<directory>tests/</directory>
+		</blacklist>
+		<whitelist>
+			<directory>src/</directory>
+		</whitelist>
+	</filter>
+	
+	<logging>
+		<log type="testdox-text"  target="php://stdout" />
+		<log type="coverage-text" target="php://stdout" showUncoveredFiles="false"/>
+	</logging>
+	
+	<testsuites>
+		<testsuite name="unit">
+			<directory>tests/</directory>
+		</testsuite>
+	</testsuites>
+</phpunit>
+
