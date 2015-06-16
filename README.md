@@ -42,6 +42,15 @@ In your browser navigate to [http://localhost:8000](http://localhost:8000).
 You should see the standard ```phpinfo()``` page.  If you do, all parts 
 are in place.
 
+Here is how to run unit tests:
+
+```
+./vendor/bin/phpunit
+```
+
+There are some examples in the ```test/``` folder , so now you have no excuse NOT 
+to write them.
+
 Usage
 -----
 
@@ -51,7 +60,7 @@ advantages:
 * Per-environment configuration using ```.env``` file, which is ignored by git
 * Powerful build system ([phake-builder](https://github.com/QoboLtd/phake-builder)) integrated
 * Composer integrated with ```vendor/``` folder added to ```.gitignore``` .
-* PHPUnit integrated with ```tests/``` folder and an example unit test.
+* PHPUnit integrated with ```tests/``` folder and example unit tests.
 * Sensible defaults for best practices - favicon.ico, robots.txt, MySQL dump, Nginx configuration, GPL, etc.
 
 For example, you can easily automate the build process of your application
@@ -73,12 +82,4 @@ You can, of course, add your own, remove these, or change them any way you want.
 [phake-builder](https://github.com/QoboLtd/phake-builder) documentation for more information on how
 to use these targets and pass runtime configuration parameters.
 
-Here is how to run your unit tests:
-
-```
-./vendor/bin/phpunit --coverage-text --colors tests/
-```
-
-There's an example one for you, so now you have no excuse NOT to write
-them.
 
