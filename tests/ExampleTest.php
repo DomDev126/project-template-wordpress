@@ -12,7 +12,7 @@ class ExampleTest extends PHPUnit_Framework_TestCase {
 	 * The list of all available assertions is here:
 	 * https://phpunit.de/manual/current/en/appendixes.assertions.html
 	 */
-	public function test_example() {
+	public function testExampleTest() {
 		$this->assertTrue(true, "Truth is a lie");
 	}
 }
