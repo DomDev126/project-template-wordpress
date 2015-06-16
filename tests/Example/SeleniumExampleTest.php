@@ -1,4 +1,5 @@
 <?php
+namespace Tests\Example;
 /**
  * Selenium Example Test
  * 
@@ -16,7 +17,7 @@
  * 
  * @author Antonis Flangofas <a.flangofas@qobo.biz>
  */
-class SeleniumExampleTest extends PHPUnit_Extensions_Selenium2TestCase
+class SeleniumExampleTest extends \PHPUnit_Extensions_Selenium2TestCase
 {
     protected function setUp()
     {

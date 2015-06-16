@@ -1,10 +1,11 @@
 <?php
+namespace Tests\Example;
 /**
  * PHPUnit Example Test
  * 
  * @author Leonid Mamchenkov <l.mamchenkov@qobo.biz>
  */
-class PHPUnitExampleTest extends PHPUnit_Framework_TestCase {
+class PHPUnitExampleTest extends \PHPUnit_Framework_TestCase {
 
 	/**
 	 * Example unit test

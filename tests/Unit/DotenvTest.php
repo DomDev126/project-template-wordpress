@@ -1,10 +1,11 @@
 <?php
+namespace Tests\Unit;
 /**
  * Dotenv Test
  * 
  * @author Leonid Mamchenkov <l.mamchenkov@qobo.biz>
  */
-class DotenvTest extends PHPUnit_Framework_TestCase {
+class DotenvTest extends \PHPUnit_Framework_TestCase {
 
 	/**
 	 * Check that .env.example file exists
