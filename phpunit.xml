@@ -20,8 +20,17 @@
 	</logging>
 	
 	<testsuites>
+		<testsuite name="example">
+			<directory>tests/Example/</directory>
+		</testsuite>
+		<testsuite name="environment">
+			<directory>tests/Environment/</directory>
+		</testsuite>
+		<testsuite name="integration">
+			<directory>tests/Integration/</directory>
+		</testsuite>
 		<testsuite name="unit">
-			<directory>tests/</directory>
+			<directory>tests/Unit/</directory>
 		</testsuite>
 	</testsuites>
 </phpunit>
