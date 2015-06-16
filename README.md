@@ -18,7 +18,7 @@ touch README.md
 git add README.md
 git commit -m "Initial commit"
 # Get project-template
-git remote add template git@github.com:QoboLtd/project-template.git
+git remote add template https://github.com/QoboLtd/project-template.git
 git remote update
 # Merge latest tag (or use 'template/master' instead)
 git merge --squash $(git tag | tail -n 1)
