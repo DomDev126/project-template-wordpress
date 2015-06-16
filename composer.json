@@ -3,6 +3,7 @@
 		"qobo/phake-builder": "~1.0"
 	},
 	"require-dev": {
-		"phpunit/phpunit": "~4.3"
+		"phpunit/phpunit": "~4.3",
+		"phpunit/phpunit-selenium": ">=1.2"
 	}
 }
