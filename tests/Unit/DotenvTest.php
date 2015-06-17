@@ -1,5 +1,7 @@
 <?php
 namespace Tests\Unit;
+
+use \Dotenv;
 /**
  * Dotenv Test
  * 
@@ -7,12 +9,30 @@ namespace Tests\Unit;
  */
 class DotenvTest extends \PHPUnit_Framework_TestCase {
 
-	/**
-	 * Check that .env.example file exists
-	 */
-	public function testDotenvExampleFileExists() {
-		$file = __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '.env.example';
-		$this->assertTrue(file_exists($file), ".env.example file does not exist [$file]");
+	protected $folder;
+	protected $file;
+
+	protected function setUp() {
+		$this->folder = __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR;
+		$this->file = '.env.example';
 	}
 
+	/**
+	 * Check that the file exists
+	 */
+	public function testDotenvExampleFileExists() {
+		$this->assertTrue(file_exists($this->folder . $this->file), $this->file . " file does not exist in " . $this->folder);
+	}
+
+	/**
+	* Check that we can parse the file
+	*/
+	public function testDotenvExampleFileIsParseable() {
+		try {
+			Dotenv::load($this->folder, $this->file);
+		}
+		catch (\Exception $e) {
+			$this->fail("Failed to parse file " . $this->file . " in " . $this->folder . " : " . $e->getMessage());
+		}
+	}
 }
