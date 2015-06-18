@@ -20,7 +20,7 @@ class FaviconTest extends \PHPUnit_Framework_TestCase {
 	 * Check that the file exists
 	 */
 	public function testFaviconFileExists() {
-		$this->assertTrue(file_exists($this->folder . $this->file), $this->file . " file does not exist in " . $this->folder);
+		$this->assertFileExists($this->folder . $this->file);
 	}
 
 }
