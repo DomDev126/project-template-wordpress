@@ -89,13 +89,13 @@ runt the following command (don't worry if it fails, we'll get to it shortly):
 
 If it didn't work for you, here are some of the things to try:
 
-* If ```phpunit``` command wasn't found, try ```composer install``` and then run the command again.  Chances are phpunit was removed during the ```app:install``, which runs composer with ```--no-dev``` parameter.
+* If ```phpunit``` command wasn't found, try ```composer install``` and then run the command again.  Chances are phpunit was removed during the ```app:install```, which runs composer with ```--no-dev``` parameter.
 * If ```phpunit``` worked fine, but the tests failed, that's because you probably don't have a web and Selenium server running yet (more on that later).  For now, try the simplified test plan: ```phpunit --exclude-group selenium --exclude-group network```.
 * If you had some other issue, please [let us know](https://github.com/QoboLtd/project-template/issues/new).
 
 ###Selenium
 
-Selenium is a testing platform that allows one to run tests through a real browser.  
+[Selenium](http://www.seleniumhq.org/) is a testing platform that allows one to run tests through a real browser.  
 Setting this up and getting an example might sound complicated, so project-template
 to the rescue.  Here is what you need to do:
 
