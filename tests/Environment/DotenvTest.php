@@ -4,6 +4,7 @@ namespace Tests\Environment;
  * Dotenv Test
  * 
  * @author Leonid Mamchenkov <l.mamchenkov@qobo.biz>
+ * @group environment
  */
 class DotenvTest extends \PHPUnit_Framework_TestCase {
 
