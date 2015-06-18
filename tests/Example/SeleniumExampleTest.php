@@ -19,7 +19,7 @@ namespace Tests\Example;
  * @group example
  * @group selenium
  * @group network
- * @requires 5.4
+ * @requires PHP 5.4
  */
 class SeleniumExampleTest extends \PHPUnit_Extensions_Selenium2TestCase
 {
