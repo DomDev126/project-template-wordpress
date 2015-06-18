@@ -13,6 +13,7 @@ matrix:
 
 install:
     - composer install --no-dev
+    - ./vendor/bin/phake app:install
 
 before_script:
     - sh -e /etc/init.d/xvfb start

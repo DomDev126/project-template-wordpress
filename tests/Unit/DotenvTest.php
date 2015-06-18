@@ -9,30 +9,36 @@ use \Dotenv;
  */
 class DotenvTest extends \PHPUnit_Framework_TestCase {
 
-	protected $folder;
-	protected $file;
-
-	protected function setUp() {
-		$this->folder = __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR;
-		$this->file = '.env.example';
+	/**
+	 * Provide .env file locations
+	 */
+	public function dotEnvFilesProvider() {
+		return array(
+			'.env.example' => array(__DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR, '.env.example'),
+			'.env'         => array(__DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR, '.env'),
+		);
 	}
 
 	/**
 	 * Check that the file exists
+	 * 
+	 * @dataProvider dotEnvFilesProvider
 	 */
-	public function testDotenvExampleFileExists() {
-		$this->assertTrue(file_exists($this->folder . $this->file), $this->file . " file does not exist in " . $this->folder);
+	public function testDotenvExampleFileExists($folder, $file) {
+		$this->assertTrue(file_exists($folder . $file), $file . " file does not exist in " . $folder);
 	}
 
 	/**
-	* Check that we can parse the file
-	*/
-	public function testDotenvExampleFileIsParseable() {
+	 * Check that we can parse the file
+	 * 
+	 * @dataProvider dotEnvFilesProvider
+	 */
+	public function testDotenvExampleFileIsParseable($folder, $file) {
 		try {
-			Dotenv::load($this->folder, $this->file);
+			Dotenv::load($folder, $file);
 		}
 		catch (\Exception $e) {
-			$this->fail("Failed to parse file " . $this->file . " in " . $this->folder . " : " . $e->getMessage());
+			$this->fail("Failed to parse file " . $file . " in " . $folder . " : " . $e->getMessage());
 		}
 	}
 }
