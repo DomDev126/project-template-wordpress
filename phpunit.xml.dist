@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit
+	bootstrap="vendor/autoload.php"
+	colors="true"
+	verbose="true"
+	>
+
+	<filter>
+		<blacklist>
+			<directory>vendor/</directory>
+			<directory>tests/</directory>
+		</blacklist>
+		<whitelist>
+			<directory>src/</directory>
+		</whitelist>
+	</filter>
+	
+	<logging>
+		<log type="coverage-text" target="php://stdout" showUncoveredFiles="false"/>
+	</logging>
+	
+	<testsuites>
+		<testsuite name="example">
+			<directory>tests/Example/</directory>
+		</testsuite>
+		<testsuite name="environment">
+			<directory>tests/Environment/</directory>
+		</testsuite>
+		<testsuite name="integration">
+			<directory>tests/Integration/</directory>
+		</testsuite>
+		<testsuite name="unit">
+			<directory>tests/Unit/</directory>
+		</testsuite>
+	</testsuites>
+</phpunit>
+

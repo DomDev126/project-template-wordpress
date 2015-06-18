@@ -5,8 +5,25 @@ php:
     - 5.4
     - 5.5
     - 5.6
-      
+
+matrix:
+    fast_finish: true
+    allow_failures:
+        - php: 5.3
+
 install:
     - composer install --no-dev
-      
-script: phpunit --colors --coverage-text tests/
+    - ./vendor/bin/phake app:install
+
+before_script:
+    - sh -e /etc/init.d/xvfb start
+    - export DISPLAY=:99.0
+    - wget http://selenium-release.storage.googleapis.com/2.46/selenium-server-standalone-2.46.0.jar
+    - php -S localhost:8000 > /dev/null 2>&1 &
+    - java -jar selenium-server-standalone-2.46.0.jar > /dev/null 2>&1 &
+    - sleep 30 
+
+script: 
+    - phpunit --group example
+    - phpunit --exclude-group example
+
