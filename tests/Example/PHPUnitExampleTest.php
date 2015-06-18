@@ -4,6 +4,7 @@ namespace Tests\Example;
  * PHPUnit Example Test
  * 
  * @author Leonid Mamchenkov <l.mamchenkov@qobo.biz>
+ * @group example
  */
 class PHPUnitExampleTest extends \PHPUnit_Framework_TestCase {
 

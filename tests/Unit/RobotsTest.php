@@ -20,11 +20,13 @@ class RobotsTest extends \PHPUnit_Framework_TestCase {
 	 * Check that the file exists
 	 */
 	public function testRobotsFileExists() {
-		$this->assertTrue(file_exists($this->folder . $this->file), $this->file . " file does not exist in " . $this->folder);
+		$this->assertFileExists($this->folder . $this->file);
 	}
 
 	/**
 	 * Check that the file is not empty
+	 * 
+	 * @depends testRobotsFileExists
 	 */
 	public function testRobotsFileIsNotEmpty() {
 		$content = trim(file_get_contents($this->folder . $this->file));

@@ -25,7 +25,7 @@ class DotenvTest extends \PHPUnit_Framework_TestCase {
 	 * @dataProvider dotEnvFilesProvider
 	 */
 	public function testDotenvExampleFileExists($folder, $file) {
-		$this->assertTrue(file_exists($folder . $file), $file . " file does not exist in " . $folder);
+		$this->assertFileExists($folder . $file);
 	}
 
 	/**
