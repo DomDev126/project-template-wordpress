@@ -5,6 +5,7 @@ php:
     - 5.4
     - 5.5
     - 5.6
+    - 7.0
 
 matrix:
     fast_finish: true
@@ -12,8 +13,8 @@ matrix:
         - php: 5.3
 
 install:
-    - composer install --dev
-    - ./vendor/bin/phake app:install DB_NAME=tests SYSTEM_COMMAND_COMPOSER="composer -n --dev" CHOWN_USER=$USER CHGRP_GROUP=$USER
+    - composer install
+    - ./vendor/bin/phake app:install DB_NAME=tests CHOWN_USER=$USER CHGRP_GROUP=$USER
 
 before_script:
     - sh -e /etc/init.d/xvfb start
