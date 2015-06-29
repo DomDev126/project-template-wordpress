@@ -9,7 +9,6 @@ group('app', function() {
 		printInfo("Installing application");
 	});
 	task('install', ':git:pull', ':git:checkout');
-	task('install', ':composer:install');
 	task('install', ':dotenv:create', ':dotenv:reload', ':file:process');
 
 
