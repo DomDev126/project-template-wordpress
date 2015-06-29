@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "996e8763bfa21867d9f9301adbf11bed",
+    "hash": "e70ef8bb2c5c40d8d912093aeba85697",
     "packages": [
         {
             "name": "composer/installers",
@@ -599,16 +599,16 @@
         },
         {
             "name": "qobo/phake-builder",
-            "version": "v1.0.23",
+            "version": "v1.0.24",
             "source": {
                 "type": "git",
                 "url": "https://github.com/QoboLtd/phake-builder.git",
-                "reference": "731a3ddf6d53328e0c67dd682ee6d2098434d52f"
+                "reference": "8e727b8096eedb8c843f8da10d09035c83823418"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/QoboLtd/phake-builder/zipball/731a3ddf6d53328e0c67dd682ee6d2098434d52f",
-                "reference": "731a3ddf6d53328e0c67dd682ee6d2098434d52f",
+                "url": "https://api.github.com/repos/QoboLtd/phake-builder/zipball/8e727b8096eedb8c843f8da10d09035c83823418",
+                "reference": "8e727b8096eedb8c843f8da10d09035c83823418",
                 "shasum": ""
             },
             "require": {
@@ -638,7 +638,7 @@
                 }
             ],
             "description": "A set of build and deploy files, based on jaz303/phake",
-            "time": "2015-06-07 10:28:10"
+            "time": "2015-06-18 08:00:10"
         },
         {
             "name": "qobo/qobo-wp-brand",
@@ -1166,6 +1166,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/wp-theme-plugin-editor-disable/"
+        },
+        {
+            "name": "wpackagist-theme/twentyfifteen",
+            "version": "1.2",
+            "source": {
+                "type": "svn",
+                "url": "http://themes.svn.wordpress.org/twentyfifteen/",
+                "reference": "1.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/theme/twentyfifteen.1.2.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-theme",
+            "homepage": "https://wordpress.org/themes/twentyfifteen/"
         },
         {
             "name": "zetacomponents/archive",
@@ -1706,16 +1726,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.7.2",
+            "version": "4.7.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "8e0c63329c8c4185296b8d357daa5c6bae43080f"
+                "reference": "41fea1e84ed84d373f5ac099a1276c4358c90708"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/8e0c63329c8c4185296b8d357daa5c6bae43080f",
-                "reference": "8e0c63329c8c4185296b8d357daa5c6bae43080f",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/41fea1e84ed84d373f5ac099a1276c4358c90708",
+                "reference": "41fea1e84ed84d373f5ac099a1276c4358c90708",
                 "shasum": ""
             },
             "require": {
@@ -1774,7 +1794,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-06-06 08:36:08"
+            "time": "2015-06-11 16:20:25"
         },
         {
             "name": "phpunit/phpunit-mock-objects",

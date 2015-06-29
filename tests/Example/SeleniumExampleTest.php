@@ -32,8 +32,8 @@ class SeleniumExampleTest extends \PHPUnit_Extensions_Selenium2TestCase
 
 	public function testTitle()
 	{
-		$this->url('index.php');
-		$this->assertContains('phpinfo', $this->title());
+		$this->url('wp-admin');
+		$this->assertContains('Log In', $this->title());
 	}
 
 }
