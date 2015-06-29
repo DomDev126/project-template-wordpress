@@ -13,7 +13,7 @@ matrix:
 
 install:
     - composer install --no-dev
-    - ./vendor/bin/phake app:install
+    - ./vendor/bin/phake app:install SYSTEM_COMMAND_COMPOSER="composer -n --dev"
 
 before_script:
     - sh -e /etc/init.d/xvfb start
@@ -24,6 +24,6 @@ before_script:
     - sleep 30 
 
 script: 
-    - phpunit --group example
-    - phpunit --exclude-group example
+    - ./vendor/bin/phpunit --group example
+    - ./vendor/bin/phpunit --exclude-group example
 
