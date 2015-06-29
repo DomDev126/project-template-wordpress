@@ -602,16 +602,16 @@
         },
         {
             "name": "qobo/phake-builder",
-            "version": "v1.0.24",
+            "version": "v1.0.26",
             "source": {
                 "type": "git",
                 "url": "https://github.com/QoboLtd/phake-builder.git",
-                "reference": "8e727b8096eedb8c843f8da10d09035c83823418"
+                "reference": "1438a67a39cbe561e43de5001a6f622c805cb06a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/QoboLtd/phake-builder/zipball/8e727b8096eedb8c843f8da10d09035c83823418",
-                "reference": "8e727b8096eedb8c843f8da10d09035c83823418",
+                "url": "https://api.github.com/repos/QoboLtd/phake-builder/zipball/1438a67a39cbe561e43de5001a6f622c805cb06a",
+                "reference": "1438a67a39cbe561e43de5001a6f622c805cb06a",
                 "shasum": ""
             },
             "require": {
@@ -641,7 +641,7 @@
                 }
             ],
             "description": "A set of build and deploy files, based on jaz303/phake",
-            "time": "2015-06-18 08:00:10"
+            "time": "2015-06-29 17:37:15"
         },
         {
             "name": "qobo/qobo-wp-brand",
@@ -954,16 +954,16 @@
         },
         {
             "name": "wp-cli/wp-cli",
-            "version": "v0.19.1",
+            "version": "v0.19.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli.git",
-                "reference": "4734fc5c068af4c7de66e6710f118aa15463556e"
+                "reference": "b2db97324c03af1b9e847fb2f0cf2f81e23212c7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/4734fc5c068af4c7de66e6710f118aa15463556e",
-                "reference": "4734fc5c068af4c7de66e6710f118aa15463556e",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/b2db97324c03af1b9e847fb2f0cf2f81e23212c7",
+                "reference": "b2db97324c03af1b9e847fb2f0cf2f81e23212c7",
                 "shasum": ""
             },
             "require": {
@@ -1008,7 +1008,7 @@
                 "cli",
                 "wordpress"
             ],
-            "time": "2015-05-13 19:24:38"
+            "time": "2015-06-20 20:37:44"
         },
         {
             "name": "wpackagist-plugin/compress-png-for-wp",
@@ -1726,16 +1726,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.7.3",
+            "version": "4.7.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "41fea1e84ed84d373f5ac099a1276c4358c90708"
+                "reference": "f6701ef3faea759acd1910a7751d8d102a7fd5bc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/41fea1e84ed84d373f5ac099a1276c4358c90708",
-                "reference": "41fea1e84ed84d373f5ac099a1276c4358c90708",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/f6701ef3faea759acd1910a7751d8d102a7fd5bc",
+                "reference": "f6701ef3faea759acd1910a7751d8d102a7fd5bc",
                 "shasum": ""
             },
             "require": {
@@ -1749,7 +1749,7 @@
                 "phpunit/php-code-coverage": "~2.1",
                 "phpunit/php-file-iterator": "~1.4",
                 "phpunit/php-text-template": "~1.2",
-                "phpunit/php-timer": "~1.0",
+                "phpunit/php-timer": ">=1.0.6",
                 "phpunit/phpunit-mock-objects": "~2.3",
                 "sebastian/comparator": "~1.1",
                 "sebastian/diff": "~1.2",
@@ -1794,7 +1794,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-06-11 16:20:25"
+            "time": "2015-06-21 07:23:36"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
