@@ -13,7 +13,7 @@ matrix:
 
 install:
     - composer install --dev
-    - ./vendor/bin/phake app:install DB_NAME=tests CHOWN_USER=$USER CHGRP_GROUP=$USER
+    - ./vendor/bin/phake app:install DB_NAME=tests SYSTEM_COMMAND_COMPOSER="composer -n --dev" CHOWN_USER=$USER CHGRP_GROUP=$USER
 
 before_script:
     - sh -e /etc/init.d/xvfb start
