@@ -13,8 +13,8 @@ matrix:
         - php: 5.3
 
 install:
-    - composer install --no-dev
-    - ./vendor/bin/phake app:install SYSTEM_COMMAND_COMPOSER="composer -n --dev"
+    - composer install
+    - ./vendor/bin/phake app:install
 
 before_script:
     - sh -e /etc/init.d/xvfb start
