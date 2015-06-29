@@ -12,7 +12,7 @@ matrix:
         - php: 5.3
 
 install:
-    - composer install 
+    - composer install --dev
     - ./vendor/bin/phake app:install DB_NAME=tests CHOWN_USER=$USER CHGRP_GROUP=$USER
 
 before_script:
