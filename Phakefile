@@ -52,7 +52,6 @@ group('app', function() {
 		printInfo("Installing application");
 	});
 	task('install', ':git:pull', ':git:checkout');
-	task('install', ':composer:install');
 	task('install', ':dotenv:create', ':dotenv:reload', ':file:process');
 	task('install', ':mysql:database-create');
 	// From here on, you can either import the full MySQL dump with find-replace...
