@@ -98,7 +98,8 @@
 		"wpackagist-plugin/custom-upload-dir": "3.4.2",
 		"wpackagist-plugin/resize-image-after-upload": "1.7.1",
 		"wpackagist-plugin/compress-png-for-wp": "1.3.5",
-		"wpackagist-plugin/shortcodes-ultimate": "4.9.6"
+		"wpackagist-plugin/shortcodes-ultimate": "4.9.6",
+		"wpackagist-plugin/contact-form-7": "4.2.1"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "~4.3",
