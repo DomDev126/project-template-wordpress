@@ -5,10 +5,10 @@
             "package": {
                 "name": "wordpress",
                 "type": "webroot",
-                "version": "4.2.2",
+                "version": "4.2.3",
                 "dist": {
                     "type": "zip",
-                    "url": "https://github.com/WordPress/WordPress/archive/4.2.2.zip"
+                    "url": "https://github.com/WordPress/WordPress/archive/4.2.3.zip"
                 },
                 "require": {
                     "fancyguy/webroot-installer": "1.0.0"
@@ -112,7 +112,7 @@
     ],
     "require": {
         "php": ">=5.3.0",
-        "wordpress": "4.2.2",
+        "wordpress": "4.2.3",
         "fancyguy/webroot-installer": "1.0.0",
         "qobo/phake-builder": "~1.0",
         "wp-cli/wp-cli": "~0.18",

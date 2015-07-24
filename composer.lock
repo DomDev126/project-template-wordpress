@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "43cde4b4c11e7cdf40c4b99b03c67bcf",
+    "hash": "553b8abeed2601bc5997dec4dddfbd92",
     "packages": [
         {
             "name": "composer/installers",
@@ -363,16 +363,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "1.14.0",
+            "version": "1.15.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "b287fbbe1ca27847064beff2bad7fb6920bf08cc"
+                "reference": "dc5150cc608f2334c72c3b6a553ec9668a4156b0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/b287fbbe1ca27847064beff2bad7fb6920bf08cc",
-                "reference": "b287fbbe1ca27847064beff2bad7fb6920bf08cc",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/dc5150cc608f2334c72c3b6a553ec9668a4156b0",
+                "reference": "dc5150cc608f2334c72c3b6a553ec9668a4156b0",
                 "shasum": ""
             },
             "require": {
@@ -409,7 +409,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.14.x-dev"
+                    "dev-master": "1.15.x-dev"
                 }
             },
             "autoload": {
@@ -435,7 +435,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2015-06-19 13:29:54"
+            "time": "2015-07-12 13:54:09"
         },
         {
             "name": "mustache/mustache",
@@ -666,6 +666,20 @@
             "type": "wordpress-plugin"
         },
         {
+            "name": "qobo/qobo-wp-custom-admin-theme",
+            "version": "1.0.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/QoboLtd/Qobo-WP-Custom-Admin-Theme/archive/v1.0.0.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin"
+        },
+        {
             "name": "qobo/qobo-wp-custom-theme-path",
             "version": "1.0.1",
             "dist": {
@@ -803,16 +817,16 @@
         },
         {
             "name": "symfony/finder",
-            "version": "v2.7.1",
+            "version": "v2.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Finder.git",
-                "reference": "c13a40d638aeede1e8400f8c956c7f9246c05f75"
+                "reference": "ae0f363277485094edc04c9f3cbe595b183b78e4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Finder/zipball/c13a40d638aeede1e8400f8c956c7f9246c05f75",
-                "reference": "c13a40d638aeede1e8400f8c956c7f9246c05f75",
+                "url": "https://api.github.com/repos/symfony/Finder/zipball/ae0f363277485094edc04c9f3cbe595b183b78e4",
+                "reference": "ae0f363277485094edc04c9f3cbe595b183b78e4",
                 "shasum": ""
             },
             "require": {
@@ -848,7 +862,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "time": "2015-06-04 20:11:48"
+            "time": "2015-07-09 16:07:40"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -898,10 +912,10 @@
         },
         {
             "name": "wordpress",
-            "version": "4.2.2",
+            "version": "4.2.3",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/WordPress/WordPress/archive/4.2.2.zip",
+                "url": "https://github.com/WordPress/WordPress/archive/4.2.3.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -1100,15 +1114,15 @@
         },
         {
             "name": "wpackagist-plugin/disable-wordpress-updates",
-            "version": "1.4.2",
+            "version": "1.4.7",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/disable-wordpress-updates/",
-                "reference": "tags/1.4.2"
+                "reference": "tags/1.4.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/disable-wordpress-updates.1.4.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/disable-wordpress-updates.1.4.7.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -1120,15 +1134,15 @@
         },
         {
             "name": "wpackagist-plugin/jetpack",
-            "version": "3.5",
+            "version": "3.6",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/jetpack/",
-                "reference": "tags/3.5"
+                "reference": "tags/3.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/jetpack.3.5.zip",
+                "url": "https://downloads.wordpress.org/plugin/jetpack.3.6.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -1160,15 +1174,15 @@
         },
         {
             "name": "wpackagist-plugin/shortcodes-ultimate",
-            "version": "4.9.6",
+            "version": "4.9.7",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/shortcodes-ultimate/",
-                "reference": "tags/4.9.6"
+                "reference": "tags/4.9.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/shortcodes-ultimate.4.9.6.zip",
+                "url": "https://downloads.wordpress.org/plugin/shortcodes-ultimate.4.9.7.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -1514,16 +1528,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "2.1.7",
+            "version": "2.1.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "07e27765596d72c378a6103e80da5d84e802f1e4"
+                "reference": "6044546998c7627ab997501a3d0db972b3db9790"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/07e27765596d72c378a6103e80da5d84e802f1e4",
-                "reference": "07e27765596d72c378a6103e80da5d84e802f1e4",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/6044546998c7627ab997501a3d0db972b3db9790",
+                "reference": "6044546998c7627ab997501a3d0db972b3db9790",
                 "shasum": ""
             },
             "require": {
@@ -1572,7 +1586,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-06-30 06:52:35"
+            "time": "2015-07-13 11:25:58"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -1754,16 +1768,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.7.6",
+            "version": "4.7.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "0ebabb4cda7d066be8391dfdbaf57fe70ac9a99b"
+                "reference": "9b97f9d807b862c2de2a36e86690000801c85724"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/0ebabb4cda7d066be8391dfdbaf57fe70ac9a99b",
-                "reference": "0ebabb4cda7d066be8391dfdbaf57fe70ac9a99b",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/9b97f9d807b862c2de2a36e86690000801c85724",
+                "reference": "9b97f9d807b862c2de2a36e86690000801c85724",
                 "shasum": ""
             },
             "require": {
@@ -1822,7 +1836,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-06-30 06:53:57"
+            "time": "2015-07-13 11:28:34"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -2307,16 +2321,16 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v2.7.1",
+            "version": "v2.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Yaml.git",
-                "reference": "9808e75c609a14f6db02f70fccf4ca4aab53c160"
+                "reference": "4bfbe0ed3909bfddd75b70c094391ec1f142f860"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Yaml/zipball/9808e75c609a14f6db02f70fccf4ca4aab53c160",
-                "reference": "9808e75c609a14f6db02f70fccf4ca4aab53c160",
+                "url": "https://api.github.com/repos/symfony/Yaml/zipball/4bfbe0ed3909bfddd75b70c094391ec1f142f860",
+                "reference": "4bfbe0ed3909bfddd75b70c094391ec1f142f860",
                 "shasum": ""
             },
             "require": {
@@ -2352,7 +2366,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2015-06-10 15:30:22"
+            "time": "2015-07-01 11:25:50"
         },
         {
             "name": "wpackagist-plugin/debug-bar",
@@ -2436,15 +2450,15 @@
         },
         {
             "name": "wpackagist-plugin/user-switching",
-            "version": "1.0.3",
+            "version": "1.0.6",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/user-switching/",
-                "reference": "tags/1.0.3"
+                "reference": "tags/1.0.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/user-switching.1.0.3.zip",
+                "url": "https://downloads.wordpress.org/plugin/user-switching.1.0.6.zip",
                 "reference": null,
                 "shasum": null
             },
