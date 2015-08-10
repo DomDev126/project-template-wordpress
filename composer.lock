@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "dc8b83ae2adf5da9a535e2c0e5763d16",
+    "hash": "a744d540b95cefadd409d56b8f0a2701",
     "packages": [
         {
             "name": "composer/installers",
@@ -1114,15 +1114,15 @@
         },
         {
             "name": "wpackagist-plugin/disable-wordpress-updates",
-            "version": "1.4.7",
+            "version": "1.4.2",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/disable-wordpress-updates/",
-                "reference": "tags/1.4.7"
+                "reference": "tags/1.4.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/disable-wordpress-updates.1.4.7.zip",
+                "url": "https://downloads.wordpress.org/plugin/disable-wordpress-updates.1.4.2.zip",
                 "reference": null,
                 "shasum": null
             },
