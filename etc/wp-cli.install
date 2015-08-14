@@ -26,6 +26,17 @@
 # 
 %%SYSTEM_COMMAND_WPCLI%% rewrite structure "/%year%/%monthnum%/%day%/%postname%/"
 
+# Install all plugins that are found in the Child theme directory.
+# Usually, these plugins are the proprietary plugins. (WPML, etc.).
+# Please note the --force option which overwrites any installed version.
+if [ -d "%%WP_CHILD_PLUGIN_FOLDER%%" ];
+then
+	for plugin in  %%WP_CHILD_PLUGIN_FOLDER%%/*.zip
+	do
+		%%SYSTEM_COMMAND_WPCLI%% plugin install --force $plugin
+	done
+fi
+
 # 
 # Activate all installed inactive plugins (install them with Composer)
 # 
