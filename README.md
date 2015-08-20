@@ -22,8 +22,8 @@ git commit -m "Initial commit"
 git remote add template https://github.com/QoboLtd/project-template-wordpress.git
 git remote update
 # Merge latest tag (or use 'template/master' instead)
-git merge --squash $(git tag | tail -n 1)
-git commit -m "Merged project-template-wordpress ($(git tag | tail -n 1))"
+git merge --squash $(git tag --sort=v:refname | tail -n 1)
+git commit -m "Merged project-template-wordpress ($(git tag --sort=v:refname | tail -n 1))"
 # Finalize the setup
 composer install
 ./vendor/bin/phake dotenv:create DB_NAME=wordpress
