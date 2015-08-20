@@ -78,21 +78,6 @@
         {
             "type": "package",
             "package": {
-                    "name": "qobo/qobo-wp-brand",
-                    "type": "wordpress-plugin",
-                    "version": "1.0.0",
-                    "dist": {
-                            "type": "zip",
-                            "url": "https://github.com/QoboLtd/Qobo-WP-Brand/archive/v1.0.0.zip"
-                    },
-                    "require": {
-                            "composer/installers": "~1.0"
-                    }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
                     "name": "qobo/qobo-wp-custom-admin-theme",
                     "type": "wordpress-plugin",
                     "version": "1.0.0",
