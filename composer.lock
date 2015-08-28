@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c05b2456fb5470485a6bceda9b5cce77",
+    "hash": "d85363962de5e6d1e9fec30f51ff8cf7",
     "packages": [
         {
             "name": "composer/installers",
@@ -667,10 +667,10 @@
         },
         {
             "name": "qobo/qobo-wp-custom-admin-theme",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/QoboLtd/Qobo-WP-Custom-Admin-Theme/archive/v1.0.0.zip",
+                "url": "https://github.com/QoboLtd/Qobo-WP-Custom-Admin-Theme/archive/v1.0.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -926,16 +926,16 @@
         },
         {
             "name": "wp-cli/php-cli-tools",
-            "version": "v0.10.4",
+            "version": "v0.10.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/php-cli-tools.git",
-                "reference": "228e8c1300675313e519b4195783aaa1a1a020bf"
+                "reference": "037a010441a5c220cd1df26cdc9b20ad73408356"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/php-cli-tools/zipball/228e8c1300675313e519b4195783aaa1a1a020bf",
-                "reference": "228e8c1300675313e519b4195783aaa1a1a020bf",
+                "url": "https://api.github.com/repos/wp-cli/php-cli-tools/zipball/037a010441a5c220cd1df26cdc9b20ad73408356",
+                "reference": "037a010441a5c220cd1df26cdc9b20ad73408356",
                 "shasum": ""
             },
             "require": {
@@ -972,20 +972,20 @@
                 "cli",
                 "console"
             ],
-            "time": "2015-02-27 22:11:29"
+            "time": "2015-08-10 12:46:19"
         },
         {
             "name": "wp-cli/wp-cli",
-            "version": "v0.19.2",
+            "version": "v0.20.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/wp-cli.git",
-                "reference": "b2db97324c03af1b9e847fb2f0cf2f81e23212c7"
+                "reference": "58317fce36e34a10473bbd397b42a185edd10438"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/b2db97324c03af1b9e847fb2f0cf2f81e23212c7",
-                "reference": "b2db97324c03af1b9e847fb2f0cf2f81e23212c7",
+                "url": "https://api.github.com/repos/wp-cli/wp-cli/zipball/58317fce36e34a10473bbd397b42a185edd10438",
+                "reference": "58317fce36e34a10473bbd397b42a185edd10438",
                 "shasum": ""
             },
             "require": {
@@ -995,7 +995,7 @@
                 "ramsey/array_column": "~1.1",
                 "rmccue/requests": "~1.6",
                 "symfony/finder": "~2.3",
-                "wp-cli/php-cli-tools": "0.10.4"
+                "wp-cli/php-cli-tools": "0.10.5"
             },
             "require-dev": {
                 "behat/behat": "2.5.*",
@@ -1030,7 +1030,7 @@
                 "cli",
                 "wordpress"
             ],
-            "time": "2015-06-20 20:37:44"
+            "time": "2015-08-26 17:38:02"
         },
         {
             "name": "wpackagist-plugin/compress-png-for-wp",
@@ -1788,16 +1788,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.8.5",
+            "version": "4.8.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "9b7417edaf28059ea63d86be941e6004dbfcc0cc"
+                "reference": "2246830f4a1a551c67933e4171bf2126dc29d357"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/9b7417edaf28059ea63d86be941e6004dbfcc0cc",
-                "reference": "9b7417edaf28059ea63d86be941e6004dbfcc0cc",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/2246830f4a1a551c67933e4171bf2126dc29d357",
+                "reference": "2246830f4a1a551c67933e4171bf2126dc29d357",
                 "shasum": ""
             },
             "require": {
@@ -1856,7 +1856,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-08-19 09:20:57"
+            "time": "2015-08-24 04:09:38"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
