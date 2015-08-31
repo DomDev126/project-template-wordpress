@@ -103,7 +103,7 @@
         "wpackagist-plugin/listo": "1.1"
     },
     "suggest": {
-        "qobo/qobo-wp-custom-admin-theme": "it fixes WP admin styles where widget input, select overlapap their container"
+        "qobo/qobo-wp-custom-admin-theme": "it fixes WP admin styles where widget input, select overlap their container"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.3",
