@@ -76,21 +76,6 @@
             }
         },
         {
-            "type": "package",
-            "package": {
-                "name": "qobo/qobo-wp-custom-admin-theme",
-                "type": "wordpress-plugin",
-                "version": "1.0.1",
-                "dist": {
-                    "type": "zip",
-                    "url": "https://github.com/QoboLtd/Qobo-WP-Custom-Admin-Theme/archive/v1.0.1.zip"
-                },
-                "require": {
-                    "composer/installers": "~1.0"
-                }
-            }
-        },
-        {
             "type": "composer",
             "url": "http://wpackagist.org"
         }
@@ -105,7 +90,6 @@
         "qobo/qobo-wp-custom-theme-path": "1.0.1",
         "qobo/qobo-wp-brand": "1.0.0",
         "qobo/qobo-wp-shortcodes": "1.0.0",
-        "qobo/qobo-wp-custom-admin-theme": "1.0.1",
         "wpackagist-theme/twentyfifteen": "*",
         "wpackagist-plugin/disable-wordpress-updates": "1.4.2",
         "wpackagist-plugin/wp-theme-plugin-editor-disable": "1.0.0",
@@ -117,6 +101,9 @@
         "wpackagist-plugin/shortcodes-ultimate": "4.9.8",
         "wpackagist-plugin/contact-form-7": "4.2.2",
         "wpackagist-plugin/listo": "1.1"
+    },
+    "suggest": {
+        "qobo/qobo-wp-custom-admin-theme": "it fixes WP admin styles where widget input, select overlapap their container"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.3",
