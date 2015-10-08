@@ -4,7 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "77dafb995a8c0959e0021d9c18d529a0",
+    "hash": "f92dc6ba6151636c2b8ab10507adce84",
+    "content-hash": "9fe8fee5888b37afa26210eb27961b67",
     "packages": [
         {
             "name": "composer/installers",
@@ -803,16 +804,16 @@
         },
         {
             "name": "symfony/finder",
-            "version": "v2.7.4",
+            "version": "v2.7.5",
             "source": {
                 "type": "git",
-                "url": "https://github.com/symfony/Finder.git",
-                "reference": "fff4b0c362640a0ab7355e2647b3d461608e9065"
+                "url": "https://github.com/symfony/finder.git",
+                "reference": "8262ab605973afbb3ef74b945daabf086f58366f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Finder/zipball/fff4b0c362640a0ab7355e2647b3d461608e9065",
-                "reference": "fff4b0c362640a0ab7355e2647b3d461608e9065",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/8262ab605973afbb3ef74b945daabf086f58366f",
+                "reference": "8262ab605973afbb3ef74b945daabf086f58366f",
                 "shasum": ""
             },
             "require": {
@@ -848,7 +849,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "time": "2015-08-26 17:56:37"
+            "time": "2015-09-19 19:59:23"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -898,10 +899,10 @@
         },
         {
             "name": "wordpress",
-            "version": "4.3",
+            "version": "4.3.1",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/WordPress/WordPress/archive/4.3.zip",
+                "url": "https://github.com/WordPress/WordPress/archive/4.3.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -1554,16 +1555,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "2.2.3",
+            "version": "2.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "ef1ca6835468857944d5c3b48fa503d5554cff2f"
+                "reference": "eabf68b476ac7d0f73793aada060f1c1a9bf8979"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/ef1ca6835468857944d5c3b48fa503d5554cff2f",
-                "reference": "ef1ca6835468857944d5c3b48fa503d5554cff2f",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/eabf68b476ac7d0f73793aada060f1c1a9bf8979",
+                "reference": "eabf68b476ac7d0f73793aada060f1c1a9bf8979",
                 "shasum": ""
             },
             "require": {
@@ -1612,7 +1613,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-09-14 06:51:16"
+            "time": "2015-10-06 15:47:00"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -1794,16 +1795,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.8.9",
+            "version": "4.8.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "73fad41adb5b7bc3a494bb930d90648df1d5e74b"
+                "reference": "bdd199472410fd7e32751f9c814c7e06f2c21bd5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/73fad41adb5b7bc3a494bb930d90648df1d5e74b",
-                "reference": "73fad41adb5b7bc3a494bb930d90648df1d5e74b",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/bdd199472410fd7e32751f9c814c7e06f2c21bd5",
+                "reference": "bdd199472410fd7e32751f9c814c7e06f2c21bd5",
                 "shasum": ""
             },
             "require": {
@@ -1862,20 +1863,20 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-09-20 12:56:44"
+            "time": "2015-10-07 10:39:46"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
-            "version": "2.3.7",
+            "version": "2.3.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit-mock-objects.git",
-                "reference": "5e2645ad49d196e020b85598d7c97e482725786a"
+                "reference": "ac8e7a3db35738d56ee9a76e78a4e03d97628983"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/5e2645ad49d196e020b85598d7c97e482725786a",
-                "reference": "5e2645ad49d196e020b85598d7c97e482725786a",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/ac8e7a3db35738d56ee9a76e78a4e03d97628983",
+                "reference": "ac8e7a3db35738d56ee9a76e78a4e03d97628983",
                 "shasum": ""
             },
             "require": {
@@ -1918,7 +1919,7 @@
                 "mock",
                 "xunit"
             ],
-            "time": "2015-08-19 09:14:08"
+            "time": "2015-10-02 06:51:40"
         },
         {
             "name": "phpunit/phpunit-selenium",
@@ -2348,16 +2349,16 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v2.7.4",
+            "version": "v2.7.5",
             "source": {
                 "type": "git",
-                "url": "https://github.com/symfony/Yaml.git",
-                "reference": "2dc7b06c065df96cc686c66da2705e5e18aef661"
+                "url": "https://github.com/symfony/yaml.git",
+                "reference": "31cb2ad0155c95b88ee55fe12bc7ff92232c1770"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Yaml/zipball/2dc7b06c065df96cc686c66da2705e5e18aef661",
-                "reference": "2dc7b06c065df96cc686c66da2705e5e18aef661",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/31cb2ad0155c95b88ee55fe12bc7ff92232c1770",
+                "reference": "31cb2ad0155c95b88ee55fe12bc7ff92232c1770",
                 "shasum": ""
             },
             "require": {
@@ -2393,7 +2394,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2015-08-24 07:13:45"
+            "time": "2015-09-14 14:14:09"
         },
         {
             "name": "wpackagist-plugin/debug-bar",
