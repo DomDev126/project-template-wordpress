@@ -1,30 +1,81 @@
 server {
+
+	#
+	# Basics
+	#
+
 	server_name %%NGINX_SITE_MAIN%% %%NGINX_SITE_OTHER%%;
 	root %%NGINX_ROOT_PREFIX%%/%%NGINX_SITE_MAIN%%;
 
 	access_log %%NGINX_LOG_PREFIX%%/%%NGINX_SITE_MAIN%%-access.log;
 	error_log %%NGINX_LOG_PREFIX%%/%%NGINX_SITE_MAIN%%-error.log;
 
-	# For details on our Nginx configuration, 
-	# check puppet-boxes repo (https://github.com/QoboLtd/puppet-boxes)
-	include /etc/nginx/restrictions.conf;
+	#
+	# Restrictions
+	#
+
+	# Disable all methods besides HEAD, GET, and POST
+	if ($request_method !~ ^(GET|HEAD|POST)$) {
+			return 444;
+	}
+
+	# Deny all attempts to access hidden files such as .htaccess, .git, etc.
+	location ~ /\. {
+			deny all;
+	}
+	# Deny all attempts to access Composer files
+	location = /composer.json { deny all; }
+	location = /composer.lock { deny all; }
+	location ~ ^/vendor/ { deny all; }
+
+	# Deny all attempts to access template-project files
+	location ~ ^/(bin|etc|src|tests)/ { deny all; }
+	location = /Phakefile { deny all; }
+	location = /README.md { deny all; }
 
 	location / {
 		try_files $uri $uri/ =404;
 	}
 
+	#
 	# PHP
+	#
+
 	location ~ \.php$ {
 		fastcgi_split_path_info ^(.+?\.php)(/.*)$;
 		if (!-f $document_root$fastcgi_script_name) {
 			return 404;
 		}
 
-		include /etc/nginx/fastcgi.conf;
+		fastcgi_param  SCRIPT_FILENAME    $document_root$fastcgi_script_name;
+		fastcgi_param  QUERY_STRING       $query_string;
+		fastcgi_param  REQUEST_METHOD     $request_method;
+		fastcgi_param  CONTENT_TYPE       $content_type;
+		fastcgi_param  CONTENT_LENGTH     $content_length;
+
+		fastcgi_param  SCRIPT_NAME        $fastcgi_script_name;
+		fastcgi_param  REQUEST_URI        $request_uri;
+		fastcgi_param  DOCUMENT_URI       $document_uri;
+		fastcgi_param  DOCUMENT_ROOT      $document_root;
+		fastcgi_param  SERVER_PROTOCOL    $server_protocol;
+		fastcgi_param  HTTPS              $https if_not_empty;
+
+		fastcgi_param  GATEWAY_INTERFACE  CGI/1.1;
+		fastcgi_param  SERVER_SOFTWARE    nginx/$nginx_version;
+
+		fastcgi_param  REMOTE_ADDR        $remote_addr;
+		fastcgi_param  REMOTE_PORT        $remote_port;
+		fastcgi_param  SERVER_ADDR        $server_addr;
+		fastcgi_param  SERVER_PORT        $server_port;
+		fastcgi_param  SERVER_NAME        $server_name;
+
+		# PHP only, required if PHP was built with --enable-force-cgi-redirect
+		fastcgi_param  REDIRECT_STATUS    200;
+
 		#fastcgi_intercept_errors on;
 		fastcgi_index index.php;
-		fastcgi_pass php;
-		#fastcgi_pass 127.0.0.1:9000;
+		#fastcgi_pass php;
+		fastcgi_pass 127.0.0.1:9000;
 	}
 }
 # vi:ft=nginx
