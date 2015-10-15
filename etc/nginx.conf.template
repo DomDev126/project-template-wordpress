@@ -11,6 +11,17 @@ server {
 	error_log %%NGINX_LOG_PREFIX%%/%%NGINX_SITE_MAIN%%-error.log;
 
 	#
+	# Errors
+	#
+	error_page 400 /errors/4xx.html; # Bad Request
+	error_page 404 /errors/4xx.html; # Not Found
+
+	error_page 500 /errors/5xx.html; # Internal Server Error
+	error_page 502 /errors/5xx.html; # Bad Gateway
+	error_page 503 /errors/5xx.html; # Service Unavailable
+	error_page 504 /errors/5xx.html; # Gateway Timeout
+
+	#
 	# Expires
 	# 
 	 
