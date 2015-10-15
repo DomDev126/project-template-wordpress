@@ -33,8 +33,9 @@ server {
 	location = /Phakefile { deny all; }
 	location = /README.md { deny all; }
 
+	# Try to serve file directly, fallback on index.php
 	location / {
-		try_files $uri $uri/ =404;
+		try_files $uri $uri/ /index.php$is_args$args;
 	}
 
 	#
