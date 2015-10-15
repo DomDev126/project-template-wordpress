@@ -11,8 +11,31 @@ server {
 	error_log %%NGINX_LOG_PREFIX%%/%%NGINX_SITE_MAIN%%-error.log;
 
 	#
+	# Expires
+	# 
+	 
+	# Non-aggressive Expires header for JavaScript, CSS, and images
+	location ~* \.(js|css|png|jpg|jpeg|gif|ico)$ {
+		expires 5m;
+		log_not_found off;
+	}
+
+	#
 	# Restrictions
 	#
+
+	# We already provide one.  No need to log access since often used for health pings
+	location = /favicon.ico {
+		log_not_found off;
+		access_log off;
+	}
+
+	# We already provie one.  No need to slow things down and use more disk space with logging
+	location = /robots.txt {
+		allow all;
+		log_not_found off;
+		access_log off;
+	}
 
 	# Disable all methods besides HEAD, GET, and POST
 	if ($request_method !~ ^(GET|HEAD|POST)$) {
