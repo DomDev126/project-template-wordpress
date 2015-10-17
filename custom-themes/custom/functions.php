@@ -26,4 +26,27 @@
 		}
 		loadFunctions();
 	endif;
+	
+	//Theme's widgets directory
+	if (!defined('WIDGET_DIR')) {
+		define('WIDGET_DIR', __DIR__ . DIRECTORY_SEPARATOR .'widgets' . DIRECTORY_SEPARATOR);
+	}
+	
+	/**
+	 * Load all widgets which are placed in theme's folder
+	 *
+	 * @return void
+	 */
+	if ( ! function_exists( 'loadWidgets' ) ):
+		function loadWidgets() {
+			$it = new DirectoryIterator(WIDGET_DIR);
+			$it = new RegexIterator($it, '#.php$#');
+			foreach ($it as $widget) {
+				if ($widget->isReadable()) {
+					require_once($widget->getPathname());
+				}
+			}
+		}
+		loadWidgets();
+	endif;
 ?>
