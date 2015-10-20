@@ -87,12 +87,35 @@
 		function loadIncludes() {
 			$it = new DirectoryIterator(INCLUDES_DIR);
 			$it = new RegexIterator($it, '#.php$#');
-			foreach ($it as $shortcode) {
+			foreach ($it as $include) {
 				if ($shortcode->isReadable()) {
-					require_once($shortcode->getPathname());
+					require_once($include->getPathname());
 				}
 			}
 		}
 		loadIncludes();
+	endif;
+	
+	//Theme's includes directory
+	if (!defined('CLASSES_DIR')) {
+		define('CLASSES_DIR', __DIR__ . DIRECTORY_SEPARATOR .'classes' . DIRECTORY_SEPARATOR);
+	}
+	
+	/**
+	 * Load all widgets which are placed in theme's folder
+	 *
+	 * @return void
+	 */
+	if ( ! function_exists( 'loadClasses' ) ):
+		function loadClasses() {
+			$it = new DirectoryIterator(CLASSES_DIR);
+			$it = new RegexIterator($it, '#.php$#');
+			foreach ($it as $class) {
+				if ($class->isReadable()) {
+					require_once($class->getPathname());
+				}
+			}
+		}
+		loadClasses();
 	endif;
 ?>
