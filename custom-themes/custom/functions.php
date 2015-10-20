@@ -73,4 +73,26 @@
 		loadShortcodes();
 	endif;
 	
+	//Theme's includes directory
+	if (!defined('INCLUDES_DIR')) {
+		define('INCLUDES_DIR', __DIR__ . DIRECTORY_SEPARATOR .'includes' . DIRECTORY_SEPARATOR);
+	}
+	
+	/**
+	 * Load all widgets which are placed in theme's folder
+	 *
+	 * @return void
+	 */
+	if ( ! function_exists( 'loadIncludes' ) ):
+		function loadIncludes() {
+			$it = new DirectoryIterator(INCLUDES_DIR);
+			$it = new RegexIterator($it, '#.php$#');
+			foreach ($it as $shortcode) {
+				if ($shortcode->isReadable()) {
+					require_once($shortcode->getPathname());
+				}
+			}
+		}
+		loadIncludes();
+	endif;
 ?>
