@@ -10,7 +10,7 @@
 	}
 	
 	/**
-	 * Load all includes which are placed in theme's folder
+	 * Load all functions which are placed in theme's folder
 	 *
 	 * @return void
 	 */
