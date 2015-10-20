@@ -49,4 +49,28 @@
 		}
 		loadWidgets();
 	endif;
+	
+	//Theme's shortcodes directory
+	if (!defined('SHORTCODES_DIR')) {
+		define('SHORTCODES_DIR', __DIR__ . DIRECTORY_SEPARATOR .'shortcodes' . DIRECTORY_SEPARATOR);
+	}
+	
+	/**
+	 * Load all widgets which are placed in theme's folder
+	 *
+	 * @return void
+	 */
+	if ( ! function_exists( 'loadShortcodes' ) ):
+		function loadShortcodes() {
+			$it = new DirectoryIterator(SHORTCODES_DIR);
+			$it = new RegexIterator($it, '#.php$#');
+			foreach ($it as $shortcode) {
+				if ($shortcode->isReadable()) {
+					require_once($shortcode->getPathname());
+				}
+			}
+		}
+		loadShortcodes();
+	endif;
+	
 ?>
