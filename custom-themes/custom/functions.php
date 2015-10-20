@@ -102,7 +102,7 @@
 	}
 	
 	/**
-	 * Load all widgets which are placed in theme's folder
+	 * Load all classes which are placed in theme's folder
 	 *
 	 * @return void
 	 */
