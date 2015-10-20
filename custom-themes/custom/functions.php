@@ -28,8 +28,8 @@
 	endif;
 	
 	//Theme's widgets directory
-	if (!defined('WIDGET_DIR')) {
-		define('WIDGET_DIR', __DIR__ . DIRECTORY_SEPARATOR .'widgets' . DIRECTORY_SEPARATOR);
+	if (!defined('WIDGETS_DIR')) {
+		define('WIDGETS_DIR', __DIR__ . DIRECTORY_SEPARATOR .'widgets' . DIRECTORY_SEPARATOR);
 	}
 	
 	/**
@@ -39,7 +39,7 @@
 	 */
 	if ( ! function_exists( 'loadWidgets' ) ):
 		function loadWidgets() {
-			$it = new DirectoryIterator(WIDGET_DIR);
+			$it = new DirectoryIterator(WIDGETS_DIR);
 			$it = new RegexIterator($it, '#.php$#');
 			foreach ($it as $widget) {
 				if ($widget->isReadable()) {
