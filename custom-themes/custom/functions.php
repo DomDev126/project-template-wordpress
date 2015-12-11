@@ -26,4 +26,17 @@
 	}
 
 	loadIncludes(THEME_LIB_DIR);
+
+	/**
+	 * Redirect to login page if not logged in
+	 */
+	function redirect_non_logged_users_to_login_page() {
+		if(getenv('REQUIRE_LOGIN')) {
+			global $pagenow;
+			if (!is_user_logged_in() && $pagenow != 'wp-login.php') {
+				wp_redirect(wp_login_url());
+			}
+		}
+	}
+	add_action('wp', 'redirect_non_logged_users_to_login_page');
 ?>
