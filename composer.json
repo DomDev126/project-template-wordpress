@@ -105,7 +105,7 @@
         "wpackagist-plugin/contact-form-7": "4.3.1",
         "wpackagist-plugin/listo": "1.1",
         "wpackagist-plugin/wordpress-seo": "3.0.6",
-        "wpackagist-plugin/w3-total-cache": "0.9.4.1",
+        "wpackagist-plugin/wp-super-cache": "1.4.7",
         "wpackagist-plugin/google-analytics-for-wordpress": "5.4.6"
     },
     "suggest": {
