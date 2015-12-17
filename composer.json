@@ -105,10 +105,12 @@
         "wpackagist-plugin/contact-form-7": "4.3.1",
         "wpackagist-plugin/listo": "1.1",
         "wpackagist-plugin/wordpress-seo": "3.0.6",
-        "wpackagist-plugin/w3-total-cache": "0.9.4.1"
+        "wpackagist-plugin/w3-total-cache": "0.9.4.1",
+        "wpackagist-plugin/google-analytics-for-wordpress": "5.4.6"
     },
     "suggest": {
-        "qobo/qobo-wp-custom-admin-theme": "it fixes WP admin styles where widget input, select overlap their container"
+        "qobo/qobo-wp-custom-admin-theme": "it fixes WP admin styles where widget input, select overlap their container",
+        "wpackagist-plugin/regenerate-thumbnails": "Regenerate Thumbnails allows you to regenerate the thumbnails for your image attachments."
     },
     "require-dev": {
         "phpunit/phpunit": "~4.3",
