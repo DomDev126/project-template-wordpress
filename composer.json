@@ -109,7 +109,8 @@
         "wpackagist-plugin/google-analytics-for-wordpress": "5.4.6"
     },
     "suggest": {
-        "qobo/qobo-wp-custom-admin-theme": "it fixes WP admin styles where widget input, select overlap their container"
+        "qobo/qobo-wp-custom-admin-theme": "it fixes WP admin styles where widget input, select overlap their container",
+        "wpackagist-plugin/regenerate-thumbnails": "2.2.5"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.3",
