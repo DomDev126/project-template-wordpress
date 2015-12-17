@@ -110,7 +110,7 @@
     },
     "suggest": {
         "qobo/qobo-wp-custom-admin-theme": "it fixes WP admin styles where widget input, select overlap their container",
-        "wpackagist-plugin/regenerate-thumbnails": "2.2.5"
+        "wpackagist-plugin/regenerate-thumbnails": "Regenerate Thumbnails allows you to regenerate the thumbnails for your image attachments."
     },
     "require-dev": {
         "phpunit/phpunit": "~4.3",
