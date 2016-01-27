@@ -12,7 +12,7 @@ matrix:
         - php: hhvm
 
 install:
-    - composer install
+    - ./bin/composer install
     - ./vendor/bin/phake app:install
 
 before_script:
