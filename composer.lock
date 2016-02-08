@@ -4,25 +4,25 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "072640880c5907336f9d2aad9d344861",
-    "content-hash": "37ac3f96be73964b0b19e6e96c55a59c",
+    "hash": "7451393b6b4f099bf47470861623485c",
+    "content-hash": "7103f09b2d9f3c01dea8fadc74ff22b6",
     "packages": [
         {
             "name": "composer/installers",
-            "version": "v1.0.22",
+            "version": "v1.0.23",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "bd9b14f094c89c8b5804a4e41edeb7853bb85046"
+                "reference": "6213d900e92647831f7a406d5c530ea1f3d4360e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/bd9b14f094c89c8b5804a4e41edeb7853bb85046",
-                "reference": "bd9b14f094c89c8b5804a4e41edeb7853bb85046",
+                "url": "https://api.github.com/repos/composer/installers/zipball/6213d900e92647831f7a406d5c530ea1f3d4360e",
+                "reference": "6213d900e92647831f7a406d5c530ea1f3d4360e",
                 "shasum": ""
             },
             "require": {
-                "composer-plugin-api": "1.0.0"
+                "composer-plugin-api": "^1.0"
             },
             "replace": {
                 "roundcube/plugin-installer": "*",
@@ -103,7 +103,7 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2015-10-29 23:28:48"
+            "time": "2016-01-27 12:54:22"
         },
         {
             "name": "composer/semver",
@@ -775,16 +775,16 @@
         },
         {
             "name": "qobo/phake-builder",
-            "version": "v1.0.28",
+            "version": "v1.0.29",
             "source": {
                 "type": "git",
                 "url": "https://github.com/QoboLtd/phake-builder.git",
-                "reference": "22816ec553bebcd7c8f8060920a772fa63589ffb"
+                "reference": "66f472502fe85b973f6eea1c7efbe60a5b724b5a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/QoboLtd/phake-builder/zipball/22816ec553bebcd7c8f8060920a772fa63589ffb",
-                "reference": "22816ec553bebcd7c8f8060920a772fa63589ffb",
+                "url": "https://api.github.com/repos/QoboLtd/phake-builder/zipball/66f472502fe85b973f6eea1c7efbe60a5b724b5a",
+                "reference": "66f472502fe85b973f6eea1c7efbe60a5b724b5a",
                 "shasum": ""
             },
             "require": {
@@ -815,14 +815,14 @@
                 }
             ],
             "description": "A set of build and deploy files, based on jaz303/phake",
-            "time": "2015-10-15 10:45:00"
+            "time": "2016-01-26 09:08:42"
         },
         {
             "name": "qobo/qobo-wp-brand",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/QoboLtd/Qobo-WP-Brand/archive/v1.0.0.zip",
+                "url": "https://github.com/QoboLtd/Qobo-WP-Brand/archive/v1.0.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -847,10 +847,10 @@
         },
         {
             "name": "qobo/qobo-wp-generic-theme",
-            "version": "1.0.4",
+            "version": "1.0.5",
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/QoboLtd/Qobo-WP-Generic-Theme/archive/v1.0.4.zip",
+                "url": "https://github.com/QoboLtd/Qobo-WP-Generic-Theme/archive/v1.0.5.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -969,16 +969,16 @@
         },
         {
             "name": "symfony/finder",
-            "version": "v2.8.1",
+            "version": "v2.8.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
-                "reference": "dd41ae57f4f737be271d944a0cc5f5f21203a7c6"
+                "reference": "c90fabdd97e431ee19b6383999cf35334dff27da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/dd41ae57f4f737be271d944a0cc5f5f21203a7c6",
-                "reference": "dd41ae57f4f737be271d944a0cc5f5f21203a7c6",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/c90fabdd97e431ee19b6383999cf35334dff27da",
+                "reference": "c90fabdd97e431ee19b6383999cf35334dff27da",
                 "shasum": ""
             },
             "require": {
@@ -1014,7 +1014,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "time": "2015-12-05 11:09:21"
+            "time": "2016-01-14 08:26:52"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -1195,7 +1195,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/compress-png-for-wp.1.3.5.zip",
+                "url": "https://downloads.wordpress.org/plugin/compress-png-for-wp.1.3.5.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -1435,7 +1435,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/wp-theme-plugin-editor-disable.1.0.0.zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-theme-plugin-editor-disable.1.0.0.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -2001,16 +2001,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.8.21",
+            "version": "4.8.22",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "ea76b17bced0500a28098626b84eda12dbcf119c"
+                "reference": "dfb11aa5236376b4fc63853cf746af39fe780e72"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/ea76b17bced0500a28098626b84eda12dbcf119c",
-                "reference": "ea76b17bced0500a28098626b84eda12dbcf119c",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/dfb11aa5236376b4fc63853cf746af39fe780e72",
+                "reference": "dfb11aa5236376b4fc63853cf746af39fe780e72",
                 "shasum": ""
             },
             "require": {
@@ -2069,7 +2069,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-12-12 07:45:58"
+            "time": "2016-02-02 09:01:21"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -2563,16 +2563,16 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v3.0.1",
+            "version": "v3.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "3df409958a646dad2bc5046c3fb671ee24a1a691"
+                "reference": "3cf0709d7fe936e97bee9e954382e449003f1d9a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/3df409958a646dad2bc5046c3fb671ee24a1a691",
-                "reference": "3df409958a646dad2bc5046c3fb671ee24a1a691",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/3cf0709d7fe936e97bee9e954382e449003f1d9a",
+                "reference": "3cf0709d7fe936e97bee9e954382e449003f1d9a",
                 "shasum": ""
             },
             "require": {
@@ -2608,7 +2608,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2015-12-26 13:39:53"
+            "time": "2016-02-02 13:44:19"
         },
         {
             "name": "wpackagist-plugin/debug-bar",
@@ -2620,7 +2620,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/debug-bar.0.8.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/debug-bar.0.8.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -2640,7 +2640,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/debug-bar-console.0.3.zip",
+                "url": "https://downloads.wordpress.org/plugin/debug-bar-console.0.3.zip",
                 "reference": null,
                 "shasum": null
             },
