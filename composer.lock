@@ -441,23 +441,24 @@
         },
         {
             "name": "qobo/pattern",
-            "version": "v1.0.6",
+            "version": "v1.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/QoboLtd/PHP-Pattern.git",
-                "reference": "eaf13a6d3ecd9631d3b7ca14dc2f9dabd65bdcb9"
+                "reference": "6e74a371b51eb137dcbb006070d00fad17083723"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/QoboLtd/PHP-Pattern/zipball/eaf13a6d3ecd9631d3b7ca14dc2f9dabd65bdcb9",
-                "reference": "eaf13a6d3ecd9631d3b7ca14dc2f9dabd65bdcb9",
+                "url": "https://api.github.com/repos/QoboLtd/PHP-Pattern/zipball/6e74a371b51eb137dcbb006070d00fad17083723",
+                "reference": "6e74a371b51eb137dcbb006070d00fad17083723",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "4.3.*"
+                "phpunit/phpunit": "~4.3",
+                "squizlabs/php_codesniffer": "~2.5"
             },
             "type": "library",
             "autoload": {
@@ -483,20 +484,20 @@
                 "strings",
                 "templating"
             ],
-            "time": "2015-04-08 11:07:16"
+            "time": "2016-02-16 09:09:22"
         },
         {
             "name": "qobo/phake-builder",
-            "version": "v1.0.29",
+            "version": "v1.0.30",
             "source": {
                 "type": "git",
                 "url": "https://github.com/QoboLtd/phake-builder.git",
-                "reference": "66f472502fe85b973f6eea1c7efbe60a5b724b5a"
+                "reference": "ef2b1000be590f9a852f7bed37ea8fb89bb7734a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/QoboLtd/phake-builder/zipball/66f472502fe85b973f6eea1c7efbe60a5b724b5a",
-                "reference": "66f472502fe85b973f6eea1c7efbe60a5b724b5a",
+                "url": "https://api.github.com/repos/QoboLtd/phake-builder/zipball/ef2b1000be590f9a852f7bed37ea8fb89bb7734a",
+                "reference": "ef2b1000be590f9a852f7bed37ea8fb89bb7734a",
                 "shasum": ""
             },
             "require": {
@@ -511,7 +512,8 @@
                 "zetacomponents/archive": "1.5"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.3"
+                "phpunit/phpunit": "~4.3",
+                "squizlabs/php_codesniffer": "~2.5"
             },
             "type": "library",
             "notification-url": "https://packagist.org/downloads/",
@@ -527,7 +529,7 @@
                 }
             ],
             "description": "A set of build and deploy files, based on jaz303/phake",
-            "time": "2016-01-26 09:08:42"
+            "time": "2016-02-16 09:24:01"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -811,22 +813,24 @@
         },
         {
             "name": "phpspec/prophecy",
-            "version": "v1.5.0",
+            "version": "v1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "4745ded9307786b730d7a60df5cb5a6c43cf95f7"
+                "reference": "3c91bdf81797d725b14cb62906f9a4ce44235972"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/4745ded9307786b730d7a60df5cb5a6c43cf95f7",
-                "reference": "4745ded9307786b730d7a60df5cb5a6c43cf95f7",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/3c91bdf81797d725b14cb62906f9a4ce44235972",
+                "reference": "3c91bdf81797d725b14cb62906f9a4ce44235972",
                 "shasum": ""
             },
             "require": {
                 "doctrine/instantiator": "^1.0.2",
+                "php": "^5.3|^7.0",
                 "phpdocumentor/reflection-docblock": "~2.0",
-                "sebastian/comparator": "~1.1"
+                "sebastian/comparator": "~1.1",
+                "sebastian/recursion-context": "~1.0"
             },
             "require-dev": {
                 "phpspec/phpspec": "~2.0"
@@ -834,7 +838,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.4.x-dev"
+                    "dev-master": "1.5.x-dev"
                 }
             },
             "autoload": {
@@ -867,7 +871,7 @@
                 "spy",
                 "stub"
             ],
-            "time": "2015-08-13 10:07:40"
+            "time": "2016-02-15 07:46:21"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -1111,16 +1115,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.8.21",
+            "version": "4.8.23",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "ea76b17bced0500a28098626b84eda12dbcf119c"
+                "reference": "6e351261f9cd33daf205a131a1ba61c6d33bd483"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/ea76b17bced0500a28098626b84eda12dbcf119c",
-                "reference": "ea76b17bced0500a28098626b84eda12dbcf119c",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/6e351261f9cd33daf205a131a1ba61c6d33bd483",
+                "reference": "6e351261f9cd33daf205a131a1ba61c6d33bd483",
                 "shasum": ""
             },
             "require": {
@@ -1179,7 +1183,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-12-12 07:45:58"
+            "time": "2016-02-11 14:56:33"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -1673,16 +1677,16 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v3.0.1",
+            "version": "v3.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "3df409958a646dad2bc5046c3fb671ee24a1a691"
+                "reference": "3cf0709d7fe936e97bee9e954382e449003f1d9a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/3df409958a646dad2bc5046c3fb671ee24a1a691",
-                "reference": "3df409958a646dad2bc5046c3fb671ee24a1a691",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/3cf0709d7fe936e97bee9e954382e449003f1d9a",
+                "reference": "3cf0709d7fe936e97bee9e954382e449003f1d9a",
                 "shasum": ""
             },
             "require": {
@@ -1718,7 +1722,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2015-12-26 13:39:53"
+            "time": "2016-02-02 13:44:19"
         }
     ],
     "aliases": [],
