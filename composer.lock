@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "7451393b6b4f099bf47470861623485c",
-    "content-hash": "7103f09b2d9f3c01dea8fadc74ff22b6",
+    "hash": "2d37edc8f2ec561d077e2d0499813f18",
+    "content-hash": "12654c88c04f21c3949809f0fdf20a85",
     "packages": [
         {
             "name": "composer/installers",
@@ -527,16 +527,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "1.17.2",
+            "version": "1.18.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "bee7f0dc9c3e0b69a6039697533dca1e845c8c24"
+                "reference": "e19b764b5c855580e8ffa7e615f72c10fd2f99cc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/bee7f0dc9c3e0b69a6039697533dca1e845c8c24",
-                "reference": "bee7f0dc9c3e0b69a6039697533dca1e845c8c24",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/e19b764b5c855580e8ffa7e615f72c10fd2f99cc",
+                "reference": "e19b764b5c855580e8ffa7e615f72c10fd2f99cc",
                 "shasum": ""
             },
             "require": {
@@ -565,6 +565,7 @@
                 "ext-amqp": "Allow sending log messages to an AMQP server (1.0+ required)",
                 "ext-mongo": "Allow sending log messages to a MongoDB server",
                 "graylog2/gelf-php": "Allow sending log messages to a GrayLog2 server",
+                "mongodb/mongodb": "Allow sending log messages to a MongoDB server via PHP Driver",
                 "php-console/php-console": "Allow sending log messages to Google Chrome",
                 "raven/raven": "Allow sending log messages to a Sentry server",
                 "rollbar/rollbar": "Allow sending log messages to Rollbar",
@@ -574,7 +575,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.16.x-dev"
+                    "dev-master": "2.0.x-dev"
                 }
             },
             "autoload": {
@@ -600,20 +601,20 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2015-10-14 12:51:02"
+            "time": "2016-03-01 18:00:40"
         },
         {
             "name": "mustache/mustache",
-            "version": "v2.9.0",
+            "version": "v2.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/mustache.php.git",
-                "reference": "c745b01956caf27d26b55a72a90aff56bc169cd6"
+                "reference": "0bb2f76e2f34a8864a32be34c4ec66274d76c05e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/mustache.php/zipball/c745b01956caf27d26b55a72a90aff56bc169cd6",
-                "reference": "c745b01956caf27d26b55a72a90aff56bc169cd6",
+                "url": "https://api.github.com/repos/bobthecow/mustache.php/zipball/0bb2f76e2f34a8864a32be34c4ec66274d76c05e",
+                "reference": "0bb2f76e2f34a8864a32be34c4ec66274d76c05e",
                 "shasum": ""
             },
             "require": {
@@ -621,7 +622,7 @@
             },
             "require-dev": {
                 "fabpot/php-cs-fixer": "~1.6",
-                "phpunit/phpunit": "~3.7|~4.0"
+                "phpunit/phpunit": "~3.7|~4.0|~5.0"
             },
             "type": "library",
             "autoload": {
@@ -646,7 +647,7 @@
                 "mustache",
                 "templating"
             ],
-            "time": "2015-08-15 19:23:13"
+            "time": "2016-02-27 19:22:46"
         },
         {
             "name": "nb/oxymel",
@@ -729,23 +730,24 @@
         },
         {
             "name": "qobo/pattern",
-            "version": "v1.0.6",
+            "version": "v1.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/QoboLtd/PHP-Pattern.git",
-                "reference": "eaf13a6d3ecd9631d3b7ca14dc2f9dabd65bdcb9"
+                "reference": "6e74a371b51eb137dcbb006070d00fad17083723"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/QoboLtd/PHP-Pattern/zipball/eaf13a6d3ecd9631d3b7ca14dc2f9dabd65bdcb9",
-                "reference": "eaf13a6d3ecd9631d3b7ca14dc2f9dabd65bdcb9",
+                "url": "https://api.github.com/repos/QoboLtd/PHP-Pattern/zipball/6e74a371b51eb137dcbb006070d00fad17083723",
+                "reference": "6e74a371b51eb137dcbb006070d00fad17083723",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "4.3.*"
+                "phpunit/phpunit": "~4.3",
+                "squizlabs/php_codesniffer": "~2.5"
             },
             "type": "library",
             "autoload": {
@@ -771,20 +773,20 @@
                 "strings",
                 "templating"
             ],
-            "time": "2015-04-08 11:07:16"
+            "time": "2016-02-16 09:09:22"
         },
         {
             "name": "qobo/phake-builder",
-            "version": "v1.0.29",
+            "version": "v1.0.32",
             "source": {
                 "type": "git",
                 "url": "https://github.com/QoboLtd/phake-builder.git",
-                "reference": "66f472502fe85b973f6eea1c7efbe60a5b724b5a"
+                "reference": "f5f3c408724b59be138bd9b655fda1b939150524"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/QoboLtd/phake-builder/zipball/66f472502fe85b973f6eea1c7efbe60a5b724b5a",
-                "reference": "66f472502fe85b973f6eea1c7efbe60a5b724b5a",
+                "url": "https://api.github.com/repos/QoboLtd/phake-builder/zipball/f5f3c408724b59be138bd9b655fda1b939150524",
+                "reference": "f5f3c408724b59be138bd9b655fda1b939150524",
                 "shasum": ""
             },
             "require": {
@@ -799,9 +801,15 @@
                 "zetacomponents/archive": "1.5"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.3"
+                "phpunit/phpunit": "~4.3",
+                "squizlabs/php_codesniffer": "~2.5"
             },
             "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PhakeBuilder\\": "src/"
+                }
+            },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "GPL-2.0"
@@ -815,7 +823,7 @@
                 }
             ],
             "description": "A set of build and deploy files, based on jaz303/phake",
-            "time": "2016-01-26 09:08:42"
+            "time": "2016-03-01 13:16:45"
         },
         {
             "name": "qobo/qobo-wp-brand",
@@ -969,16 +977,16 @@
         },
         {
             "name": "symfony/finder",
-            "version": "v2.8.2",
+            "version": "v2.8.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
-                "reference": "c90fabdd97e431ee19b6383999cf35334dff27da"
+                "reference": "877bb4b16ea573cc8c024e9590888fcf7eb7e0f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/c90fabdd97e431ee19b6383999cf35334dff27da",
-                "reference": "c90fabdd97e431ee19b6383999cf35334dff27da",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/877bb4b16ea573cc8c024e9590888fcf7eb7e0f7",
+                "reference": "877bb4b16ea573cc8c024e9590888fcf7eb7e0f7",
                 "shasum": ""
             },
             "require": {
@@ -1014,7 +1022,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "time": "2016-01-14 08:26:52"
+            "time": "2016-02-22 16:12:45"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -1195,7 +1203,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/compress-png-for-wp.1.3.5.zip",
+                "url": "http://downloads.wordpress.org/plugin/compress-png-for-wp.1.3.5.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -1435,7 +1443,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-theme-plugin-editor-disable.1.0.0.zip",
+                "url": "http://downloads.wordpress.org/plugin/wp-theme-plugin-editor-disable.1.0.0.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -1701,22 +1709,24 @@
         },
         {
             "name": "phpspec/prophecy",
-            "version": "v1.5.0",
+            "version": "v1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "4745ded9307786b730d7a60df5cb5a6c43cf95f7"
+                "reference": "3c91bdf81797d725b14cb62906f9a4ce44235972"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/4745ded9307786b730d7a60df5cb5a6c43cf95f7",
-                "reference": "4745ded9307786b730d7a60df5cb5a6c43cf95f7",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/3c91bdf81797d725b14cb62906f9a4ce44235972",
+                "reference": "3c91bdf81797d725b14cb62906f9a4ce44235972",
                 "shasum": ""
             },
             "require": {
                 "doctrine/instantiator": "^1.0.2",
+                "php": "^5.3|^7.0",
                 "phpdocumentor/reflection-docblock": "~2.0",
-                "sebastian/comparator": "~1.1"
+                "sebastian/comparator": "~1.1",
+                "sebastian/recursion-context": "~1.0"
             },
             "require-dev": {
                 "phpspec/phpspec": "~2.0"
@@ -1724,7 +1734,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.4.x-dev"
+                    "dev-master": "1.5.x-dev"
                 }
             },
             "autoload": {
@@ -1757,7 +1767,7 @@
                 "spy",
                 "stub"
             ],
-            "time": "2015-08-13 10:07:40"
+            "time": "2016-02-15 07:46:21"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -2001,16 +2011,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.8.22",
+            "version": "4.8.23",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "dfb11aa5236376b4fc63853cf746af39fe780e72"
+                "reference": "6e351261f9cd33daf205a131a1ba61c6d33bd483"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/dfb11aa5236376b4fc63853cf746af39fe780e72",
-                "reference": "dfb11aa5236376b4fc63853cf746af39fe780e72",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/6e351261f9cd33daf205a131a1ba61c6d33bd483",
+                "reference": "6e351261f9cd33daf205a131a1ba61c6d33bd483",
                 "shasum": ""
             },
             "require": {
@@ -2069,7 +2079,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2016-02-02 09:01:21"
+            "time": "2016-02-11 14:56:33"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -2129,23 +2139,23 @@
         },
         {
             "name": "phpunit/phpunit-selenium",
-            "version": "2.0.0",
+            "version": "2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giorgiosironi/phpunit-selenium.git",
-                "reference": "5e13bfe60ccf8b487f25ccc5d84eaeb89f4e7189"
+                "reference": "2bad798ec0daf20d2854400e3bc5329ee0a7b2d1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giorgiosironi/phpunit-selenium/zipball/5e13bfe60ccf8b487f25ccc5d84eaeb89f4e7189",
-                "reference": "5e13bfe60ccf8b487f25ccc5d84eaeb89f4e7189",
+                "url": "https://api.github.com/repos/giorgiosironi/phpunit-selenium/zipball/2bad798ec0daf20d2854400e3bc5329ee0a7b2d1",
+                "reference": "2bad798ec0daf20d2854400e3bc5329ee0a7b2d1",
                 "shasum": ""
             },
             "require": {
                 "ext-curl": "*",
                 "ext-dom": "*",
                 "php": ">=5.3.3",
-                "phpunit/phpunit": ">=4.8,<=6.0",
+                "phpunit/phpunit": "~4.8",
                 "sebastian/comparator": "~1.0"
             },
             "require-dev": {
@@ -2184,11 +2194,12 @@
             "description": "Selenium Server integration for PHPUnit",
             "homepage": "http://www.phpunit.de/",
             "keywords": [
+                "phpunit",
                 "selenium",
                 "testing",
                 "xunit"
             ],
-            "time": "2016-01-04 12:16:49"
+            "time": "2016-03-01 10:33:56"
         },
         {
             "name": "sebastian/comparator",
@@ -2308,16 +2319,16 @@
         },
         {
             "name": "sebastian/environment",
-            "version": "1.3.3",
+            "version": "1.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/environment.git",
-                "reference": "6e7133793a8e5a5714a551a8324337374be209df"
+                "reference": "dc7a29032cf72b54f36dac15a1ca5b3a1b6029bf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/6e7133793a8e5a5714a551a8324337374be209df",
-                "reference": "6e7133793a8e5a5714a551a8324337374be209df",
+                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/dc7a29032cf72b54f36dac15a1ca5b3a1b6029bf",
+                "reference": "dc7a29032cf72b54f36dac15a1ca5b3a1b6029bf",
                 "shasum": ""
             },
             "require": {
@@ -2354,7 +2365,7 @@
                 "environment",
                 "hhvm"
             ],
-            "time": "2015-12-02 08:37:27"
+            "time": "2016-02-26 18:40:46"
         },
         {
             "name": "sebastian/exporter",
@@ -2563,16 +2574,16 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v3.0.2",
+            "version": "v3.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "3cf0709d7fe936e97bee9e954382e449003f1d9a"
+                "reference": "b5ba64cd67ecd6887f63868fa781ca094bd1377c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/3cf0709d7fe936e97bee9e954382e449003f1d9a",
-                "reference": "3cf0709d7fe936e97bee9e954382e449003f1d9a",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/b5ba64cd67ecd6887f63868fa781ca094bd1377c",
+                "reference": "b5ba64cd67ecd6887f63868fa781ca094bd1377c",
                 "shasum": ""
             },
             "require": {
@@ -2608,7 +2619,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2016-02-02 13:44:19"
+            "time": "2016-02-23 15:16:06"
         },
         {
             "name": "wpackagist-plugin/debug-bar",
@@ -2620,7 +2631,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/debug-bar.0.8.2.zip",
+                "url": "http://downloads.wordpress.org/plugin/debug-bar.0.8.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -2640,7 +2651,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/debug-bar-console.0.3.zip",
+                "url": "http://downloads.wordpress.org/plugin/debug-bar-console.0.3.zip",
                 "reference": null,
                 "shasum": null
             },
