@@ -44,7 +44,7 @@ server {
 		access_log off;
 	}
 
-	# We already provie one.  No need to slow things down and use more disk space with logging
+	# We already provide one.  No need to slow things down and use more disk space with logging
 	location = /robots.txt {
 		allow all;
 		log_not_found off;

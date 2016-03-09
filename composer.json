@@ -110,11 +110,12 @@
     },
     "suggest": {
         "qobo/qobo-wp-custom-admin-theme": "it fixes WP admin styles where widget input, select overlap their container",
-        "wpackagist-plugin/regenerate-thumbnails": "Regenerate Thumbnails allows you to regenerate the thumbnails for your image attachments."
+        "wpackagist-plugin/regenerate-thumbnails": "Regenerate Thumbnails allows you to regenerate the thumbnails for your image attachments.",
+		"ext-xdebug": "Allows code coverage reports and advanced debugging"
     },
     "require-dev": {
-        "phpunit/phpunit": "~4.3",
-        "phpunit/phpunit-selenium": ">=1.2",
+        "phpunit/phpunit": "~4.8",
+        "phpunit/phpunit-selenium": "~2.0",
         "wpackagist-plugin/theme-check": "*",
         "wpackagist-plugin/debug-bar": "0.8.2",
         "wpackagist-plugin/debug-bar-console": "0.3",
