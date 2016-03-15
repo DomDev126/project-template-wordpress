@@ -63,7 +63,7 @@ server {
 	location ~ ^/vendor/ { deny all; }
 
 	# Deny all attempts to access template-project files
-	location ~ ^/(bin|etc|src|tests)/ { deny all; }
+	location ~ ^/(bin|build|etc|src|tests)/ { deny all; }
 	location = /Phakefile { deny all; }
 	location = /phpunit.xml.dist { deny all; }
 	location = /phpunit.xml { deny all; }
