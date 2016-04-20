@@ -73,8 +73,8 @@ before you start working on your changes.  Fire up the PHP web server:
 php -S localhost:8000
 ```
 
-In your browser navigate to [http://localhost:8000](http://localhost:8000).  
-You should see the standard ```phpinfo()``` page.  If you do, all parts 
+In your browser navigate to [http://localhost:8000](http://localhost:8000).
+You should see the standard ```phpinfo()``` page.  If you do, all parts
 are in place.
 
 ###PHPUnit
@@ -95,13 +95,13 @@ If it didn't work for you, here are some of the things to try:
 
 ###Selenium
 
-[Selenium](http://www.seleniumhq.org/) is a testing platform that allows one to run tests through a real browser.  
+[Selenium](http://www.seleniumhq.org/) is a testing platform that allows one to run tests through a real browser.
 Setting this up and getting an example might sound complicated, so project-template
 to the rescue.  Here is what you need to do:
 
-* Download [Selenium Server Standalone JAR file](http://selenium-release.storage.googleapis.com/2.49/selenium-server-standalone-2.49.0.jar) (check ```.travis.yml``` for newer versions).
+* Download [Selenium Server Standalone JAR file](http://selenium-release.storage.googleapis.com/2.53/selenium-server-standalone-2.53.0.jar) (check ```.travis.yml``` for newer versions).
 * Start the web server (in separate terminal or in background): ```php -S localhost:8000```
-* Start the Selenium server (in separate terminal or in background): ```java -jar selenium-server-standalone-2.49.0.jar```
+* Start the Selenium server (in separate terminal or in background): ```java -jar selenium-server-standalone-2.53.0.jar```
 
 Now you can run the full test suite with:
 
@@ -117,7 +117,7 @@ Or just the Selenium tests with:
 
 ###Travis CI
 
-Continious Integration is a tool that helps to run your tests whenever you do any 
+Continious Integration is a tool that helps to run your tests whenever you do any
 changes on your code base (commit, merge, etc).  There are many tools that you can
 use, but project-template provides an example integration with [Travis CI](https://travis-ci.org/).
 
