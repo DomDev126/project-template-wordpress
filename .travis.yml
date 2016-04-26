@@ -11,7 +11,7 @@ matrix:
         - php: hhvm
 
 install:
-    - ./bin/composer install
+    - if [ -f composer.lock ] ; then ./bin/composer install ; else ./bin/composer update ; fi
     - ./vendor/bin/phake app:install
 
 before_script:
