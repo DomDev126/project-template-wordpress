@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2d37edc8f2ec561d077e2d0499813f18",
-    "content-hash": "12654c88c04f21c3949809f0fdf20a85",
+    "hash": "bc7c6a360ee3ce3ad26a5da8bc16fbb2",
+    "content-hash": "2d735987c39c0abf409480b7eba6ba77",
     "packages": [
         {
             "name": "composer/installers",
-            "version": "v1.0.23",
+            "version": "v1.0.25",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "6213d900e92647831f7a406d5c530ea1f3d4360e"
+                "reference": "36e5b5843203d7f1cf6ffb0305a97e014387bd8e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/6213d900e92647831f7a406d5c530ea1f3d4360e",
-                "reference": "6213d900e92647831f7a406d5c530ea1f3d4360e",
+                "url": "https://api.github.com/repos/composer/installers/zipball/36e5b5843203d7f1cf6ffb0305a97e014387bd8e",
+                "reference": "36e5b5843203d7f1cf6ffb0305a97e014387bd8e",
                 "shasum": ""
             },
             "require": {
@@ -40,8 +40,8 @@
                 }
             },
             "autoload": {
-                "psr-0": {
-                    "Composer\\Installers\\": "src/"
+                "psr-4": {
+                    "Composer\\Installers\\": "src/Composer/Installers"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -56,12 +56,14 @@
                 }
             ],
             "description": "A multi-framework Composer library installer",
-            "homepage": "http://composer.github.com/installers/",
+            "homepage": "https://composer.github.io/installers/",
             "keywords": [
                 "Craft",
                 "Dolibarr",
                 "Hurad",
+                "ImageCMS",
                 "MODX Evo",
+                "Mautic",
                 "OXID",
                 "SMF",
                 "Thelia",
@@ -103,7 +105,7 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2016-01-27 12:54:22"
+            "time": "2016-04-13 19:46:30"
         },
         {
             "name": "composer/semver",
@@ -258,97 +260,6 @@
                 "v2"
             ],
             "time": "2015-10-08 21:36:23"
-        },
-        {
-            "name": "heartsentwined/arg-validator",
-            "version": "1.1.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/heartsentwined/php-arg-validator.git",
-                "reference": "198be54e92e5c2e3c4d6cf119ebc83ef377a2557"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/heartsentwined/php-arg-validator/zipball/198be54e92e5c2e3c4d6cf119ebc83ef377a2557",
-                "reference": "198be54e92e5c2e3c4d6cf119ebc83ef377a2557",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Heartsentwined\\ArgValidator": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-3.0"
-            ],
-            "authors": [
-                {
-                    "name": "heartsentwined",
-                    "email": "heartsentwined@cogito-lab.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Validate function arguments, extending typehinting capabilities of PHP.",
-            "homepage": "https://github.com/heartsentwined/arg-validator",
-            "keywords": [
-                "argument",
-                "typehint",
-                "typehinting",
-                "validate",
-                "validator"
-            ],
-            "time": "2012-10-03 19:54:08"
-        },
-        {
-            "name": "heartsentwined/file-system-manager",
-            "version": "1.1.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/heartsentwined/php-file-system-manager.git",
-                "reference": "f72ccaa4dd3eb939d9dfc009bf330db799d2274d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/heartsentwined/php-file-system-manager/zipball/f72ccaa4dd3eb939d9dfc009bf330db799d2274d",
-                "reference": "f72ccaa4dd3eb939d9dfc009bf330db799d2274d",
-                "shasum": ""
-            },
-            "require": {
-                "heartsentwined/arg-validator": "1.*",
-                "php": ">=5.3.3"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Heartsentwined\\FileSystemManager": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-3.0"
-            ],
-            "authors": [
-                {
-                    "name": "heartsentwined",
-                    "email": "heartsentwined@cogito-lab.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "A collection of file and directory management functions.",
-            "homepage": "https://github.com/heartsentwined/file-system-manager",
-            "keywords": [
-                "dir",
-                "directory",
-                "file",
-                "manager",
-                "system"
-            ],
-            "time": "2012-10-03 19:54:08"
         },
         {
             "name": "interconnectit/search-replace-db",
@@ -527,16 +438,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "1.18.0",
+            "version": "1.19.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "e19b764b5c855580e8ffa7e615f72c10fd2f99cc"
+                "reference": "5f56ed5212dc509c8dc8caeba2715732abb32dbf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/e19b764b5c855580e8ffa7e615f72c10fd2f99cc",
-                "reference": "e19b764b5c855580e8ffa7e615f72c10fd2f99cc",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/5f56ed5212dc509c8dc8caeba2715732abb32dbf",
+                "reference": "5f56ed5212dc509c8dc8caeba2715732abb32dbf",
                 "shasum": ""
             },
             "require": {
@@ -551,13 +462,13 @@
                 "doctrine/couchdb": "~1.0@dev",
                 "graylog2/gelf-php": "~1.0",
                 "jakub-onderka/php-parallel-lint": "0.9",
+                "php-amqplib/php-amqplib": "~2.4",
                 "php-console/php-console": "^3.1.3",
                 "phpunit/phpunit": "~4.5",
                 "phpunit/phpunit-mock-objects": "2.3.0",
                 "raven/raven": "^0.13",
                 "ruflin/elastica": ">=0.90 <3.0",
-                "swiftmailer/swiftmailer": "~5.3",
-                "videlalvaro/php-amqplib": "~2.4"
+                "swiftmailer/swiftmailer": "~5.3"
             },
             "suggest": {
                 "aws/aws-sdk-php": "Allow sending log messages to AWS services like DynamoDB",
@@ -566,11 +477,11 @@
                 "ext-mongo": "Allow sending log messages to a MongoDB server",
                 "graylog2/gelf-php": "Allow sending log messages to a GrayLog2 server",
                 "mongodb/mongodb": "Allow sending log messages to a MongoDB server via PHP Driver",
+                "php-amqplib/php-amqplib": "Allow sending log messages to an AMQP server using php-amqplib",
                 "php-console/php-console": "Allow sending log messages to Google Chrome",
                 "raven/raven": "Allow sending log messages to a Sentry server",
                 "rollbar/rollbar": "Allow sending log messages to Rollbar",
-                "ruflin/elastica": "Allow sending log messages to an Elastic Search server",
-                "videlalvaro/php-amqplib": "Allow sending log messages to an AMQP server using php-amqplib"
+                "ruflin/elastica": "Allow sending log messages to an Elastic Search server"
             },
             "type": "library",
             "extra": {
@@ -601,7 +512,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2016-03-01 18:00:40"
+            "time": "2016-04-12 18:29:35"
         },
         {
             "name": "mustache/mustache",
@@ -777,31 +688,33 @@
         },
         {
             "name": "qobo/phake-builder",
-            "version": "v1.0.32",
+            "version": "v1.0.36",
             "source": {
                 "type": "git",
                 "url": "https://github.com/QoboLtd/phake-builder.git",
-                "reference": "f5f3c408724b59be138bd9b655fda1b939150524"
+                "reference": "4c91ca02501c05b91b508a046177d17f693fd8eb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/QoboLtd/phake-builder/zipball/f5f3c408724b59be138bd9b655fda1b939150524",
-                "reference": "f5f3c408724b59be138bd9b655fda1b939150524",
+                "url": "https://api.github.com/repos/QoboLtd/phake-builder/zipball/4c91ca02501c05b91b508a046177d17f693fd8eb",
+                "reference": "4c91ca02501c05b91b508a046177d17f693fd8eb",
                 "shasum": ""
             },
             "require": {
                 "gorkalaucirica/hipchat-v2-api-client": "~1.5",
-                "heartsentwined/file-system-manager": "~1.1",
                 "interconnectit/search-replace-db": "3.1",
                 "jaz303/phake": "~0.6",
                 "kmelia/monolog-stdout-handler": "~1.2",
                 "monolog/monolog": "~1.11",
                 "qobo/pattern": "~1.0",
+                "symfony/filesystem": "~2.5",
+                "symfony/finder": "~2.8",
                 "vlucas/phpdotenv": "~1.1",
                 "zetacomponents/archive": "1.5"
             },
             "require-dev": {
                 "phpunit/phpunit": "~4.3",
+                "sami/sami": "~3.2",
                 "squizlabs/php_codesniffer": "~2.5"
             },
             "type": "library",
@@ -823,7 +736,7 @@
                 }
             ],
             "description": "A set of build and deploy files, based on jaz303/phake",
-            "time": "2016-03-01 13:16:45"
+            "time": "2016-04-25 12:38:52"
         },
         {
             "name": "qobo/qobo-wp-brand",
@@ -976,17 +889,66 @@
             "time": "2014-05-18 04:59:02"
         },
         {
-            "name": "symfony/finder",
-            "version": "v2.8.3",
+            "name": "symfony/filesystem",
+            "version": "v2.8.4",
             "source": {
                 "type": "git",
-                "url": "https://github.com/symfony/finder.git",
-                "reference": "877bb4b16ea573cc8c024e9590888fcf7eb7e0f7"
+                "url": "https://github.com/symfony/filesystem.git",
+                "reference": "f08ffdf229252cd2745558cb2112df43903bcae4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/877bb4b16ea573cc8c024e9590888fcf7eb7e0f7",
-                "reference": "877bb4b16ea573cc8c024e9590888fcf7eb7e0f7",
+                "url": "https://api.github.com/repos/symfony/filesystem/zipball/f08ffdf229252cd2745558cb2112df43903bcae4",
+                "reference": "f08ffdf229252cd2745558cb2112df43903bcae4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.9"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.8-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Filesystem\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Filesystem Component",
+            "homepage": "https://symfony.com",
+            "time": "2016-03-27 10:20:16"
+        },
+        {
+            "name": "symfony/finder",
+            "version": "v2.8.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/finder.git",
+                "reference": "ca24cf2cd4e3826f571e0067e535758e73807aa1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/ca24cf2cd4e3826f571e0067e535758e73807aa1",
+                "reference": "ca24cf2cd4e3826f571e0067e535758e73807aa1",
                 "shasum": ""
             },
             "require": {
@@ -1022,7 +984,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "time": "2016-02-22 16:12:45"
+            "time": "2016-03-10 10:53:53"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -1198,12 +1160,12 @@
             "version": "1.3.5",
             "source": {
                 "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/compress-png-for-wp/",
+                "url": "https://plugins.svn.wordpress.org/compress-png-for-wp/",
                 "reference": "tags/1.3.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/compress-png-for-wp.1.3.5.zip",
+                "url": "https://downloads.wordpress.org/plugin/compress-png-for-wp.1.3.5.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -1218,7 +1180,7 @@
             "version": "4.3.1",
             "source": {
                 "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/contact-form-7/",
+                "url": "https://plugins.svn.wordpress.org/contact-form-7/",
                 "reference": "tags/4.3.1"
             },
             "dist": {
@@ -1238,7 +1200,7 @@
             "version": "3.4.3.1",
             "source": {
                 "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/custom-upload-dir/",
+                "url": "https://plugins.svn.wordpress.org/custom-upload-dir/",
                 "reference": "tags/3.4.3.1"
             },
             "dist": {
@@ -1258,7 +1220,7 @@
             "version": "1.3.2",
             "source": {
                 "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/disable-comments/",
+                "url": "https://plugins.svn.wordpress.org/disable-comments/",
                 "reference": "tags/1.3.2"
             },
             "dist": {
@@ -1278,7 +1240,7 @@
             "version": "1.4.2",
             "source": {
                 "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/disable-wordpress-updates/",
+                "url": "https://plugins.svn.wordpress.org/disable-wordpress-updates/",
                 "reference": "tags/1.4.2"
             },
             "dist": {
@@ -1298,7 +1260,7 @@
             "version": "5.4.6",
             "source": {
                 "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/google-analytics-for-wordpress/",
+                "url": "https://plugins.svn.wordpress.org/google-analytics-for-wordpress/",
                 "reference": "tags/5.4.6"
             },
             "dist": {
@@ -1318,7 +1280,7 @@
             "version": "3.8.1",
             "source": {
                 "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/jetpack/",
+                "url": "https://plugins.svn.wordpress.org/jetpack/",
                 "reference": "tags/3.8.1"
             },
             "dist": {
@@ -1338,7 +1300,7 @@
             "version": "1.1",
             "source": {
                 "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/listo/",
+                "url": "https://plugins.svn.wordpress.org/listo/",
                 "reference": "tags/1.1"
             },
             "dist": {
@@ -1358,7 +1320,7 @@
             "version": "1.7.2",
             "source": {
                 "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/resize-image-after-upload/",
+                "url": "https://plugins.svn.wordpress.org/resize-image-after-upload/",
                 "reference": "tags/1.7.2"
             },
             "dist": {
@@ -1378,7 +1340,7 @@
             "version": "4.9.9",
             "source": {
                 "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/shortcodes-ultimate/",
+                "url": "https://plugins.svn.wordpress.org/shortcodes-ultimate/",
                 "reference": "tags/4.9.9"
             },
             "dist": {
@@ -1398,7 +1360,7 @@
             "version": "3.0.6",
             "source": {
                 "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/wordpress-seo/",
+                "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
                 "reference": "tags/3.0.6"
             },
             "dist": {
@@ -1418,7 +1380,7 @@
             "version": "1.4.7",
             "source": {
                 "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/wp-super-cache/",
+                "url": "https://plugins.svn.wordpress.org/wp-super-cache/",
                 "reference": "tags/1.4.7"
             },
             "dist": {
@@ -1438,12 +1400,12 @@
             "version": "1.0.0",
             "source": {
                 "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/wp-theme-plugin-editor-disable/",
+                "url": "https://plugins.svn.wordpress.org/wp-theme-plugin-editor-disable/",
                 "reference": "tags/1.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/wp-theme-plugin-editor-disable.1.0.0.zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-theme-plugin-editor-disable.1.0.0.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -1455,15 +1417,15 @@
         },
         {
             "name": "wpackagist-theme/twentyfifteen",
-            "version": "1.4",
+            "version": "1.5",
             "source": {
                 "type": "svn",
-                "url": "http://themes.svn.wordpress.org/twentyfifteen/",
-                "reference": "1.4"
+                "url": "https://themes.svn.wordpress.org/twentyfifteen/",
+                "reference": "1.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/theme/twentyfifteen.1.4.zip",
+                "url": "https://downloads.wordpress.org/theme/twentyfifteen.1.5.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -2011,16 +1973,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.8.23",
+            "version": "4.8.24",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "6e351261f9cd33daf205a131a1ba61c6d33bd483"
+                "reference": "a1066c562c52900a142a0e2bbf0582994671385e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/6e351261f9cd33daf205a131a1ba61c6d33bd483",
-                "reference": "6e351261f9cd33daf205a131a1ba61c6d33bd483",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/a1066c562c52900a142a0e2bbf0582994671385e",
+                "reference": "a1066c562c52900a142a0e2bbf0582994671385e",
                 "shasum": ""
             },
             "require": {
@@ -2079,7 +2041,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2016-02-11 14:56:33"
+            "time": "2016-03-14 06:16:08"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -2574,16 +2536,16 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v3.0.3",
+            "version": "v3.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "b5ba64cd67ecd6887f63868fa781ca094bd1377c"
+                "reference": "0047c8366744a16de7516622c5b7355336afae96"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/b5ba64cd67ecd6887f63868fa781ca094bd1377c",
-                "reference": "b5ba64cd67ecd6887f63868fa781ca094bd1377c",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/0047c8366744a16de7516622c5b7355336afae96",
+                "reference": "0047c8366744a16de7516622c5b7355336afae96",
                 "shasum": ""
             },
             "require": {
@@ -2619,19 +2581,19 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2016-02-23 15:16:06"
+            "time": "2016-03-04 07:55:57"
         },
         {
             "name": "wpackagist-plugin/debug-bar",
             "version": "0.8.2",
             "source": {
                 "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/debug-bar/",
+                "url": "https://plugins.svn.wordpress.org/debug-bar/",
                 "reference": "tags/0.8.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/debug-bar.0.8.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/debug-bar.0.8.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -2646,12 +2608,12 @@
             "version": "0.3",
             "source": {
                 "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/debug-bar-console/",
+                "url": "https://plugins.svn.wordpress.org/debug-bar-console/",
                 "reference": "tags/0.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://downloads.wordpress.org/plugin/debug-bar-console.0.3.zip",
+                "url": "https://downloads.wordpress.org/plugin/debug-bar-console.0.3.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -2666,7 +2628,7 @@
             "version": "1.5.3.9",
             "source": {
                 "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/p3-profiler/",
+                "url": "https://plugins.svn.wordpress.org/p3-profiler/",
                 "reference": "tags/1.5.3.9"
             },
             "dist": {
@@ -2686,7 +2648,7 @@
             "version": "20151211.1",
             "source": {
                 "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/theme-check/",
+                "url": "https://plugins.svn.wordpress.org/theme-check/",
                 "reference": "tags/20151211.1"
             },
             "dist": {
@@ -2706,7 +2668,7 @@
             "version": "1.0.9",
             "source": {
                 "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/user-switching/",
+                "url": "https://plugins.svn.wordpress.org/user-switching/",
                 "reference": "tags/1.0.9"
             },
             "dist": {
