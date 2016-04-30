@@ -9,17 +9,17 @@
     "packages": [
         {
             "name": "gorkalaucirica/hipchat-v2-api-client",
-            "version": "v1.5.0",
+            "version": "v1.5.1",
             "target-dir": "GorkaLaucirica/HipchatAPIv2Client",
             "source": {
                 "type": "git",
                 "url": "https://github.com/gorkalaucirica/HipchatAPIv2Client.git",
-                "reference": "30ebdd77cca56e18afa41491eb62616486e076d2"
+                "reference": "045521cd01aba26cdf304010bc3f66dc4f9fd37c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gorkalaucirica/HipchatAPIv2Client/zipball/30ebdd77cca56e18afa41491eb62616486e076d2",
-                "reference": "30ebdd77cca56e18afa41491eb62616486e076d2",
+                "url": "https://api.github.com/repos/gorkalaucirica/HipchatAPIv2Client/zipball/045521cd01aba26cdf304010bc3f66dc4f9fd37c",
+                "reference": "045521cd01aba26cdf304010bc3f66dc4f9fd37c",
                 "shasum": ""
             },
             "require": {
@@ -56,7 +56,7 @@
                 "library",
                 "v2"
             ],
-            "time": "2015-10-08 21:36:23"
+            "time": "2016-04-30 11:45:31"
         },
         {
             "name": "interconnectit/search-replace-db",
@@ -398,16 +398,16 @@
         },
         {
             "name": "qobo/phake-builder",
-            "version": "v1.0.35",
+            "version": "v1.0.36",
             "source": {
                 "type": "git",
                 "url": "https://github.com/QoboLtd/phake-builder.git",
-                "reference": "ac1cfdab48211fc5e70460048b1740b8b7aed3a4"
+                "reference": "4c91ca02501c05b91b508a046177d17f693fd8eb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/QoboLtd/phake-builder/zipball/ac1cfdab48211fc5e70460048b1740b8b7aed3a4",
-                "reference": "ac1cfdab48211fc5e70460048b1740b8b7aed3a4",
+                "url": "https://api.github.com/repos/QoboLtd/phake-builder/zipball/4c91ca02501c05b91b508a046177d17f693fd8eb",
+                "reference": "4c91ca02501c05b91b508a046177d17f693fd8eb",
                 "shasum": ""
             },
             "require": {
@@ -446,7 +446,7 @@
                 }
             ],
             "description": "A set of build and deploy files, based on jaz303/phake",
-            "time": "2016-03-13 09:00:53"
+            "time": "2016-04-25 12:38:52"
         },
         {
             "name": "symfony/filesystem",
@@ -1398,16 +1398,16 @@
         },
         {
             "name": "phpunit/phpunit-mock-objects",
-            "version": "3.1.2",
+            "version": "3.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit-mock-objects.git",
-                "reference": "7c34c9bdde4131b824086457a3145e27dba10ca1"
+                "reference": "151c96874bff6fe61a25039df60e776613a61489"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/7c34c9bdde4131b824086457a3145e27dba10ca1",
-                "reference": "7c34c9bdde4131b824086457a3145e27dba10ca1",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/151c96874bff6fe61a25039df60e776613a61489",
+                "reference": "151c96874bff6fe61a25039df60e776613a61489",
                 "shasum": ""
             },
             "require": {
@@ -1450,20 +1450,20 @@
                 "mock",
                 "xunit"
             ],
-            "time": "2016-03-24 05:58:25"
+            "time": "2016-04-20 14:39:26"
         },
         {
             "name": "phpunit/phpunit-selenium",
-            "version": "3.0.1",
+            "version": "3.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giorgiosironi/phpunit-selenium.git",
-                "reference": "facc2c9421a5a784092e0471e30812e711299da7"
+                "reference": "d3aa8984c31efcff7c8829b9bd9ad7ab4c94709c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giorgiosironi/phpunit-selenium/zipball/facc2c9421a5a784092e0471e30812e711299da7",
-                "reference": "facc2c9421a5a784092e0471e30812e711299da7",
+                "url": "https://api.github.com/repos/giorgiosironi/phpunit-selenium/zipball/d3aa8984c31efcff7c8829b9bd9ad7ab4c94709c",
+                "reference": "d3aa8984c31efcff7c8829b9bd9ad7ab4c94709c",
                 "shasum": ""
             },
             "require": {
@@ -1514,7 +1514,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2016-03-26 10:45:59"
+            "time": "2016-04-22 10:41:33"
         },
         {
             "name": "pimple/pimple",
