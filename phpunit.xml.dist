@@ -9,10 +9,16 @@
 		<whitelist>
 			<directory suffix=".php">.</directory>
 			<exclude>
-				<directory>./vendor/*</directory>
+				<directory>./bin/*</directory>
+				<directory>./build/*</directory>
 				<directory>./tests/*</directory>
+				<directory>./etc/*</directory>
+				<directory>./vendor/*</directory>
 				<file>./index.php</file>
 			</exclude>
+			<include>
+				<directory>./src/*</directory>
+			</include>
 		</whitelist>
 	</filter>
 	
