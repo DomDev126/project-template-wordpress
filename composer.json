@@ -4,95 +4,20 @@
     "license": "GPL-2.0",
     "repositories": [
         {
-            "type": "package",
-            "package": {
-                "name": "wordpress",
-                "type": "webroot",
-                "version": "4.4.1",
-                "dist": {
-                    "type": "zip",
-                    "url": "https://github.com/WordPress/WordPress/archive/4.4.1.zip"
-                },
-                "require": {
-                    "fancyguy/webroot-installer": "1.1.0"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "qobo/qobo-wp-custom-theme-path",
-                "type": "wordpress-plugin",
-                "version": "1.0.1",
-                "dist": {
-                    "type": "zip",
-                    "url": "https://github.com/QoboLtd/Qobo-WP-Custom-Theme-Path/archive/v1.0.1.zip"
-                },
-                "require": {
-                    "composer/installers": "~1.0"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "qobo/qobo-wp-generic-theme",
-                "type": "wordpress-theme",
-                "version": "1.0.5",
-                "dist": {
-                    "type": "zip",
-                    "url": "https://github.com/QoboLtd/Qobo-WP-Generic-Theme/archive/v1.0.5.zip"
-                },
-                "require": {
-                    "composer/installers": "~1.0"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "qobo/qobo-wp-brand",
-                "type": "wordpress-plugin",
-                "version": "1.0.1",
-                "dist": {
-                    "type": "zip",
-                    "url": "https://github.com/QoboLtd/Qobo-WP-Brand/archive/v1.0.1.zip"
-                },
-                "require": {
-                    "composer/installers": "~1.0"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "qobo/qobo-wp-shortcodes",
-                "type": "wordpress-plugin",
-                "version": "1.0.0",
-                "dist": {
-                    "type": "zip",
-                    "url": "https://github.com/QoboLtd/Qobo-WP-Shortcodes/archive/v1.0.0.zip"
-                },
-                "require": {
-                    "composer/installers": "~1.0"
-                }
-            }
-        },
-        {
             "type": "composer",
             "url": "https://wpackagist.org"
         }
     ],
     "require": {
         "php": ">=5.3.0",
-        "wordpress": "4.4.1",
+        "johnpbloch/wordpress": "4.4.1",
         "fancyguy/webroot-installer": "1.1.0",
         "qobo/phake-builder": "~1.0",
         "wp-cli/wp-cli": "~0.21.1",
         "qobo/qobo-wp-generic-theme": "1.0.5",
-        "qobo/qobo-wp-custom-theme-path": "1.0.1",
-        "qobo/qobo-wp-brand": "1.0.1",
-        "qobo/qobo-wp-shortcodes": "1.0.0",
+        "qobo/qobo-wp-custom-theme-path": "1.0.2",
+        "qobo/qobo-wp-brand": "1.0.3",
+        "qobo/qobo-wp-shortcodes": "1.0.1",
         "wpackagist-theme/twentyfifteen": "*",
         "wpackagist-plugin/disable-wordpress-updates": "1.4.2",
         "wpackagist-plugin/wp-theme-plugin-editor-disable": "1.0.0",
@@ -123,7 +48,6 @@
         "wpackagist-plugin/user-switching": "1.0.9"
     },
     "extra": {
-        "webroot-dir": "wp",
-        "webroot-package": "wordpress"
+        "wordpress-install-dir": "wp"
     }
 }
