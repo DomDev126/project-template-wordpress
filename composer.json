@@ -13,7 +13,7 @@
         "johnpbloch/wordpress": "4.5.1",
         "fancyguy/webroot-installer": "1.1.0",
         "qobo/phake-builder": "~1.0",
-        "wp-cli/wp-cli": "~0.21.1",
+        "wp-cli/wp-cli": "~0.23.1",
         "qobo/qobo-wp-generic-theme": "1.0.5",
         "qobo/qobo-wp-custom-theme-path": "1.0.2",
         "qobo/qobo-wp-brand": "1.0.3",
