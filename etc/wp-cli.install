@@ -3,6 +3,7 @@
 #
 %%SYSTEM_COMMAND_WPCLI%% \
 	core install \
+		--skip-email \
 		--url=%%WP_URL%%  \
 		--title=%%WP_TITLE%% \
 		--admin_user=%%WP_ADMIN_USER%% \
