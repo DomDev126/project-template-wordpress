@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9858db7e8d37e3c96ef138d0e731b5c0",
-    "content-hash": "2ac488c654b3f66d8f01eb97aca69288",
+    "hash": "02632138a1c372a7dc183f1e8b41ad2e",
+    "content-hash": "7390333aaf3eb127abcb3ec910b5b115",
     "packages": [
         {
             "name": "gorkalaucirica/hipchat-v2-api-client",
@@ -398,16 +398,16 @@
         },
         {
             "name": "qobo/phake-builder",
-            "version": "v1.0.36",
+            "version": "v1.0.38",
             "source": {
                 "type": "git",
                 "url": "https://github.com/QoboLtd/phake-builder.git",
-                "reference": "4c91ca02501c05b91b508a046177d17f693fd8eb"
+                "reference": "0fe8104887cb02e287fc8d6c9cefe4c35bf4be36"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/QoboLtd/phake-builder/zipball/4c91ca02501c05b91b508a046177d17f693fd8eb",
-                "reference": "4c91ca02501c05b91b508a046177d17f693fd8eb",
+                "url": "https://api.github.com/repos/QoboLtd/phake-builder/zipball/0fe8104887cb02e287fc8d6c9cefe4c35bf4be36",
+                "reference": "0fe8104887cb02e287fc8d6c9cefe4c35bf4be36",
                 "shasum": ""
             },
             "require": {
@@ -417,8 +417,8 @@
                 "kmelia/monolog-stdout-handler": "~1.2",
                 "monolog/monolog": "~1.11",
                 "qobo/pattern": "~1.0",
-                "symfony/filesystem": "~2.5",
-                "symfony/finder": "~2.8",
+                "symfony/filesystem": "~2.7",
+                "symfony/finder": "~2.7",
                 "vlucas/phpdotenv": "~1.1",
                 "zetacomponents/archive": "1.5"
             },
@@ -446,7 +446,7 @@
                 }
             ],
             "description": "A set of build and deploy files, based on jaz303/phake",
-            "time": "2016-04-25 12:38:52"
+            "time": "2016-05-01 07:08:23"
         },
         {
             "name": "symfony/filesystem",
@@ -884,16 +884,16 @@
         },
         {
             "name": "myclabs/deep-copy",
-            "version": "1.5.0",
+            "version": "1.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/myclabs/DeepCopy.git",
-                "reference": "e3abefcd7f106677fd352cd7c187d6c969aa9ddc"
+                "reference": "a8773992b362b58498eed24bf85005f363c34771"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/e3abefcd7f106677fd352cd7c187d6c969aa9ddc",
-                "reference": "e3abefcd7f106677fd352cd7c187d6c969aa9ddc",
+                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/a8773992b362b58498eed24bf85005f363c34771",
+                "reference": "a8773992b362b58498eed24bf85005f363c34771",
                 "shasum": ""
             },
             "require": {
@@ -922,7 +922,7 @@
                 "object",
                 "object graph"
             ],
-            "time": "2015-11-07 22:20:37"
+            "time": "2015-11-20 12:04:31"
         },
         {
             "name": "nikic/php-parser",
