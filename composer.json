@@ -1,4 +1,7 @@
 {
+	"name": "qobo/project-template",
+	"description": "Template for new PHP projects",
+	"license": "GPL-2.0",
 	"require": {
 		"php": ">=5.6.0",
 		"qobo/phake-builder": "~1.0"

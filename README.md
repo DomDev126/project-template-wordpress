@@ -1,7 +1,7 @@
 project-template
 ================
 
-This is a template for the new project.
+This is a template for the new PHP projects.
 
 Install
 -------
@@ -9,24 +9,26 @@ Install
 When starting a new PHP project, do the following:
 
 ```bash
-# Initiate the new work space
-mkdir new-project
-cd new-project
+composer create-project qobo/project-template
+mv project-template example.com
+cd example.com
 git init
-# Kick off the project (this is needed for --squash merge later)
-touch README.md
-git add README.md
+git add .
 git commit -m "Initial commit"
-# Get project-template
-git remote add template https://github.com/QoboLtd/project-template.git
-git remote update
-# Merge latest tag (or use 'template/master' instead)
-git merge --squash $(git tag --sort=v:refname | tail -n 1)
-git commit -m "Merged project-template ($(git tag --sort=v:refname | tail -n 1))"
-# Finalize the setup
-composer install
 ./vendor/bin/phake dotenv:create
 ```
+
+Update
+------
+
+When you want to update your project with the latest
+and greatest project-template, do the following:
+
+```
+cd exmample.com
+git pull https://github.com/QoboLtd/project-template
+```
+
 
 Usage
 -----
