@@ -1,4 +1,19 @@
 server {
+	#
+	# Redirect HTTP to HTTPS
+	# 
+	listen 80;
+	server_name %%NGINX_SITE_MAIN%% %%NGINX_SITE_OTHER%%;
+	return 301 https://$host$request_uri;
+}
+
+server {
+	#
+	# SSL
+	# 
+	listen 443;
+	ssl_certificate     %%NGINX_ROOT_PREFIX%%/%%NGINX_SITE_MAIN%%/etc/ssl/nginx.crt;
+	ssl_certificate_key %%NGINX_ROOT_PREFIX%%/%%NGINX_SITE_MAIN%%/etc/ssl/nginx.key;
 
 	#
 	# Basics
