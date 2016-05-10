@@ -111,8 +111,7 @@ server {
 
 		#fastcgi_intercept_errors on;
 		fastcgi_index index.php;
-		#fastcgi_pass php;
-		fastcgi_pass 127.0.0.1:9000;
+		fastcgi_pass %%NGINX_FASTCGI_PASS%%;
 	}
 }
 # vi:ft=nginx
