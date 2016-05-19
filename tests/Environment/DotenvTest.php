@@ -1,18 +1,20 @@
 <?php
 namespace Tests\Environment;
+
 /**
  * Dotenv Test
  * 
  * @author Leonid Mamchenkov <l.mamchenkov@qobo.biz>
- * @group environment
+ * @group  environment
  */
-class DotenvTest extends \PHPUnit_Framework_TestCase {
+class DotenvTest extends \PHPUnit_Framework_TestCase
+{
 
-	/**
-	 * Check that Dotenv is loaded by composer
-	 */
-	public function testDotenvClassLoaded() {
-		$this->assertTrue(class_exists('Dotenv'), 'Dotenv class is not loaded');
-	}
-
+    /**
+     * Check that Dotenv is loaded by composer
+     */
+    public function testDotenvClassLoaded() 
+    {
+        $this->assertTrue(class_exists('Dotenv'), 'Dotenv class is not loaded');
+    }
 }
