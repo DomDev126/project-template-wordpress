@@ -12,7 +12,7 @@ class RobotsTest extends \PHPUnit_Framework_TestCase
     protected $folder;
     protected $file;
 
-    protected function setUp() 
+    protected function setUp()
     {
         $this->folder = __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'webroot' . DIRECTORY_SEPARATOR;
         $this->file = 'robots.txt';
@@ -21,20 +21,19 @@ class RobotsTest extends \PHPUnit_Framework_TestCase
     /**
      * Check that the file exists
      */
-    public function testRobotsFileExists() 
+    public function testRobotsFileExists()
     {
         $this->assertFileExists($this->folder . $this->file);
     }
 
     /**
      * Check that the file is not empty
-     * 
+     *
      * @depends testRobotsFileExists
      */
-    public function testRobotsFileIsNotEmpty() 
+    public function testRobotsFileIsNotEmpty()
     {
         $content = trim(file_get_contents($this->folder . $this->file));
         $this->assertFalse(empty($content), $this->file . " file is empty in " . $this->folder);
     }
-
 }
