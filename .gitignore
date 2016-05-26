@@ -3,6 +3,7 @@ vendor/
 wp/
 .env
 etc/nginx.conf
+etc/ssl/*
 
 # Ignore wp-content/, but exclude uploads by dev user
 !wp-content/
