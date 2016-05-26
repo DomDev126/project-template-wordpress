@@ -8,7 +8,6 @@ group('app', function() {
 		printSeparator();
 		printInfo("Installing application");
 	});
-	task('install', ':git:pull', ':git:checkout');
 	task('install', ':dotenv:create', ':dotenv:reload', ':file:process');
 
 
@@ -17,8 +16,6 @@ group('app', function() {
 		printSeparator();
 		printInfo("Updating application");
 	});
-	task('update', ':git:pull', ':git:checkout');
-	task('update', ':composer:install');
 	task('update', ':dotenv:create', ':dotenv:reload', ':file:process');
 
 
