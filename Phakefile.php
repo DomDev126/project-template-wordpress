@@ -1,5 +1,5 @@
 <?php
-require_once 'vendor/qobo/phake-builder/Phakefile';
+require_once 'vendor/qobo/phake-builder/Phakefile.php';
 
 group('app', function() {
 
@@ -30,6 +30,3 @@ group('app', function() {
 	task('remove', ':dotenv:delete');
 
 });
-
-# vi:ft=php
-?>
