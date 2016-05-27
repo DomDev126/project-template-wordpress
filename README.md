@@ -10,20 +10,12 @@ Install
 When starting a new PHP project, do the following:
 
 ```bash
-# Initiate the new work space
-mkdir new-project
-cd new-project
+composer create-project qobo/project-template-wordpress
+mv project-template-wordpress example.com
+cd example.com
 git init
-# Kick off the project (this is needed for --squash merge later)
-touch README.md
-git add README.md
+git add .
 git commit -m "Initial commit"
-# Get project-template
-git remote add template https://github.com/QoboLtd/project-template-wordpress.git
-git remote update
-# Merge latest tag (or use 'template/master' instead)
-git merge --squash $(git tag --sort=v:refname | tail -n 1)
-git commit -m "Merged project-template-wordpress ($(git tag --sort=v:refname | tail -n 1))"
 # Finalize the setup
 composer install
 ./vendor/bin/phake dotenv:create DB_NAME=wordpress
@@ -34,13 +26,44 @@ DB_NAME, the name of the database to use, is the only setting which is required.
 rest is being figured out automatically, but you can easily adjust them.  Have a look
 at .env.example file for defaults.
 
+Update
+------
+
+When you want to update your project with the latest
+and greatest project-template, do the following:
+
+```
+cd exmample.com
+git pull https://github.com/QoboLtd/project-template-wordpress
+```
+
 Usage
 -----
+
+###Quick
+
+Now that you have the project template installed, check that it works
+before you start working on your changes.  Fire up the PHP web server:
+
+```
+./bin/phpserv
+```
+
+Or run it on the alternative port:
+
+```
+./bin/phpserv -S localhost:9000
+```
+
+In your browser navigate to [http://localhost:8000](http://localhost:8000).
+You should see the standard ```phpinfo()``` page.  If you do, all parts
+are in place.
+
 
 Now you can develop your PHP project as per usual, but with the following
 advantages:
 
-* Support for [PHP built-in web server](http://php.net/manual/en/features.commandline.webserver.php) (start with ```php -S localhost:8000```)
+* Support for [PHP built-in web server](http://php.net/manual/en/features.commandline.webserver.php)
 * Per-environment configuration using ```.env``` file, which is ignored by git
 * Powerful build system ([phake-builder](https://github.com/QoboLtd/phake-builder)) integrated
 * Composer integrated with ```vendor/``` folder added to ```.gitignore``` .
@@ -68,19 +91,6 @@ to use these targets and pass runtime configuration parameters.
 
 Test
 ----
-
-###Quick
-
-Now that you have the project template installed, check that it works
-before you start working on your changes.  Fire up the PHP web server:
-
-```
-php -S localhost:8000
-```
-
-In your browser navigate to [http://localhost:8000](http://localhost:8000).
-You should see the standard ```phpinfo()``` page.  If you do, all parts
-are in place.
 
 ###PHPUnit
 

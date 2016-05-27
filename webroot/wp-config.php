@@ -14,9 +14,9 @@
  * @package WordPress
  */
 
-require_once dirname(__FILE__) . '/vendor/autoload.php';
+require_once dirname(__DIR__) . '/vendor/autoload.php';
 try {
-	Dotenv::load(__DIR__);
+	Dotenv::load(dirname(__DIR__));
 	Dotenv::required(array('DB_NAME'));
 }
 catch (\Exception $e) {

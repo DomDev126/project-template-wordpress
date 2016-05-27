@@ -14,10 +14,13 @@
 				<directory>./tests/*</directory>
 				<directory>./etc/*</directory>
 				<directory>./vendor/*</directory>
+				<directory>./webroot/wp/*</directory>
+				<directory>./webroot/wp-content/*</directory>
 				<file>./index.php</file>
 			</exclude>
 			<include>
 				<directory>./src/*</directory>
+				<directory>./webroot/custom-themes/custom/*</directory>
 			</include>
 		</whitelist>
 	</filter>
