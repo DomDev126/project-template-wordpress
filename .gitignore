@@ -1,13 +1,13 @@
 build/
 vendor/
-wp/
+webroot/wp/
 .env
 etc/nginx.conf
 etc/ssl/*
 
 # Ignore wp-content/, but exclude uploads by dev user
-!wp-content/
-wp-content/*
-!wp-content/uploads
-wp-content/uploads/*
-!wp-content/uploads/qobo
+!webroot/wp-content/
+webroot/wp-content/*
+!webroot/wp-content/uploads
+webroot/wp-content/uploads/*
+!webroot/wp-content/uploads/qobo

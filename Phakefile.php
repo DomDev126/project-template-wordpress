@@ -28,7 +28,7 @@ function runWPCLIBatch($name, $app) {
 		
 		// We really need wp-cli for this
 		if ($placeholder == 'SYSTEM_COMMAND_WPCLI') {
-			$data['SYSTEM_COMMAND_WPCLI'] = getValue($placeholder, $app) ?: './vendor/bin/wp --allow-root';
+			$data['SYSTEM_COMMAND_WPCLI'] = getValue($placeholder, $app) ?: './vendor/bin/wp --allow-root --path=webroot/wp';
 		}
 	}
 	$bytes = $template->parseToFile($dst, $data);

@@ -50,6 +50,10 @@
         "wpackagist-plugin/user-switching": "1.0.9"
     },
     "extra": {
-        "wordpress-install-dir": "wp"
+        "wordpress-install-dir": "webroot/wp",
+        "installer-paths": {
+	        "webroot/wp-content/plugins/{$name}": ["type:wordpress-plugin"],
+	        "webroot/wp-content/themes/{$name}": ["type:wordpress-theme"]
+		}
     }
 }
