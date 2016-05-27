@@ -1,5 +1,5 @@
 {
-    "name": "qoboltd/project-template-wordpress",
+    "name": "qobo/project-template-wordpress",
     "description": "This is a template for the new project using WordPress.",
     "license": "GPL-2.0",
     "repositories": [
