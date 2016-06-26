@@ -49,7 +49,7 @@ group('app', function() {
 	desc('Install application');
 	task('install', ':builder:init', function($app) {
 		printSeparator();
-		printInfo("Installing application");
+		printInfo("Task: app:install (Install application)");
 	});
 	task('install', ':dotenv:create', ':dotenv:reload', ':file:process');
 	task('install', ':mysql:database-create');
@@ -67,10 +67,10 @@ group('app', function() {
 	desc('Update application');
 	task('update', ':builder:init', function($app) {
 		printSeparator();
-		printInfo("Updating application");
+		printInfo("Task: app:update (Update application)");
 	});
 	task('update', ':dotenv:create', ':dotenv:reload', ':file:process');
-	task('update', ':mysql:database-import');
+	//task('update', ':mysql:database-import');
 	task('update', ':mysql:find-replace');
 	task('update', ':wordpress:update');
 
@@ -81,7 +81,7 @@ group('app', function() {
 	desc('Remove application');
 	task('remove', ':builder:init', function($app) {
 		printSeparator();
-		printInfo("Removing application");
+		printInfo("Task: app:remove (Update application)");
 	});
 	task('remove', ':mysql:database-drop');
 	task('remove', ':dotenv:delete');
@@ -93,7 +93,7 @@ group('wordpress', function() {
 	desc("Install WordPress");
 	task('install', ':builder:init', function($app) {
 		printSeparator();
-		printInfo("Installing WordPress");
+		printInfo("Task: wordpress:install (Install WordPress)");
 		
 		runWPCLIBatch('install', $app);
 	});
@@ -101,7 +101,7 @@ group('wordpress', function() {
 	desc("Installation content WordPress");
 	task('content', ':builder:init', function($app) {
 			printSeparator();
-			printInfo("Adding installation content WordPress");
+			printInfo("Task: wordpress:content (Installation content WordPress)");
 
 			runWPCLIBatch('content', $app);
 	});
@@ -109,7 +109,7 @@ group('wordpress', function() {
 	desc("Update content WordPress");
 	task('update', ':builder:init', function($app) {
 			printSeparator();
-			printInfo("Updating content WordPress");
+			printInfo("Task: wordpress:update (Update content WordPress)");
 
 			runWPCLIBatch('update', $app);
 	});
