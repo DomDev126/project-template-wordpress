@@ -6,7 +6,7 @@ group('app', function() {
 	desc('Install application');
 	task('install', ':builder:init', function($app) {
 		printSeparator();
-		printInfo("Installing application");
+		printInfo("Task: app:install (Install application)");
 	});
 	task('install', ':dotenv:create', ':dotenv:reload', ':file:process');
 
@@ -14,7 +14,7 @@ group('app', function() {
 	desc('Update application');
 	task('update', ':builder:init', function($app) {
 		printSeparator();
-		printInfo("Updating application");
+		printInfo("Task: app:update (Update application)");
 	});
 	task('update', ':dotenv:create', ':dotenv:reload', ':file:process');
 
@@ -22,7 +22,7 @@ group('app', function() {
 	desc('Remove application');
 	task('remove', ':builder:init', function($app) {
 		printSeparator();
-		printInfo("Removing application");
+		printInfo("Task: app:remove (Update application)");
 	});
 	task('remove', ':dotenv:delete');
 
