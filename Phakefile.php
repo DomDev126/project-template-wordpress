@@ -93,7 +93,7 @@ group('wordpress', function() {
 	desc("Install WordPress");
 	task('install', ':builder:init', function($app) {
 		printSeparator();
-		printInfo("Installing WordPress");
+		printInfo("Task: wordpress:install (Install WordPress)");
 		
 		runWPCLIBatch('install', $app);
 	});
@@ -101,7 +101,7 @@ group('wordpress', function() {
 	desc("Installation content WordPress");
 	task('content', ':builder:init', function($app) {
 			printSeparator();
-			printInfo("Adding installation content WordPress");
+			printInfo("Task: wordpress:content (Installation content WordPress)");
 
 			runWPCLIBatch('content', $app);
 	});
@@ -109,7 +109,7 @@ group('wordpress', function() {
 	desc("Update content WordPress");
 	task('update', ':builder:init', function($app) {
 			printSeparator();
-			printInfo("Updating content WordPress");
+			printInfo("Task: wordpress:update (Update content WordPress)");
 
 			runWPCLIBatch('update', $app);
 	});
