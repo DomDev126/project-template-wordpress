@@ -70,7 +70,7 @@ group('app', function() {
 		printInfo("Task: app:update (Update application)");
 	});
 	task('update', ':dotenv:create', ':dotenv:reload', ':file:process');
-	task('update', ':mysql:database-import');
+	//task('update', ':mysql:database-import');
 	task('update', ':mysql:find-replace');
 	task('update', ':wordpress:update');
 
