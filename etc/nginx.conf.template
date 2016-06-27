@@ -53,6 +53,9 @@ server {
 			return 444;
 	}
 
+	# Do not hanndle Let's Encrypt validations
+	location /.well-known/ {}
+
 	# Deny all attempts to access hidden files such as .htaccess, .git, etc.
 	location ~ /\. {
 			deny all;
