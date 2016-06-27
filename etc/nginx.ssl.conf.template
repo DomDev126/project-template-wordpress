@@ -22,7 +22,7 @@ server {
 	listen 443 ssl;
 	ssl on;
 	ssl_certificate     %%NGINX_ROOT_PREFIX%%/%%NGINX_SITE_MAIN%%/etc/ssl/%%NGINX_SITE_MAIN%%.fullchain.pem;
-	ssl_certificate_key %%NGINX_ROOT_PREFIX%%/%%NGINX_SITE_MAIN%%/etc/ssl/%%NGINX_SITE_MAIN%%.privatekey.pem;
+	ssl_certificate_key %%NGINX_ROOT_PREFIX%%/%%NGINX_SITE_MAIN%%/etc/ssl/%%NGINX_SITE_MAIN%%.privkey.pem;
 
 	add_header Strict-Transport-Security "max-age=31536000; includeSubdomains;";
 
