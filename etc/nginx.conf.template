@@ -76,6 +76,7 @@ server {
 	location = /README.md { deny all; }
 
 	# Try to serve file directly, fallback on index.php
+	index index.php;
 	location / {
 		try_files $uri $uri/ /index.php$is_args$args;
 	}
