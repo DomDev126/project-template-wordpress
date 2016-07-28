@@ -56,6 +56,12 @@ server {
 			return 444;
 	}
 
+	# Do not hanndle Let's Encrypt validations
+	# Thanks to: http://stackoverflow.com/a/34262192/151647
+	location ^~ /.well-known/ {
+			allow all;
+	}
+
 	# Deny all attempts to access hidden files such as .htaccess, .git, etc.
 	location ~ /\. {
 			deny all;
@@ -73,6 +79,7 @@ server {
 	location = /README.md { deny all; }
 
 	# Try to serve file directly, fallback on index.php
+	index index.php;
 	location / {
 		try_files $uri $uri/ /index.php$is_args$args;
 	}
