@@ -15,7 +15,6 @@ catch (\Exception $e) {
 }
 
 $projectName = getenv('PROJECT_NAME') ?: basename(dirname(__DIR__));
-print_r($projectName);
 return new Sami\Sami('./src', array(
     'title'     => $projectName,
     'build_dir' => 'build/doc/source',
