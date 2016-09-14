@@ -1,0 +1,13 @@
+image: smartapps/bitbucket-pipelines-php-mysql
+
+pipelines:
+  default:
+    - step:
+        script:
+          - service mysql start
+          - if [ -f composer.lock ] ; then ./bin/composer install --no-interaction ; else ./bin/composer update --no-interaction ; fi
+          - npm install --no-spin
+          - gulp
+          - ./vendor/bin/phake app:install DB_ADMIN_USER=root DB_ADMIN_USER_PASS=root DB_USER=root DB_USER=root DB_NAME=app
+          - ./vendor/bin/phpunit --group example
+          - ./vendor/bin/phpunit --exclude-group example
