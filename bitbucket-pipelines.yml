@@ -1,0 +1,12 @@
+# You can use a Docker image from Docker Hub or your own container
+# registry for your build environment.
+image: phpunit/phpunit:5.0.3
+
+pipelines:
+  default:
+    - step:
+        script: # Modify the commands below to build your repository.
+          - if [ -f composer.lock ] ; then ./bin/composer install ; else ./bin/composer update ; fi
+          - ./vendor/bin/phake app:install
+          - ./vendor/bin/phpunit --group example
+          - ./vendor/bin/phpunit --exclude-group example
