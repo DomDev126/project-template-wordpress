@@ -1,12 +1,13 @@
-# You can use a Docker image from Docker Hub or your own container
-# registry for your build environment.
-image: phpunit/phpunit:5.0.3
+image: smartapps/bitbucket-pipelines-php-mysql
 
 pipelines:
   default:
     - step:
-        script: # Modify the commands below to build your repository.
-          - if [ -f composer.lock ] ; then ./bin/composer install ; else ./bin/composer update ; fi
-          - ./vendor/bin/phake app:install
+        script:
+          - service mysql start
+          - if [ -f composer.lock ] ; then ./bin/composer install --no-interaction ; else ./bin/composer update --no-interaction ; fi
+          - npm install --no-spin
+          - gulp
+          - ./vendor/bin/phake app:install DB_ADMIN_USER=root DB_ADMIN_USER_PASS=root DB_USER=root DB_USER=root DB_NAME=app
           - ./vendor/bin/phpunit --group example
           - ./vendor/bin/phpunit --exclude-group example
