@@ -13,11 +13,11 @@
     },
     "require": {
         "php": ">=5.6.0",
-        "johnpbloch/wordpress": "4.5.3",
+        "johnpbloch/wordpress": "4.6.1",
         "fancyguy/webroot-installer": "1.1.0",
         "qobo/phake-builder": "~2.0",
 		"pyrech/composer-changelogs": "~1.4",
-        "wp-cli/wp-cli": "~0.23.1",
+        "wp-cli/wp-cli": "~0.24",
         "qobo/qobo-wp-generic-theme": "1.0.6",
         "qobo/qobo-wp-custom-theme-path": "1.0.2",
         "qobo/qobo-wp-brand": "1.0.3",
