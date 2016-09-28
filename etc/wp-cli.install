@@ -4,16 +4,16 @@
 %%SYSTEM_COMMAND_WPCLI%% \
 	core install \
 		--skip-email \
-		--url=%%WP_URL%%  \
-		--title=%%WP_TITLE%% \
-		--admin_user=%%WP_ADMIN_USER%% \
-		--admin_password=%%WP_ADMIN_PASS%% \
-		--admin_email=%%WP_ADMIN_EMAIL%% 
+		--url="%%WP_URL%%"  \
+		--title="%%WP_TITLE%%" \
+		--admin_user="%%WP_ADMIN_USER%%" \
+		--admin_password="%%WP_ADMIN_PASS%%" \
+		--admin_email="%%WP_ADMIN_EMAIL%%"
 
 # 
 # Add dev user
 # 
-%%SYSTEM_COMMAND_WPCLI%% user create %%WP_DEV_USER%% %%WP_DEV_EMAIL%% --user_pass=%%WP_DEV_PASS%% --role=administrator
+%%SYSTEM_COMMAND_WPCLI%% user create "%%WP_DEV_USER%%" "%%WP_DEV_EMAIL%%" --user_pass="%%WP_DEV_PASS%%" --role=administrator
 
 # 
 # Remove default content
@@ -43,7 +43,7 @@ fi
 # 
 for WP_INACTIVE_PLUGIN in $(%%SYSTEM_COMMAND_WPCLI%% plugin list --status=inactive --field=name)
 do
-	%%SYSTEM_COMMAND_WPCLI%% plugin activate $WP_INACTIVE_PLUGIN
+	%%SYSTEM_COMMAND_WPCLI%% plugin activate "$WP_INACTIVE_PLUGIN"
 done
 
 #
