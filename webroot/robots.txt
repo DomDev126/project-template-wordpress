@@ -1,9 +1,1 @@
 User-agent: *
-Disallow: /etc/
-Disallow: /src/
-Disallow: /tests/
-Disallow: /vendor/
-Disallow: /composer.json
-Disallow: /composer.lock
-Disallow: /Phakefile
-Disallow: /README.md
