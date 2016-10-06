@@ -41,11 +41,12 @@ server {
 		access_log off;
 	}
 
-	# We already provide one.  No need to slow things down and use more disk space with logging
+	# Redirect to robots.php which supports dynamic robots.txt rules
 	location = /robots.txt {
 		allow all;
 		log_not_found off;
 		access_log off;
+		rewrite ^.*$ /robots.php last;
 	}
 
 	# Disable all methods besides HEAD, GET, and POST
