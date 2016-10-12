@@ -8,6 +8,10 @@
  * of anything on the site.  Setting it to true will
  * either allow everything or only what is defined in
  * the robots.txt file, if it exists and is readable.
+ *
+ * Furthermore, setting ALLOW_ROBOTS_EXCEPT_ON will
+ * disable indexing for any server hostname that matches
+ * the pattern.
  */
 require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php';
 
@@ -26,6 +30,15 @@ $allowRobots = (bool) getenv('ALLOW_ROBOTS');
 
 // Switch MIME type to text/plain
 header('Content-Type: text/plain'); 
+
+// Limit indexing on certain domains
+if ($allowRobots) {
+	$exceptionPattern = (string)getenv('ALLOW_ROBOTS_EXCEPT_ON');
+	$currentDomain = empty($_SERVER['SERVER_NAME']) ? '' : $_SERVER['SERVER_NAME'];
+	if ($exceptionPattern && $currentDomain && preg_match('/' . $exceptionPattern . '/i', $currentDomain)) {
+		$allowRobots = false;
+	}
+}
 
 // Allow indexing
 if ($allowRobots) {
