@@ -14,7 +14,7 @@ cd example.com
 git init
 git add .
 git commit -m "Initial commit"
-./vendor/bin/phake dotenv:create
+composer exec -- phake dotenv:create
 ```
 
 Update
