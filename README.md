@@ -9,8 +9,7 @@ Install
 When starting a new PHP project, do the following:
 
 ```bash
-composer create-project qobo/project-template
-mv project-template example.com
+composer create-project qobo/project-template example.com
 cd example.com
 git init
 git add .
