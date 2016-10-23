@@ -10,16 +10,14 @@ Install
 When starting a new PHP project, do the following:
 
 ```bash
-composer create-project qobo/project-template-wordpress
-mv project-template-wordpress example.com
+composer create-project qobo/project-template-wordpress example.com
 cd example.com
 git init
 git add .
 git commit -m "Initial commit"
 # Finalize the setup
 composer install
-./vendor/bin/phake dotenv:create DB_NAME=wordpress
-./vendor/bin/phake app:install
+composer exec -- phake app:install DB_NAME=wordpress
 ```
 
 DB_NAME, the name of the database to use, is the only setting which is required.  The
