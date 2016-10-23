@@ -34,7 +34,7 @@ header('Content-Type: text/plain');
 // Limit indexing on certain domains
 if ($allowRobots) {
 	$exceptionPattern = (string)getenv('ALLOW_ROBOTS_EXCEPT_ON');
-	$currentDomain = empty($_SERVER['SERVER_NAME']) ? '' : $_SERVER['SERVER_NAME'];
+	$currentDomain = empty($_SERVER['HTTP_HOST']) ? '' : $_SERVER['HTTP_HOST'];
 	if ($exceptionPattern && $currentDomain && preg_match('/' . $exceptionPattern . '/i', $currentDomain)) {
 		$allowRobots = false;
 	}
