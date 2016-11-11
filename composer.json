@@ -50,7 +50,8 @@
         "wpackagist-plugin/debug-bar": "0.8.4",
         "wpackagist-plugin/debug-bar-console": "0.3",
         "wpackagist-plugin/p3-profiler": "1.5.3.9",
-        "wpackagist-plugin/user-switching": "1.0.9"
+        "wpackagist-plugin/user-switching": "1.0.9",
+        "wp-coding-standards/wpcs": "dev-master"
     },
     "extra": {
         "wordpress-install-dir": "webroot/wp",
