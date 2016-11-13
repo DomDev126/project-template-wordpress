@@ -2,8 +2,7 @@
 /**
  * Theme functions
  *
- * @package WordPress
- * @subpackage Custom
+ * @package Custom
  */
 
 // Define theme's images URI.
