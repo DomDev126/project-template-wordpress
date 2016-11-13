@@ -2,6 +2,14 @@
 /**
  * Theme functions
  *
+ * This file provides the place for all the necessary functions of the
+ * theme.
+ *
+ * Instead of growing one huge file, which is hard to maintain and
+ * reuse, this file is broken down into bits and pieces, which are
+ * loaded automatically.  This way, classes, shortcodes, widgets and
+ * other snippets can be easily copied from theme to them.
+ *
  * @package Custom
  */
 
@@ -33,16 +41,3 @@ function load_includes( $dir ) {
 }
 
 load_includes( THEME_LIB_DIR );
-
-/**
- * Redirect to login page if not logged in
- */
-function redirect_non_logged_users_to_login_page() {
-	if ( getenv( 'REQUIRE_LOGIN' ) ) {
-		global $pagenow;
-		if ( ! is_user_logged_in() && 'wp-login.php' != $pagenow ) {
-			wp_redirect( wp_login_url() );
-		}
-	}
-}
-add_action( 'wp', 'redirect_non_logged_users_to_login_page' );
