@@ -14,7 +14,10 @@ class RobotsTest extends \PHPUnit_Framework_TestCase
 
     protected function setUp()
     {
-        $this->folder = __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'webroot' . DIRECTORY_SEPARATOR;
+        $this->folder = __DIR__ . DIRECTORY_SEPARATOR
+            . '..' . DIRECTORY_SEPARATOR
+            . '..' . DIRECTORY_SEPARATOR
+            . 'webroot' . DIRECTORY_SEPARATOR;
         $this->file = 'robots.txt';
     }
 
