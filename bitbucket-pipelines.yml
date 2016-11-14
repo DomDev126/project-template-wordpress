@@ -15,3 +15,5 @@ pipelines:
           - ./vendor/bin/phake app:install CHOWN_USER=$USER CHGRP_GROUP=$USER DB_NAME=app DB_ADMIN_USER=root DB_ADMIN_PASS=root DB_USER=root DB_PASS=root
           - ./vendor/bin/phpunit --group example
           - ./vendor/bin/phpunit --exclude-group example
+          - ./vendor/bin/phpcs --config-set ignore_warnings_on_exit 1
+          - ./vendor/bin/phpcs --colors -p --extensions=php --standard=PSR2 src/ tests/ webroot/

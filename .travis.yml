@@ -25,4 +25,5 @@ before_script:
 script: 
     - ./vendor/bin/phpunit --group example
     - ./vendor/bin/phpunit --exclude-group example
-
+    - ./vendor/bin/phpcs --config-set ignore_warnings_on_exit 1
+    - ./vendor/bin/phpcs --colors -p --extensions=php --standard=PSR2 src/ tests/ webroot/
