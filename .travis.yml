@@ -1,5 +1,5 @@
 language: php
-    
+
 php:
     - 5.6
     - 7.0
@@ -20,12 +20,9 @@ before_script:
     - wget http://selenium-release.storage.googleapis.com/2.53/selenium-server-standalone-2.53.0.jar
     - java -jar selenium-server-standalone-2.53.0.jar > /dev/null 2>&1 &
     - bin/phpserv >/dev/null 2>&1 &
-    - sleep 30 
+    - sleep 30
 
-script: 
+script:
     - ./vendor/bin/phpunit --group example
     - ./vendor/bin/phpunit --exclude-group example
-    - ./vendor/bin/phpcs --config-set ignore_warnings_on_exit 1
-    - ./vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs
-    - ./vendor/bin/phpcs --colors -p --extensions=php --standard=WordPress webroot/custom-themes/
-
+    - ./vendor/bin/phpcs
