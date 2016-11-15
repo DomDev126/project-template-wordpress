@@ -25,7 +25,7 @@ try {
     $allowRobots = false;
 }
 
-$allowRobots = (bool) getenv('ALLOW_ROBOTS');
+$allowRobots = (bool)getenv('ALLOW_ROBOTS');
 
 // Switch MIME type to text/plain
 header('Content-Type: text/plain');
@@ -39,19 +39,19 @@ if ($allowRobots) {
     }
 }
 
-// Allow indexing
 if ($allowRobots) {
+    // Allow indexing
     $robotsFile = __DIR__ . DIRECTORY_SEPARATOR . 'robots.txt';
-    // Use robots.txt rules if file exists and is readable
     if (file_exists($robotsFile) && is_readable($robotsFile)) {
+        // Use robots.txt rules if file exists and is readable
         readfile($robotsFile);
-    } // Allow indexing of everything if we can't read robots.txt
-    else {
+    } else {
+        // Allow indexing of everything if we can't read robots.txt
         echo "User-agent: *\n";
         echo "Disallow:\n";
     }
-} // Deny indexing
-else {
+} else {
+    // Deny indexing
     echo "User-agent: *\n";
     echo "Disallow: /\n";
 }
