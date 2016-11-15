@@ -1,9 +1,9 @@
 <?php
 /**
  * This script allows for dynamic robots.txt rules,
- * based on the ALLOW_ROBOTS setting in the .env 
+ * based on the ALLOW_ROBOTS setting in the .env
  * file.
- * 
+ *
  * Setting ALLOW_ROBOTS to false will disallow indexing
  * of anything on the site.  Setting it to true will
  * either allow everything or only what is defined in
@@ -16,45 +16,42 @@
 require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php';
 
 try {
-	Dotenv::load(dirname(__DIR__));
-}
-catch (\Exception $e) {
-	// If there is no .env file, we are probably on
-	// a local/dev/test install with the project that
-	// is not properly deployed.  No need to allow
-	// robots indexing it.
-	$allowRobots = false;
+    Dotenv::load(dirname(__DIR__));
+} catch (\Exception $e) {
+    // If there is no .env file, we are probably on
+    // a local/dev/test install with the project that
+    // is not properly deployed.  No need to allow
+    // robots indexing it.
+    $allowRobots = false;
 }
 
-$allowRobots = (bool) getenv('ALLOW_ROBOTS');
+$allowRobots = (bool)getenv('ALLOW_ROBOTS');
 
 // Switch MIME type to text/plain
-header('Content-Type: text/plain'); 
+header('Content-Type: text/plain');
 
 // Limit indexing on certain domains
 if ($allowRobots) {
-	$exceptionPattern = (string)getenv('ALLOW_ROBOTS_EXCEPT_ON');
-	$currentDomain = empty($_SERVER['HTTP_HOST']) ? '' : $_SERVER['HTTP_HOST'];
-	if ($exceptionPattern && $currentDomain && preg_match('/' . $exceptionPattern . '/i', $currentDomain)) {
-		$allowRobots = false;
-	}
+    $exceptionPattern = (string)getenv('ALLOW_ROBOTS_EXCEPT_ON');
+    $currentDomain = empty($_SERVER['HTTP_HOST']) ? '' : $_SERVER['HTTP_HOST'];
+    if ($exceptionPattern && $currentDomain && preg_match('/' . $exceptionPattern . '/i', $currentDomain)) {
+        $allowRobots = false;
+    }
 }
 
-// Allow indexing
 if ($allowRobots) {
-	$robotsFile = __DIR__ . DIRECTORY_SEPARATOR . 'robots.txt';
-	// Use robots.txt rules if file exists and is readable
-	if (file_exists($robotsFile) && is_readable($robotsFile)) {
-		readfile($robotsFile);
-	}
-	// Allow indexing of everything if we can't read robots.txt
-	else {
-		echo "User-agent: *\n";
-		echo "Disallow:\n";
-	}
-}
-// Deny indexing
-else {
-	echo "User-agent: *\n";
-	echo "Disallow: /\n";
+    // Allow indexing
+    $robotsFile = __DIR__ . DIRECTORY_SEPARATOR . 'robots.txt';
+    if (file_exists($robotsFile) && is_readable($robotsFile)) {
+        // Use robots.txt rules if file exists and is readable
+        readfile($robotsFile);
+    } else {
+        // Allow indexing of everything if we can't read robots.txt
+        echo "User-agent: *\n";
+        echo "Disallow:\n";
+    }
+} else {
+    // Deny indexing
+    echo "User-agent: *\n";
+    echo "Disallow: /\n";
 }
