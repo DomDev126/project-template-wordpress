@@ -17,10 +17,11 @@ class DotenvTest extends \PHPUnit_Framework_TestCase
     public function dotEnvFilesProvider()
     {
         $root = join(DIRECTORY_SEPARATOR, [__DIR__, '..', '..']) . DIRECTORY_SEPARATOR;
-        return array(
-         '.env.example' => array($root, '.env.example'),
-         '.env' => array($root, '.env'),
-        );
+
+        return [
+         '.env.example' => [$root, '.env.example'],
+         '.env' => [$root, '.env'],
+        ];
     }
 
     /**
