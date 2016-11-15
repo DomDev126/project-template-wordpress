@@ -28,6 +28,5 @@
 
     <!-- Files and directories to check -->
     <file>./src/</file>
-    <file>./tests/</file>
     <file>./webroot/custom-themes/</file>
 </ruleset>
