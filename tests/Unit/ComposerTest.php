@@ -47,7 +47,6 @@ class ComposerTest extends \PHPUnit_Framework_TestCase
 
     public function testComposerLockUpToDate()
     {
-
         # Thanks to: http://stackoverflow.com/a/28730898
         $lock = json_decode(file_get_contents($this->folder . self::COMPOSER_LOCK))->{'hash'};
         $json = md5(file_get_contents($this->folder . self::COMPOSER_JSON));
