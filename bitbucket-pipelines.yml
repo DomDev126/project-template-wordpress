@@ -9,6 +9,7 @@ pipelines:
           - echo $MY_SSH_KEY | base64 --decode -i > ~/.ssh/id_rsa
           - echo > ~/.ssh/known_hosts
           - ssh-keyscan -t rsa bitbucket.com >> ~/.ssh/known_hosts
+          - ssh-keyscan -t rsa bitbucket.org >> ~/.ssh/known_hosts
           - ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
           - chmod -R u+rwX,go-rwX ~/.ssh
           - ./bin/composer install --no-interaction --no-progress --no-suggest
