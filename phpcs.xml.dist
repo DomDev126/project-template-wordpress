@@ -9,7 +9,8 @@
     <description>PHP CodeSniffer Configuration</description>
 
     <!-- Coding standard to use -->
-    <rule ref="WordPress" />
+    <rule ref="WordPress-Docs" />
+    <rule ref="WordPress-Extra" />
 
     <!-- Do not fail on warnings -->
     <config name="ignore_warnings_on_exit" value="1" />
