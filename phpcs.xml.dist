@@ -27,4 +27,5 @@
     <file>./src/</file>
     <file>./tests/</file>
     <file>./webroot/</file>
+    <file>./Phakefile.php</file>
 </ruleset>
