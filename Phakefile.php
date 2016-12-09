@@ -1,6 +1,12 @@
 <?php
 require_once 'vendor/qobo/phake-builder/Phakefile.php';
 
+/**
+ * Get project version
+ *
+ * @param array $app Application variables
+ * @return string
+ */
 function getProjectVersion($app = null)
 {
     $result = null;
