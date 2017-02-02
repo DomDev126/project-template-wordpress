@@ -14,13 +14,12 @@
  * @param mixed $var Variable to print out.
  * @return void
  */
-function debug($var)
-{
-    if (defined('WP_DEBUG') && WP_DEBUG) {
-        echo '<pre>';
+function debug( $var ) {
+	if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+		echo '<pre>';
 		// @codingStandardsIgnoreStart
 		print_r( $var );
 		// @codingStandardsIgnoreEnd
-        echo '</pre>';
-    }
+		echo '</pre>';
+	}
 }
