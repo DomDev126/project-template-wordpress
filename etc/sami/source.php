@@ -28,7 +28,7 @@ $iterator = Finder::create()
     ->name('*.php')
     ->exclude('tests')
     ->exclude('Test')
-    ->in(['./src'])
+    ->in(['./src', './webroot/custom-themes'])
 ;
 
 # If PROJECT_NAME is not set, use the project folder

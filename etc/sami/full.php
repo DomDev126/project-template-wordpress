@@ -30,7 +30,7 @@ $iterator = Finder::create()
     ->name('*.php')
     ->exclude('tests')
     ->exclude('Test')
-    ->in(['./src', './vendor'])
+    ->in(['./src', './webroot', './vendor'])
 ;
 
 # If PROJECT_NAME is not set, use the project folder
