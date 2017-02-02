@@ -9,10 +9,14 @@
     <description>PHP CodeSniffer Configuration</description>
 
     <!-- Coding standard to use -->
-    <rule ref="PSR2" />
+    <rule ref="WordPress-Docs" />
+    <rule ref="WordPress-Extra" />
 
     <!-- Do not fail on warnings -->
     <config name="ignore_warnings_on_exit" value="1" />
+
+    <!-- Added WordPress Coding Standards (wpcs) to path -->
+    <config name="installed_paths" value="../../wp-coding-standards/wpcs" />
 
     <!-- Assume UTF-8 -->
     <config name="encoding" value="UTF-8" />
@@ -24,8 +28,8 @@
     <arg value="p" />
 
     <!-- Files and directories to check -->
-    <file>./webroot/custom-themes/</file>
     <file>./src/</file>
     <file>./tests/</file>
+    <file>./webroot/custom-themes/</file>
     <file>./Phakefile.php</file>
 </ruleset>
