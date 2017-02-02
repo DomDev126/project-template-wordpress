@@ -29,7 +29,5 @@
 
     <!-- Files and directories to check -->
     <file>./src/</file>
-    <file>./tests/</file>
     <file>./webroot/custom-themes/</file>
-    <file>./Phakefile.php</file>
 </ruleset>
