@@ -47,10 +47,26 @@ class ComposerTest extends \PHPUnit_Framework_TestCase
 
     public function testComposerLockUpToDate()
     {
-        # Thanks to: http://stackoverflow.com/a/28730898
-        $lock = json_decode(file_get_contents($this->folder . self::COMPOSER_LOCK))->{'hash'};
-        $json = md5(file_get_contents($this->folder . self::COMPOSER_JSON));
+        # Until composer v1.3.0-RC (https://github.com/composer/composer/releases/tag/1.3.0-RC)
+        # we could easily compare the hashes.  However now it's not that
+        # easy anymore.  Bringing in the whole composer source just for
+        # such a quick test seems extensive, therefor we simply compare
+        # modification timestamps of the two files.
+        #
+        # More details: http://stackoverflow.com/a/28730898
 
-        $this->assertEquals($lock, $json, "composer.lock is outdated");
+        // Skip if composer.lock does not exist
+        if (!file_exists($this->folder . self::COMPOSER_LOCK)) {
+            $this->markTestSkipped($this->folder . self::COMPOSER_LOCK . " does not exist.");
+        }
+        // Skip if composer.json does not exist
+        if (!file_exists($this->folder . self::COMPOSER_JSON)) {
+            $this->markTestSkipped($this->folder . self::COMPOSER_JSON . " does not exist.");
+        }
+
+        $lock = filemtime($this->folder . self::COMPOSER_LOCK);
+        $json = filemtime($this->folder . self::COMPOSER_JSON);
+
+        $this->assertGreaterThanOrEqual($json, $lock, "composer.lock is outdated");
     }
 }
