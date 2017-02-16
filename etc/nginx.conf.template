@@ -23,8 +23,8 @@ server {
 
 	#
 	# Expires
-	# 
-	 
+	#
+
 	# Non-aggressive Expires header for JavaScript, CSS, and images
 	location ~* \.(js|css|png|jpg|jpeg|gif|ico)$ {
 		expires 5m;
@@ -64,17 +64,6 @@ server {
 	location ~ /\. {
 			deny all;
 	}
-	# Deny all attempts to access Composer files
-	location = /composer.json { deny all; }
-	location = /composer.lock { deny all; }
-	location ~ ^/vendor/ { deny all; }
-
-	# Deny all attempts to access template-project files
-	location ~ ^/(bin|build|etc|src|tests)/ { deny all; }
-	location = /Phakefile.php { deny all; }
-	location = /phpunit.xml.dist { deny all; }
-	location = /phpunit.xml { deny all; }
-	location = /README.md { deny all; }
 
 	# Try to serve file directly, fallback on index.php
 	index index.php;
