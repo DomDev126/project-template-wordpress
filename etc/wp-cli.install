@@ -10,21 +10,21 @@
 		--admin_password="%%WP_ADMIN_PASS%%" \
 		--admin_email="%%WP_ADMIN_EMAIL%%"
 
-# 
+#
 # Add dev user
-# 
+#
 %%SYSTEM_COMMAND_WPCLI%% user create "%%WP_DEV_USER%%" "%%WP_DEV_EMAIL%%" --user_pass="%%WP_DEV_PASS%%" --role=administrator
 
-# 
+#
 # Remove default content
-# 
+#
 %%SYSTEM_COMMAND_WPCLI%% comment delete 1 --force
 %%SYSTEM_COMMAND_WPCLI%% post delete 1 --force
 %%SYSTEM_COMMAND_WPCLI%% post delete 2 --force
 
-# 
+#
 # Setup friendly URLs
-# 
+#
 %%SYSTEM_COMMAND_WPCLI%% rewrite structure "/%year%/%monthnum%/%day%/%postname%/"
 
 # Install all plugins that are found in the Child theme directory.
@@ -38,24 +38,34 @@ then
 	done
 fi
 
-# 
+#
 # Activate all installed inactive plugins (install them with Composer)
-# 
+#
 for WP_INACTIVE_PLUGIN in $(%%SYSTEM_COMMAND_WPCLI%% plugin list --status=inactive --field=name)
 do
 	%%SYSTEM_COMMAND_WPCLI%% plugin activate "$WP_INACTIVE_PLUGIN"
 done
 
 #
-# Activate custom child theme themes
-# 
+# Symlink the custom theme
+#
+# TODO: This should configurable and synchronized with wp-config.php
+echo "Creating symbolic link for custom theme in WordPress themes"
+pushd ./webroot/wp-content/themes > /dev/null
+if [ ! -e custom ]
+then
+	ln -s ../../custom-themes/custom
+fi
+popd > /dev/null
 
-# Custom child theme (this is just a good practice)
+#
+# Activate custom child theme themes
+#
 %%SYSTEM_COMMAND_WPCLI%% theme activate custom
 
 #
 # Setting options
-# 
+#
 
 # WordPress is in the wp/ folder, but home should be in the root
 %%SYSTEM_COMMAND_WPCLI%% option update home '%%WP_URL%%'
@@ -81,7 +91,7 @@ done
 
 #
 # Setting categories
-# 
+#
 
 # Update default category 'Uncategorised', set name & slug from 'Uncategorised' to 'General'
 %%SYSTEM_COMMAND_WPCLI%% term update category 1 --name=General --slug=general

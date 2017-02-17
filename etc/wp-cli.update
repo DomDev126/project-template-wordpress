@@ -4,15 +4,27 @@
 
 #
 # Update Wordpress Database
-# 
+#
 %%SYSTEM_COMMAND_WPCLI%% core update-db
 
 #
 # Setting categories
-# 
+#
 
 # Update default category 'Uncategorised', set name & slug from 'Uncategorised' to 'General'
 %%SYSTEM_COMMAND_WPCLI%% term update category 1 --name=General --slug=general
+
+#
+# Symlink the custom theme
+#
+# TODO: This should configurable and synchronized with wp-config.php
+echo "Creating symbolic link for custom theme in WordPress themes"
+pushd ./webroot/wp-content/themes > /dev/null
+if [ ! -e custom ]
+then
+	ln -s ../../custom-themes/custom
+fi
+popd > /dev/null
 
 # Install all plugins that are found in the Child theme directory.
 # Usually, these plugins are the proprietary plugins. (WPML, etc.).
