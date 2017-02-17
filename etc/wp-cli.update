@@ -20,9 +20,9 @@
 # TODO: This should configurable and synchronized with wp-config.php
 echo "Creating symbolic link for custom theme in WordPress themes"
 pushd ./webroot/wp-content/themes > /dev/null
-if [ ! -f ./custom ]
+if [ ! -e custom ]
 then
-	ln -s ../../custom-themes/custom custom
+	ln -s ../../custom-themes/custom
 fi
 popd > /dev/null
 
