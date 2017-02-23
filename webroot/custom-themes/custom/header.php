@@ -42,7 +42,7 @@ $header_nav = [
 	            <span class="icon-bar"></span>
 	            <span class="icon-bar"></span>
 	          </button>
-	          <a class="navbar-brand" href="#">Qobo Genetic Theme</a>
+	          <a class="navbar-brand" href="#">Qobo Generic Theme</a>
 	        </div>
 	        <div id="navbar" class="collapse navbar-collapse navbar-right">
 	        	<?php wp_nav_menu( $header_nav );	?>
