@@ -11,7 +11,7 @@ add_filter( 'theme_page_templates', 'unregister_page_templates' );
 /**
  * Unregisters not needed widgets from parent theme
  *
- * @param array $page_template Parent theme page templates.
+ * @param array $page_templates Parent theme page templates.
  * @return array
  */
 function unregister_page_templates( $page_templates ) {
