@@ -20,12 +20,41 @@ get_header();
 	<div class="container">
 	<div class="row">
 		<div class="col-md-6">
-			<h3>Font awesome is included</h3>
+			<h3><a href="http://fontawesome.io/">Fontawesome</a> is included</h3>
 			<i class="fa fa-camera-retro fa-lg"></i> fa-lg
 			<i class="fa fa-camera-retro fa-2x"></i> fa-2x
 			<i class="fa fa-camera-retro fa-3x"></i> fa-3x
 			<i class="fa fa-camera-retro fa-4x"></i> fa-4x
 			<i class="fa fa-camera-retro fa-5x"></i> fa-5x
+		</div>
+		<div class="col-md-6">
+			<h3><a href="http://alfredobarron.github.io/smoke/#/">Smoke</a> is included</h3>
+			<script>
+			jQuery( document ).ready(function() {
+				jQuery('#btnAlphanumeric').click(function(e) {
+					e.preventDefault();
+					if( jQuery('#formAlphanumeric').smkValidate() ){
+						jQuery.smkAlert({
+							text: jQuery('#formAlphanumeric input').val(),
+							type: 'success'
+						});
+					}
+				});
+			});
+			</script>
+			<form class="form-horizontal" id="formAlphanumeric" data-smk-icon="glyphicon-remove">
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Alphanumeric</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" data-smk-type="alphanumeric" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<button type="submit" class="btn btn-default" id="btnAlphanumeric">Submit</button>
+					</div>
+				</div>
+			</form>
 		</div>
 	</div>
 	</div>
