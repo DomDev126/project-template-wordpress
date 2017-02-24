@@ -17,6 +17,18 @@ get_header();
 		<a href="<?php bloginfo( 'url' )?>"><img src="<?php echo esc_attr( get_template_directory_uri() ); ?>/img/logo.png" alt="Company logo"></a>
 		<p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
 	</div>
+	<div class="container">
+	<div class="row">
+		<div class="col-md-6">
+			<h3>Font awesome is included</h3>
+			<i class="fa fa-camera-retro fa-lg"></i> fa-lg
+			<i class="fa fa-camera-retro fa-2x"></i> fa-2x
+			<i class="fa fa-camera-retro fa-3x"></i> fa-3x
+			<i class="fa fa-camera-retro fa-4x"></i> fa-4x
+			<i class="fa fa-camera-retro fa-5x"></i> fa-5x
+		</div>
+	</div>
+	</div>
 </div>
 
 <div class="container">
