@@ -30,4 +30,9 @@
     <!-- Files and directories to check -->
     <file>./src/</file>
     <file>./webroot/custom-themes/</file>
+    <arg name="ignore" value="webroot/custom-themes/custom/includes/bootstrap/" />
+    <arg name="ignore" value="webroot/custom-themes/custom/includes/font-awesome/" />
+    <arg name="ignore" value="webroot/custom-themes/custom/includes/jquery/" />
+    <arg name="ignore" value="webroot/custom-themes/custom/includes/jquery-ui/" />
+    <arg name="ignore" value="webroot/custom-themes/custom/includes/smoke/" />
 </ruleset>
