@@ -5,7 +5,7 @@ pipelines:
     - step:
         script:
           - service mysql start
-          - mkdir ~/.ssh
+          - if [ ! -d ~/.ssh ] ; then mkdir ~/.ssh ; fi
           - echo $MY_SSH_KEY | base64 --decode -i > ~/.ssh/id_rsa
           - echo > ~/.ssh/known_hosts
           - ssh-keyscan -t rsa bitbucket.com >> ~/.ssh/known_hosts
