@@ -34,7 +34,9 @@
     "wpackagist-plugin/listo": "1.1",
     "wpackagist-plugin/wordpress-seo": "4.1",
     "wpackagist-plugin/wp-super-cache": "1.4.8",
-    "wpackagist-plugin/google-analytics-for-wordpress": "5.5.4"
+    "wpackagist-plugin/google-analytics-for-wordpress": "5.5.4",
+    "wpackagist-plugin/bootstrap-for-contact-form-7": "1.4.2",
+    "wpackagist-plugin/multiple-post-thumbnails": "1.6.6"
   },
   "suggest": {
     "qobo/qobo-wp-custom-admin-theme": "it fixes WP admin styles where widget input, select overlap their container",
