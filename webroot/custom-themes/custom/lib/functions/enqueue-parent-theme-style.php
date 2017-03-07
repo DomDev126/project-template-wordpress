@@ -18,12 +18,12 @@ add_action( 'wp_enqueue_scripts', 'enqueue_parent_theme_style' );
  * @return void
  */
 function enqueue_parent_theme_style() {
-	wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
-	wp_enqueue_style( 'child-custom', get_stylesheet_directory_uri() . '/style.css' );
 	wp_enqueue_style( 'bootstrap-min-css', INCLUDES_DIR . 'bootstrap/3.3.7/css/bootstrap.min.css' );
 	wp_enqueue_style( 'bootstrap-theme-min-css', INCLUDES_DIR . 'bootstrap/3.3.7/css/bootstrap-theme.min.css' );
 	wp_enqueue_style( 'font-awesome-min-css', INCLUDES_DIR . 'font-awesome/4.7.0/css/font-awesome.min.css' );
 	wp_enqueue_style( 'smoke-min-css', INCLUDES_DIR . 'smoke/3.1.1/css/smoke.min.css' );
+	wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
+	wp_enqueue_style( 'child-custom', get_stylesheet_directory_uri() . '/style.css' );
 }
 
 
