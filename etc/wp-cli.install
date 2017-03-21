@@ -51,12 +51,12 @@ done
 #
 # TODO: This should configurable and synchronized with wp-config.php
 echo "Creating symbolic link for custom theme in WordPress themes"
-pushd ./webroot/wp-content/themes > /dev/null
+cd ./webroot/wp-content/themes
 if [ ! -e custom ]
 then
 	ln -s ../../custom-themes/custom
 fi
-popd > /dev/null
+cd -
 
 #
 # Activate custom child theme themes
