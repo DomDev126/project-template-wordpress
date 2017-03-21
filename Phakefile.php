@@ -38,7 +38,7 @@ function runWPCLIBatch($name, $app)
     }
 
     $parts = array();
-    $parts[] = getValue('SYSTEM_COMMAND_SHELL', $app) ?: '/bin/sh';
+    $parts[] = getValue('SYSTEM_COMMAND_SHELL', $app) ?: '/bin/bash';
     $parts[] = $dst;
     doShellCommand($parts);
     unlink($dst);
