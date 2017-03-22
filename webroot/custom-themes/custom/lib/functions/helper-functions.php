@@ -1,6 +1,6 @@
 <?php
 /**
- * Require login
+ * Helper functions
  *
  * @package Custom
  */
