@@ -13,8 +13,9 @@
   },
   "require": {
     "php": ">=5.6.0",
-    "johnpbloch/wordpress": "4.7.3",
+    "johnpbloch/wordpress-core": "4.7.3",
     "fancyguy/webroot-installer": "1.1.0",
+    "johnpbloch/wordpress-core-installer": "0.2.1",
     "qobo/phake-builder": "~2.0",
     "pyrech/composer-changelogs": "~1.4",
     "wp-cli/wp-cli": "~1.0",
