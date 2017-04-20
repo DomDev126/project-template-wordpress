@@ -6,6 +6,8 @@
  * @subpackage Custom
  */
 
+define( 'THEME_LANG_PATH', dirname( dirname( dirname( __DIR__ ) ) ) . DIRECTORY_SEPARATOR . 'custom' . DIRECTORY_SEPARATOR . 'languages' );
+
 /**
  * Loads the theme's translated strings files based on their textdomain.
  *
@@ -24,17 +26,15 @@ function register_textdomain( $path ) {
  */
 function register_child_theme_textdomains() {
 
-	$theme_language_path = dirname( __DIR__ ) . DIRECTORY_SEPARATOR . 'custom' . DIRECTORY_SEPARATOR . 'languages';
-
-	$dir = new DirectoryIterator( $theme_language_path );
+	$dir = new DirectoryIterator( THEME_LANG_PATH );
 
 	if ( ! empty( $dir ) ) {
 		foreach ( $dir as $fileinfo ) {
 			if ( $fileinfo->isDir() && ! $fileinfo->isDot() ) {
-				register_textdomain( $theme_language_path . DIRECTORY_SEPARATOR . $fileinfo->getFilename() );
+				register_textdomain( THEME_LANG_PATH . DIRECTORY_SEPARATOR . $fileinfo->getFilename() );
 			}
 		}
-		register_textdomain( $theme_language_path );
+		register_textdomain( THEME_LANG_PATH );
 	}
 
 	return false;
