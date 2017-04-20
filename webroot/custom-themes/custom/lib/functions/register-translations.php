@@ -13,7 +13,7 @@
  */
 function register_textdomain( $path ) {
 
-	$text_domains = [ 'qobo' ];
+	$text_domains = [ 'custom-theme' ];
 	foreach ( $text_domains as $domain ) {
 		load_child_theme_textdomain( $domain , $path );
 	}
