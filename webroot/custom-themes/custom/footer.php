@@ -40,5 +40,12 @@ $footer_nav = [
 
 <?php wp_footer(); ?>
 
+<script>
+	$('.navbar-toggle').click(function(){
+		$('#navbar').toggleClass('visible');
+		$('body').toggleClass('opacity');
+	});
+</script>
+
 </body>
 </html>
