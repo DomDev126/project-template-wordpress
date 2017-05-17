@@ -1,0 +1,144 @@
+/*
+ Description: Bootstrap Navbar
+ Template: qobo-wp-generic-theme
+ Version: 1.1.0
+ Author: Leonidas Christodoulou
+*/
+
+#top-navigation-bar {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+#navbar{
+	padding-top:0px;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.navbar {
+	margin-top: 35px;
+	margin-bottom: 35px;
+}
+
+.navbar-default, .navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active>a:hover , .navbar-default .navbar-nav>.active>a:focus,
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a,
+.navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+	background-color: transparent;
+	border: none;
+	background-image: none;
+	-webkit-box-shadow:none;
+	box-shadow:none;
+}
+
+.navbar-logo{
+	margin-bottom: 10px;
+}
+
+.navbar-toggle {
+	margin-top: 2px;
+	margin-right: 5px;
+}
+
+.dropdown-menu>.active>a, .dropdown-menu>.active>a:focus, .dropdown-menu>.active>a:hover {
+	background-image: none !important;
+	background-color: #2951CC;
+	color:#fff !important;
+}
+
+.dropdown-menu {
+	padding:0px;
+}
+
+.no-padding{
+	padding:0px !important;
+}
+
+@media only screen and (max-width:1199px) {
+
+	#navbar {
+		background: #fff;
+		width: 275px;
+		display: block !important;
+		height: 100% !important;
+		position: fixed;
+		left: -275px;
+		top: 0px;
+		transition: left 0.3s linear;
+		margin: 0;
+		border: 0;
+		border-radius: 0;
+		overflow-y: auto;
+		overflow-x: hidden;
+		height: 100%;
+		z-index:999999999 !important;
+		text-align:left;
+		padding: 15px 35px;
+	}
+
+	#menu-header{
+		padding:25px;
+	}
+
+	#navbar.visible {
+		left: 0px;
+		transition: left 0.3s linear;
+	}
+
+	.navbar-toggle {
+		display: inline-block;
+		vertical-align: middle;
+		margin: 0;
+	}
+
+	#navbar li { display: block; float:none; }
+
+	.opacity {
+		background: rgba(0,0,0,0.7);
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index:999999999 !important;
+	}
+
+}
+
+@media (min-width: 992px) and (max-width: 1227px) {
+
+	#top-navigation-bar .no-padding {
+		padding: 0px !important;
+	}
+}
+
+@media (min-width: 992px) and (max-width: 1390px) {
+
+	#navbar li > a {
+		padding-left: 3px;
+		padding-right: 12px;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+
+	.navbar-header{
+		top: 28px;
+		position: relative;
+	}
+
+	#navbar {
+		width: 375px;
+		left: -375px;
+	}
+
+}
+
+@media (max-width: 768px) {
+
+	#navbar {
+		padding: 0px 15px;
+	}
+
+}
