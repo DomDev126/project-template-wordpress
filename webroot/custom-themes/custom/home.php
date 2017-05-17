@@ -14,7 +14,7 @@ get_header();
 
 <div class="jumbotron">
 	<div class="container">
-		<a href="<?php bloginfo( 'url' )?>"><img src="<?php echo esc_attr( get_template_directory_uri() ); ?>/img/logo.png" alt="Company logo"></a>
+		<a href="<?php bloginfo( 'url' )?>"><img src="<?php echo esc_attr( get_stylesheet_directory_uri() ); ?>/images/logo.png" alt="Company logo"></a>
 		<p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
 	</div>
 	<div class="container">
