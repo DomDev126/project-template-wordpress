@@ -1,0 +1,38 @@
+/*
+ Description: Responsive Cover Image
+ Template: qobo-wp-generic-theme
+ Version: 1.0.0
+ Author: Leonidas Christodoulou
+*/
+
+.img-responsive {
+	width: 100%;
+}
+
+.img-responsive.cover {
+	object-fit: cover;
+}
+
+@media (min-width: 992px) and (max-width: 1390px) {
+	.img-responsive.cover {
+		height: 330px;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+	.img-responsive.cover {
+		height: 350px;
+	}
+}
+
+@media (min-width: 479px) and (max-width: 767px) {
+	.img-responsive.cover {
+		height: 230px;
+	}
+}
+
+@media (max-width: 480px) {
+	.img-responsive.cover {
+		height: 185px;
+	}
+}
