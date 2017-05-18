@@ -21,7 +21,7 @@ function enqueue_parent_theme_style() {
 	wp_enqueue_style( 'bootstrap-min-css', INCLUDES_DIR . 'bootstrap/3.3.7/css/bootstrap.min.css' );
 	wp_enqueue_style( 'bootstrap-theme-min-css', INCLUDES_DIR . 'bootstrap/3.3.7/css/bootstrap-theme.min.css' );
 	wp_enqueue_style( 'bootstrap-navbar-css', INCLUDES_DIR . 'bootstrap-navbar/1.1.0/bootstrap-navbar.css' );
-	wp_enqueue_style( 'bootstrap-extension', get_template_directory_uri() . '/css/bootstrap-extension.css' );
+	wp_enqueue_style( 'responsive-cover-image-css', INCLUDES_DIR . 'responsive-cover-image/1.0.0/responsive-cover-image.css' );
 	wp_enqueue_style( 'font-awesome-min-css', INCLUDES_DIR . 'font-awesome/4.7.0/css/font-awesome.min.css' );
 	wp_enqueue_style( 'smoke-min-css', INCLUDES_DIR . 'smoke/3.1.1/css/smoke.min.css' );
 	wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
