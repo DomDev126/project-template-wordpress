@@ -32,7 +32,7 @@ git pull https://github.com/QoboLtd/project-template
 Usage
 -----
 
-###Quick
+### Quick
 
 Now that you have the project template installed, check that it works
 before you start working on your changes.  Fire up the PHP web server:
@@ -85,7 +85,7 @@ to use these targets and pass runtime configuration parameters.
 Test
 ----
 
-###PHPUnit
+### PHPUnit
 
 project-template brings quite a bit of setup for testing your projects.  The
 first part of this setup is [PHPUnit](https://phpunit.de/).  To try it out,
@@ -101,7 +101,7 @@ If it didn't work for you, here are some of the things to try:
 * If ```phpunit``` worked fine, but the tests failed, that's because you probably don't have a web and Selenium server running yet (more on that later).  For now, try the simplified test plan: ```phpunit --exclude-group selenium --exclude-group network```.
 * If you had some other issue, please [let us know](https://github.com/QoboLtd/project-template/issues/new).
 
-###Selenium
+### Selenium
 
 [Selenium](http://www.seleniumhq.org/) is a testing platform that allows one to run tests through a real browser.
 Setting this up and getting an example might sound complicated, so project-template
@@ -123,7 +123,7 @@ Or just the Selenium tests with:
 ./vendor/bin/phpunit --group selenium
 ```
 
-###Travis CI
+### Travis CI
 
 Continious Integration is a tool that helps to run your tests whenever you do any
 changes on your code base (commit, merge, etc).  There are many tools that you can
@@ -133,7 +133,7 @@ Have a look at ```.travis.yml``` file, which describes the environment matrix, p
 steps and ways to run the test suite.  For your real project, based on project-template, you'd probably
 want to remove the example tests from the file.
 
-###Examples
+### Examples
 
 project-template provides a few examples of how to write and organize unit tests.  Have a look
 in the ```tests/``` folder.  Now you have **NO EXCUSE** for not testing your applications!
