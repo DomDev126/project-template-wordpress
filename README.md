@@ -107,9 +107,9 @@ If it didn't work for you, here are some of the things to try:
 Setting this up and getting an example might sound complicated, so project-template
 to the rescue.  Here is what you need to do:
 
-* Download [Selenium Server Standalone JAR file](http://selenium-release.storage.googleapis.com/2.53/selenium-server-standalone-2.53.0.jar) (check ```.travis.yml``` for newer versions).
+* Download [Selenium Server Standalone JAR file](https://selenium-release.storage.googleapis.com/3.4/selenium-server-standalone-3.4.0.jar) (check ```.travis.yml``` for newer versions).
 * Start the web server (in separate terminal or in background): ```php -S localhost:8000```
-* Start the Selenium server (in separate terminal or in background): ```java -jar selenium-server-standalone-2.53.0.jar```
+* Start the Selenium server (in separate terminal or in background): ```java -jar selenium-server-standalone-3.4.0.jar```
 
 Now you can run the full test suite with:
 
