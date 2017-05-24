@@ -16,8 +16,9 @@ install:
     - ./vendor/bin/phake app:install CHOWN_USER=$USER CHGRP_GROUP=$USER DB_NAME=app DB_ADMIN_USER=root DB_USER=root
 
 before_script:
-    - sh -e /etc/init.d/xvfb start
     - export DISPLAY=:99.0
+    - sh -e /etc/init.d/xvfb start
+    - sleep 3
     - wget http://selenium-release.storage.googleapis.com/2.53/selenium-server-standalone-2.53.0.jar
     - java -jar selenium-server-standalone-2.53.0.jar > /dev/null 2>&1 &
     - ./bin/phpserv >/dev/null 2>&1 &
