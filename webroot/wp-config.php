@@ -29,7 +29,7 @@ define('WP_SITEURL', WP_HOME . '/wp');
 
 // Changes for wp-content/ folder at root level
 define('WP_CONTENT_DIR', dirname(__FILE__) . '/wp-content');
-define('WP_CONTENT_URL', '/wp-content');
+define('WP_CONTENT_URL', WP_HOME . '/wp-content');
 
 $name = getenv('DB_NAME');
 $host = getenv('DB_HOST') ?: 'localhost';
