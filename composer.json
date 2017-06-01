@@ -18,7 +18,7 @@
     "johnpbloch/wordpress-core-installer": "0.2.1",
     "qobo/phake-builder": "~2.0",
     "pyrech/composer-changelogs": "~1.4",
-    "wp-cli/wp-cli": "~1.0",
+    "wp-cli/wp-cli": "1.1.0",
     "qobo/qobo-wp-generic-theme": "1.1.2",
     "qobo/qobo-wp-brand": "1.0.3",
     "qobo/qobo-wp-shortcodes": "1.0.1",
@@ -38,7 +38,8 @@
     "wpackagist-plugin/bootstrap-for-contact-form-7": "1.4.2",
     "wpackagist-plugin/multiple-post-thumbnails": "1.6.6",
     "wpackagist-plugin/wp-media-library-categories": "1.5.4",
-    "wpackagist-plugin/page-links-to": "2.9.9"
+    "wpackagist-plugin/page-links-to": "2.9.9",
+    "wpackagist-plugin/akismet": "3.3.2"
   },
   "suggest": {
     "qobo/qobo-wp-custom-admin-theme": "it fixes WP admin styles where widget input, select overlap their container",
