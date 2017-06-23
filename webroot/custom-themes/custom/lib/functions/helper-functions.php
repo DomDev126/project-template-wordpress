@@ -69,7 +69,7 @@ function disable_upload_files_for_user_qobo() {
 	}
 
 	$user = wp_get_current_user();
-	if ( getenv('WP_DEV_USER') === $user->user_login ) {
+	if ( getenv( 'WP_DEV_USER' ) === $user->user_login ) {
 		remove_post_type_thumbnail();
 		add_action( 'admin_menu', 'remove_menu_links' );
 	}
