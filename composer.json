@@ -22,7 +22,7 @@
     "qobo/qobo-wp-generic-theme": "1.1.2",
     "qobo/qobo-wp-brand": "1.0.3",
     "qobo/qobo-wp-shortcodes": "1.0.1",
-    "wpackagist-plugin/disable-wordpress-updates": "1.4.8",
+    "wpackagist-plugin/disable-wordpress-updates": "1.6.2",
     "wpackagist-plugin/wp-theme-plugin-editor-disable": "1.0.0",
     "wpackagist-plugin/disable-comments": "1.6",
     "wpackagist-plugin/jetpack": "4.5",
