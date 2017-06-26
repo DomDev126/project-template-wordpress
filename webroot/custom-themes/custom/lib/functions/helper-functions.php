@@ -52,19 +52,19 @@ function get_images_by_gategory_slug( $slug, $no_of_images = 1 ) {
 	return $result;
 }
 
-add_action( 'init', 'disable_upload_files_for_user_qobo' );
+add_action( 'init', 'disable_upload_files_for_wp_dev_user' );
 
 /**
  * Disable upload functionality for the qobo user
  */
-function disable_upload_files_for_user_qobo() {
+function disable_upload_files_for_wp_dev_user() {
 
-	$accepted_domains_str = getenv( 'QOBO_USER_DOMAINS' );
-	if ( empty( $accepted_domains_str ) || false === $accepted_domains_str ) {
-		$accepted_domains_str = '::1';
+	$dev_env = getenv( 'DEV_ENV' );
+	if ( empty( $dev_env ) || false === $dev_env ) {
+		$dev_env = 'localhost';
 	}
-	$accepted_domains = explode( ',', $accepted_domains_str );
-	if ( ! in_array( $_SERVER['REMOTE_ADDR'], $accepted_domains ) ) {
+
+	if ( $_SERVER['SERVER_NAME'] !== $dev_env ) {
 		return;
 	}
 
@@ -73,6 +73,7 @@ function disable_upload_files_for_user_qobo() {
 		remove_post_type_thumbnail();
 		add_action( 'admin_menu', 'remove_menu_links' );
 		remove_action( 'media_buttons', 'media_buttons' );
+		add_action( 'admin_notices', 'image_upload_notice' );
 	}
 }
 
@@ -103,4 +104,3 @@ function image_upload_notice() {
 	<?php
 }
 
-add_action( 'admin_notices', 'image_upload_notice' );
