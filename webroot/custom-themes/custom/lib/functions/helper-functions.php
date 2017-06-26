@@ -64,7 +64,7 @@ function disable_upload_files_for_wp_dev_user() {
 		$dev_env = 'localhost';
 	}
 
-	if ( $_SERVER['SERVER_NAME'] !== $dev_env ) {
+	if ( $_SERVER['SERVER_NAME'] === $dev_env ) {
 		return;
 	}
 
