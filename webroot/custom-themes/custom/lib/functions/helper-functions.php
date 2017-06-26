@@ -72,6 +72,7 @@ function disable_upload_files_for_user_qobo() {
 	if ( getenv( 'WP_DEV_USER' ) === $user->user_login ) {
 		remove_post_type_thumbnail();
 		add_action( 'admin_menu', 'remove_menu_links' );
+		remove_action( 'media_buttons', 'media_buttons' );
 	}
 }
 
@@ -84,9 +85,22 @@ function remove_menu_links() {
 }
 
 /**
- * Reomove for post types (post, page) the upload thumbnail functionality
+ * Remove for post types (post, page) the upload thumbnail functionality
  */
 function remove_post_type_thumbnail() {
 	remove_post_type_support( 'post', 'thumbnail' );
 	remove_post_type_support( 'page', 'thumbnail' );
 }
+
+/**
+ * Image upload notice.
+ */
+function image_upload_notice() {
+	?>
+	<div class="update-nag notice">
+		<p><?php esc_html_e( 'Image Upload Functionality is Disabled!', 'qobo_domain' ); ?></p>
+	</div>
+	<?php
+}
+
+add_action( 'admin_notices', 'image_upload_notice' );
