@@ -98,30 +98,7 @@ runt the following command (don't worry if it fails, we'll get to it shortly):
 If it didn't work for you, here are some of the things to try:
 
 * If `phpunit` command wasn't found, try `composer install` and then run the command again.  Chances are phpunit was removed during the `app:install`, which runs composer with `--no-dev` parameter.
-* If `phpunit` worked fine, but the tests failed, that's because you probably don't have a web and Selenium server running yet (more on that later).  For now, try the simplified test plan: `phpunit --exclude-group selenium --exclude-group network`.
 * If you had some other issue, please [let us know](https://github.com/QoboLtd/project-template/issues/new).
-
-### Selenium
-
-[Selenium](http://www.seleniumhq.org/) is a testing platform that allows one to run tests through a real browser.
-Setting this up and getting an example might sound complicated, so project-template
-to the rescue.  Here is what you need to do:
-
-* Download [Selenium Server Standalone JAR file](https://selenium-release.storage.googleapis.com/3.4/selenium-server-standalone-3.4.0.jar) (check `.travis.yml` for newer versions).
-* Start the web server (in separate terminal or in background): `php -S localhost:8000`
-* Start the Selenium server (in separate terminal or in background): `java -jar selenium-server-standalone-3.4.0.jar`
-
-Now you can run the full test suite with:
-
-```
-./vendor/bin/phpunit
-```
-
-Or just the Selenium tests with:
-
-```
-./vendor/bin/phpunit --group selenium
-```
 
 ### Travis CI
 
@@ -137,6 +114,5 @@ want to remove the example tests from the file.
 
 project-template provides a few examples of how to write and organize unit tests.  Have a look
 in the `tests/` folder.  Now you have **NO EXCUSE** for not testing your applications!
-
 
 
