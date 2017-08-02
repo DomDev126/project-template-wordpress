@@ -1,0 +1,16 @@
+#!/usr/bin/env php
+<?php
+
+require_once __DIR__ . "/../vendor/autoload.php";
+
+$config = [
+];
+
+$app = new \Qobo\Robo\App();
+$statusCode = $app->name("Qobo Robo Project Builder")
+    ->version("v1.0.0")
+    ->args($_SERVER['argv'])
+    ->config($config)
+    ->run();
+
+exit($statusCode);
