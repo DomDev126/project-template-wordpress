@@ -5,14 +5,22 @@
 	"require": {
 		"php": ">=5.6.0",
 		"qobo/phake-builder": "~3.0",
-		"pyrech/composer-changelogs": "~1.4"
+		"pyrech/composer-changelogs": "~1.4",
+		"consolidation/robo": "^1.1"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "*",
+		"phpunit/phpunit-selenium": "~3.0",
 		"squizlabs/php_codesniffer": "*",
 		"sami/sami": "~3.2"
 	},
 	"suggest": {
 		"ext-xdebug": "Allows code coverage reports and advanced debugging"
-	}
+	},
+    "autoload": {
+        "psr-4": {
+            "Qobo\\Robo\\": "build/Robo"
+        }
+    }
+
 }
