@@ -3,7 +3,7 @@
 namespace Qobo\Robo\Command\Project;
 
 use \Qobo\Robo\AbstractCommand;
-use \Consolidation\OutputFormatters\StructuredData\PropertyList;
+use \Qobo\Robo\Formatter\PropertyList;
 
 class DotenvCreate extends AbstractCommand
 {
