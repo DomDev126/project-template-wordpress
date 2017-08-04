@@ -70,9 +70,9 @@ class App
 
         // set our config
         Robo::createDefaultContainer(
-            null, 
-            null, 
-            null, 
+            null,
+            null,
+            null,
             new Config($this->data['config'])
         );
 
@@ -83,6 +83,8 @@ class App
             $this->data['name'],
             $this->data['version']
         );
+
+        return $statusCode;
     }
 
     /**
