@@ -55,9 +55,13 @@ trait DataAwareTrait
             }
         }
 
-        return count($missing)
-            ? Result::error($this, "Missing required data field(s) [" . implode(",", array_map([$this,"camelize"], $missing)) . "].", $this->data)
-            : Result::success($this, "All required data fields preset", $this->data);
+        if (!count($missing)) {
+            return true;
+        }
+
+        throw new \RuntimeException(
+            sprintf("Missing required data field(s) [%s]", implode(",", array_map([$this,"camelize"], $missing)))
+        );
     }
 
 

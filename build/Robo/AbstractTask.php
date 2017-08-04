@@ -78,12 +78,13 @@ abstract class AbstractTask extends BaseTask
                 $this->data[$k] = array_merge_recursive($this->data[$k], $default);
             }
             continue;
-        }        
+        }
 
         // check if we have all required data fields
-        $res = $this->checkRequiredData();
-        if (!$res->wasSuccessful()) {
-            return $res;
+        try {
+            $this->checkRequiredData();
+        } catch (\Exception $e) {
+            return Result::fromException($this, $e);
         }
 
         // general success, as will be overriden by child classes
@@ -131,7 +132,7 @@ abstract class AbstractTask extends BaseTask
     protected static function getClassKey($key)
     {
         return sprintf(
-            "%s%s.%s", 
+            "%s%s.%s",
             static::configPrefix(),
             static::configClassIdentifier(get_called_class()),
             $key
