@@ -48,21 +48,33 @@ class Reload extends \Qobo\Robo\AbstractTask
 
         $file = file($this->data['path']);
         if (empty($file)) {
-            return Result::success($this, "File is empty, nothing to read");
+            return Result::success($this, "File is empty, nothing to read", $this->data);
         }
 
-        if (preg_match("/^((.*?)\/)(.*)$/", $this->data['path'], $matches)) {
-            $dir = $matches[2];
-            $file = $matches[3];
-        } else {
-            $dir = "./";
-            $file = $this->data['path'];
+        $this->data['data'] = [];
+        foreach ($file as $line) {
+            $line = trim($line);
+
+            // Disregard comments
+            if (strpos($line, '#') === 0) {
+                continue;
+            }
+            // Only use non-empty lines that look like setters
+            if (!preg_match('#^\s*(.*)?=(.*)?$#', $line, $matches) ) {
+                continue;
+            }
+
+            // Do not fill env with lots of empty keys
+            if (trim($matches[2]) === "") {
+                continue;
+            }
+            $this->data['data'][$matches[1]] = $matches[2];
+
+            \Dotenv::makeMutable();
+            \Dotenv::setEnvironmentVariable($line);
+            \Dotenv::makeImmutable();
         }
 
-        \Dotenv::makeMutable();
-        \Dotenv::load($dir, $file);
-        \Dotenv::makeImmutable();
-
-        return Result::success($this, "Successfully reloaded environment");
+        return Result::success($this, "Successfully reloaded environment", $this->data);
     }
 }

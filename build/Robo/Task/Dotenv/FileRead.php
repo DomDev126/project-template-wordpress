@@ -54,7 +54,18 @@ class FileRead extends \Qobo\Robo\AbstractTask
         $this->data['data'] = [];
         foreach ($file as $line) {
             $line = trim($line);
-            if (!preg_match('#^(.*)?=(.*)?$#', $line, $matches)) {
+
+            // Disregard comments
+            if (strpos($line, '#') === 0) {
+                continue;
+            }
+            // Only use non-empty lines that look like setters
+            if (!preg_match('#^\s*(.*)?=(.*)?$#', $line, $matches) ) {
+                continue;
+            }
+
+            // Do not fill env with lots of empty keys
+            if (trim($matches[2]) === "") {
                 continue;
             }
             $this->data['data'][$matches[1]] = $matches[2];
