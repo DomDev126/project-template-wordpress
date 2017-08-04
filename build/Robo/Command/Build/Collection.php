@@ -68,6 +68,11 @@ class Collection extends AbstractCommand
             'path'  => ['./src'],
             'batch' => false,
             'logs'  => 'build/logs'
+        ],
+        'sami' => [
+            'cmd'   => './vendor/bin/sami.php update etc/sami/source.php',
+            'path'  => ['./src'],
+            'batch' => true
         ]
     ];
 
