@@ -44,7 +44,7 @@ abstract class AbstractTask extends BaseTask
      */
     protected static $configClassRegexReplacement = '${1}';
 
-    public function __construct($params)
+    public function __construct($params = [])
     {
     }
 
