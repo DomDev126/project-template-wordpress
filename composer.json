@@ -49,7 +49,6 @@
   },
   "require-dev": {
       "phpunit/phpunit": "*",
-      "phpunit/phpunit-selenium": "~3.0",
       "sami/sami": "~3.2",
       "wpackagist-plugin/theme-check": "*",
       "wpackagist-plugin/debug-bar": "0.8.4",
