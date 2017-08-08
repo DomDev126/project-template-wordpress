@@ -50,7 +50,7 @@ trait DataAwareTrait
 
         $missing = [];
         foreach ($this->requiredData as $key) {
-            if (!isset($this->data[$key]) or empty($this->data[$key])) {
+            if (!isset($this->data[$key])) {
                 $missing []= $key;
             }
         }
