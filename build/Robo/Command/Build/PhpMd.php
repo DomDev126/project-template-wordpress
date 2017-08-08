@@ -3,22 +3,27 @@
 namespace Qobo\Robo\Command\Build;
 
 
-class PhpMd extends Collection
+class PhpMd extends \Qobo\Robo\AbstractCommand
 {
-    /**
-     * {@inheritdoc}
-     */
-    protected $commandKey = "phpmd";
-
     /**
      * Run PHP Mess Detector
      *
-     * @param string $path Path for which to run
-     *
      * @return true on success or false on failure
      */
-    public function buildPhpMd($path = null)
+    public function buildPhpMd()
     {
-        return $this->runCmd(null, $path);
+        $result = $this->taskBuildPhpMd()
+            ->path(['./src'])
+            ->run();
+
+        if (!$result->wasSuccessful()) {
+            return false;
+        }
+
+        foreach ($result->getData()['data'][0]['output'] as $line) {
+            $this->say($line);
+        }
+
+        return true;
     }
 }

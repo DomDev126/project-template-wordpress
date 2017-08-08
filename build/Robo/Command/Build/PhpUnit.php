@@ -3,18 +3,27 @@
 namespace Qobo\Robo\Command\Build;
 
 
-class PhpUnit extends Collection
+class PhpUnit extends \Qobo\Robo\AbstractCommand
 {
     /**
-     * {@inheritdoc}
-     */
-    protected $commandKey = "phpunit";
-
-    /**
      * Run PHP Unit Tests
+     *
+     * @return bool true on success or false on failure
      */
     public function buildPhpUnit()
     {
-        return $this->runCmd();
+        $result = $this->taskBuildPhpUnit()
+            ->path(['./tests'])
+            ->run();
+
+        if (!$result->wasSuccessful()) {
+            return false;
+        }
+
+        foreach ($result->getData()['data'][0]['output'] as $line) {
+            $this->say($line);
+        }
+
+        return true;
     }
 }

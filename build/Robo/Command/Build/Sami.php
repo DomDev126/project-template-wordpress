@@ -3,18 +3,27 @@
 namespace Qobo\Robo\Command\Build;
 
 
-class Sami extends Collection
+class Sami extends \Qobo\Robo\AbstractCommand
 {
     /**
-     * {@inheritdoc}
-     */
-    protected $commandKey = "sami";
-
-    /**
      * Run Sami PHP documentation generation tool
+     *
+     * @return bool true on success or false on failure
      */
     public function buildSami()
     {
-        return $this->runCmd();
+        $result = $this->taskBuildSami()
+            ->path(['./src'])
+            ->run();
+
+        if (!$result->wasSuccessful()) {
+            return false;
+        }
+
+        foreach ($result->getData()['data'][0]['output'] as $line) {
+            $this->say($line);
+        }
+
+        return true;
     }
 }

@@ -3,18 +3,27 @@
 namespace Qobo\Robo\Command\Build;
 
 
-class PhpCs extends Collection
+class PhpCs extends \Qobo\Robo\AbstractCommand
 {
     /**
-     * @var string $commandKey
-     */
-    protected $commandKey = "phpcs";
-
-    /**
      * Run PHP Code Sniffer
+     *
+     * return bool true on success or false on failure
      */
     public function buildPhpCs()
     {
-        return $this->runCmd();
+        $result = $this->taskBuildPhpCs()
+            ->path(['./src', './tests'])
+            ->run();
+
+        if (!$result->wasSuccessful()) {
+            return false;
+        }
+
+        foreach ($result->getData()['data'][0]['output'] as $line) {
+            $this->say($line);
+        }
+
+        return true;
     }
 }

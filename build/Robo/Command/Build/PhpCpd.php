@@ -3,22 +3,26 @@
 namespace Qobo\Robo\Command\Build;
 
 
-class PhpCpd extends Collection
+class PhpCpd extends \Qobo\Robo\AbstractCommand
 {
-    /**
-     * {@inheritdoc}
-     */
-    protected $commandKey = "phpcpd";
-
     /**
      * Run PHP Copy-Paste Detector
      *
-     * @param string $path Path for which to run
-     *
      * @return true on success or false on failure
      */
-    public function buildPhpCpd($path = null)
+    public function buildPhpCpd()
     {
-        return $this->runCmd(null, $path);
+        $result = $this->taskBuildPhpCpd()
+            ->path(['./src'])
+            ->run();
+
+        if (!$result->wasSuccessful()) {
+            return false;
+        }
+        foreach ($result->getData()['data'][0]['output'] as $line) {
+            $this->say($line);
+        }
+
+        return true;
     }
 }
