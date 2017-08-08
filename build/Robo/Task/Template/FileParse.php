@@ -81,7 +81,7 @@ class FileParse extends \Qobo\Robo\AbstractTask
         }
 
         $file = file_get_contents($this->data['path']);
-        $this->data['data'] = $this->parse($file, $this->data['recurse']);
+        $this->data['data'] = $this->parse($file);
 
         return Result::success($this, "Successfully parsed template", $this->data);
     }
@@ -96,13 +96,15 @@ class FileParse extends \Qobo\Robo\AbstractTask
      */
     public function parse($template, $recurse = false)
     {
+        if ($recurse) {
+            $this->data['recurse'] = $recurse;
+        }
         foreach ($this->data['tokens'] as $token => $value) {
             $token = $this->data['pre'] . $token . $this->data['post'];
-            print "$token => $value\n";
             $template = str_replace($token, $value, $template);
         }
 
-        if (!$recurse) {
+        if (!$this->data['recurse']) {
             return $template;
         }
 
