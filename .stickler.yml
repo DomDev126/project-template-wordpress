@@ -1,4 +1,4 @@
 linters:
   phpcs:
-    standard: PSR2
+    standard: WordPress-Core
     extensions: '.php'
