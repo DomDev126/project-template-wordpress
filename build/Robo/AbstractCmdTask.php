@@ -170,27 +170,50 @@ abstract class AbstractCmdTask extends AbstractTask
         $tokens = [];
         foreach ($this->tokenKeys as $key) {
 
+			// allow tokenKeys items to be array with prefix as the second
+			// array element, ex: ['user', '-u '], so that it will parse
+			// %%USER%% into '-u <$this->data['user']>', or
+			// ex: ['pass', '-p'] will replace %%PASS%% into -p<$this->data['pass']>
+			$prefix = "";
+			if (is_array($key)) {
+				$prefix = $key[1];
+				$key = $key[0];
+			}
+
             // skip if don't have data for the token available
             if (!isset($this->data[$key])) {
                 continue;
             }
 
-            $tokens[strtoupper($key)] = $this->data[$key];
+			$tokens[strtoupper($key)] = $prefix . escapeshellarg($this->data[$key]);
         }
 
         // return a combined command for all paths if in batch mode
         if ($this->data['batch']) {
             $tokens['PATH'] = implode(" ", $this->data['path']);
-            return [ Template::parse($this->data['cmd'], $tokens, '%%', '%%') ];
+            return $this->getCommand($this->data['cmd'], $tokens);
         }
 
         // get an array of standalone commands in non-batch mode
         $cmds = [];
         foreach ($this->data['path'] as $path) {
             $tokens['PATH'] = $path;
-            $cmds []= Template::parse($this->data['cmd'], $tokens, '%%', '%%');
+            $cmds []= $this->getCommand($this->data['cmd'], $tokens);
         }
 
         return $cmds;
+    }
+
+    /**
+     * Construct a single command from $cmd template and given $tokens
+     *
+     * @param string $cmd Command template
+     * @param array $tokens List of tokens to subsctitude in command template
+     *
+     * @return string final command
+     */
+    protected function getCommand($cmd, $tokens)
+    {
+        return Template::parse($cmd, $tokens, '%%', '%%', Template::FLAG_RECURSIVE | Template::FLAG_EMPTY_MISSING);
     }
 }
