@@ -3,19 +3,21 @@
 namespace Qobo\Robo\Task\Template;
 
 use Robo\Result;
+use \Qobo\Utility\File;
+use \Qobo\Utility\Template;
 
 /**
  * List all tokens from template file
  *
  * ```php
  * <?php
- * $this->taskTemplateFileTokensList()
+ * $this->taskTemplateTokens()
  * ->path('template.ctp')
  * ->wrap('###')
  * ->run();
  *
  *<?php
- * $this->taskTemplateFileTokensList()
+ * $this->taskTemplateTokens()
  * ->path('template.ctp')
  * ->pre('{{')
  * ->post('}}')
@@ -24,7 +26,7 @@ use Robo\Result;
  * ?>
  * ```
  */
-class FileTokensList extends \Qobo\Robo\AbstractTask
+class Tokens extends \Qobo\Robo\AbstractTask
 {
     /**
      * {@inheritdoc}
@@ -69,22 +71,15 @@ class FileTokensList extends \Qobo\Robo\AbstractTask
             return $result;
         }
 
-        $this->printInfo("Retrieving list of tockens from {path} template", $this->data);
-        if (!is_file($this->data['path']) || !is_readable($this->data['path'])) {
-            return Result::error($this, "Template does not exist or is not readable", $this->data);
+        $this->printInfo("Retrieving list of tokens from {path} template", $this->data);
+
+        try {
+            $template = File::read($this->data['path']);
+            $this->data['data'] = Template::getTokens($template, $this->data['pre'], $this->data['post']);
+        } catch (\Exception $e) {
+            return Result::fromException($this, $e);
         }
 
-        $file = file($this->data['path']);
-        if (empty($file)) {
-            return Result::success($this, "Template is empty, nothing to read");
-        }
-
-        $this->data['data'] = [];
-        $file = file_get_contents($this->data['path']);
-        if (preg_match_all('/' . $this->data['pre'] . '(.*?)' . $this->data['post'] . '/', $file, $matches)) {
-            $this->data['data'] = array_unique($matches[1]);
-        }
-
-        return Result::success($this, "Successfully reloaded environment", $this->data);
+        return Result::success($this, "Successfully retrieved list of tokens", $this->data);
     }
 }
