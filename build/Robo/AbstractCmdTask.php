@@ -4,7 +4,7 @@ namespace Qobo\Robo;
 
 use \Robo\Result;
 use \Robo\Exception\TaskException;
-use \Qobo\Robo\Task\Template\FileParse;
+use \Qobo\Utility\Template;
 
 /**
  * Qobo base command task.
@@ -59,6 +59,9 @@ abstract class AbstractCmdTask extends AbstractTask
             return $result;
         }
 
+		if (!is_array($this->data['path'])) {
+			$this->data['path'] = [ $this->data['path'] ];
+		}
         // validate our cmd and paths
         try {
             static::checkCmd($this->data['cmd']);
@@ -75,20 +78,17 @@ abstract class AbstractCmdTask extends AbstractTask
         $this->data['data'] = [];
         foreach ($cmds as $cmd) {
             $this->printInfo("Running {cmd}", ['cmd' => $cmd]);
-            $data = [
-                'message'   => null,
-                'output'    => [],
-                'status'    => null
-            ];
-            $data['message'] = exec($cmd, $data['output'], $data['status']);
+            $data = $this->runCmd($cmd);
             $this->data['data'] []= $data;
 
+            // POSIX commands will exit with 1 on success
+            // and 0 on failure
             if (!$data['status'] && $this->stopOnFail) {
                 return Result::error($this, "Last command failed to run", $this->data);
             }
 
         }
-        return Result::success($this, "Commnds run successfully", $this->data);
+        return Result::success($this, "Commands run successfully", $this->data);
     }
 
     /**
@@ -149,6 +149,18 @@ abstract class AbstractCmdTask extends AbstractTask
         return true;
     }
 
+    protected function runCmd($cmd)
+    {
+        $data = [
+            'message'   => null,
+            'output'    => [],
+            'status'    => null
+        ];
+        $data['message'] = exec($cmd, $data['output'], $data['status']);
+
+        return $data;
+    }
+
     /**
      * Get commands
      */
@@ -166,23 +178,17 @@ abstract class AbstractCmdTask extends AbstractTask
             $tokens[strtoupper($key)] = $this->data[$key];
         }
 
-        $parser = new FileParse();
-        $parser->wrap('%%');
-        $parser->recurse(false);
-
         // return a combined command for all paths if in batch mode
         if ($this->data['batch']) {
             $tokens['PATH'] = implode(" ", $this->data['path']);
-            $parser->tokens($tokens);
-            return [ $parser->parse($this->data['cmd']) ];
+            return [ Template::parse($this->data['cmd'], $tokens, '%%', '%%') ];
         }
 
         // get an array of standalone commands in non-batch mode
         $cmds = [];
         foreach ($this->data['path'] as $path) {
             $tokens['PATH'] = $path;
-            $parser->tokens($tokens);
-            $cmds []= $parser->parse($this->data['cmd']);
+            $cmds []= Template::parse($this->data['cmd'], $tokens, '%%', '%%');
         }
 
         return $cmds;
