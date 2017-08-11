@@ -21,36 +21,19 @@ class DotenvCreate extends AbstractCommand
      */
     public function projectDotenvCreate($envPath = '.env', $templatePath = '.env.example', $opts = ['format' => 'table', 'fields' => ''])
     {
-        $env = [];
-
-        // Read the template if any
-        $result = $this->taskDotenvFileRead()
-            ->path($templatePath)
+        $result = $this->taskProjectDotenvCreate()
+            ->env($envPath)
+            ->template($templatePath)
             ->run();
-        if ($result->wasSuccessful()) {
-            $data = $result->getData();
-            if (isset($data['data'])) {
-                $env = $data['data'];
-            }
-        }
 
-        // Read the existing .env if any
-        $result = $this->taskDotenvFileRead()
-            ->path($envPath)
-            ->run();
-        if ($result->wasSuccessful()) {
-            $data = $result->getData();
-            if (isset($data['data'])) {
-                $env = array_merge($env, $data['data']);
-            }
-        }
+        $data = $result->getData()['data'];
 
-        $lines = array_map(function ($k, $v) { return "$k=$v"; }, array_keys($env), $env);
+        $lines = array_map(function ($k, $v) { return "$k=$v"; }, array_keys($data), $data);
 
         $result = $this->taskWriteToFile($envPath)
             ->lines($lines)
             ->run();
 
-        return new PropertyList($env);
+        return new PropertyList($data);
     }
 }
