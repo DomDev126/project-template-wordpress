@@ -19,7 +19,8 @@
 	},
     "autoload": {
         "psr-4": {
-            "Qobo\\Robo\\": "build/Robo"
+            "Qobo\\Robo\\": "build/Robo",
+            "Qobo\\Utility\\": "build/Utility"
         }
     }
 
