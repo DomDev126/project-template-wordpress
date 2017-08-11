@@ -9,12 +9,8 @@ use Robo\Result;
  */
 class DbCreate extends BaseQuery
 {
-    public function run()
-    {
-        $this->data['query'] = "CREATE DATABASE IF NOT EXISTS " . $this->data['db'];
-        $this->data['db'] = '';
-
-        $this->printInfo("Running MySQL {query} ", $this->data);
-        return parent::run();
-    }
+    /**
+     * {@inheritdoc}
+     */
+    protected $query = "CREATE DATABASE IF NOT EXISTS %%DB%%";
 }
