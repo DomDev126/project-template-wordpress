@@ -3,6 +3,8 @@
 namespace Qobo\Robo\Task\Dotenv;
 
 use Robo\Result;
+use \Qobo\Utility\File;
+use \Qobo\Utility\Dotenv;
 
 /**
  * Read dotenv file
@@ -41,36 +43,23 @@ class FileRead extends \Qobo\Robo\AbstractTask
             return $result;
         }
 
-        $this->printInfo("Reading {path} dotenv file", $this->data);
-        if (!is_file($this->data['path']) || !is_readable($this->data['path'])) {
-            return Result::error($this, "File does not exist or is not readable", $this->data);
+        $this->printInfo("Reading from {path}", $this->data);
+        return $this->read($this->data['path']);
+    }
+
+    public function read($path = null)
+    {
+        if ($path) {
+            $this->data['path'] = $path;
         }
 
-        $file = file($this->data['path']);
-        if (empty($file)) {
-            return Result::success($this, "File is empty, nothing to read");
+        try {
+            $content = File::read($this->data['path']);
+            $this->data['data'] = Dotenv::parse($content, Dotenv::FLAG_STRICT);
+        } catch (\Exception $e) {
+            return Result::fromException($this, $e);
         }
 
-        $this->data['data'] = [];
-        foreach ($file as $line) {
-            $line = trim($line);
-
-            // Disregard comments
-            if (strpos($line, '#') === 0) {
-                continue;
-            }
-            // Only use non-empty lines that look like setters
-            if (!preg_match('#^\s*(.*)?=(.*)?$#', $line, $matches) ) {
-                continue;
-            }
-
-            // Do not fill env with lots of empty keys
-            if (trim($matches[2]) === "") {
-                continue;
-            }
-            $this->data['data'][$matches[1]] = $matches[2];
-        }
-
-        return Result::success($this, "Successfully read dotenv file", $this->data);
+        return Result::success($this, "Environment successfully read", $this->data);
     }
 }
