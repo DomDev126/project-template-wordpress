@@ -8,7 +8,7 @@ class DbFindReplace extends \Qobo\Robo\AbstractCmdTask
      * {@inheritdoc}
      */
     protected $data = [
-        'cmd'   => './vendor/interconnectit/search-replace-db/srdb.cli.php -h %%HOST%% %%PORT%% -u %%USER%% -p %%PASS%% -n %%DB%% -s %%SEARCH%% -r %%REPLACE%%',
+        'cmd'   => './vendor/bin/srdb.cli.php -h %%HOST%% %%PORT%% -u %%USER%% -p %%PASS%% -n %%DB%% -s %%SEARCH%% -r %%REPLACE%%',
         'path'  => ['./'],
         'host'  => 'localhost',
         'user'  => 'root',
