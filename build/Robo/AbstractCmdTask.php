@@ -44,7 +44,6 @@ abstract class AbstractCmdTask extends AbstractTask
      * @var array $tokenKeys data keys to use as tokens in cmd
      */
     protected $tokenKeys = [
-        'path',
         'out',
         'logs'
     ];
@@ -181,7 +180,7 @@ abstract class AbstractCmdTask extends AbstractTask
 			}
 
             // skip if don't have data for the token available
-            if (!isset($this->data[$key])) {
+            if (!isset($this->data[$key]) || $this->data[$key] === null) {
                 continue;
             }
 
