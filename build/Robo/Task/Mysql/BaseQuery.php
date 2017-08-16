@@ -14,7 +14,7 @@ class BaseQuery extends \Qobo\Robo\AbstractCmdTask
      * {@inheritdoc}
      */
     protected $data = [
-        'cmd'   => 'mysql %%HOST%% %%PORT%% %%USER%% %%PASS%% %%QUERY%%',
+        'cmd'   => 'mysql %%HOST%% %%PORT%% %%USER%% %%PASS%% %%DB%% %%QUERY%%',
         'path'  => ['./'],
         'batch' => false,
         'user'  => 'root',
@@ -31,8 +31,7 @@ class BaseQuery extends \Qobo\Robo\AbstractCmdTask
     protected $requiredData = [
         'cmd',
         'user',
-        'query',
-        'db'
+        'query'
     ];
 
     /**
@@ -57,7 +56,9 @@ class BaseQuery extends \Qobo\Robo\AbstractCmdTask
      */
     public function run()
     {
-        $this->data['query'] = $this->query;
+        if (!empty($this->query)) {
+            $this->data['query'] = $this->query;
+        }
 
         return parent::run();
     }
