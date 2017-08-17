@@ -4,7 +4,7 @@ namespace Qobo\Robo\Command\App;
 
 use \Qobo\Robo\AbstractCommand;
 
-class Install extends AbstractCommand
+class App extends AbstractCommand
 {
 
     /**
@@ -80,6 +80,15 @@ class Install extends AbstractCommand
         return $this->postInstall();
     }
 
+    /**
+     * Remove a project
+     *
+     * @return bool true on success or false on failure
+     */
+    public function appRemove()
+    {
+        return (file_exists('.env') && !unlink('.env')) ? false : true;
+    }
 
     /**
      * Do wordpress related install things
