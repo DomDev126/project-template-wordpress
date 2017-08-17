@@ -56,10 +56,18 @@ class BaseQuery extends \Qobo\Robo\AbstractCmdTask
      */
     public function run()
     {
+        // preset query only if hardcoded,
+        // otherwise use whatever provided
+        // by the user
         if (!empty($this->query)) {
             $this->data['query'] = $this->query;
         }
 
+        // if password is empty, null it
+        // so its not added to cmd during parsing
+        if (empty($this->data['pass'])) {
+            $this->data['pass'] = null;
+        }
         return parent::run();
     }
 }
