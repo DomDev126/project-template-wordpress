@@ -6,40 +6,95 @@ use \Qobo\Robo\AbstractCommand;
 
 class Install extends AbstractCommand
 {
+
     /**
-     * Install a wordpress project
+     * @var array $defaultEnv Default values if missing in env
+     */
+    protected $defaultEnv = [
+        'SYSTEM_COMMAND_WPCLI'  => './vendor/bin/wp --allow-root --path=webroot/wp'
+    ];
+
+    /**
+     * Install a project
+     *
+     * @param string $type (Optional) Project type to install (possible values: wp, cake)
      *
      * @return bool true on success or false on failure
      */
-    public function appWpInstall()
+    public function appInstall($type = null)
     {
-        if (!$this->preInstall()) {
+        $env = $this->getDotenv();
+
+        if ($env === false || !$this->preInstall($env)) {
             return false;
         }
 
-        $result = $this->taskDotenvReload()->run();
-        $data = $result->getData();
-        if (!$result->wasSuccessful() || !isset($data['data'])) {
+        switch ($type) {
+            case "wp":
+                $result = $this->installWp($env);
+                break;
+            case "cake":
+                $result = $this->installCake($env);
+                break;
+            default;
+                $result = true;
+        }
+
+        if (!$result) {
             return false;
         }
 
-        // make sure DB password is either present
-        // or is set to null
-        $dbPass = getenv('DB_ADMIN_PASS');
-        if (empty($dbPass)) {
-            $dbPass = null;
+        return $this->postInstall();
+    }
+
+    /**
+     * Update a project
+     *
+     * @param string $type (Optional) Project type to update (possible values: wp, cake)
+     *
+     * @return bool true on success or false on failure
+     */
+    public function appUpdate($type = null)
+    {
+        $env = $this->getDotenv();
+
+        if ($env === false || !$this->preInstall($env)) {
+            return false;
         }
 
-        $tokens = $data['data'];
-        if (!isset($tokens['SYSTEM_COMMAND_WPCLI'])) {
-            $tokens['SYSTEM_COMMAND_WPCLI'] = './vendor/bin/wp --allow-root --path=webroot/wp';
+        switch ($type) {
+            case "wp":
+                $result = $this->updateWp($env);
+                break;
+            case "cake":
+                $result = $this->updateCake($env);
+                break;
+            default;
+                $result = true;
         }
 
+        if (!$result) {
+            return false;
+        }
+
+        return $this->postInstall();
+    }
+
+
+    /**
+     * Do wordpress related install things
+     *
+     * @param array $env Environment variables
+     * @return bool true on success or false on failure
+     */
+    protected function installWp($env)
+    {
+        // Check DB connectivity and get server time
         $result = $this->taskMysqlBaseQuery()
             ->query("SELECT NOW() AS ServerTime")
-            ->user(getenv('DB_ADMIN_USER'))
-            ->pass($dbPass)
-            ->host(getenv('DB_HOST'))
+            ->user($this->getValue('DB_ADMIN_USER', $env))
+            ->pass($this->getValue('DB_ADMIN_PASS', $env))
+            ->host($this->getValue('DB_HOST', $env))
             ->run();
 
         if (!$result->wasSuccessful()) {
@@ -47,45 +102,57 @@ class Install extends AbstractCommand
         }
         $this->say(implode(": ", $result->getData()['data'][0]['output']));
 
+        // prepare all remaining tasks in this array
         $tasks = [];
-        $tasks []= $this->taskMysqlDbCreate()
-            ->db(getenv('DB_NAME'))
-            ->user(getenv('DB_ADMIN_USER'))
-            ->pass($dbPass)
-            ->host(getenv('DB_HOST'));
 
+        // create DB
+        $tasks []= $this->taskMysqlDbCreate()
+            ->db($this->getValue('DB_NAME', $env))
+            ->user($this->getValue('DB_ADMIN_USER', $env))
+            ->pass($this->getValue('DB_ADMIN_PASS', $env))
+            ->host($this->getValue('DB_HOST', $env));
+
+        // Parse install script template
         $tasks []= $this->taskTemplateProcess()
             ->wrap('%%')
-            ->tokens($tokens)
+            ->tokens($env)
             ->src('etc/wp-cli.install')
             ->dst('etc/wp-cli.install.sh');
 
+        // Run install script
         $tasks []= $this->taskExec('/bin/bash etc/wp-cli.install.sh');
 
+        // Parse content script template
         $tasks []= $this->taskTemplateProcess()
             ->wrap('%%')
-            ->tokens($tokens)
+            ->tokens($env)
             ->src('etc/wp-cli.content')
             ->dst('etc/wp-cli.content.sh');
 
+        // Run content script
 		$tasks []= $this->taskExec('/bin/bash etc/wp-cli.content.sh');
 
+        // Chmod dir
 		$tasks []= $this->taskFileChmod()
-			->path([getenv('CHMOD_PATH')])
-		->fileMode(0664)
+			->path([$this->getValue('CHMOD_PATH', $env)])
+		    ->fileMode(0664)
 			->dirMode(0775)
 			->recursive(true);
 
+        // Chown dir
 		$tasks []= $this->taskFileChown()
-			->path([getenv('CHOWN_PATH')])
-			->user(getenv('CHOWN_USER'))
+			->path([$this->getValue('CHOWN_PATH', $env)])
+			->user($this->getValue('CHOWN_USER', $env))
 			->recursive(true);
 
+        // Chgrp dir
 		$tasks []= $this->taskFileChgrp()
-			->path([getenv('CHGRP_PATH')])
-			->group(getenv('CHGRP_GROUP'))
+			->path([$this->getValue('CHGRP_PATH', $env)])
+			->group($this->getValue('CHGRP_GROUP', $env))
 			->recursive(true);
 
+        // Now as we have all tasks prepared in order,
+        // run one-by-one and stop on first fail
         foreach ($tasks as $task) {
             $result = $task->run();
             if (!$result->wasSuccessful()) {
@@ -93,43 +160,24 @@ class Install extends AbstractCommand
             }
         }
 
-        return $this->postInstall();
+        // shoul be ok by here
+        return true;
     }
+
 
     /**
      * Update a wordpress project
      *
+     * @param array $env Environment variables
      * @return bool true on success or false on failure
      */
-    public function appWpUpdate()
+    public function updateWp($env)
     {
-        if (!$this->preInstall()) {
-            return false;
-        }
-
-        $result = $this->taskDotenvReload()->run();
-        $data = $result->getData();
-        if (!$result->wasSuccessful() || !isset($data['data'])) {
-            return false;
-        }
-
-        // make sure DB password is either present
-        // or is set to null
-        $dbPass = getenv('DB_ADMIN_PASS');
-        if (empty($dbPass)) {
-            $dbPass = null;
-        }
-
-        $tokens = $data['data'];
-        if (!isset($tokens['SYSTEM_COMMAND_WPCLI'])) {
-            $tokens['SYSTEM_COMMAND_WPCLI'] = './vendor/bin/wp --allow-root --path=webroot/wp';
-        }
-
         $result = $this->taskMysqlBaseQuery()
             ->query("SELECT NOW() AS ServerTime")
-            ->user(getenv('DB_ADMIN_USER'))
-            ->pass($dbPass)
-            ->host(getenv('DB_HOST'))
+            ->user($this->getValue('DB_ADMIN_USER', $env))
+            ->pass($this->getValue('DB_ADMIN_PASS', $env))
+            ->host($this->getValue('DB_HOST', $env))
             ->run();
 
         if (!$result->wasSuccessful()) {
@@ -141,34 +189,34 @@ class Install extends AbstractCommand
 
         $tasks []= $this->taskTemplateProcess()
             ->wrap('%%')
-            ->tokens($tokens)
+            ->tokens($env)
             ->src('etc/wp-cli.update')
             ->dst('etc/wp-cli.update.sh');
 
         $tasks []= $this->taskMysqlDbFindReplace()
-            ->search(getenv('DB_FIND'))
-            ->replace(getenv('DB_REPLACE'))
-            ->db(getenv('DB_NAME'))
-            ->user(getenv('DB_ADMIN_USER'))
-            ->pass($dbPass)
-            ->host(getenv('DB_HOST'));
+            ->search($this->getValue('DB_FIND', $env))
+            ->replace($this->getValue('DB_REPLACE', $env))
+            ->db($this->getValue('DB_NAME', $env))
+            ->user($this->getValue('DB_ADMIN_USER', $env))
+            ->pass($this->getValue('DB_ADMIN_PASS', $env))
+            ->host($this->getValue('DB_HOST', $env));
 
 		$tasks []= $this->taskExec('/bin/bash etc/wp-cli.update.sh');
 
 		$tasks []= $this->taskFileChmod()
-			->path([getenv('CHMOD_PATH')])
+			->path([$this->getValue('CHMOD_PATH', $env)])
 			->fileMode(0664)
 			->dirMode(0775)
 			->recursive(true);
 
 		$tasks []= $this->taskFileChown()
-			->path([getenv('CHOWN_PATH')])
-			->user(getenv('CHOWN_USER'))
+			->path([$this->getValue('CHOWN_PATH', $env)])
+			->user($this->getValue('CHOWN_USER', $env))
 			->recursive(true);
 
 		$tasks []= $this->taskFileChgrp()
-			->path([getenv('CHGRP_PATH')])
-			->group(getenv('CHGRP_GROUP'))
+			->path([$this->getValue('CHGRP_PATH', $env)])
+			->group($this->getValue('CHGRP_GROUP', $env))
 			->recursive(true);
 
         foreach ($tasks as $task) {
@@ -178,37 +226,89 @@ class Install extends AbstractCommand
             }
         }
 
-        return $this->postInstall();
+        return true;
     }
 
-    protected function preInstall()
+    /**
+     * Do CakePHP related install things
+     *
+     * @return bool true on success or false on failure
+     */
+    protected function installCake($env)
     {
-        if (is_file('.env') && is_readable('.env') && !$this->taskDotenvReload()->path('.env')->run()->wasSuccessful()) {
+        return true;
+    }
+
+    /**
+     * Do CakePHP related update things
+     *
+     * @return bool true on success or false on failure
+     */
+    protected function updateCake($env)
+    {
+        return true;
+    }
+
+
+    /**
+     * Recreates and reloads environment
+     *
+     * @return mixed Env array or false on failure
+     */
+    protected function getDotenv()
+    {
+        $batch = $this->collectionBuilder();
+
+        $result = $batch->taskProjectDotenvCreate()
+                ->env('.env')
+                ->template('.env.example')
+            ->taskDotenvReload()
+                ->path('.env')
+            ->run();
+
+        if (!$result->wasSuccessful()) {
             return false;
         }
 
+        return $result->getData()['data'];
+    }
+
+    /**
+     * Find a value for configuration parameter
+     *
+     * @param string $name Parameter name
+     * @param array $env Environment
+     *
+     * @return string
+     */
+    protected function getValue($name, $env)
+    {
+        // try to match in given $env
+        if (!empty($env) && isset($env[$name])) {
+            return $env[$name];
+        }
+
+        // look in real ENV
+        $value = getenv($name);
+        if ($value !== false) {
+            return $value;
+        }
+
+        // look in the defaults
+        if (!empty($this->defaultEnv) && isset($this->defaultEnv[$name])) {
+            return $this->defaultEnv[$name];
+        }
+
+        // return null if nothing
+        return null;
+    }
+
+    protected function preInstall($env)
+    {
         // old :builder:init
         if (!$this->versionBackup("build/version")) {
             return false;
         }
-
-        $result = $this->taskProjectDotenvCreate() // old :dotenv:create
-                ->env('.env')
-                ->template('.env.example')
-                ->run();
-
-        if (!$result->wasSuccessful()) {
-            return false;
-        }
-
-        $result = $this->taskDotenvReload()                // old :dotenv:reload
-                ->path('.env')
-                ->run();
-
-        if (!$result->wasSuccessful()) {
-            return false;
-        }
-        $env = $result->getData()['data'];
 
         // old :file:process
         return $this->taskTemplateProcess()
