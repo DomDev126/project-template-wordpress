@@ -6,7 +6,7 @@
 		"php": ">=5.6.0",
 		"qobo/phake-builder": "~4.0",
 		"pyrech/composer-changelogs": "~1.4",
-		"phpunit/php-token-stream": "1.4.2"
+		"phpunit/php-token-stream": "~1.4"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "*",
