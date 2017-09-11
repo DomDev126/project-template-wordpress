@@ -5,9 +5,9 @@ namespace Qobo\Robo\Task\Mysql;
 use Robo\Result;
 
 /**
- * Create Mysql database
+ * Drop Mysql database
  */
-class DbCreate extends BaseQuery
+class DbDrop extends BaseQuery
 {
     /**
      * {@inheritdoc}
@@ -25,8 +25,9 @@ class DbCreate extends BaseQuery
     ];
 
 
+
     /**
      * {@inheritdoc}
      */
-    protected $query = "CREATE DATABASE IF NOT EXISTS %%DB%%";
+    protected $query = "DROP DATABASE IF EXISTS %%DB%%";
 }
