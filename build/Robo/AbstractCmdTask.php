@@ -80,14 +80,17 @@ abstract class AbstractCmdTask extends AbstractTask
             $data = $this->runCmd($cmd);
             $this->data['data'] []= $data;
 
-            // POSIX commands will exit with 1 on success
-            // and 0 on failure
-            if (!$data['status'] && $this->stopOnFail) {
+            // POSIX commands will exit with 0 on success
+            // and 1 on failure
+            if ($data['status'] && $this->stopOnFail) {
                 return Result::error($this, "Last command failed to run", $this->data);
             }
 
         }
-        return Result::success($this, "Commands run successfully", $this->data);
+
+        return ($data['status'])
+            ? Result::error($this, "Last command failed to run", $this->data)
+            : Result::success($this, "Commands run successfully", $this->data);
     }
 
     /**
