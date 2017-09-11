@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "98ccc77c66a9711742980b2c5c5a05d8",
+    "content-hash": "5ef674a1be92363c8781149a65fb5eb5",
     "packages": [
         {
             "name": "blackfire/php-sdk",
-            "version": "v1.8.1",
+            "version": "v1.9.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/blackfireio/php-sdk.git",
-                "reference": "5d82bc5a846885ec460d94f3c7298f8b614f85da"
+                "reference": "1e9bf90676b773812f80b5a68bbdf02057adb116"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/blackfireio/php-sdk/zipball/5d82bc5a846885ec460d94f3c7298f8b614f85da",
-                "reference": "5d82bc5a846885ec460d94f3c7298f8b614f85da",
+                "url": "https://api.github.com/repos/blackfireio/php-sdk/zipball/1e9bf90676b773812f80b5a68bbdf02057adb116",
+                "reference": "1e9bf90676b773812f80b5a68bbdf02057adb116",
                 "shasum": ""
             },
             "require": {
@@ -26,7 +26,6 @@
             },
             "suggest": {
                 "ext-blackfire": "The C version of the Blackfire probe",
-                "ext-xhprof": "XHProf is required as a fallback",
                 "ext-zlib": "To push config to remote profiling targets"
             },
             "type": "library",
@@ -60,7 +59,7 @@
                 "uprofiler",
                 "xhprof"
             ],
-            "time": "2017-07-24T15:55:16+00:00"
+            "time": "2017-08-10T13:21:56+00:00"
         },
         {
             "name": "composer/ca-bundle",
@@ -638,40 +637,6 @@
             ],
             "description": "Expands internal property references in a yaml file.",
             "time": "2017-08-01T16:15:05+00:00"
-        },
-        {
-            "name": "interconnectit/search-replace-db",
-            "version": "3.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/interconnectit/Search-Replace-DB.git",
-                "reference": "28a1f059e4739bca618056dcf3c550a634cf1035"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/interconnectit/Search-Replace-DB/zipball/28a1f059e4739bca618056dcf3c550a634cf1035",
-                "reference": "28a1f059e4739bca618056dcf3c550a634cf1035",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "bin": [
-                "srdb.cli.php"
-            ],
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "srdb.class.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-3.0"
-            ],
-            "description": "A PHP search replace tool for quickly modifying a string throughout a database. Useful for changing the base URL when migrating a WordPress site from development to production.",
-            "homepage": "https://github.com/interconnectit/Search-Replace-DB",
-            "time": "2015-07-07T15:44:12+00:00"
         },
         {
             "name": "jaz303/phake",
@@ -1564,29 +1529,29 @@
         },
         {
             "name": "phpunit/php-token-stream",
-            "version": "1.4.11",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-token-stream.git",
-                "reference": "e03f8f67534427a787e21a385a67ec3ca6978ea7"
+                "reference": "ecb0b2cdaa0add708fe6f329ef65ae0c5225130b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-token-stream/zipball/e03f8f67534427a787e21a385a67ec3ca6978ea7",
-                "reference": "e03f8f67534427a787e21a385a67ec3ca6978ea7",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-token-stream/zipball/ecb0b2cdaa0add708fe6f329ef65ae0c5225130b",
+                "reference": "ecb0b2cdaa0add708fe6f329ef65ae0c5225130b",
                 "shasum": ""
             },
             "require": {
                 "ext-tokenizer": "*",
-                "php": ">=5.3.3"
+                "php": "^7.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.2"
+                "phpunit/phpunit": "^6.2.4"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.4-dev"
+                    "dev-master": "2.0-dev"
                 }
             },
             "autoload": {
@@ -1609,7 +1574,7 @@
             "keywords": [
                 "tokenizer"
             ],
-            "time": "2017-02-27T10:12:30+00:00"
+            "time": "2017-08-03T14:17:41+00:00"
         },
         {
             "name": "phpunit/phpunit",
@@ -2002,21 +1967,20 @@
         },
         {
             "name": "qobo/phake-builder",
-            "version": "v3.0.0",
+            "version": "v4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/QoboLtd/phake-builder.git",
-                "reference": "c9c45d7595b03cc1d0c6e2f74dafbf5459d236f0"
+                "reference": "08314b13f28f2608d41f8df2b9b87b611ad7ceb2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/QoboLtd/phake-builder/zipball/c9c45d7595b03cc1d0c6e2f74dafbf5459d236f0",
-                "reference": "c9c45d7595b03cc1d0c6e2f74dafbf5459d236f0",
+                "url": "https://api.github.com/repos/QoboLtd/phake-builder/zipball/08314b13f28f2608d41f8df2b9b87b611ad7ceb2",
+                "reference": "08314b13f28f2608d41f8df2b9b87b611ad7ceb2",
                 "shasum": ""
             },
             "require": {
                 "gorkalaucirica/hipchat-v2-api-client": "~1.5",
-                "interconnectit/search-replace-db": "3.1",
                 "jaz303/phake": "~0.6",
                 "kmelia/monolog-stdout-handler": "~1.2",
                 "monolog/monolog": "~1.11",
@@ -2026,6 +1990,7 @@
                 "phpunit/phpunit": "~5.3",
                 "pyrech/composer-changelogs": "~1.4",
                 "qobo/pattern": "~1.0",
+                "qobo/search-replace-db": "~4.0",
                 "sami/sami": "~3.2",
                 "sebastian/phpcpd": "*",
                 "squizlabs/php_codesniffer": "*",
@@ -2054,7 +2019,44 @@
                 }
             ],
             "description": "A set of build and deploy files, based on jaz303/phake",
-            "time": "2017-07-17T12:37:43+00:00"
+            "time": "2017-08-16T13:05:28+00:00"
+        },
+        {
+            "name": "qobo/search-replace-db",
+            "version": "v4.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/QoboLtd/Search-Replace-DB.git",
+                "reference": "82a5c421a5c15e3c94fb0654e3f9e4717d580aa7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/QoboLtd/Search-Replace-DB/zipball/82a5c421a5c15e3c94fb0654e3f9e4717d580aa7",
+                "reference": "82a5c421a5c15e3c94fb0654e3f9e4717d580aa7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "conflict": {
+                "interconnectit/search-replace-db": "*"
+            },
+            "bin": [
+                "srdb.cli.php"
+            ],
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "srdb.class.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "description": "Fork of interconnectit/search-replace-db! A PHP search replace tool for quickly modifying a string throughout a database. Useful for changing the base URL when migrating a WordPress site from development to production.",
+            "homepage": "https://github.com/QoboLtd/Search-Replace-DB",
+            "time": "2017-08-16T11:16:14+00:00"
         },
         {
             "name": "sami/sami",
@@ -3163,16 +3165,16 @@
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.4.0",
+            "version": "v1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "f29dca382a6485c3cbe6379f0c61230167681937"
+                "reference": "7c8fae0ac1d216eb54349e6a8baa57d515fe8803"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/f29dca382a6485c3cbe6379f0c61230167681937",
-                "reference": "f29dca382a6485c3cbe6379f0c61230167681937",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/7c8fae0ac1d216eb54349e6a8baa57d515fe8803",
+                "reference": "7c8fae0ac1d216eb54349e6a8baa57d515fe8803",
                 "shasum": ""
             },
             "require": {
@@ -3184,7 +3186,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.4-dev"
+                    "dev-master": "1.5-dev"
                 }
             },
             "autoload": {
@@ -3218,7 +3220,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2017-06-09T14:24:12+00:00"
+            "time": "2017-06-14T15:44:48+00:00"
         },
         {
             "name": "symfony/process",
