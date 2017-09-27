@@ -17,11 +17,9 @@ class App extends AbstractCommand
     /**
      * Install a project
      *
-     * @param string $type (Optional) Project type to install (possible values: wp, cake)
-     *
      * @return bool true on success or false on failure
      */
-    public function appInstall($type = null)
+    public function appInstall()
     {
         $env = $this->getDotenv();
 
@@ -29,15 +27,12 @@ class App extends AbstractCommand
             return false;
         }
 
-        switch ($type) {
-            case "wp":
-                $result = $this->installWp($env);
-                break;
-            case "cake":
-                $result = $this->installCake($env);
-                break;
-            default;
-                $result = true;
+        if (preg_match('/^qobrix.*$/', $env['PLATFORM'])) {
+            $result = $this->installCake($env);
+        } else if (preg_match('/^wordpress.*$/', $env['PLATFORM'])) {
+            $result = $this->installWp($env);
+        } else {
+            $result = true;
         }
 
         if (!$result) {
