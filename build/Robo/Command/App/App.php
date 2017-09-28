@@ -45,11 +45,9 @@ class App extends AbstractCommand
     /**
      * Update a project
      *
-     * @param string $type (Optional) Project type to update (possible values: wp, cake)
-     *
      * @return bool true on success or false on failure
      */
-    public function appUpdate($type = null)
+    public function appUpdate()
     {
         $env = $this->getDotenv();
 
@@ -57,15 +55,12 @@ class App extends AbstractCommand
             return false;
         }
 
-        switch ($type) {
-            case "wp":
-                $result = $this->updateWp($env);
-                break;
-            case "cake":
-                $result = $this->updateCake($env);
-                break;
-            default;
-                $result = true;
+        if (preg_match('/^qobrix.*$/', $env['PLATFORM'])) {
+            $result = $this->installCake($env);
+        } else if (preg_match('/^wordpress.*$/', $env['PLATFORM'])) {
+            $result = $this->installWp($env);
+        } else {
+            $result = true;
         }
 
         if (!$result) {
