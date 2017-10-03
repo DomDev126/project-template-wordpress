@@ -39,7 +39,7 @@ $header_nav = [
 					<div class="col-xs-10 col-sm-10 col-md-10 col-lg-3">
 						<div class="navbar-logo text-center">
 							<a href="<?php bloginfo( 'url' )?>">
-								<img class="img-responsive"  src="<?php echo esc_attr( get_stylesheet_directory_uri() ); ?>/images/logo.png">
+								<img class="img-responsive" alt="Logo Image" src="<?php echo esc_attr( get_stylesheet_directory_uri() ); ?>/images/logo.png">
 							</a>
 						</div>
 					</div>
