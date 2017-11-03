@@ -13,7 +13,7 @@
   },
   "require": {
     "php": ">=5.6.0",
-    "johnpbloch/wordpress-core": "4.8.1",
+    "johnpbloch/wordpress-core": "4.8.3",
     "fancyguy/webroot-installer": "1.1.0",
     "johnpbloch/wordpress-core-installer": "0.2.1",
     "qobo/phake-builder": "~4.0",
