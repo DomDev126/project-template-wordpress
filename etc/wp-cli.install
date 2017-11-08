@@ -1,7 +1,23 @@
+# Shortcut for the WP CLI command
+WPCLI="%%SYSTEM_COMMAND_WPCLI%%"
+
+# Setup error handling if we are in bash
+if [ ! -z "$BASH" ]
+then
+	# Stop on error
+	set -e
+	# Stop on unitialized variables
+	set -u
+	# Stop on failed pipes
+	set -o pipefail
+else
+	echo "Not in bash!  Error handling is disabled."
+fi
+
 #
 # Install WordPress
 #
-%%SYSTEM_COMMAND_WPCLI%% \
+$WPCLI \
 	core install \
 		--skip-email \
 		--url="%%WP_URL%%"  \
@@ -13,19 +29,19 @@
 #
 # Add dev user
 #
-%%SYSTEM_COMMAND_WPCLI%% user create "%%WP_DEV_USER%%" "%%WP_DEV_EMAIL%%" --user_pass="%%WP_DEV_PASS%%" --role=administrator
+$WPCLI user create "%%WP_DEV_USER%%" "%%WP_DEV_EMAIL%%" --user_pass="%%WP_DEV_PASS%%" --role=administrator
 
 #
 # Remove default content
 #
-%%SYSTEM_COMMAND_WPCLI%% comment delete 1 --force
-%%SYSTEM_COMMAND_WPCLI%% post delete 1 --force
-%%SYSTEM_COMMAND_WPCLI%% post delete 2 --force
+$WPCLI comment delete 1 --force
+$WPCLI post delete 1 --force
+$WPCLI post delete 2 --force
 
 #
 # Setup friendly URLs
 #
-%%SYSTEM_COMMAND_WPCLI%% rewrite structure "/%year%/%monthnum%/%day%/%postname%/"
+$WPCLI rewrite structure "/%year%/%monthnum%/%day%/%postname%/"
 
 # Install all plugins that are found in the Child theme directory.
 # Usually, these plugins are the proprietary plugins. (WPML, etc.).
@@ -34,16 +50,16 @@ if [ -d "%%WP_CHILD_PLUGIN_FOLDER%%" ];
 then
 	for plugin in  %%WP_CHILD_PLUGIN_FOLDER%%/*.zip
 	do
-		%%SYSTEM_COMMAND_WPCLI%% plugin install --force $plugin
+		$WPCLI plugin install --force $plugin
 	done
 fi
 
 #
 # Activate all installed inactive plugins (install them with Composer)
 #
-for WP_INACTIVE_PLUGIN in $(%%SYSTEM_COMMAND_WPCLI%% plugin list --status=inactive --field=name)
+for WP_INACTIVE_PLUGIN in $($WPCLI plugin list --status=inactive --field=name)
 do
-	%%SYSTEM_COMMAND_WPCLI%% plugin activate "$WP_INACTIVE_PLUGIN"
+	$WPCLI plugin activate "$WP_INACTIVE_PLUGIN"
 done
 
 #
@@ -61,39 +77,39 @@ cd -
 #
 # Activate custom child theme themes
 #
-%%SYSTEM_COMMAND_WPCLI%% theme activate custom
+$WPCLI theme activate custom
 
 #
 # Setting options
 #
 
 # WordPress is in the wp/ folder, but home should be in the root
-%%SYSTEM_COMMAND_WPCLI%% option update home '%%WP_URL%%'
+$WPCLI option update home '%%WP_URL%%'
 # Disable comments everywhere, for the Disable Comments plugin
-%%SYSTEM_COMMAND_WPCLI%% option update disable_comments_options '{"disabled_post_types":["post","page","attachment"],"remove_everywhere":true,"permanent":false,"extra_post_types":false,"db_version":6}' --format=json
+$WPCLI option update disable_comments_options '{"disabled_post_types":["post","page","attachment"],"remove_everywhere":true,"permanent":false,"extra_post_types":false,"db_version":6}' --format=json
 # Custom upload directory, uploads will be added in a separate firectory by logged in user. Files uploaded by dev user will be versioned
-%%SYSTEM_COMMAND_WPCLI%% option update custom_upload_dir --format=json '{"test_ids":"-1","template":"\/%current_user%\/%year%\/%monthnum%","only_leaf_nodes":false,"only_base_nodes":false,"flatten_hierarchy":false,"all_parents":true}'
+$WPCLI option update custom_upload_dir --format=json '{"test_ids":"-1","template":"\/%current_user%\/%year%\/%monthnum%","only_leaf_nodes":false,"only_base_nodes":false,"flatten_hierarchy":false,"all_parents":true}'
 # Resize after upload settings
-%%SYSTEM_COMMAND_WPCLI%% option update jr_resizeupload_width '2560'
-%%SYSTEM_COMMAND_WPCLI%% option update jr_resizeupload_height '1440'
-%%SYSTEM_COMMAND_WPCLI%% option update jr_resizeupload_quality '90'
-%%SYSTEM_COMMAND_WPCLI%% option update jr_resizeupload_resize_yesno 'yes'
-%%SYSTEM_COMMAND_WPCLI%% option update jr_resizeupload_recompress_yesno 'no'
-%%SYSTEM_COMMAND_WPCLI%% option update jr_resizeupload_convertbmp_yesno 'no'
-%%SYSTEM_COMMAND_WPCLI%% option update jr_resizeupload_convertpng_yesno 'no'
-%%SYSTEM_COMMAND_WPCLI%% option update jr_resizeupload_convertgif_yesno 'no'
+$WPCLI option update jr_resizeupload_width '2560'
+$WPCLI option update jr_resizeupload_height '1440'
+$WPCLI option update jr_resizeupload_quality '90'
+$WPCLI option update jr_resizeupload_resize_yesno 'yes'
+$WPCLI option update jr_resizeupload_recompress_yesno 'no'
+$WPCLI option update jr_resizeupload_convertbmp_yesno 'no'
+$WPCLI option update jr_resizeupload_convertpng_yesno 'no'
+$WPCLI option update jr_resizeupload_convertgif_yesno 'no'
 # Qobo Developed by
-%%SYSTEM_COMMAND_WPCLI%% option update qbdevby_settings '{"title":"", "text":"", "text_style":"", "style":"text-align:center;", "light_colour_icon":"", "link":"http://www.qobo.biz", "footer":""}' --format=json
+$WPCLI option update qbdevby_settings '{"title":"", "text":"", "text_style":"", "style":"text-align:center;", "light_colour_icon":"", "link":"http://www.qobo.biz", "footer":""}' --format=json
 # Compress PNG for WP (Using TinyPNG API)
-%%SYSTEM_COMMAND_WPCLI%% option update gd_tiny_png_key '%%TINYPNG_API_KEY%%'
+$WPCLI option update gd_tiny_png_key '%%TINYPNG_API_KEY%%'
 # Available options for vanilla WP are - large, medium, thumbnail
-%%SYSTEM_COMMAND_WPCLI%% option update gd_tiny_png_sizes_option '{"large":"on"}' --format=json
+$WPCLI option update gd_tiny_png_sizes_option '{"large":"on"}' --format=json
 
 #
 # Setting categories
 #
 
 # Update default category 'Uncategorised', set name & slug from 'Uncategorised' to 'General'
-%%SYSTEM_COMMAND_WPCLI%% term update category 1 --name=General --slug=general
+$WPCLI term update category 1 --name=General --slug=general
 
 # vi:ft=sh

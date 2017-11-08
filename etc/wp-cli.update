@@ -1,3 +1,19 @@
+# Shortcut for the WP CLI command
+WPCLI="%%SYSTEM_COMMAND_WPCLI%%"
+
+# Setup error handling if we are in bash
+if [ ! -z "$BASH" ]
+then
+	# Stop on error
+	set -e
+	# Stop on unitialized variables
+	set -u
+	# Stop on failed pipes
+	set -o pipefail
+else
+	echo "Not in bash!  Error handling is disabled."
+fi
+
 #
 # Update content WordPress
 #
@@ -5,14 +21,14 @@
 #
 # Update Wordpress Database
 #
-%%SYSTEM_COMMAND_WPCLI%% core update-db
+$WPCLI core update-db
 
 #
 # Setting categories
 #
 
 # Update default category 'Uncategorised', set name & slug from 'Uncategorised' to 'General'
-%%SYSTEM_COMMAND_WPCLI%% term update category 1 --name=General --slug=general
+$WPCLI term update category 1 --name=General --slug=general
 
 #
 # Symlink the custom theme
@@ -33,7 +49,7 @@ if [ -d "%%WP_CHILD_PLUGIN_FOLDER%%" ];
 then
 	for plugin in  %%WP_CHILD_PLUGIN_FOLDER%%/*.zip
 	do
-		%%SYSTEM_COMMAND_WPCLI%% plugin install --force $plugin
+		$WPCLI plugin install --force $plugin
 	done
 fi
 

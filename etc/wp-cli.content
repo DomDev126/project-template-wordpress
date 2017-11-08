@@ -1,3 +1,21 @@
+# Shortcut for the WP CLI command
+WPCLI="%%SYSTEM_COMMAND_WPCLI%%"
+
+# Setup error handling if we are in bash
+if [ ! -z "$BASH" ]
+then
+	# Stop on error
+	set -e
+	# Stop on unitialized variables
+	set -u
+	# Stop on failed pipes
+	set -o pipefail
+else
+	echo "Not in bash!  Error handling is disabled."
+fi
+
 #
 # Install content WordPress
 #
+
+# vi:ft=sh
