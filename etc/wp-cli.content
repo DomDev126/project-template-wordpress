@@ -1,3 +1,8 @@
+# Shortcut for the WP CLI command
+WPCLI="%%SYSTEM_COMMAND_WPCLI%%"
+
 #
 # Install content WordPress
 #
+
+# vi:ft=sh
