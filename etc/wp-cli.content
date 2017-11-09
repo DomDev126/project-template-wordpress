@@ -4,6 +4,7 @@ WPCLI="%%SYSTEM_COMMAND_WPCLI%%"
 # Setup error handling if we are in bash
 if [ ! -z "$BASH" ]
 then
+	echo "Setting up bash error handling"
 	# Stop on error
 	set -e
 	# Stop on unitialized variables
