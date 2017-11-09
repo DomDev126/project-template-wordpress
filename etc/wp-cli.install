@@ -129,4 +129,7 @@ $WPCLI term update category 1 --name=General --slug=general
 echo "Cleaning up transients"
 $WPCLI transient delete --all
 
+echo "Flushing cache"
+$WPCLI cache flush
+
 # vi:ft=sh
