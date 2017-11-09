@@ -4,6 +4,7 @@ WPCLI="%%SYSTEM_COMMAND_WPCLI%%"
 # Setup error handling if we are in bash
 if [ ! -z "$BASH" ]
 then
+	echo "Setting up bash error handling"
 	# Stop on error
 	set -e
 	# Stop on unitialized variables
@@ -21,6 +22,7 @@ fi
 #
 # Update Wordpress Database
 #
+echo "Updating WordPress"
 $WPCLI core update-db
 
 #
@@ -28,6 +30,7 @@ $WPCLI core update-db
 #
 
 # Update default category 'Uncategorised', set name & slug from 'Uncategorised' to 'General'
+echo "Renaming Uncategorised category to General"
 $WPCLI term update category 1 --name=General --slug=general
 
 #
@@ -45,12 +48,20 @@ cd -
 # Install all plugins that are found in the Child theme directory.
 # Usually, these plugins are the proprietary plugins. (WPML, etc.).
 # Please note the --force option which overwrites any installed version.
+echo "Installing plugins from child theme folder"
 if [ -d "%%WP_CHILD_PLUGIN_FOLDER%%" ];
 then
 	for plugin in  %%WP_CHILD_PLUGIN_FOLDER%%/*.zip
 	do
+		echo "Installing $plugin"
 		$WPCLI plugin install --force $plugin
 	done
 fi
+
+#
+# Clean cache
+#
+echo "Cleaning up transients"
+$WPCLI transient delete --all
 
 # vi:ft=sh

@@ -4,6 +4,7 @@ WPCLI="%%SYSTEM_COMMAND_WPCLI%%"
 # Setup error handling if we are in bash
 if [ ! -z "$BASH" ]
 then
+	echo "Setting up bash error handling"
 	# Stop on error
 	set -e
 	# Stop on unitialized variables
@@ -17,6 +18,7 @@ fi
 #
 # Install WordPress
 #
+echo "Installing WordPress"
 $WPCLI \
 	core install \
 		--skip-email \
@@ -29,11 +31,13 @@ $WPCLI \
 #
 # Add dev user
 #
+echo "Adding dev user"
 $WPCLI user create "%%WP_DEV_USER%%" "%%WP_DEV_EMAIL%%" --user_pass="%%WP_DEV_PASS%%" --role=administrator
 
 #
 # Remove default content
 #
+echo "Removing default content"
 $WPCLI comment delete 1 --force
 $WPCLI post delete 1 --force
 $WPCLI post delete 2 --force
@@ -41,15 +45,18 @@ $WPCLI post delete 2 --force
 #
 # Setup friendly URLs
 #
+echo "Setting up friendly URLs"
 $WPCLI rewrite structure "/%year%/%monthnum%/%day%/%postname%/"
 
 # Install all plugins that are found in the Child theme directory.
 # Usually, these plugins are the proprietary plugins. (WPML, etc.).
 # Please note the --force option which overwrites any installed version.
+echo "Installing plugins from child theme folder"
 if [ -d "%%WP_CHILD_PLUGIN_FOLDER%%" ];
 then
 	for plugin in  %%WP_CHILD_PLUGIN_FOLDER%%/*.zip
 	do
+		echo "Installing $plugin"
 		$WPCLI plugin install --force $plugin
 	done
 fi
@@ -57,8 +64,10 @@ fi
 #
 # Activate all installed inactive plugins (install them with Composer)
 #
+echo "Activating inactive plugins"
 for WP_INACTIVE_PLUGIN in $($WPCLI plugin list --status=inactive --field=name)
 do
+	echo "Activating $WP_INACTIVE_PLUGIN"
 	$WPCLI plugin activate "$WP_INACTIVE_PLUGIN"
 done
 
@@ -77,12 +86,13 @@ cd -
 #
 # Activate custom child theme themes
 #
+echo "Activating custom theme"
 $WPCLI theme activate custom
 
 #
 # Setting options
 #
-
+echo "Setting up options"
 # WordPress is in the wp/ folder, but home should be in the root
 $WPCLI option update home '%%WP_URL%%'
 # Disable comments everywhere, for the Disable Comments plugin
@@ -110,6 +120,13 @@ $WPCLI option update gd_tiny_png_sizes_option '{"large":"on"}' --format=json
 #
 
 # Update default category 'Uncategorised', set name & slug from 'Uncategorised' to 'General'
+echo "Renaming Uncategorised category to General"
 $WPCLI term update category 1 --name=General --slug=general
+
+#
+# Clean cache
+#
+echo "Cleaning up transients"
+$WPCLI transient delete --all
 
 # vi:ft=sh
