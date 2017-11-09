@@ -18,7 +18,7 @@
     "johnpbloch/wordpress-core-installer": "0.2.1",
     "qobo/phake-builder": "~5.0",
     "pyrech/composer-changelogs": "~1.4",
-    "wp-cli/wp-cli": "1.1.0",
+    "wp-cli/wp-cli": "^1.1",
     "qobo/qobo-wp-generic-theme": "1.1.2",
     "qobo/qobo-wp-brand": "2.0.1",
     "qobo/qobo-wp-shortcodes": "1.0.1",
