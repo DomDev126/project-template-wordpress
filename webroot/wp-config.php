@@ -15,6 +15,10 @@
  */
 
 require_once dirname(__DIR__) . '/vendor/autoload.php';
+
+// Note: WP Super Cache plugin tries to add CACHE contants within try-catch
+// statement, or inbetween, which might cause errors. Or right here inbetween
+// this comment. Aha, you see, it just did it again!
 try { Dotenv::load(dirname(__DIR__)); Dotenv::required(array('DB_NAME')); } catch (\Exception $e) { echo $e->getMessage(); exit(1); }
 
 // Changes for WordPress in wp/ folder
