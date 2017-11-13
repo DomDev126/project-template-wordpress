@@ -15,14 +15,8 @@
  */
 
 require_once dirname(__DIR__) . '/vendor/autoload.php';
-try {
-	Dotenv::load(dirname(__DIR__));
-	Dotenv::required(array('DB_NAME'));
-}
-catch (\Exception $e) {
-	echo $e->getMessage();
-	exit(1);
-}
+try { Dotenv::load(dirname(__DIR__)); Dotenv::required(array('DB_NAME')); } catch (\Exception $e) { echo $e->getMessage(); exit(1); }
+
 // Changes for WordPress in wp/ folder
 define('WP_HOME', getenv('WP_URL'));
 define('WP_SITEURL', WP_HOME . '/wp');
