@@ -9,6 +9,8 @@ use \Robo\Runner as RoboRunner;
  */
 class Runner extends RoboRunner
 {
+    private $lastErrno = null;
+
     /**
      * Custom error handler that will throw an exception on any errors
      */
@@ -27,8 +29,26 @@ class Runner extends RoboRunner
             $msg .= " [$file]";
         }
 
+        $this->lastErrno = $errno;
+
         // throw the exception
         throw new \RuntimeException($msg, $errno);
+    }
+
+    public function installRoboHandlers()
+    {
+        register_shutdown_function(array($this, 'shutdown'));
+
+        if (PHP_MAJOR_VERSION < 7) {
+            set_error_handler(array($this, 'handleError'), E_ALL & ~E_STRICT);
+        } else {
+            set_error_handler(array($this, 'handleError'), E_ALL);
+        }
+    }
+
+    public function shutdown()
+    {
+        exit($this->lastErrno);
     }
 
     /**
