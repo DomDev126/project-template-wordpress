@@ -29,9 +29,9 @@ class App extends AbstractCommand
             return false;
         }
 
-        if (preg_match('/^qobrix.*$/', $env['PLATFORM'])) {
+        if (array_key_exists('PLATFORM', $env) && preg_match('/^qobrix.*$/', $env['PLATFORM'])) {
             $result = $this->installCake($env);
-        } else if (preg_match('/^wordpress.*$/', $env['PLATFORM'])) {
+        } else if (array_key_exists('PLATFORM', $env) && preg_match('/^wordpress.*$/', $env['PLATFORM'])) {
             $result = $this->installWp($env);
         } else {
             $result = true;
