@@ -11,7 +11,6 @@
 	},
 	"require-dev": {
 		"phpunit/phpunit": "*",
-		"phpunit/phpunit-selenium": "~3.0",
 		"squizlabs/php_codesniffer": "*",
 		"sami/sami": "~3.2"
 	},
