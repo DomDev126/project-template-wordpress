@@ -17,11 +17,13 @@ class App extends AbstractCommand
     /**
      * Install a project
      *
+     * @param string $env Custom env in KEY1=VALUE1,KEY2=VALUE2 format
+     *
      * @return bool true on success or false on failure
      */
-    public function appInstall()
+    public function appInstall($env = '')
     {
-        $env = $this->getDotenv();
+        $env = $this->getDotenv($env);
 
         if ($env === false || !$this->preInstall($env)) {
             return false;
@@ -45,11 +47,13 @@ class App extends AbstractCommand
     /**
      * Update a project
      *
+     * @param string $env Custom env in KEY1=VALUE1,KEY2=VALUE2 format
+     *
      * @return bool true on success or false on failure
      */
-    public function appUpdate()
+    public function appUpdate($env = '')
     {
-        $env = $this->getDotenv();
+        $env = $this->getDotenv($env);
 
         if ($env === false || !$this->preInstall($env)) {
             return false;
@@ -577,16 +581,29 @@ class App extends AbstractCommand
     /**
      * Recreates and reloads environment
      *
+     * @param string $env Custom env in KEY1=VALUE1,KEY2=VALUE2 format
+     *
      * @return mixed Env array or false on failure
      */
-    protected function getDotenv()
+    protected function getDotenv($env = '')
     {
         $batch = $this->collectionBuilder();
 
-        $result = $batch->taskProjectDotenvCreate()
-                ->env('.env')
-                ->template('.env.example')
-            ->taskDotenvReload()
+
+        $task = $batch->taskProjectDotenvCreate()
+            ->env('.env')
+            ->template('.env.example');
+
+        $vars = explode(',', $env);
+        foreach ($vars as $var) {
+            $var = trim($var);
+            if (preg_match('/^(.*?)=(.*?)$/', $var, $matches)) {
+                $task->set($matches[1], $matches[2]);
+            }
+        }
+
+
+        $result = $task->taskDotenvReload()
                 ->path('.env')
             ->run();
 

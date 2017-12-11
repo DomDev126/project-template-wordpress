@@ -12,6 +12,7 @@ class DotenvCreate extends AbstractCommand
      *
      * @param string $envPath Path to dotenv file
      * @param string $templatePath Path to dotenv template
+     * @param string $env Custom dotenv in KEY1=VALUE1,KEY2=VALUE2 format
      *
      * @option string $format Output format (table, list, csv, json, xml)
      * @option string $fields Limit output to given fields, comma-separated
@@ -19,12 +20,21 @@ class DotenvCreate extends AbstractCommand
      * @return PropertyList
      *
      */
-    public function projectDotenvCreate($envPath = '.env', $templatePath = '.env.example', $opts = ['format' => 'table', 'fields' => ''])
+    public function projectDotenvCreate($envPath = '.env', $templatePath = '.env.example', $env = '', $opts = ['format' => 'table', 'fields' => ''])
     {
-        $result = $this->taskProjectDotenvCreate()
+        $task = $this->taskProjectDotenvCreate()
             ->env($envPath)
-            ->template($templatePath)
-            ->run();
+            ->template($templatePath);
+
+        $vars = explode(',', $env);
+        foreach ($vars as $var) {
+            $var = trim($var);
+            if (preg_match('/^(.*?)=(.*?)$/', $var, $matches)) {
+                $task->set($matches[1], $matches[2]);
+            }
+        }
+
+        $result = $task->run();
 
         $data = $result->getData()['data'];
 

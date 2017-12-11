@@ -52,6 +52,8 @@ class DotenvCreate extends \Qobo\Robo\AbstractTask
 
         $env = [];
         try {
+            // read .env template and .env files
+            // and make one env array with all the variables in it
             foreach (['template', 'env'] as $key) {
 
                 // skip on missing
@@ -62,6 +64,13 @@ class DotenvCreate extends \Qobo\Robo\AbstractTask
                $content =  File::readLines($this->data[$key]);
                $env = Dotenv::parse($content, $env, Dotenv::FLAG_REPLACE_DUPLICATES);
             }
+
+            // for any custom env provided via set method - adjust our env array
+            foreach ($this->data['data'] as $key => $value) {
+                $env[$key] = $value;
+            }
+
+            // write env into file
             File::writeLines(
                 $this->data['env'],
                 array_map(
@@ -78,26 +87,10 @@ class DotenvCreate extends \Qobo\Robo\AbstractTask
         return Result::success($this, "Successfully created environment", $this->data);
     }
 
-    protected function readFile($path)
+    public function set($key, $value)
     {
-        $reader = new FileRead();
+        $this->data['data'][$key] = $value;
 
-        $result = $reader
-            ->path($path)
-            ->read();
-
-        if (!$result->wasSuccessful()) {
-            return false;
-        }
-
-        $data = $result->getData();
-
-        if (!isset($data['data'])) {
-            return false;
-        }
-
-        $this->data['data'] = array_merge($this->data['data'], $data['data']);
-
-        return true;
+        return $this;
     }
 }
