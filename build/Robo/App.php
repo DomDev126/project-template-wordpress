@@ -3,7 +3,8 @@
 namespace Qobo\Robo;
 
 use \Robo\Config;
-use \Robo\Robo;
+use \Qobo\Robo\Robo;
+use \Robo\Runner as RoboRunner;
 
 /**
  * Qobo Robo App
@@ -38,6 +39,8 @@ class App
         'grp_cmd'   => true
     ];
 
+    private $runner;
+
     /**
      * @var array $requiredData
      */
@@ -50,6 +53,11 @@ class App
     {
         // all data is required for the app to run
         $this->requiredData = array_keys($this->data);
+
+        // use our custom runner class for Robo with custom error handler
+        $this->runner = new RoboRunner(
+            Runner::class
+        );
     }
 
     /**
