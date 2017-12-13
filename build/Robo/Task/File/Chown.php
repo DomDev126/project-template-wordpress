@@ -46,7 +46,7 @@ class Chown extends \Qobo\Robo\AbstractTask
 			$this->data['path'] = [ $this->data['path'] ];
 		}
 		foreach ($this->data['path'] as $path) {
-			$this->printInfo("Changing user ownership on {path}", ['path' => $path]);
+			$this->printInfo("Changing user ownership on {path} to {user}", ['path' => $path, 'user' => $this->data['user']]);
 			$result = static::chown($path, $this->data['user'], $this->data['recursive']);
 		}
 

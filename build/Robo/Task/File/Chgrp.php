@@ -46,7 +46,7 @@ class Chgrp extends \Qobo\Robo\AbstractTask
 			$this->data['path'] = [ $this->data['path'] ];
 		}
 		foreach ($this->data['path'] as $path) {
-			$this->printInfo("Changing user group ownership on {path}", ['path' => $path]);
+			$this->printInfo("Changing user group ownership on {path} to {group}", ['path' => $path, 'group' => $this->data['group']]);
 			$result = static::chgrp($path, $this->data['group'], $this->data['recursive']);
 		}
 
