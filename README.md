@@ -14,7 +14,7 @@ cd example.com
 git init
 git add .
 git commit -m "Initial commit"
-composer exec -- phake dotenv:create
+./bin/build app:install PROJECT_NAME="My Project",PROJECT_VERSION="v1.0.0"
 ```
 
 Update
@@ -57,17 +57,17 @@ advantages:
 
 * Support for [PHP built-in web server](http://php.net/manual/en/features.commandline.webserver.php)
 * Per-environment configuration using `.env` file, which is ignored by git
-* Powerful build system ([phake-builder](https://github.com/QoboLtd/phake-builder)) integrated
+* Powerful build system ([Robo](http://robo.li/)) integrated
 * Composer integrated with `vendor/` folder added to `.gitignore` .
 * PHPUnit integrated with `tests/` folder and example unit tests.
 * Sensible defaults for best practices - favicon.ico, robots.txt, MySQL dump, Nginx configuration, GPL, etc.
 
 For example, you can easily automate the build process of your application
-by modifying the included `Phakefile`.  Run the following command to examine
-available targets:
+by modifying the included Robo files in `build/` folder.  Run the following
+command to examine available targets:
 
 ```
-./vendor/bin/phake -T
+./bin/build
 ```
 
 As you can see, there are already some placeholders for your application's build
@@ -78,7 +78,7 @@ process.  By default, it is suggested that you have these:
 * `app:remove` - for the application removal process and cleanup.
 
 You can, of course, add your own, remove these, or change them any way you want.  Have a look at
-[phake-builder](https://github.com/QoboLtd/phake-builder) documentation for more information on how
+[Robo](http://robo.li) documentation for more information on how
 to use these targets and pass runtime configuration parameters.
 
 
