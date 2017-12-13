@@ -268,7 +268,14 @@ class App extends AbstractCommand
             return false;
         }
 
-        return $result->getData()['data'];
+		$env = $result->getData()['data'];
+		foreach ($this->defaultEnv as $k => $v) {
+			if (!array_key_exists($k, $env)) {
+				$env[$k] = $v;
+			}
+		}
+
+		return $env;
     }
 
     /**
