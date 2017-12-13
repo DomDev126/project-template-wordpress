@@ -55,7 +55,7 @@ class Chmod extends \Qobo\Robo\AbstractTask
 			$this->data['path'] = [ $this->data['path'] ];
 		}
 		foreach ($this->data['path'] as $path) {
-			$this->printInfo("Changing mode on {path}", ['path' => $path]);
+			$this->printInfo("Changing mode on {path} (dir: {dir_mode}, file: {file_mode})", ['path' => $path, 'dir_mode' => $this->data['dirMode'], 'file_mode' => $this->data['fileMode']]);
 			$result = static::chmod($path, $this->data['file_mode'], $this->data['dir_mode'], $this->data['recursive']);
 		}
 
