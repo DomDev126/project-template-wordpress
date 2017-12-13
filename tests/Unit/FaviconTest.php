@@ -3,8 +3,6 @@ namespace Tests\Unit;
 
 /**
  * Favicon Test
- *
- * @author Leonid Mamchenkov <l.mamchenkov@qobo.biz>
  */
 class FaviconTest extends \PHPUnit_Framework_TestCase
 {
