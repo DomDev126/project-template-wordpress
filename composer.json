@@ -17,6 +17,7 @@
     "fancyguy/webroot-installer": "1.1.0",
     "johnpbloch/wordpress-core-installer": "0.2.1",
     "qobo/phake-builder": "~5.0",
+		"consolidation/robo": "^1.1",
     "pyrech/composer-changelogs": "~1.4",
     "wp-cli/wp-cli": "^1.1",
     "qobo/qobo-wp-generic-theme": "1.1.2",
@@ -66,5 +67,11 @@
       "webroot/wp-content/plugins/{$name}": ["type:wordpress-plugin"],
       "webroot/wp-content/themes/{$name}": ["type:wordpress-theme"]
     }
+  },
+  "autoload": {
+      "psr-4": {
+          "Qobo\\Robo\\": "build/Robo",
+          "Qobo\\Utility\\": "build/Utility"
+      }
   }
 }
