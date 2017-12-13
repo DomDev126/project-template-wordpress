@@ -149,7 +149,7 @@ class Dotenv
 
         return preg_replace_callback(
             '/{\$([a-zA-Z0-9_]+)}/',
-            function ($items) {
+            function ($items) use ($env) {
                 $nested = array_key_exists($items[1], $env)
                     ? $env[$items[1]]
                     : null;
