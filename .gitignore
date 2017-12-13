@@ -1,4 +1,7 @@
-build/
+!build/
+build/*
+!build/Robo/
+!build/Utility/
 vendor/
 .env
 etc/nginx.conf

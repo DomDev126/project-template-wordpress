@@ -6,6 +6,7 @@
 		"php": ">=5.6.0",
 		"qobo/phake-builder": "~5.0",
 		"pyrech/composer-changelogs": "~1.4",
+		"consolidation/robo": "^1.1",
 		"phpunit/php-token-stream": "~1.4"
 	},
 	"require-dev": {
@@ -15,5 +16,12 @@
 	},
 	"suggest": {
 		"ext-xdebug": "Allows code coverage reports and advanced debugging"
-	}
+	},
+    "autoload": {
+        "psr-4": {
+            "Qobo\\Robo\\": "build/Robo",
+            "Qobo\\Utility\\": "build/Utility"
+        }
+    }
+
 }
