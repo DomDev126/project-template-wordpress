@@ -32,6 +32,7 @@ class DbFindReplace extends AbstractCommand
             ->pass($pass)
             ->host($host)
             ->port($port)
+            ->hide($pass)
             ->run();
 
     }

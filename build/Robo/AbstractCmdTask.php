@@ -49,6 +49,12 @@ abstract class AbstractCmdTask extends AbstractTask
     ];
 
     /**
+     * @var array $hiddenOutput replace matching strings of output with stars
+     */
+    protected $hiddenOutput = [
+    ];
+
+    /**
      * {@inheritdoc}
      */
     public function run()
@@ -76,7 +82,11 @@ abstract class AbstractCmdTask extends AbstractTask
 
         $this->data['data'] = [];
         foreach ($cmds as $cmd) {
-            $this->printInfo("Running {cmd}", ['cmd' => $cmd]);
+            $output = $cmd;
+            foreach ($this->hiddenOutput as $str) {
+                $output = str_replace($str, '******', $output);
+            }
+            $this->printInfo("Running {cmd}", ['cmd' => $output]);
             $data = $this->runCmd($cmd);
             $this->data['data'] []= $data;
 
@@ -91,6 +101,16 @@ abstract class AbstractCmdTask extends AbstractTask
         return ($data['status'])
             ? Result::error($this, "Last command failed to run", $this->data)
             : Result::success($this, "Commands run successfully", $this->data);
+    }
+
+    /**
+     * Add strings to hide from output
+     */
+    public function hide($str)
+    {
+        $this->hiddenOutput []= $str;
+
+        return $this;
     }
 
     /**
