@@ -3,7 +3,6 @@
 namespace Qobo\Robo\Task\File;
 
 use Robo\Result;
-use \Symfony\Component\Filesystem\Filesystem;
 
 /**
  * Change file mode
@@ -22,18 +21,14 @@ use \Symfony\Component\Filesystem\Filesystem;
  */
 class Chmod extends \Qobo\Robo\AbstractTask
 {
-	/**
-	 * Symfony Filesystem
-	 */
-	protected static $fs = null;
 
     /**
      * {@inheritdoc}
      */
     protected $data = [
 		'path'  => [],
-		'file_mode' => 0664,
-		'dir_mode' => 0775,
+		'file_mode' => '0664',
+		'dir_mode' => '0775',
 		'recursive'	=> false,
 	];
 
@@ -53,8 +48,8 @@ class Chmod extends \Qobo\Robo\AbstractTask
 	{
 		if (!is_array($this->data['path'])) {
 			$this->data['path'] = [ $this->data['path'] ];
-		}
-		foreach ($this->data['path'] as $path) {
+        }
+        foreach ($this->data['path'] as $path) {
 			$this->printInfo("Changing mode on {path} (dir: {dir_mode}, file: {file_mode})", ['path' => $path, 'dir_mode' => $this->data['dir_mode'], 'file_mode' => $this->data['file_mode']]);
 			$result = static::chmod($path, $this->data['file_mode'], $this->data['dir_mode'], $this->data['recursive']);
 		}
@@ -67,20 +62,20 @@ class Chmod extends \Qobo\Robo\AbstractTask
 	}
 
 	public static function chmod($path, $fileMode, $dirMode, $recursive)
-	{
-		if (is_null(static::$fs)) {
-			static::$fs = new Filesystem;
-		}
+    {
+        $fileMode = static::valueToOct($fileMode);
+        $dirMode = static::valueToOct($dirMode);
+
 		$path = realpath($path);
 
 		try {
 
 			if (is_file($path)) {
-				static::$fs->chmod($path, $fileMode);
+                chmod($path, $fileMode);
 				return true;
 			}
 
-			static::$fs->chmod($path, $dirMode);
+            chmod($path, $dirMode);
 		} catch (\Exception $e) {
 			return false;
 		}
@@ -96,5 +91,18 @@ class Chmod extends \Qobo\Robo\AbstractTask
 			}
 		}
 		return true;
-	}
+    }
+
+    protected static function valueToOct($value)
+    {
+        // If the value is a string in a form '0777', then extract octal value
+        if (is_string($value) && (strpos($value, '0') === 0)) {
+            $value = intval($value, 8);
+        }
+        // If the value is not octal, convert
+        if (decoct(octdec($value)) <> $value) {
+            return base_convert((string) $value, 10, 8);
+        }
+        return $value;
+    }
 }
