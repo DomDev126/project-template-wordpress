@@ -17,7 +17,7 @@ class PhpUnit extends \Qobo\Robo\AbstractCommand
             ->run();
 
         if (!$result->wasSuccessful()) {
-            return false;
+            $this->exitError("Failed to run command");
         }
 
         foreach ($result->getData()['data'][0]['output'] as $line) {

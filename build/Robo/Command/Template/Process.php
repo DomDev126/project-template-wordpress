@@ -23,20 +23,25 @@ class Process extends AbstractCommand
             ->path('.env')
             ->run();
         if (!$result->wasSuccessful()) {
-            return false;
+            $this->exitError("Failed to run command");
         }
 
         $data = $result->getData();
         if (!isset($data['data'])) {
-            return false;
+            $this->exitError("Failed to run command");
         }
 
-        return $this->taskTemplateProcess()
+        $result = $this->taskTemplateProcess()
             ->src($src)
             ->dst($dst)
             ->wrap('%%')
             ->tokens($tokens)
-            ->run()
-            ->wasSuccessful();
+            ->run();
+
+        if (!$result->wasSuccessful()) {
+            $this->exitError("Failed to run command");
+        }
+
+        return true;
     }
 }
