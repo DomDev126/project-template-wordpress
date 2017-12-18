@@ -36,6 +36,10 @@ class DotenvCreate extends AbstractCommand
 
         $result = $task->run();
 
+        if (!$result->wasSuccessful()) {
+            $this->exitError("Failed to run command");
+        }
+
         $data = $result->getData()['data'];
 
         $lines = array_map(function ($k, $v) { return "$k=$v"; }, array_keys($data), $data);
@@ -43,6 +47,10 @@ class DotenvCreate extends AbstractCommand
         $result = $this->taskWriteToFile($envPath)
             ->lines($lines)
             ->run();
+
+        if (!$result->wasSuccessful()) {
+            $this->exitError("Failed to run command");
+        }
 
         return new PropertyList($data);
     }

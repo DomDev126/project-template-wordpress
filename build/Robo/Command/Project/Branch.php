@@ -18,7 +18,7 @@ class Branch extends AbstractCommand
             ->run();
 
         if (!$result->wasSuccessful()) {
-            return false;
+            $this->exitError("Failed to run command");
         }
 
         $data = $result->getData();
