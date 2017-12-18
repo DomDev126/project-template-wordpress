@@ -23,6 +23,10 @@ class DotenvReload extends AbstractCommand
             ->path($envPath)
             ->run();
 
+        if ($result->wasSuccessful()) {
+            $this->exitError("Failed to run command");
+        }
+
         return new PropertyList($result->getData());
     }
 }

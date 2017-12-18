@@ -16,7 +16,7 @@ class Clean extends \Qobo\Robo\AbstractCommand
             ->run();
 
         if (!$result->wasSuccessful()) {
-            return false;
+            $this->exitError("Failed to run command");
         }
 
         $data = $result->getData();
