@@ -25,7 +25,7 @@ class App extends AbstractCommand
         $env = $this->getDotenv($env);
 
         if ($env === false || !$this->preInstall($env)) {
-            return false;
+            $this->exitError("Failed to do pre-install ");
         }
 
         return $this->postInstall();
@@ -43,7 +43,7 @@ class App extends AbstractCommand
         $env = $this->getDotenv($env);
 
         if ($env === false || !$this->preInstall($env)) {
-            return false;
+            $this->exitError("Failed to do app:update");
         }
 
         return $this->postInstall();
@@ -57,7 +57,11 @@ class App extends AbstractCommand
     public function appRemove()
     {
         // Remove .env
-        return (file_exists('.env') && !unlink('.env')) ? false : true;
+        if (!file_exists('.env') || !unlink('.env')) {
+            $this->exitError("Failed to do app:remove");
+        }
+
+        return true;
     }
 
     /**

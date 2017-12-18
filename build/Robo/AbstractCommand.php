@@ -36,7 +36,7 @@ abstract class AbstractCommand extends \Robo\Tasks
      * @param string $method Method name that was called
      * @param array $args Arguments that were passed to the method
      *
-     * @return 
+     * @return
      */
     public function __call($method, $args = null)
     {
@@ -48,5 +48,16 @@ abstract class AbstractCommand extends \Robo\Tasks
             return $this->task($className, $args);
         }
         throw new \RuntimeException("Called to undefined method '$method' of '" . get_called_class() . "'");
+    }
+
+    /**
+     * Terminate command with proper error code by throwing an exception
+     *
+     * @param string $message Error message
+     * @param int $errorCode Error code for exit status
+     */
+    protected function exitError($message, $errorCode = 1)
+    {
+        throw new \RuntimeException($message, $errorCode);
     }
 }
