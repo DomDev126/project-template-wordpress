@@ -11,7 +11,9 @@ class App extends AbstractCommand
      * @var array $defaultEnv Default values if missing in env
      */
     protected $defaultEnv = [
-        'SYSTEM_COMMAND_WPCLI'  => './vendor/bin/wp --allow-root --path=webroot/wp'
+		'SYSTEM_COMMAND_WPCLI'  => './vendor/bin/wp --allow-root --path=webroot/wp',
+		'CHMOD_FILE_MODE'		=> '0664',
+		'CHMOD_DIR_MODE'		=> '02775'
     ];
 
     /**
@@ -76,6 +78,7 @@ class App extends AbstractCommand
             ->db($this->getValue('DB_NAME', $env))
             ->user($this->getValue('DB_ADMIN_USER', $env))
             ->pass($this->getValue('DB_ADMIN_PASS', $env))
+            ->hide($this->getValue('DB_ADMIN_PASS', $env))
             ->host($this->getValue('DB_HOST', $env))
             ->run();
 
@@ -104,6 +107,7 @@ class App extends AbstractCommand
             ->query("SELECT NOW() AS ServerTime")
             ->user($this->getValue('DB_ADMIN_USER', $env))
             ->pass($this->getValue('DB_ADMIN_PASS', $env))
+            ->hide($this->getValue('DB_ADMIN_PASS', $env))
             ->host($this->getValue('DB_HOST', $env))
             ->run();
 
@@ -120,6 +124,7 @@ class App extends AbstractCommand
             ->db($this->getValue('DB_NAME', $env))
             ->user($this->getValue('DB_ADMIN_USER', $env))
             ->pass($this->getValue('DB_ADMIN_PASS', $env))
+            ->hide($this->getValue('DB_ADMIN_PASS', $env))
             ->host($this->getValue('DB_HOST', $env));
 
         // Parse install script template
@@ -145,8 +150,8 @@ class App extends AbstractCommand
         // Chmod dir
 		$tasks []= $this->taskFileChmod()
 			->path([$this->getValue('CHMOD_PATH', $env)])
-		    ->fileMode(0664)
-			->dirMode(0775)
+		    ->fileMode($this->getValue('CHMOD_FILE_MODE', $env))
+			->dirMode($this->getValue('CHMOD_DIR_MODE', $env))
 			->recursive(true);
 
         // Chown dir
@@ -187,6 +192,7 @@ class App extends AbstractCommand
             ->query("SELECT NOW() AS ServerTime")
             ->user($this->getValue('DB_ADMIN_USER', $env))
             ->pass($this->getValue('DB_ADMIN_PASS', $env))
+            ->hide($this->getValue('DB_ADMIN_PASS', $env))
             ->host($this->getValue('DB_HOST', $env))
             ->run();
 
@@ -209,14 +215,15 @@ class App extends AbstractCommand
             ->db($this->getValue('DB_NAME', $env))
             ->user($this->getValue('DB_ADMIN_USER', $env))
             ->pass($this->getValue('DB_ADMIN_PASS', $env))
+            ->hide($this->getValue('DB_ADMIN_PASS', $env))
             ->host($this->getValue('DB_HOST', $env));
 
 		$tasks []= $this->taskExec('/bin/bash etc/wp-cli.update.sh');
 
 		$tasks []= $this->taskFileChmod()
 			->path([$this->getValue('CHMOD_PATH', $env)])
-			->fileMode(0664)
-			->dirMode(0775)
+			->fileMode($this->getValue('CHMOD_FILE_MODE', $env))
+			->dirMode($this->getValue('CHMOD_DIR_MODE', $env))
 			->recursive(true);
 
 		$tasks []= $this->taskFileChown()
