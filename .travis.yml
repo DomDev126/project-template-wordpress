@@ -20,9 +20,9 @@ install:
 
 before_script:
     - ./bin/phpserv >/dev/null 2>&1 &
-    - sleep 5
+    - sleep 10
 
 script:
-    - ./vendor/bin/phpunit --group example
+    - ./vendor/bin/phpunit --group example --no-coverage
     - ./vendor/bin/phpunit --exclude-group example
     - ./vendor/bin/phpcs
