@@ -13,8 +13,8 @@ class Base extends \Qobo\Robo\AbstractCmdTask
             'cmd'   => './vendor/bin/phpunit',
             'path'  => ['./tests'],
             'batch' => true,
-            'out'  => 'build/coverage',
-            'logs'  => 'build/logs'
+            'out'  => 'build/test-coverage',
+            'logs'  => 'build/test-results'
         ],
         'phpcs' => [
             'cmd'   => './vendor/bin/phpcs',
@@ -26,13 +26,13 @@ class Base extends \Qobo\Robo\AbstractCmdTask
             'path'  => ['./src'],
             'batch' => false,
             'out'  => 'build/pdepend',
-            'logs'  => 'build/logs'
+            'logs'  => 'build/test-results'
         ],
         'phploc' => [
             'cmd'   =>  './vendor/bin/phploc --count-tests --log-csv %%LOGS%%/phploc.csv --log-xml %%LOGS%%/phploc.xml %%PATH%%',
             'path'  => ['./src', './tests'],
             'batch' => true,
-            'logs'  => 'build/logs'
+            'logs'  => 'build/test-results'
         ],
         'phpmd' => [
             'cmd'   => './vendor/bin/phpmd %%PATH%% text codesize,controversial,naming,unusedcode',
@@ -43,13 +43,13 @@ class Base extends \Qobo\Robo\AbstractCmdTask
             'cmd'   => './vendor/bin/phpmd %%PATH%% xml codesize,controversial,naming,unusedcode --reportfile %%LOGS%%/phpmd.xml',
             'path'  => ['./src'],
             'batch' => false,
-            'logs'  => 'build/logs'
+            'logs'  => 'build/test-results'
         ],
         'phpcpd' => [
             'cmd'   => './vendor/bin/phpcpd --log-pmd=%%LOGS%%/phpcpd.xml %%PATH%%',
             'path'  => ['./src'],
             'batch' => false,
-            'logs'  => 'build/logs'
+            'logs'  => 'build/test-results'
         ],
         'sami' => [
             'cmd'   => './vendor/bin/sami.php update etc/sami/source.php',
