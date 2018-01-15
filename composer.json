@@ -48,7 +48,6 @@
         "wpackagist-plugin/page-links-to": "2.9.9",
         "wpackagist-plugin/akismet": "4.0.1",
         "wpackagist-plugin/uk-cookie-consent": "2.3.4",
-        "phpunit/php-token-stream": "~1.4",
         "wpackagist-plugin/fast-velocity-minify": "2.2.2"
     },
     "suggest": {
@@ -59,7 +58,6 @@
     "require-dev": {
         "phpunit/phpunit": "*",
         "squizlabs/php_codesniffer": "*",
-        "sami/sami": "~3.2",
         "wpackagist-plugin/theme-check": "*",
         "wpackagist-plugin/debug-bar": "0.9",
         "wpackagist-plugin/debug-bar-console": "0.3",
