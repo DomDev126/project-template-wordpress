@@ -23,3 +23,7 @@ script:
     - ./vendor/bin/phpunit --group example --no-coverage
     - ./vendor/bin/phpunit --exclude-group example
     - ./vendor/bin/phpcs
+
+notifications:
+  email:
+    - webdev@qobocloud.com
