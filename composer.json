@@ -3,6 +3,7 @@
 	"description": "Template for new PHP projects",
 	"license": "GPL-2.0",
     "config": {
+        "sort-packages": true,
         "platform": {
             "php": "5.6"
         }
