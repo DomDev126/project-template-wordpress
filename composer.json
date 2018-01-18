@@ -1,7 +1,7 @@
 {
     "name": "qobo/project-template",
     "description": "Template for new PHP projects",
-    "license": "GPL-2.0",
+    "license": "MIT",
     "config": {
         "sort-packages": true,
         "platform": {
@@ -27,5 +27,4 @@
             "Qobo\\Utility\\": "build/Utility"
         }
     }
-
 }
