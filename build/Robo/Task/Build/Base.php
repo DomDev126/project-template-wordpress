@@ -2,6 +2,8 @@
 
 namespace Qobo\Robo\Task\Build;
 
+use Robo\Result;
+
 class Base extends \Qobo\Robo\AbstractCmdTask
 {
     /**
@@ -88,7 +90,7 @@ class Base extends \Qobo\Robo\AbstractCmdTask
                 $this->tasks[$this->taskKey],
                 array_filter($this->data, function ($item){ return ($item === null) ? false : true; })
               )
-            : $this->tasks[$tihs->taskKey];
+            : $this->tasks[$this->taskKey];
 
         return parent::run();
     }
