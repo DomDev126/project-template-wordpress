@@ -4,6 +4,7 @@
 require_once __DIR__ . "/../vendor/autoload.php";
 
 $config = [
+    'extra_commands' => []
 ];
 
 $app = new \Qobo\Robo\App();
