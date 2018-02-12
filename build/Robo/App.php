@@ -134,6 +134,10 @@ class App
             $commands []= $className;
         }
 
+        if (!empty($this->data['config']['extra_commands']) && is_array($this->data['config']['extra_commands'])) {
+            $commands = array_merge($commands, $this->data['config']['extra_commands']);
+        }
+
         return $commands;
     }
 }
