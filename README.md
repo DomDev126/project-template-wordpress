@@ -1,7 +1,23 @@
 project-template
 ================
 
+[![Build Status](https://travis-ci.org/QoboLtd/project-template.svg?branch=master)](https://travis-ci.org/QoboLtd/project-template)
+[![Latest Stable Version](https://poser.pugx.org/qobo/project-template/v/stable)](https://packagist.org/packages/qobo/project-template)
+[![Total Downloads](https://poser.pugx.org/qobo/project-template/downloads)](https://packagist.org/packages/qobo/project-template)
+[![Latest Unstable Version](https://poser.pugx.org/qobo/project-template-cakephp/v/unstable)](https://packagist.org/packages/qobo/project-template-cakephp)
+[![License](https://poser.pugx.org/qobo/project-template/license)](https://packagist.org/packages/qobo/project-template)
+
+About
+-----
+
 This is a template for the new PHP projects.
+
+Developed by [Qobo](https://www.qobo.biz), used in [Qobrix](https://qobrix.com).
+
+Some of the projects using this template are:
+
+* [project-template-cakephp](https://github.com/QoboLtd/project-template-cakephp)
+* [project-template-wordpress](https://github.com/QoboLtd/project-template-wordpress)
 
 Install
 -------
