@@ -11,7 +11,8 @@
     "require": {
         "php": ">=5.6.0",
         "pyrech/composer-changelogs": "~1.4",
-        "qobo/qobo-robo": "^1.0"
+        "qobo/qobo-robo": "^1.0",
+        "vlucas/phpdotenv": "^1.1"
     },
     "require-dev": {
         "phpunit/phpunit": "*",
