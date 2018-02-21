@@ -1,9 +1,24 @@
 {
     "name": "qobo/project-template",
     "description": "Template for new PHP projects",
+    "keywords": ["project", "template", "setup", "rapid-development", "dry"],
     "license": "MIT",
+    "homepage": "https://www.qobo.biz",
+    "authors": [
+        {
+            "name": "Qobo Ltd",
+            "email": "info@qobo.biz",
+            "homepage": "https://www.qobo.biz",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/QoboLtd/project-template/issues",
+        "source": "https://github.com/QoboLtd/project-template"
+    },
     "config": {
         "sort-packages": true,
+        "optimize-autoloader": true,
         "platform": {
             "php": "5.6"
         }
