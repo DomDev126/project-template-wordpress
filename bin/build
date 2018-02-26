@@ -5,7 +5,7 @@ require_once __DIR__ . "/../vendor/autoload.php";
 
 $config = [
     'extra_commands' => [
-        'Qobo\Robo\Command\App\App'
+        'Qobo\\Robo\\Command\\App\\App'
     ]
 ];
 
