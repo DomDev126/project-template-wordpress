@@ -4,7 +4,7 @@ project-template
 [![Build Status](https://travis-ci.org/QoboLtd/project-template.svg?branch=master)](https://travis-ci.org/QoboLtd/project-template)
 [![Latest Stable Version](https://poser.pugx.org/qobo/project-template/v/stable)](https://packagist.org/packages/qobo/project-template)
 [![Total Downloads](https://poser.pugx.org/qobo/project-template/downloads)](https://packagist.org/packages/qobo/project-template)
-[![Latest Unstable Version](https://poser.pugx.org/qobo/project-template-cakephp/v/unstable)](https://packagist.org/packages/qobo/project-template-cakephp)
+[![Latest Unstable Version](https://poser.pugx.org/qobo/project-template/v/unstable)](https://packagist.org/packages/qobo/project-template)
 [![License](https://poser.pugx.org/qobo/project-template/license)](https://packagist.org/packages/qobo/project-template)
 
 About
