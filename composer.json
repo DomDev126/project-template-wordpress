@@ -1,10 +1,25 @@
 {
     "name": "qobo/project-template-wordpress",
     "description": "This is a template for the new project using WordPress.",
+    "keywords": ["wordpress", "project", "template", "setup", "rapid-development", "dry"],
     "license": "MIT",
+    "homepage": "https://www.qobo.biz",
+    "authors": [
+        {
+            "name": "Qobo Ltd",
+            "email": "info@qobo.biz",
+            "homepage": "https://www.qobo.biz",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/QoboLtd/project-template-wordpress/issues",
+        "source": "https://github.com/QoboLtd/project-template-wordpress"
+    },
     "config": {
         "secure-http": false,
         "sort-packages": true,
+        "optimize-autoloader": true,
         "platform": {
             "php": "5.6"
         }
@@ -20,13 +35,13 @@
         "johnpbloch/wordpress-core": "4.9.4",
         "fancyguy/webroot-installer": "1.1.0",
         "johnpbloch/wordpress-core-installer": "0.2.1",
-        "qobo/phake-builder": "~5.0",
-        "consolidation/robo": "^1.1",
         "pyrech/composer-changelogs": "~1.4",
         "wp-cli/wp-cli": "^1.1",
+        "qobo/qobo-robo": "^1.0",
         "qobo/qobo-wp-generic-theme": "1.1.2",
         "qobo/qobo-wp-brand": "2.0.1",
         "qobo/qobo-wp-shortcodes": "1.0.1",
+        "vlucas/phpdotenv": "^1.1",
         "wpackagist-plugin/disable-wordpress-updates": "1.6.2",
         "wpackagist-plugin/wp-theme-plugin-editor-disable": "1.0.0",
         "wpackagist-plugin/disable-comments": "1.7.1",
@@ -72,8 +87,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Qobo\\Robo\\": "build/Robo",
-            "Qobo\\Utility\\": "build/Utility"
+            "Qobo\\Robo\\": "build/Robo"
         }
     }
 }

@@ -1,13 +1,24 @@
 project-template-wordpress
 ==========================
 
+[![Build Status](https://travis-ci.org/QoboLtd/project-template-wordpress.svg?branch=master)](https://travis-ci.org/QoboLtd/project-template-wordpress)
+[![Latest Stable Version](https://poser.pugx.org/qobo/project-template-wordpress/v/stable)](https://packagist.org/packages/qobo/project-template-wordpress)
+[![Total Downloads](https://poser.pugx.org/qobo/project-template-wordpress/downloads)](https://packagist.org/packages/qobo/project-template-wordpress)
+[![Latest Unstable Version](https://poser.pugx.org/qobo/project-template-wordpress/v/unstable)](https://packagist.org/packages/qobo/project-template-wordpress)
+[![License](https://poser.pugx.org/qobo/project-template-wordpress/license)](https://packagist.org/packages/qobo/project-template-wordpress)
+
+About
+-----
+
 This is a template for the new project using WordPress.  It is heavily based
 on the work done in [project-template](https://github.com/QoboLtd/project-template).
+
+Developed by [Qobo](https://www.qobo.biz), used in [Qobrix](https://qobrix.com).
 
 Install
 -------
 
-When starting a new PHP project, do the following:
+When starting a new WordPress project, do the following:
 
 ```bash
 composer create-project qobo/project-template-wordpress example.com
@@ -103,7 +114,7 @@ runt the following command (don't worry if it fails, we'll get to it shortly):
 If it didn't work for you, here are some of the things to try:
 
 * If `phpunit` command wasn't found, try `composer install` and then run the command again.  Chances are phpunit was removed during the `app:install`, which runs composer with `--no-dev` parameter.
-* If you had some other issue, please [let us know](https://github.com/QoboLtd/project-template/issues/new).
+* If you had some other issue, please [let us know](https://github.com/QoboLtd/project-template-wordpress/issues/new).
 
 ### Travis CI
 
@@ -117,7 +128,7 @@ want to remove the example tests from the file.
 
 ### Examples
 
-project-template provides a few examples of how to write and organize unit tests.  Have a look
+project-template-wordpress provides a few examples of how to write and organize unit tests.  Have a look
 in the `tests/` folder.  Now you have **NO EXCUSE** for not testing your applications!
 
 
