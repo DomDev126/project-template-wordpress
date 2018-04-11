@@ -3,6 +3,9 @@ image: smartapps/bitbucket-pipelines-php-mysql
 pipelines:
   default:
     - step:
+        caches:
+          - composer
+          - node
         script:
           - service mysql start
           - if [ ! -d ~/.ssh ] ; then mkdir ~/.ssh ; fi
