@@ -39,7 +39,7 @@ Update
 ------
 
 When you want to update your project with the latest
-and greatest project-template, do the following:
+and greatest project-template-wordpress, do the following:
 
 ```
 cd exmample.com
@@ -103,7 +103,7 @@ Test
 
 ### PHPUnit
 
-project-template brings quite a bit of setup for testing your projects.  The
+project-template-wordpress brings quite a bit of setup for testing your projects.  The
 first part of this setup is [PHPUnit](https://phpunit.de/).  To try it out,
 runt the following command (don't worry if it fails, we'll get to it shortly):
 
@@ -120,10 +120,10 @@ If it didn't work for you, here are some of the things to try:
 
 Continious Integration is a tool that helps to run your tests whenever you do any
 changes on your code base (commit, merge, etc).  There are many tools that you can
-use, but project-template provides an example integration with [Travis CI](https://travis-ci.org/).
+use, but project-template-wordpress provides an example integration with [Travis CI](https://travis-ci.org/).
 
 Have a look at `.travis.yml` file, which describes the environment matrix, project installation
-steps and ways to run the test suite.  For your real project, based on project-template, you'd probably
+steps and ways to run the test suite.  For your real project, based on project-template-wordpress, you'd probably
 want to remove the example tests from the file.
 
 ### Examples
