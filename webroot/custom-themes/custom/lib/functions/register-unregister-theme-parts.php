@@ -66,6 +66,20 @@ function disable_wp_emojicons() {
 
 add_action( 'init', 'disable_wp_emojicons' );
 
+/**
+ * Removes 'wpemoji' from the TinyMCE plugin list.
+ *
+ * @param  array $plugins TinyMCE plugins.
+ * @return array of filtered out plugins.
+ */
+function disable_emojicons_tinymce( $plugins ) {
+	if ( is_array( $plugins ) ) {
+		return array_diff( $plugins, [ 'wpemoji' ] );
+	}
+
+	return [];
+}
+
 
 /**
  * Disables contact form 7 inline styles
