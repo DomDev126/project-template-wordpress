@@ -62,6 +62,10 @@
         "wpackagist-plugin/akismet": "4.0.3",
         "wpackagist-plugin/uk-cookie-consent": "2.3.9",
         "wpackagist-plugin/fast-velocity-minify": "2.2.8",
+        "wpackagist-plugin/contact-form-7-honeypot": "1.13",
+        "wpackagist-plugin/bad-behavior": "2.2.20",
+        "wpackagist-plugin/google-sitemap-generator": "4.0.9",
+        "wpackagist-plugin/pubsubhubbub": "2.2.1",
         "wpackagist-plugin/amp": "0.6.2",
         "wpackagist-plugin/glue-for-yoast-seo-amp": "0.4.2"
     },
