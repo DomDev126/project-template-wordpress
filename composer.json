@@ -62,7 +62,8 @@
         "wpackagist-plugin/akismet": "4.0.3",
         "wpackagist-plugin/uk-cookie-consent": "2.3.9",
         "wpackagist-plugin/fast-velocity-minify": "2.2.8",
-        "wpackagist-plugin/amp": "0.6.2"
+        "wpackagist-plugin/amp": "0.6.2",
+        "wpackagist-plugin/glue-for-yoast-seo-amp": "0.4.2"
     },
     "suggest": {
         "qobo/qobo-wp-custom-admin-theme": "it fixes WP admin styles where widget input, select overlap their container",
