@@ -32,7 +32,7 @@
     ],
     "require": {
         "php": ">=5.6.0",
-        "johnpbloch/wordpress-core": "4.9.5",
+        "johnpbloch/wordpress-core": "4.9.6",
         "fancyguy/webroot-installer": "1.1.0",
         "johnpbloch/wordpress-core-installer": "0.2.1",
         "pyrech/composer-changelogs": "~1.4",
