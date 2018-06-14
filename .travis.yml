@@ -25,6 +25,7 @@ install:
 script:
   - ./vendor/bin/phpunit --group example --no-coverage
   - ./vendor/bin/phpunit --exclude-group example
+  - if [ $TRAVIS_PHP_VERSION != "7.1" ]; then vendor/bin/phpunit --exclude-group example --no-coverage; else vendor/bin/phpunit --exclude-group example; fi
   - ./vendor/bin/phpcs
 
 notifications:
