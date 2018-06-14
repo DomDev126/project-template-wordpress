@@ -10,6 +10,10 @@ php:
   - 7.2
   - nightly
 
+cache:
+  directories:
+    - $HOME/.composer/cache
+
 matrix:
   fast_finish: true
   allow_failures:
