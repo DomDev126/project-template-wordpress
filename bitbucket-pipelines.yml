@@ -1,23 +1,40 @@
-image: smartapps/bitbucket-pipelines-php-mysql
-
+image: docker:stable
 pipelines:
   default:
-    - step:
-        caches:
-          - composer
-          - node
-        script:
-          - service mysql start
-          - if [ ! -d ~/.ssh ] ; then mkdir ~/.ssh ; fi
-          - echo $MY_SSH_KEY | base64 --decode -i > ~/.ssh/id_rsa
-          - echo > ~/.ssh/known_hosts
-          - ssh-keyscan -t rsa bitbucket.com >> ~/.ssh/known_hosts
-          - ssh-keyscan -t rsa bitbucket.org >> ~/.ssh/known_hosts
-          - ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
-          - chmod -R u+rwX,go-rwX ~/.ssh
-          - ./bin/composer validate --strict
-          - ./bin/composer install --no-interaction --no-progress --no-suggest
-          - ./bin/build app:install CHOWN_USER=root,CHGRP_GROUP=root,DB_NAME=app,DB_ADMIN_USER=root,DB_ADMIN_PASS=root,DB_USER=root,DB_PASS=root
-          - ./vendor/bin/phpunit --group example --no-coverage
-          - ./vendor/bin/phpunit --exclude-group example --no-coverage
-          - ./vendor/bin/phpcs
+    - parallel:
+      - step:
+          name: PHP 7.1
+          caches:
+            - docker
+            - composer
+            - pip
+          services:
+            - docker
+          script:
+            - apk add --no-cache py-pip bash rsync
+            - rsync -avg ~/.composer/ ./build/composer/
+            - pip install docker-compose
+            - docker-compose -v
+            - export PRIV_KEY=$MY_SSH_KEY
+            - export PHP_VERSION=7.1
+            - docker-compose up test
+            - docker-compose down
+            - rsync -avg ./build/composer/ ~/.composer/
+      - step:
+          name: PHP 5.6
+          caches:
+            - docker
+            - composer
+            - pip
+          services:
+            - docker
+          script:
+            - apk add --no-cache py-pip bash rsync
+            - rsync -avg ~/.composer/ ./build/composer/
+            - pip install docker-compose
+            - docker-compose -v
+            - export PRIV_KEY=$MY_SSH_KEY
+            - export PHP_VERSION=5.6
+            - docker-compose up test
+            - docker-compose down
+            - rsync -avg ./build/composer/ ~/.composer/
