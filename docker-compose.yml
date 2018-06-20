@@ -1,0 +1,48 @@
+version: "3"
+services:
+  mysql:
+    image: centos/mariadb
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=app
+  app:
+    image: qoboltd/docker-centos-nginx:${PHP_VERSION-latest}
+    volumes:
+      - ./:/var/www/html
+    ports:
+      - 8000:8000
+    user: ${FIXUID-1000}:${FIXGID-1000}
+    entrypoint: >
+      bash -c "cd /var/www/html
+      && ping -c 3 mysql
+      && mysql -h mysql -u root -proot -e 'drop database if exists app'
+      && /usr/bin/fixuid
+      && ./bin/composer install --no-interaction --no-progress --no-suggest
+      && ./bin/build app:install CHOWN_USER=nginx,CHGRP_GROUP=nginx,DB_HOST=mysql,DB_NAME=app,DB_ADMIN_USER=root,DB_ADMIN_PASS=root,DB_USER=root,DB_PASS=root
+      && echo 'Firing up PHP+Nginx, please proceed to http://localhost:8000'
+      && php-fpm -D
+      && nginx -g 'daemon off;'"
+    depends_on:
+      - mysql
+  test:
+    image: qoboltd/docker-centos-php:${PHP_VERSION-latest}
+    volumes:
+      - ./:/code
+    entrypoint: >
+      bash -c "echo 'Check DB'
+      && ping -c 3 mysql
+      && mysql -h mysql -u root -proot -e 'drop database if exists app'
+      && echo 'Check PHP Version'
+      && php --version
+      && echo $PRIV_KEY | base64 -d -i > ~/.ssh/id_rsa
+      && chmod -R u+rwX,go-rwX ~/.ssh
+      && cd /code
+      && export COMPOSER_HOME=./build/composer
+      && ./bin/composer validate --strict
+      && ./bin/composer install --no-interaction --no-progress --no-suggest
+      && ./vendor/bin/phpcs
+      && ./bin/build app:install CHOWN_USER=root,CHGRP_GROUP=root,DB_HOST=mysql,DB_NAME=app,DB_ADMIN_USER=root,DB_ADMIN_PASS=root,DB_USER=root,DB_PASS=root
+      && ./vendor/bin/phpunit --group example --no-coverage
+      && ./vendor/bin/phpunit --exclude-group example,external --no-coverage"
+    depends_on:
+      - mysql
