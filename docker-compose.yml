@@ -22,7 +22,7 @@ services:
       && ping -c 3 mysql
       && mysql -h mysql -u root -proot -e 'drop database if exists app'
       && /usr/bin/fixuid
-      && ./bin/composer validate --strict
+      && ./bin/composer validate
       && ./bin/composer install --no-progress --no-suggest
       && ./bin/build app:install CHOWN_USER=nginx,CHGRP_GROUP=nginx,DB_HOST=mysql,DB_NAME=app,DB_ADMIN_USER=root,DB_ADMIN_PASS=root,DB_USER=root,DB_PASS=root
       && echo 'Firing up PHP+Nginx, please proceed to http://localhost:8000'
@@ -48,7 +48,7 @@ services:
       && echo $PRIV_KEY | base64 -d -i > ~/.ssh/id_rsa
       && chmod -R u+rwX,go-rwX ~/.ssh
       && cd /code
-      && ./bin/composer validate --strict
+      && ./bin/composer validate
       && ./bin/composer install --no-progress --no-suggest
       && ./vendor/bin/phpcs
       && ./bin/build app:install CHOWN_USER=root,CHGRP_GROUP=root,DB_HOST=mysql,DB_NAME=app,DB_ADMIN_USER=root,DB_ADMIN_PASS=root,DB_USER=root,DB_PASS=root
