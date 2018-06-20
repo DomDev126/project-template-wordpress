@@ -27,9 +27,9 @@ install:
   - ./bin/build app:install CHOWN_USER=$USER,CHGRP_GROUP=$USER,DB_NAME=app,DB_ADMIN_USER=root,DB_USER=root
 
 script:
+  - ./vendor/bin/phpcs
   - ./vendor/bin/phpunit --group example --no-coverage
   - if [ $TRAVIS_PHP_VERSION != "7.1" ]; then ./vendor/bin/phpunit --exclude-group example --no-coverage; else ./vendor/bin/phpunit --exclude-group example; fi
-  - ./vendor/bin/phpcs
 
 notifications:
   email:
