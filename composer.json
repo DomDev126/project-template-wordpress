@@ -24,6 +24,7 @@
         }
     },
     "require": {
+        "aws/aws-sdk-php": "^3.52",
         "pyrech/composer-changelogs": "~1.4",
         "qobo/qobo-robo": "^2.0",
         "vlucas/phpdotenv": "^1.1"
