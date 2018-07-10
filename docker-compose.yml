@@ -18,8 +18,10 @@ services:
     user: ${FIXUID-1000}:${FIXGID-1000}
     entrypoint: >
       bash -c "set -x
+      && echo 'waiting for mysql to start'
+      && sh -c 'until printf \"\" 2>>/dev/null >> /dev/tcp/mysql/3306; do sleep 1; done'
+      && echo 'mysql is up'
       && cd /var/www/html
-      && ping -c 3 mysql
       && mysql -h mysql -u root -proot -e 'drop database if exists app'
       && /usr/bin/fixuid
       && ./bin/composer validate
@@ -40,8 +42,9 @@ services:
       - ./:/code
     entrypoint: >
       bash -c "set -x
-      && echo 'Check DB'
-      && ping -c 3 mysql
+      && echo 'waiting for mysql to start'
+      && sh -c 'until printf \"\" 2>>/dev/null >> /dev/tcp/mysql/3306; do sleep 1; done'
+      && echo 'mysql is up'
       && mysql -h mysql -u root -proot -e 'drop database if exists app'
       && echo 'Check PHP Version'
       && php --version
