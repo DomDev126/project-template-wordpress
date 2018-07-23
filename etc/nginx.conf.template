@@ -49,6 +49,17 @@ server {
 		rewrite ^.*$ /robots.php last;
 	}
 
+	# Microsoft Internet Explorer requests this, polluting logs with 404
+	# Thanks to: http://blog.tcs.de/let-nginx-handle-browserconfig-xml-404-inline/
+	location = /browserconfig.xml {return 200 "<?xml version=\"1.0\" encoding=\"utf-8\"?><browserconfig><msapplication></msapplication></browserconfig>";}
+
+	# Safari requests for Apple Touch icons, polluting logs with 404
+	# Thanks to: https://gist.github.com/relax-more/10618675
+	location ~ /apple-touch-icon(|-\d+x\d+)(|-precomposed).png {
+		return 204;
+		log_not_found off;
+	}
+
 	# Disable all methods besides HEAD, GET, and POST
 	if ($request_method !~ ^(GET|HEAD|POST)$) {
 			return 444;
