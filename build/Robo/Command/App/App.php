@@ -220,8 +220,6 @@ class App extends AbstractCommand
         if (!file_exists("/etc/cron.d/{$env['NGINX_SITE_MAIN']}")) {
             return;
         }
-        $this->taskExec("rm -f /etc/cron.d/{$env['NGINX_SITE_MAIN']}")->run();
+        $this->taskExec("rm -f '/etc/cron.d/{$env['NGINX_SITE_MAIN']}'")->run();
     }
-
-
 }
