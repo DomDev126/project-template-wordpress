@@ -36,7 +36,7 @@ $pass = getenv('DB_PASS') ?: '';
 
 // Thanks to: https://wordpress.org/support/topic/disable-error-reporting-in-wordpress
 $debug = getenv('WP_DEBUG') ?: false;
-$debug_log = getenv('WP_DEBUG_LOG') ?: false;
+$debug_log = getenv('WP_DEBUG_DISPLAY') ?: false;
 $debug_display = getenv('WP_DEBUG_LOG') ?: false;
 $allow_repair = getenv('WP_ALLOW_REPAIR') ?: false;
 
