@@ -32,7 +32,7 @@
     ],
     "require": {
         "aws/aws-sdk-php": "^3.52",
-        "johnpbloch/wordpress-core": "4.9.7",
+        "johnpbloch/wordpress-core": "4.9.8",
         "fancyguy/webroot-installer": "1.1.0",
         "johnpbloch/wordpress-core-installer": "0.2.1",
         "pyrech/composer-changelogs": "~1.4",
