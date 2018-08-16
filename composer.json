@@ -60,7 +60,7 @@
     },
     "extra": {
         "hooks": {
-            "pre-commit": "composer test"
+            "pre-commit": "./vendor/bin/phpcs"
         }
     }
 }
