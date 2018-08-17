@@ -51,7 +51,7 @@
             "phpcs",
             "phpunit"
         ],
-        "post-install-cmd": "cghooks add --ignore-lock",
+        "post-install-cmd": "cghooks add",
         "post-update-cmd": "cghooks update"
     },
     "scripts-descriptions": {
@@ -60,7 +60,7 @@
     },
     "extra": {
         "hooks": {
-            "pre-commit": "./vendor/bin/phpcs"
+            "pre-commit": "files=$(git diff-index --name-only --cached --diff-filter=ACMR HEAD -- ) && ./vendor/bin/phpcs $files"
         }
     }
 }
