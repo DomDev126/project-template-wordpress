@@ -60,7 +60,7 @@
     },
     "extra": {
         "hooks": {
-            "pre-commit": "files=$(git diff-index --name-only --cached --diff-filter=ACMR HEAD -- ) && ./vendor/bin/phpcs $files"
+            "pre-commit": "./vendor/bin/phpcs $(git diff-index --name-only --cached --diff-filter=ACMR HEAD -- )"
         }
     }
 }
