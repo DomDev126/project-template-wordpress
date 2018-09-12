@@ -63,7 +63,7 @@ upgrade your application to the latest template with the following:
 
 ```
 cd exmample.com
-# Make sure you are on the master branch and have and clean and up-to-date workspace
+# Make sure you are on the master branch and have a clean and up-to-date workspace
 git checkout master
 git pull origin master
 # Create a new branch
