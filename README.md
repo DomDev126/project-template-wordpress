@@ -22,7 +22,8 @@ Some of the projects using this template are:
 Install
 -------
 
-When starting a new PHP project, do the following:
+There are a couple of ways to use this template.  The fastest and the easiest is via
+composer, as following:
 
 ```bash
 composer create-project qobo/project-template example.com
@@ -33,17 +34,46 @@ git commit -m "Initial commit"
 ./bin/build app:install PROJECT_NAME="My Project",PROJECT_VERSION="v1.0.0"
 ```
 
+The above will provide you with a good starting point for your project, and from there on
+you are on your own.
+
+However, if you want to be able to update your project with the newer releases of the
+template, you should follow a different approach, shown below:
+
+```
+mkdir example.com
+cd example.com
+git init
+# Pull the latest version from https://github.com/QoboLtd/project-template/releases
+git pull git@github.com:QoboLtd/project-template.git vX.Y.Z
+# Add your own remote repository
+git remote add origin git@github.com/USER/REPO
+# Push
+git push origin master
+```
+
+With the above approach, you have the full history of the template development.  You can
+do your own development now, and upgrade to the latest template at any point in the future.
+
 Update
 ------
 
-When you want to update your project with the latest
-and greatest project-template, do the following:
+If you installed the project template using the second approach above, you can easily
+upgrade your application to the latest template with the following:
 
 ```
 cd exmample.com
-git pull https://github.com/QoboLtd/project-template
+# Make sure you are on the master branch and have a clean and up-to-date workspace
+git checkout master
+git pull origin master
+# Create a new branch
+git checkout -b project-template-update
+# Pull the latest version from https://github.com/QoboLtd/project-template/releases
+git pull git@github.com:QoboLtd/project-template.git vX.Y.Z
+# Check for conflicts, resolve if any, commit, and then push
+git push origin project-template-update
+# Create a pull request, review, and merge
 ```
-
 
 Usage
 -----
