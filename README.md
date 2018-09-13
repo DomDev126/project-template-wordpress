@@ -71,6 +71,8 @@ git pull origin master
 git checkout -b project-template-update
 # Pull the latest version from https://github.com/QoboLtd/project-template/releases
 git pull git@github.com:QoboLtd/project-template.git vX.Y.Z
+composer update
+./bin/build app:update
 # Check for conflicts, resolve if any, commit, and then push
 git push origin project-template-update
 # Create a pull request, review, and merge
