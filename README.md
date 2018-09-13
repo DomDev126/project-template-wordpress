@@ -24,7 +24,7 @@ Install
 
 There are two ways to install and start using this project template.
 
-### Composer Project
+### Composer
 
 You can create a new project from this template using composer.
 
