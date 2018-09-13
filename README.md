@@ -10,57 +10,92 @@ project-template-wordpress
 About
 -----
 
-This is a template for the new project using WordPress.  It is heavily based
-on the work done in [project-template](https://github.com/QoboLtd/project-template).
+This is a template for the new WordPress projects.
 
 Developed by [Qobo](https://www.qobo.biz), used in [Qobrix](https://qobrix.com).
 
 Install
 -------
 
-When starting a new WordPress project, do the following:
+There are two ways to install and start using this project template.
+
+### Composer
+
+You can create a new project from this template using composer.
 
 ```bash
 composer create-project qobo/project-template-wordpress example.com
 cd example.com
-git init
-git add .
-git commit -m "Initial commit"
-# Finalize the setup
-composer install
-./bin/build app:install DB_NAME=wordpress,PROJECT_NAME="My Project",PROJECT_VERSION="v1.0.0"
+./bin/build app:install DB_NAME="app",CHOWN_USER=$USER,CHGRP_GROUP=$USER,PROJECT_NAME="My Project",PROJECT_VERSION="v1.0.0"
 ```
 
-DB_NAME, the name of the database to use, is the only setting which is required.  The
-rest is being figured out automatically, but you can easily adjust them.  Have a look
-at .env.example file for defaults.
+Note that the `CHOWN_USER` and `CHGRP_GROUP` above should be set to the user and group
+that is used by the web server.  In case of Apache and Nginx, these can be `nobody`
+or `nginx` or `apache`.  For the local development environment (regular user, without
+root access) should be set to the current user and group.
+
+### Git
+
+Alternatively, if you want to be able to update your project to the latest version
+of the template, you can install the template with git.
+
+```bash
+mkdir example.com
+cd example.com
+git init
+# Pull the latest version from https://github.com/QoboLtd/project-template-wordpress/releases
+git pull git@github.com:QoboLtd/project-template-wordpress.git vX.Y.Z
+composer update
+./bin/build app:install DB_NAME="app",CHOWN_USER=$USER,CHGRP_GROUP=$USER,PROJECT_NAME="My Project",PROJECT_VERSION="v1.0.0"
+# Add your own remote repository
+git remote add origin git@github.com/USER/REPO
+# Push
+git push origin master
+```
+
+Note that the `CHOWN_USER` and `CHGRP_GROUP` above should be set to the user and group
+that is used by the web server.  In case of Apache and Nginx, these can be `nobody`
+or `nginx` or `apache`.  For the local development environment (regular user, without
+root access) should be set to the current user and group.
+
+With the above approach, you have the full history of the template development.  You can
+do your own development now, and upgrade to the latest template at any point in the future.
 
 Update
 ------
 
-When you want to update your project with the latest
-and greatest project-template-wordpress, do the following:
+If you installed the project template using git, you can easily
+upgrade your application to the latest template with the following:
 
-```
+```bash
 cd exmample.com
-git pull https://github.com/QoboLtd/project-template-wordpress
+# Make sure you are on the master branch and have a clean and up-to-date workspace
+git checkout master
+git pull origin master
+# Create a new branch
+git checkout -b project-template-update
+# Pull the latest version from https://github.com/QoboLtd/project-template-wordpress/releases
+git pull git@github.com:QoboLtd/project-template-wordpress.git vX.Y.Z
+composer update
+./bin/build app:update
+# Check for conflicts, resolve if any, commit, and then push
+git push origin project-template-update
+# Create a pull request, review, and merge
 ```
 
 Usage
 -----
 
-### Quick
-
 Now that you have the project template installed, check that it works
 before you start working on your changes.  Fire up the PHP web server:
 
-```
+```bash
 ./bin/phpserv
 ```
 
 Or run it on the alternative port:
 
-```
+```bash
 ./bin/phpserv -S localhost:9000
 ```
 
@@ -68,6 +103,7 @@ In your browser navigate to [http://localhost:8000](http://localhost:8000).
 You should see the standard `phpinfo()` page.  If you do, all parts
 are in place.
 
+![Screenshot](screenshot.png)
 
 Now you can develop your PHP project as per usual, but with the following
 advantages:
@@ -83,7 +119,7 @@ For example, you can easily automate the build process of your application
 by modifying the included Robo files in `build/` folder.  Run the following
 command to examine available targets:
 
-```
+```bash
 ./bin/build
 ```
 
@@ -101,20 +137,18 @@ to use these targets and pass runtime configuration parameters.
 Test
 ----
 
-### PHPUnit
+### PHPUnit and PHP CodeSniffer
 
-project-template-wordpress brings quite a bit of setup for testing your projects.  The
-first part of this setup is [PHPUnit](https://phpunit.de/).  To try it out,
-runt the following command (don't worry if it fails, we'll get to it shortly):
+The fastest and simplest way to run PHPUnit and PHP CodeSniffer is via a
+composer script:
 
+```bash
+./bin/composer test
 ```
-./vendor/bin/phpunit
-```
 
-If it didn't work for you, here are some of the things to try:
+Alternatively, you can run the test with code coverage reports:
 
-* If `phpunit` command wasn't found, try `composer install` and then run the command again.  Chances are phpunit was removed during the `app:install`, which runs composer with `--no-dev` parameter.
-* If you had some other issue, please [let us know](https://github.com/QoboLtd/project-template-wordpress/issues/new).
+Code coverage reports in HTML format will be placed in `./build/test-coverage/` folder.
 
 ### Travis CI
 
