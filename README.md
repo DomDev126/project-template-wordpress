@@ -97,6 +97,7 @@ In your browser navigate to [http://localhost:8000](http://localhost:8000).
 You should see the standard `phpinfo()` page.  If you do, all parts
 are in place.
 
+![Screenshot](screenshot.png)
 
 Now you can develop your PHP project as per usual, but with the following
 advantages:
