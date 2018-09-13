@@ -133,20 +133,22 @@ to use these targets and pass runtime configuration parameters.
 Test
 ----
 
-### PHPUnit
+### PHPUnit and PHP CodeSniffer
 
-project-template brings quite a bit of setup for testing your projects.  The
-first part of this setup is [PHPUnit](https://phpunit.de/).  To try it out,
-runt the following command (don't worry if it fails, we'll get to it shortly):
+The fastest and simplest way to run PHPUnit and PHP CodeSniffer is via a
+composer script:
 
 ```bash
-./vendor/bin/phpunit
+./bin/composer test
 ```
 
-If it didn't work for you, here are some of the things to try:
+Alternatively, you can run the test with code coverage reports:
 
-* If `phpunit` command wasn't found, try `composer install` and then run the command again.  Chances are phpunit was removed during the `app:install`, which runs composer with `--no-dev` parameter.
-* If you had some other issue, please [let us know](https://github.com/QoboLtd/project-template/issues/new).
+```bash
+./bin/composer test-coverage
+```
+
+Code coverage reports in HTML format will be placed in `./build/test-coverage/` folder.
 
 ### Travis CI
 
