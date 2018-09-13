@@ -22,30 +22,31 @@ Some of the projects using this template are:
 Install
 -------
 
-There are a couple of ways to use this template.  The fastest and the easiest is via
-composer, as following:
+There are two ways to install and start using this project template.
+
+### Composer
+
+You can create a new project from this template using composer.
 
 ```bash
 composer create-project qobo/project-template example.com
 cd example.com
-git init
-git add .
-git commit -m "Initial commit"
 ./bin/build app:install PROJECT_NAME="My Project",PROJECT_VERSION="v1.0.0"
 ```
 
-The above will provide you with a good starting point for your project, and from there on
-you are on your own.
+### Git
 
-However, if you want to be able to update your project with the newer releases of the
-template, you should follow a different approach, shown below:
+Alternatively, if you want to be able to update your project to the latest version
+of the template, you can install the template with git.
 
-```
+```bash
 mkdir example.com
 cd example.com
 git init
 # Pull the latest version from https://github.com/QoboLtd/project-template/releases
 git pull git@github.com:QoboLtd/project-template.git vX.Y.Z
+composer update
+./bin/build app:install PROJECT_NAME="My Project",PROJECT_VERSION="v1.0.0"
 # Add your own remote repository
 git remote add origin git@github.com/USER/REPO
 # Push
@@ -58,10 +59,10 @@ do your own development now, and upgrade to the latest template at any point in 
 Update
 ------
 
-If you installed the project template using the second approach above, you can easily
+If you installed the project template using git, you can easily
 upgrade your application to the latest template with the following:
 
-```
+```bash
 cd exmample.com
 # Make sure you are on the master branch and have a clean and up-to-date workspace
 git checkout master
@@ -70,6 +71,8 @@ git pull origin master
 git checkout -b project-template-update
 # Pull the latest version from https://github.com/QoboLtd/project-template/releases
 git pull git@github.com:QoboLtd/project-template.git vX.Y.Z
+composer update
+./bin/build app:update
 # Check for conflicts, resolve if any, commit, and then push
 git push origin project-template-update
 # Create a pull request, review, and merge
@@ -78,18 +81,16 @@ git push origin project-template-update
 Usage
 -----
 
-### Quick
-
 Now that you have the project template installed, check that it works
 before you start working on your changes.  Fire up the PHP web server:
 
-```
+```bash
 ./bin/phpserv
 ```
 
 Or run it on the alternative port:
 
-```
+```bash
 ./bin/phpserv -S localhost:9000
 ```
 
@@ -113,7 +114,7 @@ For example, you can easily automate the build process of your application
 by modifying the included Robo files in `build/` folder.  Run the following
 command to examine available targets:
 
-```
+```bash
 ./bin/build
 ```
 
@@ -132,20 +133,22 @@ to use these targets and pass runtime configuration parameters.
 Test
 ----
 
-### PHPUnit
+### PHPUnit and PHP CodeSniffer
 
-project-template brings quite a bit of setup for testing your projects.  The
-first part of this setup is [PHPUnit](https://phpunit.de/).  To try it out,
-runt the following command (don't worry if it fails, we'll get to it shortly):
+The fastest and simplest way to run PHPUnit and PHP CodeSniffer is via a
+composer script:
 
+```bash
+./bin/composer test
 ```
-./vendor/bin/phpunit
+
+Alternatively, you can run the test with code coverage reports:
+
+```bash
+./bin/composer test-coverage
 ```
 
-If it didn't work for you, here are some of the things to try:
-
-* If `phpunit` command wasn't found, try `composer install` and then run the command again.  Chances are phpunit was removed during the `app:install`, which runs composer with `--no-dev` parameter.
-* If you had some other issue, please [let us know](https://github.com/QoboLtd/project-template/issues/new).
+Code coverage reports in HTML format will be placed in `./build/test-coverage/` folder.
 
 ### Travis CI
 
@@ -161,5 +164,4 @@ want to remove the example tests from the file.
 
 project-template provides a few examples of how to write and organize unit tests.  Have a look
 in the `tests/` folder.  Now you have **NO EXCUSE** for not testing your applications!
-
 
