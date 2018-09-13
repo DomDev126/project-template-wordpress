@@ -31,9 +31,6 @@ You can create a new project from this template using composer.
 ```bash
 composer create-project qobo/project-template example.com
 cd example.com
-git init
-git add .
-git commit -m "Initial commit"
 ./bin/build app:install PROJECT_NAME="My Project",PROJECT_VERSION="v1.0.0"
 ```
 
