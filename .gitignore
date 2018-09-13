@@ -7,6 +7,7 @@ webroot/wp/
 .env
 etc/nginx.conf
 etc/ssl/*
+cghooks.lock
 
 # Ignore wp-content/, but exclude uploads by dev user
 !webroot/wp-content/

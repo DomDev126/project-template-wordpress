@@ -32,6 +32,7 @@
     ],
     "require": {
         "aws/aws-sdk-php": "^3.52",
+        "brainmaestro/composer-git-hooks": "^2.4",
         "johnpbloch/wordpress-core": "4.9.8",
         "fancyguy/webroot-installer": "1.1.0",
         "johnpbloch/wordpress-core-installer": "0.2.1",
@@ -94,6 +95,27 @@
     "autoload": {
         "psr-4": {
             "Qobo\\Robo\\": "build/Robo"
+        }
+    },
+    "scripts": {
+        "test": [
+            "phpcs",
+            "phpunit --no-coverage"
+        ],
+        "test-coverage": [
+            "phpcs",
+            "phpunit"
+        ],
+        "post-install-cmd": "cghooks add",
+        "post-update-cmd": "cghooks update"
+    },
+    "scripts-descriptions": {
+        "test": "Runs phpcs and phpunit without coverage",
+        "test-coverage": "Runs phpcs and phpunit with coverage enabled"
+    },
+    "extra": {
+        "hooks": {
+            "pre-commit": "./vendor/bin/phpcs $(git diff-index --name-only --cached --diff-filter=ACMR HEAD -- )"
         }
     }
 }
