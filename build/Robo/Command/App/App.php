@@ -3,7 +3,6 @@
 namespace Qobo\Robo\Command\App;
 
 use \Qobo\Robo\AbstractCommand;
-use Robo\Result;
 
 class App extends AbstractCommand
 {
