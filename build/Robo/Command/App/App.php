@@ -41,7 +41,7 @@ class App extends AbstractCommand
             $this->installCron($env);
         }
 
-        return $this->postInstall();
+        return ($this->setPathPermissions($env) && $this->postInstall());
     }
 
     /**
@@ -69,7 +69,7 @@ class App extends AbstractCommand
             $this->installCron($env);
         }
 
-        return $this->postInstall();
+        return ($this->setPathPermissions($env) && $this->postInstall());
     }
 
     /**
@@ -157,25 +157,6 @@ class App extends AbstractCommand
         // Run content script
 		$tasks []= $this->taskExec('/bin/bash etc/wp-cli.content.sh');
 
-        // Chmod dir
-		$tasks []= $this->taskFileChmod()
-			->path([$this->getValue('CHMOD_PATH', $env)])
-		    ->fileMode($this->getValue('CHMOD_FILE_MODE', $env))
-			->dirMode($this->getValue('CHMOD_DIR_MODE', $env))
-			->recursive(true);
-
-        // Chown dir
-		$tasks []= $this->taskFileChown()
-			->path([$this->getValue('CHOWN_PATH', $env)])
-			->user($this->getValue('CHOWN_USER', $env))
-			->recursive(true);
-
-        // Chgrp dir
-		$tasks []= $this->taskFileChgrp()
-			->path([$this->getValue('CHGRP_PATH', $env)])
-			->group($this->getValue('CHGRP_GROUP', $env))
-			->recursive(true);
-
         // Now as we have all tasks prepared in order,
         // run one-by-one and stop on first fail
         foreach ($tasks as $task) {
@@ -229,22 +210,6 @@ class App extends AbstractCommand
             ->host($this->getValue('DB_HOST', $env));
 
 		$tasks []= $this->taskExec('/bin/bash etc/wp-cli.update.sh');
-
-		$tasks []= $this->taskFileChmod()
-			->path([$this->getValue('CHMOD_PATH', $env)])
-			->fileMode($this->getValue('CHMOD_FILE_MODE', $env))
-			->dirMode($this->getValue('CHMOD_DIR_MODE', $env))
-			->recursive(true);
-
-		$tasks []= $this->taskFileChown()
-			->path([$this->getValue('CHOWN_PATH', $env)])
-			->user($this->getValue('CHOWN_USER', $env))
-			->recursive(true);
-
-		$tasks []= $this->taskFileChgrp()
-			->path([$this->getValue('CHGRP_PATH', $env)])
-			->group($this->getValue('CHGRP_GROUP', $env))
-			->recursive(true);
 
         foreach ($tasks as $task) {
             $result = $task->run();
@@ -401,5 +366,90 @@ class App extends AbstractCommand
             return;
         }
         $this->taskExec("rm -f '/etc/cron.d/{$env['NGINX_SITE_MAIN']}'")->run();
+    }
+
+    /**
+     * Set correct paths permissions and ownerships
+     */
+    protected function setPathPermissions($env)
+    {
+        $dirMode = $this->getValue('CHMOD_DIR_MODE', $env);
+        $fileMode = $this->getValue('CHMOD_FILE_MODE', $env);
+
+        $chmodPaths = array_filter(explode(",", $this->getValue('CHMOD_PATH', $env)));
+        $chownPaths = array_filter(explode(",", $this->getValue('CHOWN_PATH', $env)));
+        $chgrpPaths = array_filter(explode(",", $this->getValue('CHGRP_PATH', $env)));
+
+        $user = $this->getValue('CHOWN_USER', $env);
+        $group = $this->getValue('CHGRP_GROUP', $env);
+
+        $base = str_replace("build/Robo/Command/App", "",  __DIR__);
+
+        $tasks = [];
+
+        if (!empty($fileMode) && !empty($dirMode)) {
+            foreach ($chmodPaths as $path) {
+                if (!file_exists("$base$path")) {
+                    continue;
+                }
+
+                // Chmod dir
+                $tasks []= $this->taskFileChmod()
+                    ->path("$base$path")
+                    ->fileMode($fileMode)
+                    ->dirMode($dirMode)
+                    ->recursive(true);
+            }
+        }
+
+        if (!empty($user)) {
+            foreach ($chownPaths as $path) {
+                if (!file_exists("$base$path")) {
+                    continue;
+                }
+
+                // Chown dir
+                $tasks []= $this->taskFileChown()
+                    ->path("$base$path")
+                    ->user($user)
+                    ->recursive(true);
+            }
+        }
+
+        if (!empty($group)) {
+            foreach ($chgrpPaths as $path) {
+
+                if (!file_exists("$base$path")) {
+                    continue;
+                }
+
+                // Chgrp dir
+                $tasks []= $this->taskFileChgrp()
+                    ->path("$base$path")
+                    ->group($group)
+                    ->recursive(true);
+            }
+        }
+
+        // execute all tasks
+        foreach ($tasks as $task) {
+            $error = false;
+            try {
+                $result = $task->run();
+                if (!$result->wasSuccessful()) {
+                    $error = true;
+                    print "Failed to run task\n";
+                }
+            } catch (\Exception $e) {
+                print "{$e->getMessage()}\n";
+                $error = true;
+            }
+
+            if ($error && !$this->getValue('IGNORE_FS_ERRORS', $env)) {
+                return false;
+            }
+        }
+
+        return true;
     }
 }

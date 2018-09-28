@@ -4,6 +4,7 @@ build/*
 !build/Utility/
 vendor/
 webroot/wp/
+tmp/
 .env
 etc/nginx.conf
 etc/ssl/*
