@@ -2,7 +2,8 @@
 
 namespace Qobo\Robo\Command\App;
 
-use \Qobo\Robo\AbstractCommand;
+use Qobo\Robo\AbstractCommand;
+use Qobo\Robo\Runner;
 
 class App extends AbstractCommand
 {
@@ -373,6 +374,8 @@ class App extends AbstractCommand
      */
     protected function setPathPermissions($env)
     {
+        $lastError = Runner::getLastError();
+
         $dirMode = $this->getValue('CHMOD_DIR_MODE', $env);
         $fileMode = $this->getValue('CHMOD_FILE_MODE', $env);
 
@@ -449,6 +452,8 @@ class App extends AbstractCommand
                 return false;
             }
         }
+
+        Runner::setLastError($lastError);
 
         return true;
     }
