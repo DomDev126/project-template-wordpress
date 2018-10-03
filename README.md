@@ -26,13 +26,8 @@ You can create a new project from this template using composer.
 ```bash
 composer create-project qobo/project-template-wordpress example.com
 cd example.com
-./bin/build app:install DB_NAME="app",CHOWN_USER=$USER,CHGRP_GROUP=$USER,PROJECT_NAME="My Project",PROJECT_VERSION="v1.0.0"
+./bin/build app:install DB_NAME="app",PROJECT_NAME="My Project",PROJECT_VERSION="v1.0.0"
 ```
-
-Note that the `CHOWN_USER` and `CHGRP_GROUP` above should be set to the user and group
-that is used by the web server.  In case of Apache and Nginx, these can be `nobody`
-or `nginx` or `apache`.  For the local development environment (regular user, without
-root access) should be set to the current user and group.
 
 ### Git
 
@@ -46,17 +41,12 @@ git init
 # Pull the latest version from https://github.com/QoboLtd/project-template-wordpress/releases
 git pull git@github.com:QoboLtd/project-template-wordpress.git vX.Y.Z
 composer update
-./bin/build app:install DB_NAME="app",CHOWN_USER=$USER,CHGRP_GROUP=$USER,PROJECT_NAME="My Project",PROJECT_VERSION="v1.0.0"
+./bin/build app:install DB_NAME="app",PROJECT_NAME="My Project",PROJECT_VERSION="v1.0.0"
 # Add your own remote repository
 git remote add origin git@github.com/USER/REPO
 # Push
 git push origin master
 ```
-
-Note that the `CHOWN_USER` and `CHGRP_GROUP` above should be set to the user and group
-that is used by the web server.  In case of Apache and Nginx, these can be `nobody`
-or `nginx` or `apache`.  For the local development environment (regular user, without
-root access) should be set to the current user and group.
 
 With the above approach, you have the full history of the template development.  You can
 do your own development now, and upgrade to the latest template at any point in the future.
