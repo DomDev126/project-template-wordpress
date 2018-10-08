@@ -1,10 +1,12 @@
 <?php
 namespace Tests\Unit;
 
+use PHPUnit\Framework\TestCase;
+
 /**
  * Favicon Test
  */
-class FaviconTest extends \PHPUnit_Framework_TestCase
+class FaviconTest extends TestCase
 {
 
     protected $folder;

@@ -1,12 +1,14 @@
 <?php
 namespace Tests\Example;
 
+use PHPUnit\Framework\TestCase;
+
 /**
  * PHPUnit Example Test
  *
  * @group  example
  */
-class PHPUnitExampleTest extends \PHPUnit_Framework_TestCase
+class PHPUnitExampleTest extends TestCase
 {
 
     /**
