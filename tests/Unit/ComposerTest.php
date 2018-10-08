@@ -1,11 +1,13 @@
 <?php
 namespace Tests\Unit;
 
+use PHPUnit\Framework\TestCase;
+
 /**
  * Composer Test
  *
  */
-class ComposerTest extends \PHPUnit_Framework_TestCase
+class ComposerTest extends TestCase
 {
 
     const COMPOSER_JSON = 'composer.json';
