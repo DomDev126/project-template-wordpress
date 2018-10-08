@@ -17,7 +17,7 @@
 		<log type="coverage-html" target="build/test-coverage"/>
 		<log type="coverage-clover" target="build/test-results/clover.xml"/>
 		<log type="coverage-crap4j" target="build/test-results/crap4j.xml"/>
-		<log type="junit" target="build/test-results/junit.xml" logIncompleteSkipped="false"/>
+		<log type="junit" target="build/test-results/junit.xml"/>
 	</logging>
 
 	<testsuites>
