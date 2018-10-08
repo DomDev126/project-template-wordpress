@@ -1,12 +1,14 @@
 <?php
 namespace Tests\Unit;
 
-use \Dotenv;
+use Dotenv;
+use Exception;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Dotenv Test
  */
-class DotenvTest extends \PHPUnit_Framework_TestCase
+class DotenvTest extends TestCase
 {
 
     /**
@@ -41,8 +43,11 @@ class DotenvTest extends \PHPUnit_Framework_TestCase
     {
         try {
             Dotenv::load($folder, $file);
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             $this->fail("Failed to parse file " . $file . " in " . $folder . " : " . $e->getMessage());
         }
+        // Check any variable just to make sure it is set correctly
+        $result = getenv("DB_DUMP_PATH");
+        $this->assertEquals("etc/mysql.sql", $result, "Environment variables are not set correctly");
     }
 }

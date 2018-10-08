@@ -1,10 +1,12 @@
 <?php
 namespace Tests\Unit;
 
+use PHPUnit\Framework\TestCase;
+
 /**
  * Robots Test
  */
-class RobotsTest extends \PHPUnit_Framework_TestCase
+class RobotsTest extends TestCase
 {
 
     protected $folder;
