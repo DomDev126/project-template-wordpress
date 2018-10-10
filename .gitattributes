@@ -44,3 +44,6 @@ composer binary
 *.ttf binary
 *.woff binary
 *.woff2 binary
+
+# Treat zip files as binary
+*.zip binary
