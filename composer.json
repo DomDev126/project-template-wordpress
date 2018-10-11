@@ -32,6 +32,7 @@
     },
     "require-dev": {
         "phpstan/phpstan": "^0.10.3",
+        "phpstan/phpstan-phpunit": "^0.10.0",
         "phpunit/phpunit": "*",
         "squizlabs/php_codesniffer": "*"
     },
