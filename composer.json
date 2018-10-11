@@ -31,8 +31,11 @@
         "vlucas/phpdotenv": "^1.1"
     },
     "require-dev": {
+        "phpstan/phpstan": "^0.10.3",
+        "phpstan/phpstan-phpunit": "^0.10.0",
         "phpunit/phpunit": "*",
-        "squizlabs/php_codesniffer": "*"
+        "squizlabs/php_codesniffer": "*",
+        "thecodingmachine/phpstan-strict-rules": "^0.10.3"
     },
     "suggest": {
         "ext-xdebug": "Allows code coverage reports and advanced debugging"
@@ -40,6 +43,11 @@
     "autoload": {
         "psr-4": {
             "Qobo\\Robo\\": "build/Robo"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "App\\Test\\": "tests"
         }
     },
     "scripts": {
