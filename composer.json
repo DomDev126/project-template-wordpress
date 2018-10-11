@@ -52,7 +52,10 @@
             "phpunit"
         ],
         "post-install-cmd": "cghooks add",
-        "post-update-cmd": "cghooks update"
+        "post-update-cmd": [
+            "cghooks remove pre-commit",
+            "cghooks update"
+        ]
     },
     "scripts-descriptions": {
         "test": "Runs phpcs and phpunit without coverage",
@@ -60,7 +63,7 @@
     },
     "extra": {
         "hooks": {
-            "pre-commit": "./vendor/bin/phpcs $(git diff-index --name-only --cached --diff-filter=ACMR HEAD -- )"
+            "pre-push": "./vendor/bin/phpcs"
         }
     }
 }
