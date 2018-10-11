@@ -12,7 +12,7 @@ class RobotsTest extends TestCase
     protected $folder;
     protected $file;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $webroot = join(DIRECTORY_SEPARATOR, [__DIR__, '..', '..', 'webroot']) . DIRECTORY_SEPARATOR;
         $this->folder = $webroot;
@@ -21,8 +21,10 @@ class RobotsTest extends TestCase
 
     /**
      * Check that the file exists
+     *
+     * @return void
      */
-    public function testRobotsFileExists()
+    public function testRobotsFileExists(): void
     {
         $this->assertFileExists($this->folder . $this->file);
     }
@@ -32,7 +34,7 @@ class RobotsTest extends TestCase
      *
      * @depends testRobotsFileExists
      */
-    public function testRobotsFileIsNotEmpty()
+    public function testRobotsFileIsNotEmpty(): void
     {
         $content = file_get_contents($this->folder . $this->file);
         $content = $content ? trim($content) : '';

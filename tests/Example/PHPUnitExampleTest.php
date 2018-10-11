@@ -17,7 +17,7 @@ class PHPUnitExampleTest extends TestCase
      * The list of all available assertions is here:
      * https://phpunit.de/manual/current/en/appendixes.assertions.html
      */
-    public function testExampleTest()
+    public function testExampleTest(): void
     {
         $this->assertTrue(true, "Truth is a lie");
     }

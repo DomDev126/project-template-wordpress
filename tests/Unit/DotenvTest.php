@@ -13,14 +13,16 @@ class DotenvTest extends TestCase
 
     /**
      * Provide .env file locations
+     *
+     * @return mixed[]
      */
-    public function dotEnvFilesProvider()
+    public function dotEnvFilesProvider(): array
     {
         $root = join(DIRECTORY_SEPARATOR, [__DIR__, '..', '..']) . DIRECTORY_SEPARATOR;
 
         return [
-         '.env.example' => [$root, '.env.example'],
-         '.env' => [$root, '.env'],
+            [$root, '.env.example'],
+            [$root, '.env'],
         ];
     }
 
@@ -29,7 +31,7 @@ class DotenvTest extends TestCase
      *
      * @dataProvider dotEnvFilesProvider
      */
-    public function testDotenvExampleFileExists($folder, $file)
+    public function testDotenvExampleFileExists(string $folder, string $file): void
     {
         $this->assertFileExists($folder . $file);
     }
@@ -39,7 +41,7 @@ class DotenvTest extends TestCase
      *
      * @dataProvider dotEnvFilesProvider
      */
-    public function testDotenvExampleFileIsParseable($folder, $file)
+    public function testDotenvExampleFileIsParseable(string $folder, string $file): void
     {
         try {
             Dotenv::load($folder, $file);

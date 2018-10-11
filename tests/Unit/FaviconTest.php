@@ -12,7 +12,7 @@ class FaviconTest extends TestCase
     protected $folder;
     protected $file;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $webroot = join(DIRECTORY_SEPARATOR, [__DIR__, '..', '..', 'webroot']) . DIRECTORY_SEPARATOR;
         $this->folder = $webroot;
@@ -21,8 +21,10 @@ class FaviconTest extends TestCase
 
     /**
      * Check that the file exists
+     *
+     * @return void
      */
-    public function testFaviconFileExists()
+    public function testFaviconFileExists(): void
     {
         $this->assertFileExists($this->folder . $this->file);
     }
