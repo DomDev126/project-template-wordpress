@@ -60,7 +60,7 @@
     },
     "extra": {
         "hooks": {
-            "pre-commit": "./vendor/bin/phpcs $(git diff-index --name-only --cached --diff-filter=ACMR HEAD -- | egrep '^src/|^tests/|^webroot/' | egrep '\\.php$')"
+            "pre-commit": "PHPCS_FILES=$(git diff-index --name-only --cached --diff-filter=ACMR HEAD -- | egrep '^src/|^tests/|^webroot/' | egrep '\\.php$'); if [ $PHPCS_FILES ]; then ./vendor/bin/phpcs $PHPCS_FILES; fi"
         }
     }
 }
