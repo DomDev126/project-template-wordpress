@@ -34,12 +34,13 @@ class ComposerTest extends TestCase
     public function testComposerFiles($file)
     {
         $this->assertFileExists($this->folder . $file, $file . " file is missing");
-        $this->assertTrue(is_readable($this->folder . $file), $file . " file is not readable");
+        $this->assertFileIsReadable($this->folder . $file, $file . " file is not readable");
 
         $content = file_get_contents($this->folder . $file);
-        $this->assertGreaterThan(0, strlen($content), $file . " file is empty");
+        $this->assertNotEmpty($content, $file . " file is empty");
 
         // This is useful for catching merge conflicts, for example
+        $content = $content ?: '';
         $json = json_decode($content);
         $this->assertNotNull($json, "Failed to parse JSON in file " . $file);
 

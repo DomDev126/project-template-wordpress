@@ -34,7 +34,8 @@ class RobotsTest extends TestCase
      */
     public function testRobotsFileIsNotEmpty()
     {
-        $content = trim(file_get_contents($this->folder . $this->file));
+        $content = file_get_contents($this->folder . $this->file);
+        $content = $content ? trim($content) : '';
         $this->assertFalse(empty($content), $this->file . " file is empty in " . $this->folder);
     }
 }
