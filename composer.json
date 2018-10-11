@@ -43,6 +43,11 @@
             "Qobo\\Robo\\": "build/Robo"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "App\\Test\\": "tests"
+        }
+    },
     "scripts": {
         "test": [
             "phpcs",
