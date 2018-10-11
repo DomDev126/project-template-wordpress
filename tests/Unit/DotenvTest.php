@@ -1,5 +1,5 @@
 <?php
-namespace Tests\Unit;
+namespace App\Test\Unit;
 
 use Dotenv;
 use Exception;
