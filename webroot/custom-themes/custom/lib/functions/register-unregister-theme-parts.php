@@ -11,10 +11,10 @@ add_filter( 'theme_page_templates', 'unregister_page_templates' );
 /**
  * Unregisters not needed widgets from parent theme
  *
- * @param array $page_templates Parent theme page templates.
- * @return array
+ * @param string[] $page_templates Parent theme page templates.
+ * @return string[]
  */
-function unregister_page_templates( $page_templates ) {
+function unregister_page_templates( array $page_templates ) : array {
 	unset( $page_templates['page-homepage.php'] );
 	unset( $page_templates['page-sidebar-left.php'] );
 	unset( $page_templates['page-sidebar-right.php'] );
@@ -31,10 +31,8 @@ add_action( 'widgets_init', 'unregister_default_sidebars', 11 );
 
 /**
  * Unregisters not needed sidebar widgets from parent theme
- *
- * @return void
  */
-function unregister_default_sidebars() {
+function unregister_default_sidebars() : void {
 	unregister_sidebar( 'under-footer-widget-1' );
 	unregister_sidebar( 'under-footer-widget-2' );
 	unregister_sidebar( 'footer-widget-1' );
@@ -47,10 +45,8 @@ function unregister_default_sidebars() {
 
 /**
  * Unregisters wp emojicons
- *
- * @return void
  */
-function disable_wp_emojicons() {
+function disable_wp_emojicons() : void {
 
 	// all actions related to emojis.
 	remove_action( 'admin_print_styles', 'print_emoji_styles' );
@@ -69,10 +65,10 @@ add_action( 'init', 'disable_wp_emojicons' );
 /**
  * Removes 'wpemoji' from the TinyMCE plugin list.
  *
- * @param  array $plugins TinyMCE plugins.
- * @return array of filtered out plugins.
+ * @param  string[] $plugins TinyMCE plugins.
+ * @return string[] array of filtered out plugins.
  */
-function disable_emojicons_tinymce( $plugins ) {
+function disable_emojicons_tinymce( array $plugins ) : array {
 	if ( is_array( $plugins ) ) {
 		return array_diff( $plugins, [ 'wpemoji' ] );
 	}
@@ -80,13 +76,10 @@ function disable_emojicons_tinymce( $plugins ) {
 	return [];
 }
 
-
 /**
  * Disables contact form 7 inline styles
- *
- * @return void
  */
-function disable_cf7_inline_styles() {
+function disable_cf7_inline_styles() : void {
 	remove_action( 'wp_head', 'cf7bs_inline_styles' );
 }
 

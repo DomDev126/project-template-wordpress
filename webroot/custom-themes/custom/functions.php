@@ -29,7 +29,7 @@ if ( ! defined( 'THEME_LIB_DIR' ) ) {
  * @param string $dir Directory to load files from.
  * @return void
  */
-function load_includes( $dir ) {
+function load_includes( string $dir ) : void {
 	$it = new RecursiveDirectoryIterator( $dir );
 	$it = new RecursiveIteratorIterator( $it );
 	$it = new RegexIterator( $it, '#.php$#' );

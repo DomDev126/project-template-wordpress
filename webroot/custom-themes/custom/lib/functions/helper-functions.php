@@ -30,7 +30,7 @@ add_action( 'wp', 'redirect_non_logged_users_to_login_page' );
  * @param int    $no_of_images Number of images filter.
  * @return boolen/WP_Post Object $result.
  */
-function get_images_by_gategory_slug( $slug, $no_of_images = 1 ) {
+function get_images_by_gategory_slug( string $slug, int $no_of_images = 1 ) {
 
 	$category = get_category_by_slug( $slug );
 
@@ -57,10 +57,10 @@ add_action( 'init', 'disable_upload_files_for_wp_dev_user' );
 /**
  * Disable upload functionality for the qobo user
  */
-function disable_upload_files_for_wp_dev_user() {
+function disable_upload_files_for_wp_dev_user() : void {
 
 	$dev_env = getenv( 'DEV_ENV' );
-	if ( empty( $dev_env ) || false === $dev_env ) {
+	if ( empty( $dev_env ) ) {
 		$dev_env = 'localhost';
 	}
 
@@ -80,7 +80,7 @@ function disable_upload_files_for_wp_dev_user() {
 /**
  * Remove any links link to upload.php
  */
-function remove_menu_links() {
+function remove_menu_links() : void {
 	global $submenu;
 	remove_menu_page( 'upload.php' );
 }
@@ -88,7 +88,7 @@ function remove_menu_links() {
 /**
  * Remove for post types (post, page) the upload thumbnail functionality
  */
-function remove_post_type_thumbnail() {
+function remove_post_type_thumbnail() : void {
 	remove_post_type_support( 'post', 'thumbnail' );
 	remove_post_type_support( 'page', 'thumbnail' );
 }
@@ -96,7 +96,7 @@ function remove_post_type_thumbnail() {
 /**
  * Image upload notice.
  */
-function image_upload_notice() {
+function image_upload_notice() : void {
 	?>
 	<div class="update-nag notice">
 		<p><?php esc_html_e( 'Image Upload Functionality is Disabled!', 'qobo_domain' ); ?></p>
