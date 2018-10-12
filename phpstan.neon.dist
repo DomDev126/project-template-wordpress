@@ -4,6 +4,10 @@ parameters:
         - src
         - tests
         - webroot
+    excludes_analyse:
+        - webroot/wp
+    autoload_files:
+        - webroot/wp/wp-load.php
 includes:
     - vendor/phpstan/phpstan-phpunit/extension.neon
     - vendor/phpstan/phpstan-phpunit/rules.neon
