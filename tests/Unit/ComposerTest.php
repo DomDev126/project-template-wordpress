@@ -1,5 +1,5 @@
 <?php
-namespace Tests\Unit;
+namespace App\Test\Unit;
 
 use PHPUnit\Framework\TestCase;
 
@@ -15,12 +15,17 @@ class ComposerTest extends TestCase
 
     protected $folder;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->folder = __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR;
     }
 
-    public function getComposerFiles()
+    /**
+     * Provide a list composer files
+     *
+     * @return mixed[]
+     */
+    public function getComposerFiles(): array
     {
         return [
             [self::COMPOSER_JSON],
@@ -31,22 +36,23 @@ class ComposerTest extends TestCase
     /**
      * @dataProvider getComposerFiles
      */
-    public function testComposerFiles($file)
+    public function testComposerFiles(string $file): void
     {
         $this->assertFileExists($this->folder . $file, $file . " file is missing");
-        $this->assertTrue(is_readable($this->folder . $file), $file . " file is not readable");
+        $this->assertFileIsReadable($this->folder . $file, $file . " file is not readable");
 
         $content = file_get_contents($this->folder . $file);
-        $this->assertGreaterThan(0, strlen($content), $file . " file is empty");
+        $this->assertNotEmpty($content, $file . " file is empty");
 
         // This is useful for catching merge conflicts, for example
+        $content = $content ?: '';
         $json = json_decode($content);
         $this->assertNotNull($json, "Failed to parse JSON in file " . $file);
 
         $this->assertNotEmpty($json, "Empty result from JSON parsing in file " . $file);
     }
 
-    public function testComposerLockUpToDate()
+    public function testComposerLockUpToDate(): void
     {
         # Until composer v1.3.0-RC (https://github.com/composer/composer/releases/tag/1.3.0-RC)
         # we could easily compare the hashes.  However now it's not that
