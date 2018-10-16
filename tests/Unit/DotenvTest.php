@@ -2,7 +2,7 @@
 namespace App\Test\Unit;
 
 use Dotenv;
-use Exception;
+use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -45,7 +45,7 @@ class DotenvTest extends TestCase
     {
         try {
             Dotenv::load($folder, $file);
-        } catch (Exception $e) {
+        } catch (InvalidArgumentException $e) {
             $this->fail("Failed to parse file " . $file . " in " . $folder . " : " . $e->getMessage());
         }
         // Check any variable just to make sure it is set correctly
