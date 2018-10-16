@@ -17,6 +17,7 @@
 *.po text
 *.properties text
 *.sql text
+*.svg text
 *.txt text
 *.xml text
 *.yml text
@@ -24,10 +25,10 @@
 # Declare files that will always have CRLF line endings on checkout.
 *.bat eol=crlf
 
-# # Declare files that will always have LF line endings on checkout.
+# Declare files that will always have LF line endings on checkout.
 *.pem eol=lf
 
-# # Denote all files that are truly binary and should not be modified.
+# Denote all files that are truly binary and should not be modified.
 composer binary
 *.png binary
 *.jpg binary
@@ -40,10 +41,12 @@ composer binary
 # Web fonts are binary
 *.otf binary
 *.eot binary
-*.svg binary
 *.ttf binary
 *.woff binary
 *.woff2 binary
 
 # Treat zip files as binary
+*.7z binary
+*.bz2 binary
+*.gz binary
 *.zip binary
