@@ -17,7 +17,7 @@ require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPAR
 
 try {
     Dotenv::load(dirname(__DIR__));
-} catch (\Exception $e) {
+} catch (\InvalidArgumentException $e) {
     // If there is no .env file, we are probably on
     // a local/dev/test install with the project that
     // is not properly deployed.  No need to allow

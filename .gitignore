@@ -1,18 +1,53 @@
+# Project specific files #
+##########################
 !build/
 build/*
 !build/Robo/
 !build/Utility/
 vendor/
-webroot/wp/
 tmp/
 .env
 etc/nginx.conf
 etc/ssl/*
 cghooks.lock
 
+webroot/wp/
 # Ignore wp-content/, but exclude uploads by dev user
 !webroot/wp-content/
 webroot/wp-content/*
 !webroot/wp-content/uploads
 webroot/wp-content/uploads/*
 !webroot/wp-content/uploads/qobo
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+
+# Tool specific files #
+#######################
+# vim
+*~
+*.swp
+*.swo
+# sublime text & textmate
+*.sublime-*
+*.stTheme.cache
+*.tmlanguage.cache
+*.tmPreferences.cache
+# Eclipse
+.settings/*
+# JetBrains, aka PHPStorm, IntelliJ IDEA
+.idea/*
+# NetBeans
+nbproject/*
+# Visual Studio Code
+.vscode
+# Sass preprocessor
+.sass-cache/
