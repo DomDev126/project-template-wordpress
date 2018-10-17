@@ -28,7 +28,7 @@
         "brainmaestro/composer-git-hooks": "^2.4",
         "pyrech/composer-changelogs": "~1.4",
         "qobo/qobo-robo": "^2.0",
-        "vlucas/phpdotenv": "^1.1"
+        "josegonzalez/dotenv": "^3.2"
     },
     "require-dev": {
         "phpstan/phpstan": "^0.10.3",
