@@ -1,7 +1,7 @@
 <?php
 namespace App\Test\Unit;
 
-use Dotenv;
+use josegonzalez\Dotenv\Loader;
 use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 
@@ -44,7 +44,8 @@ class DotenvTest extends TestCase
     public function testDotenvExampleFileIsParseable(string $folder, string $file): void
     {
         try {
-            Dotenv::load($folder, $file);
+            // NOTE: in order to avoid logic exceptions caused by multilpe files, we do overwrite
+            (new Loader($folder . DIRECTORY_SEPARATOR . $file))->parse()->toEnv(true)->putenv(true);
         } catch (InvalidArgumentException $e) {
             $this->fail("Failed to parse file " . $file . " in " . $folder . " : " . $e->getMessage());
         }
