@@ -9,7 +9,9 @@
     <description>PHP CodeSniffer Configuration</description>
 
     <!-- Coding standard to use -->
-    <rule ref="PSR2" />
+    <rule ref="PSR2">
+        <exclude name="Generic.Commenting.Todo" />
+    </rule>
 
     <!-- Do not fail on warnings -->
     <config name="ignore_warnings_on_exit" value="1" />
@@ -27,4 +29,7 @@
     <file>./src/</file>
     <file>./tests/</file>
     <file>./webroot/</file>
+
+    <!-- Ignore minified files -->
+    <exclude-pattern>*\.min\.(css|js)</exclude-pattern>
 </ruleset>
