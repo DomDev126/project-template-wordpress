@@ -35,4 +35,7 @@
     <arg name="ignore" value="webroot/custom-themes/custom/includes/jquery/" />
     <arg name="ignore" value="webroot/custom-themes/custom/includes/jquery-ui/" />
     <arg name="ignore" value="webroot/custom-themes/custom/includes/smoke/" />
+
+    <!-- Ignore minified files -->
+    <exclude-pattern>*\.min\.(css|js)</exclude-pattern>
 </ruleset>
