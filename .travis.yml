@@ -12,21 +12,18 @@ matrix:
   fast_finish: true
 
   allow_failures:
-    - php:
-      - 7.3
-      - nightly
-
-  global:
-    - PHPCS=1
-    - PHPUNIT_EXAMPLE=0
-    - PHPUNIT_COVERAGE=0
+    - php: 7.3
+    - php: nightly
 
   include:
     - php: 7.1
-      env: PHPUNIT_EXAMPLE=1 PHPUNIT_COVERAGE=1
+      env: PHPCS=1 TEST_EXAMPLE=1 TEST_COVERAGE=1
     - php: 7.2
+      env: PHPCS=1 TEST_EXAMPLE=0 TEST_COVERAGE=0
     - php: 7.3
+      env: PHPCS=1 TEST_EXAMPLE=0 TEST_COVERAGE=0
     - php: nightly
+      env: PHPCS=1 TEST_EXAMPLE=0 TEST_COVERAGE=0
 
 install:
   - ./bin/phpserv >/dev/null 2>&1 &
@@ -37,9 +34,9 @@ install:
 
 script:
   - if [[ $PHPCS = 1 ]]; then ./vendor/bin/phpcs; fi
-  - if [[ $PHPUNIT_EXAMPLE = 1 ]]; then ./vendor/bin/phpunit --group example --no-coverage; fi
-  - if [[ $PHPUNIT_COVERAGE = 0 ]]; then ./vendor/bin/phpunit --exclude-group example --no-coverage; fi
-  - if [[ $PHPUNIT_COVERAGE = 1 ]]; then ./vendor/bin/phpunit --exclude-group example; fi
+  - if [[ $TEST_EXAMPLE = 1 ]]; then ./vendor/bin/phpunit --group example --no-coverage; fi
+  - if [[ $TEST_COVERAGE = 0 ]]; then ./vendor/bin/phpunit --exclude-group example --no-coverage; fi
+  - if [[ $TEST_COVERAGE = 1 ]]; then ./vendor/bin/phpunit --exclude-group example; fi
 
 notifications:
   email:
