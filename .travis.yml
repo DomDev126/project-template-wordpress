@@ -1,11 +1,13 @@
-sudo: true
+language: php
+
 dist: trusty
 
-language: php
+sudo: false
 
 php:
   - 7.1
   - 7.2
+  - 7.3
   - nightly
 
 cache:
@@ -14,19 +16,33 @@ cache:
 
 matrix:
   fast_finish: true
+
   allow_failures:
-    - php: nightly
+    - php:
+      - 7.3
+      - nightly
+
+  global:
+    - PHPCS=1
+    - PHPUNIT_EXAMPLE=0
+    - PHPUNIT_COVERAGE=0
+
+  include:
+    - php: 7.1
+      env: PHPUNIT_EXAMPLE=1 PHPUNIT_COVERAGE=1
 
 install:
   - ./bin/phpserv >/dev/null 2>&1 &
   - ./bin/composer validate --strict
   - ./bin/composer install --no-interaction --no-progress --no-suggest
+  - mkdir -p build/test-coverage build/test-results
   - ./bin/build app:install CHOWN_USER=$USER,CHGRP_GROUP=$USER,DB_NAME=app,DB_ADMIN_USER=root,DB_USER=root
 
 script:
-  - ./vendor/bin/phpcs
-  - ./vendor/bin/phpunit --group example --no-coverage
-  - if [ $TRAVIS_PHP_VERSION != "7.1" ]; then ./vendor/bin/phpunit --exclude-group example --no-coverage; else ./vendor/bin/phpunit --exclude-group example; fi
+  - if [[ $PHPCS = 1 ]]; then ./vendor/bin/phpcs; fi
+  - if [[ $PHPUNIT_EXAMPLE = 1 ]]; then ./vendor/bin/phpunit --group example --no-coverage; fi
+  - if [[ $PHPUNIT_COVERAGE = 0 ]]; then ./vendor/bin/phpunit --exclude-group example --no-coverage; fi
+  - if [[ $PHPUNIT_COVERAGE = 1 ]]; then ./vendor/bin/phpunit --exclude-group example; fi
 
 notifications:
   email:
