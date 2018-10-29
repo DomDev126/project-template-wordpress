@@ -2,12 +2,13 @@
     "name": "qobo/project-template",
     "description": "Template for new PHP projects",
     "keywords": ["project", "template", "setup", "rapid-development", "dry"],
+    "type": "project",
     "license": "MIT",
     "homepage": "https://www.qobo.biz",
     "authors": [
         {
             "name": "Qobo Ltd",
-            "email": "info@qobo.biz",
+            "email": "support@qobo.biz",
             "homepage": "https://www.qobo.biz",
             "role": "Developer"
         }
