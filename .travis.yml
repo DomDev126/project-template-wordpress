@@ -4,12 +4,6 @@ dist: trusty
 
 sudo: false
 
-php:
-  - 7.1
-  - 7.2
-  - 7.3
-  - nightly
-
 cache:
   directories:
     - $HOME/.composer/cache
@@ -30,6 +24,9 @@ matrix:
   include:
     - php: 7.1
       env: PHPUNIT_EXAMPLE=1 PHPUNIT_COVERAGE=1
+    - php: 7.2
+    - php: 7.3
+    - php: nightly
 
 install:
   - ./bin/phpserv >/dev/null 2>&1 &
