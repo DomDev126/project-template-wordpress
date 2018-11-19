@@ -68,7 +68,8 @@
         "wpackagist-plugin/google-sitemap-generator": "4.0.9",
         "wpackagist-plugin/pubsubhubbub": "3.0.1",
         "wpackagist-plugin/amp": "0.7.2",
-        "wpackagist-plugin/glue-for-yoast-seo-amp": "0.4.3"
+        "wpackagist-plugin/glue-for-yoast-seo-amp": "0.4.3",
+        "wpackagist-plugin/restricted-site-access": "^7.0.1"
     },
     "suggest": {
         "qobo/qobo-wp-custom-admin-theme": "it fixes WP admin styles where widget input, select overlap their container",
