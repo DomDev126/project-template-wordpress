@@ -14,7 +14,7 @@
  * @param mixed $var Variable to print out.
  * @return void
  */
-function debug( $var ) {
+function debug( $var ) : void {
 	if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
 		echo '<pre>';
 		// @codingStandardsIgnoreStart

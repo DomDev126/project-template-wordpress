@@ -1,24 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit
-	bootstrap="vendor/autoload.php"
-	colors="true"
-	verbose="true"
-	>
+    colors="true"
+    processIsolation="false"
+    stopOnFailure="false"
+    bootstrap="vendor/autoload.php"
+    verbose="true"
+    >
+    <php>
+        <ini name="memory_limit" value="-1"/>
+        <ini name="apc.enable_cli" value="1"/>
+    </php>
 
-	<filter>
-		<whitelist>
-            <directory suffix=".php">./src/</directory>
-            <directory suffix=".php">./webroot/custom-themes/</directory>
-		</whitelist>
-	</filter>
-
-	<logging>
-		<log type="coverage-text" target="php://stdout" showUncoveredFiles="true"/>
-		<log type="coverage-html" target="build/test-coverage"/>
-		<log type="coverage-clover" target="build/test-results/clover.xml"/>
-		<log type="coverage-crap4j" target="build/test-results/crap4j.xml"/>
-		<log type="junit" target="build/test-results/junit.xml"/>
-	</logging>
+    <logging>
+        <log type="coverage-text" target="php://stdout" showUncoveredFiles="true"/>
+        <log type="coverage-html" target="build/test-coverage"/>
+        <log type="coverage-clover" target="build/test-results/clover.xml"/>
+        <log type="coverage-crap4j" target="build/test-results/crap4j.xml"/>
+        <log type="junit" target="build/test-results/junit.xml"/>
+    </logging>
 
 	<testsuites>
 		<testsuite name="example">
@@ -34,5 +33,12 @@
 			<directory>tests/Unit/</directory>
 		</testsuite>
 	</testsuites>
-</phpunit>
 
+    <!-- Ignore vendor tests in code coverage reports -->
+    <filter>
+        <whitelist>
+            <directory suffix=".php">./src/</directory>
+            <directory suffix=".php">./webroot/custom-themes/</directory>
+        </whitelist>
+    </filter>
+</phpunit>

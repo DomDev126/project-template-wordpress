@@ -13,7 +13,7 @@
  *
  * @return void
  */
-function redirect_non_logged_users_to_login_page() {
+function redirect_non_logged_users_to_login_page() : void {
 	if ( getenv( 'REQUIRE_LOGIN' ) ) {
 		global $pagenow;
 		if ( ! is_user_logged_in() && 'wp-login.php' !== $pagenow ) {
@@ -28,7 +28,7 @@ add_action( 'wp', 'redirect_non_logged_users_to_login_page' );
  *
  * @param string $slug Slug name of a category image group.
  * @param int    $no_of_images Number of images filter.
- * @return boolen/WP_Post Object $result.
+ * @return \WP_Post|bool Object $result.
  */
 function get_images_by_gategory_slug( string $slug, int $no_of_images = 1 ) {
 
