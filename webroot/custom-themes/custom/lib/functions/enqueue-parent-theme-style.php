@@ -17,7 +17,7 @@ add_action( 'wp_enqueue_scripts', 'enqueue_parent_theme_style' );
  *
  * @return void
  */
-function enqueue_parent_theme_style() {
+function enqueue_parent_theme_style() : void {
 	wp_enqueue_style( 'bootstrap-min-css', INCLUDES_DIR . 'bootstrap/3.3.7/css/bootstrap.min.css' );
 	wp_enqueue_style( 'bootstrap-theme-min-css', INCLUDES_DIR . 'bootstrap/3.3.7/css/bootstrap-theme.min.css' );
 	wp_enqueue_style( 'bootstrap-navbar-css', INCLUDES_DIR . 'bootstrap-navbar/1.1.0/bootstrap-navbar.css' );
@@ -36,7 +36,7 @@ add_action( 'wp_enqueue_scripts', 'enqueue_parent_theme_script' );
  *
  * @return void
  */
-function enqueue_parent_theme_script() {
+function enqueue_parent_theme_script() : void {
 	wp_register_script( 'jquery-min-js', INCLUDES_DIR . 'jquery/3.1.1/jquery.min.js' , array(), false, true );
 	wp_register_script( 'jquery-ui-min-js', INCLUDES_DIR . 'jquery-ui/1.12.1/jquery-ui.min.js', array(), false, true );
 	wp_register_script( 'bootstrap-min-js', INCLUDES_DIR . 'bootstrap/3.3.7/js/bootstrap.min.js', array(), false, true );
