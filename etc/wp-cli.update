@@ -45,13 +45,6 @@ then
 fi
 cd -
 
-#
-# Create files needed by WP SuperCache
-#
-echo "Creating files needed by WP SuperCache"
-touch ./webroot/wp-content/advanced-cache.php ./webroot/wp-content/wp-cache-config.php
-chown nginx:nginx ./webroot/wp-content/advanced-cache.php ./webroot/wp-content/wp-cache-config.php
-
 # Install all plugins that are found in the Child theme directory.
 # Usually, these plugins are the proprietary plugins. (WPML, etc.).
 # Please note the --force option which overwrites any installed version.
