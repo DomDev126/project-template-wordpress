@@ -72,7 +72,7 @@ class App extends AbstractCommand
             return false;
         }
 
-		$result = $this->taskExec('touch ./webroot/wp-content/wp-cache-config.php ./webroot/wp-content/advanced-cache.php')->run();
+        $result = $this->taskExec('touch ./webroot/wp-content/wp-cache-config.php ./webroot/wp-content/advanced-cache.php')->run();
 
         if (!$result->wasSuccessful()) {
             return false;
