@@ -45,7 +45,7 @@ class App extends AbstractCommand
         }
 
         if (isset($env['CRON_ENABLED']) && $env['CRON_ENABLED']) {
-                $this->installCron($env);
+            $this->installCron($env);
         }
 
         return ($this->setPathPermissions($env) && $this->postInstall());
