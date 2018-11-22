@@ -112,9 +112,11 @@ define('WP_DEBUG_LOG', $debug_log);
 define('WP_DEBUG_DISPLAY', $debug_display);
 
 /*WP SuperCache constants*/
-if( is_dir( __DIR__ . '/wp-content/plugins/wp-super-cache/' ) ){
+$supercache_plugin_path = __DIR__ . '/wp-content/plugins/wp-super-cache/';
+
+if( is_dir( $supercache_plugin_path ) ){
 	if( !defined('WPCACHEHOME' ) ){
-		define( 'WPCACHEHOME', __DIR__ . '/wp-content/plugins/wp-super-cache/' );
+		define( 'WPCACHEHOME', $supercache_plugin_path );
 	}
 	if( !defined('WP_CACHE') ){
 		define( 'WP_CACHE', true );
