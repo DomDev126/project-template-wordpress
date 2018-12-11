@@ -4,6 +4,8 @@ parameters:
         - src
         - tests
         - webroot
+    excludes_analyse:
+        - %rootDir%/../../../tests/data/*
 includes:
     - vendor/phpstan/phpstan-phpunit/extension.neon
     - vendor/phpstan/phpstan-phpunit/rules.neon
