@@ -38,6 +38,12 @@ class App extends AbstractCommand
             return false;
         }
 
+        $result = $this->taskExec('touch ./webroot/wp-content/wp-cache-config.php ./webroot/wp-content/advanced-cache.php')->run();
+
+        if (!$result->wasSuccessful()) {
+            return false;
+        }
+
         if (isset($env['CRON_ENABLED']) && $env['CRON_ENABLED']) {
             $this->installCron($env);
         }
@@ -63,6 +69,12 @@ class App extends AbstractCommand
         $result = $this->updateWp($env);
 
         if (!$result) {
+            return false;
+        }
+
+        $result = $this->taskExec('touch ./webroot/wp-content/wp-cache-config.php ./webroot/wp-content/advanced-cache.php')->run();
+
+        if (!$result->wasSuccessful()) {
             return false;
         }
 

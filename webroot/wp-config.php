@@ -111,6 +111,18 @@ define('WP_DEBUG', $debug);
 define('WP_DEBUG_LOG', $debug_log);
 define('WP_DEBUG_DISPLAY', $debug_display);
 
+/*WP SuperCache constants*/
+$supercache_plugin_path = __DIR__ . '/wp-content/plugins/wp-super-cache/';
+
+if( is_dir( $supercache_plugin_path ) ){
+	if( !defined('WPCACHEHOME' ) ){
+		define( 'WPCACHEHOME', $supercache_plugin_path );
+	}
+	if( !defined('WP_CACHE') ){
+		define( 'WP_CACHE', true );
+	}
+}
+
 /* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the WordPress directory. */
