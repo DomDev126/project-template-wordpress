@@ -1,6 +1,6 @@
 {
     "name": "qobo/project-template-wordpress",
-    "description": "This is a template for the new project using WordPress.",
+    "description": "Template for new WordPress projects",
     "keywords": ["wordpress", "project", "template", "setup", "rapid-development", "dry"],
     "type": "project",
     "license": "MIT",

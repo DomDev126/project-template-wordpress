@@ -32,6 +32,13 @@ install:
   - mkdir -p build/test-coverage build/test-results
   - ./bin/build app:install CHOWN_USER=$USER,CHGRP_GROUP=$USER,DB_NAME=app,DB_ADMIN_USER=root,DB_USER=root
 
+before_script:
+  # Add an IPv6 config - see the corresponding Travis issue
+  # https://github.com/travis-ci/travis-ci/issues/8361
+  - if [ "${TRAVIS_OS_NAME}" == "linux" ]; then
+      sudo sh -c 'echo 0 > /proc/sys/net/ipv6/conf/all/disable_ipv6';
+    fi
+
 script:
   - if [[ $PHPCS = 1 ]]; then ./vendor/bin/phpcs; fi
   - ./vendor/bin/phpunit --group example --no-coverage

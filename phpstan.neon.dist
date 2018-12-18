@@ -5,6 +5,7 @@ parameters:
         - tests
         - webroot
     excludes_analyse:
+        - %rootDir%/../../../tests/data/*
         - webroot/wp
     autoload_files:
         - webroot/wp/wp-load.php
