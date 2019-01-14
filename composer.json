@@ -73,6 +73,7 @@
         "wpackagist-plugin/wp-theme-plugin-editor-disable": "1.0.0"
     },
     "require-dev": {
+        "brianium/paratest": "*",
         "phpstan/phpstan": "^0.10.3",
         "phpstan/phpstan-phpunit": "^0.10.0",
         "phpunit/phpunit": "*",
