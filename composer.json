@@ -54,7 +54,7 @@
         "wpackagist-plugin/custom-upload-dir": "3.4.3.1",
         "wpackagist-plugin/disable-comments": "1.7.1",
         "wpackagist-plugin/disable-wordpress-updates": "1.6.3",
-        "wpackagist-plugin/fast-velocity-minify": "2.3.5",
+        "wpackagist-plugin/fast-velocity-minify": "2.5.6",
         "wpackagist-plugin/glue-for-yoast-seo-amp": "0.4.3",
         "wpackagist-plugin/google-analytics-for-wordpress": "7.2.0",
         "wpackagist-plugin/google-sitemap-generator": "4.0.9",
