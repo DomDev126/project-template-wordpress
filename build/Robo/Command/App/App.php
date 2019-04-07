@@ -190,7 +190,7 @@ class App extends AbstractCommand
      * @param array $env Environment variables
      * @return bool true on success or false on failure
      */
-    public function updateWp($env)
+    protected function updateWp($env)
     {
         $result = $this->taskMysqlBaseQuery()
             ->query("SELECT NOW() AS ServerTime")
