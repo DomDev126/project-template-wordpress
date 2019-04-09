@@ -79,7 +79,7 @@
         "phpstan/phpstan-phpunit": "^0.10.0",
         "phpunit/phpunit": "*",
         "squizlabs/php_codesniffer": "*",
-        "thecodingmachine/phpstan-strict-rules": "^0.10.3",
+        "thecodingmachine/phpstan-strict-rules": "^0.11.0",
         "wpackagist-plugin/theme-check": "*",
         "wpackagist-plugin/debug-bar": "0.9",
         "wpackagist-plugin/debug-bar-console": "0.3",
