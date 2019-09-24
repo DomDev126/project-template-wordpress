@@ -21,6 +21,16 @@ require_once dirname(__DIR__) . '/vendor/autoload.php';
 // this comment. Aha, you see, it just did it again!
 try { (new \josegonzalez\Dotenv\Loader(dirname(__DIR__) . DIRECTORY_SEPARATOR . '.env'))->parse()->expect('DB_NAME')->toEnv(true)->putenv(true); } catch (\Exception $e) { echo $e->getMessage(); exit(1); }
 
+$url = getenv( 'WP_URL' );
+$parse = parse_url( $url );
+if ( isset( $parse['host'] ) ) {
+	if ( isset( $_SERVER['HTTP_HOST'] ) && isset( $_SERVER['REQUEST_URI'] ) && $parse['host'] !== $_SERVER['HTTP_HOST'] ) {
+		$new_link = $parse['scheme'] . "://{$parse['host']}{$_SERVER['REQUEST_URI']}";
+		header( 'Location: ' . $new_link );
+		exit();
+	}
+}
+
 // Changes for WordPress in wp/ folder
 define('WP_HOME', getenv('WP_URL'));
 define('WP_SITEURL', WP_HOME . '/wp');
