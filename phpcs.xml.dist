@@ -12,6 +12,11 @@
     <rule ref="PSR2">
         <exclude name="Generic.Commenting.Todo" />
     </rule>
+    <rule ref="Generic.PHP.ForbiddenFunctions">
+        <properties>
+            <property name="forbiddenFunctions" type="array" value="var_dump=>null,sizeof=>count,delete=>unset"/>
+        </properties>
+    </rule>
 
     <!-- Do not fail on warnings -->
     <config name="ignore_warnings_on_exit" value="1" />
