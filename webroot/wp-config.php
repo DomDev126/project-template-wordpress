@@ -23,7 +23,8 @@ try { (new \josegonzalez\Dotenv\Loader(dirname(__DIR__) . DIRECTORY_SEPARATOR . 
 
 $url = getenv( 'WP_URL' );
 $parse = parse_url( $url );
-if ( isset( $parse['host'] ) ) {
+$is_wp_cli = defined( 'WP_CLI' ) && WP_CLI;
+if ( ! $is_wp_cli && isset( $parse['host'] ) ) {
 	if ( isset( $_SERVER['HTTP_HOST'] ) && isset( $_SERVER['REQUEST_URI'] ) && $parse['host'] !== $_SERVER['HTTP_HOST'] ) {
 		$new_link = $parse['scheme'] . "://{$parse['host']}{$_SERVER['REQUEST_URI']}";
 		header( 'Location: ' . $new_link );
